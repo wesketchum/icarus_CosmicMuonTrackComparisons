@@ -349,7 +349,7 @@ void make_histos2test(bool verbose=false) {
 
    //Get the files from ICARUS gpvm
   TFileCollection *my_files = new TFileCollection("my_files","My File List");
-  my_files->Add("/pnfs/icarus/persistent/calibration/calib_ntuples/mc/ICARUS_BNB_Nu_Cosmics/*.root");//hist_prodcorsika_bnb_genie_protononly_overburden_icarus_gen_filter_g4_detsim_48288510_9_reco1_20210916T052145_reco2.root");//hist_prodcorsika_genie_protononly_icarus_numi_volDetEnclosure_tpc_gen_filter_g4_detsim_48288511_98_reco1_20210912T202552_reco2.root");//*.root");//
+  my_files->Add("/pnfs/icarus/persistent/calibration/calib_ntuples/mc/ICARUS_BNB_Nu_Cosmics/hist_prodcorsika_bnb*.root");//_genie_protononly_overburden_icarus_gen_filter_g4_detsim_48288510_9_reco1_20210916T052145_reco2.root");//hist_prodcorsika_genie_protononly_icarus_numi_volDetEnclosure_tpc_gen_filter_g4_detsim_48288511_98_reco1_20210912T202552_reco2.root");//*.root");//
 
   //*.root");
 
@@ -365,7 +365,7 @@ void make_histos2test(bool verbose=false) {
   myfile.AddFileInfoList(my_files->GetList());
 
   TFileCollection *my_files2 = new TFileCollection("my_files2","My File List2");
-  my_files2->Add("/icarus/data/users/obitter/CalibrationWS21/*BNB*.root"); ///pnfs/icarus/persistent/calibration/calib_ntuples/data/*BNB*run606*.root");///icarus/data/users/obitter/CalibrationWS21/*BNB*.root");
+  my_files2->Add("/pnfs/icarus/persistent/calibration/calib_ntuples/data/hist_data_dl4_fstrmBNB*.root");///icarus/data/users/obitter/CalibrationWS21/hist_data_dl4_fstrmBNB_run6106_9_20210626T121435_20210813T230443_stage0_20210814T130318_stage1-bf52c0be-5863-4a74-a49b-7273aca42be3.root");///icarus/data/users/obitter/CalibrationWS21/*BNB*.root"); ///pnfs/icarus/persistent/calibration/calib_ntuples/data/*BNB*run606*.root");///icarus/data/users/obitter/CalibrationWS21/*BNB*.root");
 
 ///pnfs/icarus/persistent/calibration/calib_ntuples/data/*BNB*run5*.root");//*BNB*run6100*.root");//*BNB*.root");///icarus/data/users/obitter/CalibrationWS21/hist_data_dl4_fstrm*.root");///pnfs/icarus/persistent/calibration/calib_ntuples/data/hist_data_dl4_fstrmNUMI_*.root);//run6100_8_20210624T222802_20210810T173022_stage0_20210811T172950_stage1-aaf73d30-50ca-4661-a655-5e11616b005d.root");///pnfs/icarus/persistent/calibration/calib_ntuples/data/hist_data_dl4_fstrmNUMI_run6106_3_20210626T110945_20210812T034226_stage0_20210812T113610_stage1-2f1b69b2-5063-44e9-a1d2-129b4cb99fed.root");///pnfs/icarus/persistent/calibration/calib_ntuples/data/hist_data_dl4_fstrmNUMI_run6106_7_20210626T122720_20210812T011952_stage0_20210812T120934_stage1-8dc3d211-6be0-4580-b340-9b68768e98f5.root");
 
@@ -408,6 +408,15 @@ void make_histos2test(bool verbose=false) {
 
   TTreeReaderValue<float> endZ(myReader, "trk.end.z");
   TTreeReaderValue<float> endZ2(myReader2, "trk.end.z");
+
+  TTreeReaderValue<int> run(myReader, "trk.meta.run");
+  TTreeReaderValue<int> run2(myReader2, "trk.meta.run");
+
+
+
+  TTreeReaderValue<int> event(myReader, "trk.meta.evt");
+  TTreeReaderValue<int> event2(myReader2, "trk.meta.evt");
+
 
   
   TTreeReaderArray<float> dqdx_i1(myReader, "trk.hits0.dqdx");
@@ -562,79 +571,92 @@ void make_histos2test(bool verbose=false) {
      h_ez_mc->Fill(*endZ);
      cout<<"track-level done"<<endl;
      //get the last traj point on the collection plane
-     int last_i = y_c.GetSize()-1;
-     int last_j = y_i2.GetSize()-1;
-     int last_k = y_i1.GetSize()-1;
+
+     if(y_c.GetSize() == 0) continue;
+     if(y_i2.GetSize() == 0) continue;
+     if(y_i1.GetSize() == 0) continue;
+
+     int last_h_mc_c = y_c.GetSize()-1;
+     int last_h_mc_i2 = y_i2.GetSize()-1;
+     int last_h_mc_i1 = y_i1.GetSize()-1;
      
+     cout<<"MC"<<endl;
+     cout<<" x c "<<x_c.GetSize()-1<<" x i2 " <<x_i2.GetSize()-1<<" x i1 "<<x_i1.GetSize()-1<<endl;
+     cout<<" y c "<<y_c.GetSize()-1<<" y i2 " <<y_i2.GetSize()-1<<" y i1 "<<y_i1.GetSize()-1<<endl;
+     cout<<" z c "<<z_c.GetSize()-1<<" z i2 " <<z_i2.GetSize()-1<<" z i1 "<<z_i1.GetSize()-1<<endl;
+     cout<<" tpc c "<<tpc_c[last_h_mc_c]<<endl;
+     cout<<" tpc i2 "<<tpc_i2[last_h_mc_i2]<<endl;
+     cout<<" tpc i1 "<<tpc_i1[last_h_mc_i1]<<endl;
+
      //if not on thr trajectory, continue
-     if(ontraj_c[last_i]!=1) continue;
+     if(ontraj_c[last_h_mc_c]!=1) continue;
 
-     if(tpc_c[last_i]!=1) continue;
+     if(tpc_c[last_h_mc_c]!=2) continue;
 
-     h_azangle2_mc->Fill( TMath::ATan(x_c[last_i]/z_c[last_i]) );
-     h_zangle2_mc->Fill( TMath::ATan(abs( (sqrt(x_c[last_i]*x_c[last_i] + y_c[last_i]*y_c[last_i]))) / (z_c[last_i]) ) );
-     h_q2_mc->Fill(dqdx_c[last_i]);
-     h_r2_mc->Fill(rr_c[last_i]);
+     h_azangle2_mc->Fill( TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) );
+     h_zangle2_mc->Fill( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + y_c[last_h_mc_c]*y_c[last_h_mc_c]))) / (z_c[last_h_mc_c]) ) );
+     h_q2_mc->Fill(dqdx_c[last_h_mc_c]);
+     h_r2_mc->Fill(rr_c[last_h_mc_c]);
 
 
-     h_ci2_mc->Fill(integral_c[last_i]);
-     h_wi2_mc->Fill(width_c[last_i]);
-     h_w2_mc->Fill(wire_c[last_i]);
-     h_ti2_mc->Fill(time_c[last_i]);
-     h_x2_mc->Fill(x_c[last_i]);
-     h_y2_mc->Fill(y_c[last_i]);
-     h_z2_mc->Fill(z_c[last_i]);
-     h_p2_mc->Fill(pitch_c[last_i]);
+     h_ci2_mc->Fill(integral_c[last_h_mc_c]);
+     h_wi2_mc->Fill(width_c[last_h_mc_c]);
+     h_w2_mc->Fill(wire_c[last_h_mc_c]);
+     h_ti2_mc->Fill(time_c[last_h_mc_c]);
+     h_x2_mc->Fill(x_c[last_h_mc_c]);
+     h_y2_mc->Fill(y_c[last_h_mc_c]);
+     h_z2_mc->Fill(z_c[last_h_mc_c]);
+     h_p2_mc->Fill(pitch_c[last_h_mc_c]);
 
 
 
      cout<<"collection done"<<endl;
 
      //     if(verbose) 
-     // cout << "MC angle " << TMath::ATan(x_c[last_i]/z_c[last_i]) << endl;
+     // cout << "MC angle " << TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) << endl;
 
      //and fill all the other histograms related to traj points too
      
 
-     if(ontraj_i2[last_j]!=1) continue;
+     if(ontraj_i2[last_h_mc_i2]!=1) continue;
 
-     if(tpc_i2[last_j]!=1)continue;//==0) continue;
+     if(tpc_i2[last_h_mc_i2]!=2)continue;//==0) continue;
 
-     h_azangle1_mc->Fill( TMath::ATan(x_i2[last_j]/z_i2[last_j]) );
-     h_zangle1_mc->Fill( TMath::ATan(abs( (sqrt(x_i2[last_j]*x_i2[last_j] + y_i2[last_j]*y_i2[last_j]))) / (z_i2[last_j]) ) );
-     h_q1_mc->Fill(dqdx_i2[last_j]);
-     h_r1_mc->Fill(rr_i2[last_j]);
+     h_azangle1_mc->Fill( TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) );
+     h_zangle1_mc->Fill( TMath::ATan(abs( (sqrt(x_i2[last_h_mc_i2]*x_i2[last_h_mc_i2] + y_i2[last_h_mc_i2]*y_i2[last_h_mc_i2]))) / (z_i2[last_h_mc_i2]) ) );
+     h_q1_mc->Fill(dqdx_i2[last_h_mc_i2]);
+     h_r1_mc->Fill(rr_i2[last_h_mc_i2]);
 
-     h_ci1_mc->Fill(integral_i2[last_j]);
-     h_wi1_mc->Fill(width_i2[last_j]);
-     h_w1_mc->Fill(wire_i2[last_j]);
-     h_ti1_mc->Fill(time_i2[last_j]);
-     h_x1_mc->Fill(x_i2[last_j]);
-     h_y1_mc->Fill(y_i2[last_j]);
-     h_z1_mc->Fill(z_i2[last_j]);
-     h_p1_mc->Fill(pitch_i2[last_j]);
+     h_ci1_mc->Fill(integral_i2[last_h_mc_i2]);
+     h_wi1_mc->Fill(width_i2[last_h_mc_i2]);
+     h_w1_mc->Fill(wire_i2[last_h_mc_i2]);
+     h_ti1_mc->Fill(time_i2[last_h_mc_i2]);
+     h_x1_mc->Fill(x_i2[last_h_mc_i2]);
+     h_y1_mc->Fill(y_i2[last_h_mc_i2]);
+     h_z1_mc->Fill(z_i2[last_h_mc_i2]);
+     h_p1_mc->Fill(pitch_i2[last_h_mc_i2]);
 
 
 
 
      cout<<"induction 2 done"<<endl;
-     if(ontraj_i1[last_k]!=1) continue;
-     if(tpc_i1[last_k]!=1)continue;//==0) continue;
+     if(ontraj_i1[last_h_mc_i1]!=1) continue;
+     if(tpc_i1[last_h_mc_i1]!=2)continue;//==0) continue;
 
 
 
-     h_azangle0_mc->Fill( TMath::ATan(x_i1[last_k]/z_i1[last_k]) );
-     h_zangle0_mc->Fill( TMath::ATan(abs( (sqrt(x_i1[last_k]*x_i1[last_k] + y_i1[last_k]*y_i1[last_k]))) / (z_i1[last_k]) ) );
-     h_q0_mc->Fill(dqdx_i1[last_k]);
-     h_r0_mc->Fill(rr_i1[last_k]);
-     h_ci0_mc->Fill(integral_i1[last_k]);
-     h_wi0_mc->Fill(width_i1[last_k]);
-     h_w0_mc->Fill(wire_i1[last_k]);
-     h_ti0_mc->Fill(time_i1[last_k]);
-     h_x0_mc->Fill(x_i1[last_k]);
-     h_y0_mc->Fill(y_i1[last_k]);
-     h_z0_mc->Fill(z_i1[last_k]);
-     h_p0_mc->Fill(pitch_i1[last_k]);
+     h_azangle0_mc->Fill( TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) );
+     h_zangle0_mc->Fill( TMath::ATan(abs( (sqrt(x_i1[last_h_mc_i1]*x_i1[last_h_mc_i1] + y_i1[last_h_mc_i1]*y_i1[last_h_mc_i1]))) / (z_i1[last_h_mc_i1]) ) );
+     h_q0_mc->Fill(dqdx_i1[last_h_mc_i1]);
+     h_r0_mc->Fill(rr_i1[last_h_mc_i1]);
+     h_ci0_mc->Fill(integral_i1[last_h_mc_i1]);
+     h_wi0_mc->Fill(width_i1[last_h_mc_i1]);
+     h_w0_mc->Fill(wire_i1[last_h_mc_i1]);
+     h_ti0_mc->Fill(time_i1[last_h_mc_i1]);
+     h_x0_mc->Fill(x_i1[last_h_mc_i1]);
+     h_y0_mc->Fill(y_i1[last_h_mc_i1]);
+     h_z0_mc->Fill(z_i1[last_h_mc_i1]);
+     h_p0_mc->Fill(pitch_i1[last_h_mc_i1]);
 
      cout<<"induction 1 done"<<endl;
    }//end while myReader
@@ -663,72 +685,91 @@ void make_histos2test(bool verbose=false) {
 
      cout<<"track-level done"<<endl;
      //get the last traj point on the collection plane
-     int last_i2 = y2_c.GetSize()-1;
-     int last_j2 = y2_i2.GetSize()-1;
-     int last_k2 = y2_i1.GetSize()-1;
+
+
+     if(y2_c.GetSize() == 0) continue;
+     if(y2_i2.GetSize() == 0) continue;
+     if(y2_i1.GetSize() == 0) continue;
+     int last_h_data_c = y2_c.GetSize()-1;
+     int last_h_data_i2 = y2_i2.GetSize()-1;
+     int last_h_data_i1 = y2_i1.GetSize()-1;
+
+
+     cout<<"DATA"<<endl;
+     cout<<*run2<<" RUN"<<endl;
+     cout<<*event2<<" EVENT"<<endl;
+     cout<<" x c "<<x2_c.GetSize()-1<<" x i2 " <<x2_i2.GetSize()-1<<" x i1 "<<x2_i1.GetSize()-1<<endl;
+     cout<<" y c "<<y2_c.GetSize()-1<<" y i2 " <<y2_i2.GetSize()-1<<" y i1 "<<y2_i1.GetSize()-1<<endl;
+     cout<<" z c "<<z2_c.GetSize()-1<<" z i2 " <<z2_i2.GetSize()-1<<" z i1 "<<z2_i1.GetSize()-1<<endl;
+     cout<<" tpc c "<<tpc2_c[last_h_data_c]<<endl;
+     cout<<" tpc i2 "<<tpc2_i2[last_h_data_i2]<<endl;
+     cout<<" tpc i1 "<<tpc2_i1[last_h_data_i1]<<endl;
+     //cout<<*run2<<endl;
+     //cout<<*event2<<endl;
+
      //if not on thr trajectory, continue
-     if(ontraj2_c[last_i2]!=1) continue;
-     if(tpc2_c[last_i2]!=1)continue;//==0) continue;
-     h_azangle2_data->Fill( TMath::ATan(x2_c[last_i2]/z2_c[last_i2]) );
-     h_zangle2_data->Fill( TMath::ATan(abs( (sqrt(x2_c[last_i2]*x2_c[last_i2] + y2_c[last_i2]*y2_c[last_i2]))) / (z2_c[last_i2]) ) );
-     h_q2_data->Fill(dqdx2_c[last_i2]);
-     h_r2_data->Fill(rr2_c[last_i2]);
+     if(ontraj2_c[last_h_data_c]!=1) continue;
+     if(tpc2_c[last_h_data_c]!=2)continue;//==0) continue;
+     h_azangle2_data->Fill( TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) );
+     h_zangle2_data->Fill( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + y2_c[last_h_data_c]*y2_c[last_h_data_c]))) / (z2_c[last_h_data_c]) ) );
+     h_q2_data->Fill(dqdx2_c[last_h_data_c]);
+     h_r2_data->Fill(rr2_c[last_h_data_c]);
 
 
-     h_ci2_data->Fill(integral2_c[last_i2]);
-     h_wi2_data->Fill(width2_c[last_i2]);
-     h_w2_data->Fill(wire2_c[last_i2]);
-     h_ti2_data->Fill(time2_c[last_i2]);
-     h_x2_data->Fill(x2_c[last_i2]);
-     h_y2_data->Fill(y2_c[last_i2]);
-     h_z2_data->Fill(z2_c[last_i2]);
-     h_p2_data->Fill(pitch2_c[last_i2]);
+     h_ci2_data->Fill(integral2_c[last_h_data_c]);
+     h_wi2_data->Fill(width2_c[last_h_data_c]);
+     h_w2_data->Fill(wire2_c[last_h_data_c]);
+     h_ti2_data->Fill(time2_c[last_h_data_c]);
+     h_x2_data->Fill(x2_c[last_h_data_c]);
+     h_y2_data->Fill(y2_c[last_h_data_c]);
+     h_z2_data->Fill(z2_c[last_h_data_c]);
+     h_p2_data->Fill(pitch2_c[last_h_data_c]);
 
 
      cout<<"collection done"<<endl;
      //if(verbose) 
-     //cout << "MC angle " << TMath::ATan(x_c[last_i]/z_c[last_i]) << endl;
+     //cout << "MC angle " << TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) << endl;
 
      //and fill all the other histograms related to traj points too
      
 
-     if(ontraj2_i2[last_j2]!=1) continue;
-     if(tpc2_i2[last_j2]!=1)continue;//==0) continue;
-     h_azangle1_data->Fill( TMath::ATan(x2_i2[last_j2]/z2_i2[last_j2]) );
-     h_zangle1_data->Fill( TMath::ATan(abs( (sqrt(x2_i2[last_j2]*x2_i2[last_j2] + y2_i2[last_j2]*y2_i2[last_j2]))) / (z2_i2[last_j2]) ) );
-     h_q1_data->Fill(dqdx2_i2[last_j2]);
-     h_r1_data->Fill(rr2_i2[last_j2]);
+     if(ontraj2_i2[last_h_data_i2]!=1) continue;
+     if(tpc2_i2[last_h_data_i2]!=2)continue;//==0) continue;
+     h_azangle1_data->Fill( TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) );
+     h_zangle1_data->Fill( TMath::ATan(abs( (sqrt(x2_i2[last_h_data_i2]*x2_i2[last_h_data_i2] + y2_i2[last_h_data_i2]*y2_i2[last_h_data_i2]))) / (z2_i2[last_h_data_i2]) ) );
+     h_q1_data->Fill(dqdx2_i2[last_h_data_i2]);
+     h_r1_data->Fill(rr2_i2[last_h_data_i2]);
 
 
 
-     h_ci1_data->Fill(integral2_i2[last_j2]);
-     h_wi1_data->Fill(width2_i2[last_j2]);
-     h_w1_data->Fill(wire2_i2[last_j2]);
-     h_ti1_data->Fill(time2_i2[last_j2]);
-     h_x1_data->Fill(x2_i2[last_j2]);
-     h_y1_data->Fill(y2_i2[last_j2]);
-     h_z1_data->Fill(z2_i2[last_j2]);
-     h_p1_data->Fill(pitch2_i2[last_j2]);
+     h_ci1_data->Fill(integral2_i2[last_h_data_i2]);
+     h_wi1_data->Fill(width2_i2[last_h_data_i2]);
+     h_w1_data->Fill(wire2_i2[last_h_data_i2]);
+     h_ti1_data->Fill(time2_i2[last_h_data_i2]);
+     h_x1_data->Fill(x2_i2[last_h_data_i2]);
+     h_y1_data->Fill(y2_i2[last_h_data_i2]);
+     h_z1_data->Fill(z2_i2[last_h_data_i2]);
+     h_p1_data->Fill(pitch2_i2[last_h_data_i2]);
 
      cout<<"induction 2 done"<<endl;
 
 
-     if(ontraj2_i1[last_k2]!=1) continue;
-     if(tpc2_i1[last_k2]!=1)continue;//==0) continue;
-     h_azangle0_data->Fill( TMath::ATan(x2_i1[last_k2]/z2_i1[last_k2]) );
-     h_zangle0_data->Fill( TMath::ATan(abs( (sqrt(x2_i1[last_k2]*x2_i1[last_k2] + y2_i1[last_k2]*y2_i1[last_k2]))) / (z2_i1[last_k2]) ) );
-     h_q0_data->Fill(dqdx2_i1[last_k2]);
-     h_r0_data->Fill(rr2_i1[last_k2]);
+     if(ontraj2_i1[last_h_data_i1]!=1) continue;
+     if(tpc2_i1[last_h_data_i1]!=2)continue;//==0) continue;
+     h_azangle0_data->Fill( TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) );
+     h_zangle0_data->Fill( TMath::ATan(abs( (sqrt(x2_i1[last_h_data_i1]*x2_i1[last_h_data_i1] + y2_i1[last_h_data_i1]*y2_i1[last_h_data_i1]))) / (z2_i1[last_h_data_i1]) ) );
+     h_q0_data->Fill(dqdx2_i1[last_h_data_i1]);
+     h_r0_data->Fill(rr2_i1[last_h_data_i1]);
 
 
-     h_ci0_data->Fill(integral2_i1[last_k2]);
-     h_wi0_data->Fill(width2_i1[last_k2]);
-     h_w0_data->Fill(wire2_i1[last_k2]);
-     h_ti0_data->Fill(time2_i1[last_k2]);
-     h_x0_data->Fill(x2_i1[last_k2]);
-     h_y0_data->Fill(y2_i1[last_k2]);
-     h_z0_data->Fill(z2_i1[last_k2]);
-     h_p0_data->Fill(pitch2_i1[last_k2]);
+     h_ci0_data->Fill(integral2_i1[last_h_data_i1]);
+     h_wi0_data->Fill(width2_i1[last_h_data_i1]);
+     h_w0_data->Fill(wire2_i1[last_h_data_i1]);
+     h_ti0_data->Fill(time2_i1[last_h_data_i1]);
+     h_x0_data->Fill(x2_i1[last_h_data_i1]);
+     h_y0_data->Fill(y2_i1[last_h_data_i1]);
+     h_z0_data->Fill(z2_i1[last_h_data_i1]);
+     h_p0_data->Fill(pitch2_i1[last_h_data_i1]);
      cout<<"induction 1 done"<<endl;
 
    }//end while myReader2
@@ -935,7 +976,19 @@ void make_histos2test(bool verbose=false) {
 
 
 
+
+
    cout<<"norm"<<endl;
+
+
+
+   //   TFile* my_new_file = new TFile("my_output_file_AzimuthalAngle_col.root","RECREATE"); // open new file in write mode
+   //hs_az2->Write();
+
+
+
+
+
    //drawing distribtions
    TCanvas* cnvs_az2 = new TCanvas("cnvs_az2", "c1", 1,1,800,700);
 
@@ -957,6 +1010,12 @@ void make_histos2test(bool verbose=false) {
    cnvs_az2->Update();
 
 
+   //   TFile* my_new_file = new TFile("my_output_file_AzimuthalAngle_col.root","RECREATE"); // open new file in write mode                                                                               
+   //cnvs_az2->Write();
+
+   TFile* my_new_file1 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_AzimuthalAngle_col.root","RECREATE");
+   cnvs_az2->Write();
+
    TCanvas* cnvs_az1 = new TCanvas("cnvs_az1", "c1", 1,1,800,700);
    h1a->SetLineColor(kRed);
    h2a->SetLineColor(kBlue);
@@ -973,6 +1032,9 @@ void make_histos2test(bool verbose=false) {
    legenda->AddEntry(h2a,"Data");
    legenda->Draw();
    cnvs_az1->Update();
+
+   TFile* my_new_file2 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_AzimuthalAngle_in1.root","RECREATE");
+   cnvs_az1->Write();
 
    TCanvas* cnvs_az0 = new TCanvas("cnvs_az0", "c1", 1,1,800,700);
    h1b->SetLineColor(kRed);
@@ -991,6 +1053,8 @@ void make_histos2test(bool verbose=false) {
    legendb->Draw();
    cnvs_az0->Update();
 
+   TFile* my_new_file3 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_AzimuthalAngle_in2.root","RECREATE");
+   cnvs_az0->Write();
 
    TCanvas* cnvs_zz2 = new TCanvas("cnvs_zz2", "c1", 1,1,800,700);
    h1c->SetLineColor(kRed);
@@ -1010,6 +1074,10 @@ void make_histos2test(bool verbose=false) {
    legendc->Draw();
    cnvs_zz2->Update();
 
+   TFile* my_new_file4 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_ZenithAngle_col.root","RECREATE");
+   cnvs_zz2->Write();
+
+
    TCanvas* cnvs_zz1 = new TCanvas("cnvs_zz1", "c1", 1,1,800,700);
    h1d->SetLineColor(kRed);
    h2d->SetLineColor(kBlue);
@@ -1028,6 +1096,8 @@ void make_histos2test(bool verbose=false) {
    legendd->Draw();
    cnvs_zz1->Update();
 
+   TFile* my_new_file5 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_ZenithAngle_in1.root","RECREATE");
+   cnvs_zz1->Write();
 
    TCanvas* cnvs_zz0 = new TCanvas("cnvs_zz0", "c1", 1,1,800,700);
    h1e->SetLineColor(kRed);
@@ -1047,6 +1117,8 @@ void make_histos2test(bool verbose=false) {
    legende->Draw();
    cnvs_zz0->Update();
 
+   TFile* my_new_file6 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_ZenithAngle_in2.root","RECREATE");
+   cnvs_zz0->Write();
 
    TCanvas* cnvs_q2 = new TCanvas("cnvs_q2", "c1", 1,1,800,700);
    h1f->SetLineColor(kRed);
@@ -1066,7 +1138,8 @@ void make_histos2test(bool verbose=false) {
    legendf->Draw();
    cnvs_q2->Update();
 
-
+   TFile* my_new_file7 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_filedQdx_col.root","RECREATE");
+   cnvs_q2->Write();
 
 
    TCanvas* cnvs_q1 = new TCanvas("cnvs_q1", "c1", 1,1,800,700);
@@ -1087,6 +1160,9 @@ void make_histos2test(bool verbose=false) {
    cnvs_q1->Update();
 
 
+   TFile* my_new_file8 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_filedQdx_in1.root","RECREATE");
+   cnvs_q1->Write();
+
    TCanvas* cnvs_q0 = new TCanvas("cnvs_q0", "c1", 1,1,800,700);
    h1h->SetLineColor(kRed);
    h2h->SetLineColor(kBlue);
@@ -1106,6 +1182,9 @@ void make_histos2test(bool verbose=false) {
    cnvs_q0->Update();
 
 
+   TFile* my_new_file9 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_filedQdx_in2.root","RECREATE");
+   cnvs_q0->Write();
+
    TCanvas* cnvs_r2 = new TCanvas("cnvs_r2", "c1", 1,1,800,700);
    h1i->SetLineColor(kRed);
    h2i->SetLineColor(kBlue);
@@ -1123,6 +1202,8 @@ void make_histos2test(bool verbose=false) {
    legendi->Draw();
    cnvs_r2->Update();
 
+   TFile* my_new_file10 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileRR_col.root","RECREATE");
+   cnvs_r2->Write();
 
    TCanvas* cnvs_r1 = new TCanvas("cnvs_r1", "c1", 1,1,800,700);
    h1j->SetLineColor(kRed);
@@ -1142,6 +1223,8 @@ void make_histos2test(bool verbose=false) {
    legendj->Draw();
    cnvs_r1->Update();
 
+   TFile* my_new_file11 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileRR_in1.root","RECREATE");
+   cnvs_r1->Write();
 
    TCanvas* cnvs_r0 = new TCanvas("cnvs_r0", "c1", 1,1,800,700);
    h1k->SetLineColor(kRed);
@@ -1159,6 +1242,9 @@ void make_histos2test(bool verbose=false) {
    legendk->AddEntry(h2k,"Data");
    legendk->Draw();
    cnvs_r0->Update();
+
+   TFile* my_new_file12 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileRR_in2.root","RECREATE");
+   cnvs_r0->Write();
 
    TCanvas* cnvs_l = new TCanvas("cnvs_l", "c1", 1,1,800,700);
    h1l->SetLineColor(kRed);
@@ -1179,6 +1265,9 @@ void make_histos2test(bool verbose=false) {
    cnvs_l->Update();
 
 
+   TFile* my_new_file13 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileLength.root","RECREATE");
+   cnvs_l->Write();
+
    TCanvas* cnvs_t0 = new TCanvas("cnvs_t0", "c1", 1,1,800,700);
    h1m->SetLineColor(kRed);
    h2m->SetLineColor(kBlue);
@@ -1196,7 +1285,8 @@ void make_histos2test(bool verbose=false) {
    legendm->Draw();
    cnvs_t0->Update();
 
-
+   TFile* my_new_file14 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileT0.root","RECREATE");
+   cnvs_t0->Write();
 
    TCanvas* cnvs_sx = new TCanvas("cnvs_sx", "c1", 1,1,800,700);
    h1n->SetLineColor(kRed);
@@ -1217,6 +1307,9 @@ void make_histos2test(bool verbose=false) {
    cnvs_sx->Update();
 
 
+   TFile* my_new_file15 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileStartX_col.root","RECREATE");
+   cnvs_sx->Write();
+
    TCanvas* cnvs_sy = new TCanvas("cnvs_sy", "c1", 1,1,800,700);
    h1o->SetLineColor(kRed);
    h2o->SetLineColor(kBlue);
@@ -1234,6 +1327,8 @@ void make_histos2test(bool verbose=false) {
    legendo->Draw();
    cnvs_sy->Update();
 
+   TFile* my_new_file16 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileStartY_in1.root","RECREATE");
+   cnvs_sy->Write();
 
    TCanvas* cnvs_sz = new TCanvas("cnvs_sz", "c1", 1,1,800,700);
    h1p->SetLineColor(kRed);
@@ -1252,6 +1347,8 @@ void make_histos2test(bool verbose=false) {
    legendp->Draw();
    cnvs_sz->Update();
 
+   TFile* my_new_file17 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileStartZ_in2.root","RECREATE");
+   cnvs_sz->Write();
 
 
    TCanvas* cnvs_ex = new TCanvas("cnvs_ex", "c1", 1,1,800,700);
@@ -1273,12 +1370,17 @@ void make_histos2test(bool verbose=false) {
    cnvs_ex->Update();
 
 
+   TFile* my_new_file18 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileEndX_col.root","RECREATE");
+   cnvs_ex->Write();
+
+
    TCanvas* cnvs_ey = new TCanvas("cnvs_ey", "c1", 1,1,800,700);
    h1r->SetLineColor(kRed);
    h2r->SetLineColor(kBlue);
    hs_ey->Add(h1r);
    hs_ey->Add(h2r);
    hs_ey->Draw("nostackHIST");
+
 
 
    hs_ey->GetXaxis()->SetTitle(" Track End (Y) in cm  ");
@@ -1290,6 +1392,10 @@ void make_histos2test(bool verbose=false) {
    legendr->AddEntry(h2r,"Data");
    legendr->Draw();
    cnvs_ey->Update();
+
+
+   TFile* my_new_file19 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileEndY_in1.root","RECREATE");
+   cnvs_ey->Write();
 
 
    TCanvas* cnvs_ez = new TCanvas("cnvs_ez", "c1", 1,1,800,700);
@@ -1312,24 +1418,8 @@ void make_histos2test(bool verbose=false) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   TFile* my_new_file20 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileEndZ_in2.root","RECREATE");
+   cnvs_ez->Write();
 
 
 
@@ -1350,6 +1440,10 @@ void make_histos2test(bool verbose=false) {
    legendAA->Draw();
    cnvs_ci2->Update();
 
+
+   TFile* my_new_file21 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileInt_col.root","RECREATE");
+   cnvs_ci2->Write();
+
    TCanvas* cnvs_ci1 = new TCanvas("cnvs_ci1", "c1", 1,1,800,700);
    h1BB->SetLineColor(kRed);
    h2BB->SetLineColor(kBlue);
@@ -1366,6 +1460,10 @@ void make_histos2test(bool verbose=false) {
    legendBB->AddEntry(h2BB,"Data");
    legendBB->Draw();
    cnvs_ci1->Update();
+
+
+   TFile* my_new_file22 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileInt_in1.root","RECREATE");
+   cnvs_ci1->Write();
 
    TCanvas* cnvs_ci0 = new TCanvas("cnvs_ci0", "c1", 1,1,800,700);
    h1CC->SetLineColor(kRed);
@@ -1386,7 +1484,8 @@ void make_histos2test(bool verbose=false) {
 
 
 
-
+   TFile* my_new_file23 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileInt_in2.root","RECREATE");
+   cnvs_ci0->Write();
 
 
 
@@ -1407,6 +1506,9 @@ void make_histos2test(bool verbose=false) {
    legendDD->Draw();
    cnvs_wi2->Update();
 
+   TFile* my_new_file24 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileWidth_col.root","RECREATE");
+   cnvs_wi2->Write();
+
    TCanvas* cnvs_wi1 = new TCanvas("cnvs_wi1", "c1", 1,1,800,700);
    h1EE->SetLineColor(kRed);
    h2EE->SetLineColor(kBlue);
@@ -1423,6 +1525,9 @@ void make_histos2test(bool verbose=false) {
    legendEE->AddEntry(h2EE,"Data");
    legendEE->Draw();
    cnvs_wi1->Update();
+
+   TFile* my_new_file25 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileWidth_in1.root","RECREATE");
+   cnvs_wi1->Write();
 
    TCanvas* cnvs_wi0 = new TCanvas("cnvs_wi0", "c1", 1,1,800,700);
    h1FF->SetLineColor(kRed);
@@ -1441,7 +1546,8 @@ void make_histos2test(bool verbose=false) {
    legendFF->Draw();
    cnvs_wi0->Update();
 
-
+   TFile* my_new_file26 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileWidth_in2.root","RECREATE");
+   cnvs_wi0->Write();
 
 
    TCanvas* cnvs_w2 = new TCanvas("cnvs_w2", "c1", 1,1,800,700);
@@ -1461,6 +1567,10 @@ void make_histos2test(bool verbose=false) {
    legendGG->Draw();
    cnvs_w2->Update();
 
+
+   TFile* my_new_file27 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileWire_col.root","RECREATE");
+   cnvs_w2->Write();
+
    TCanvas* cnvs_w1 = new TCanvas("cnvs_w1", "c1", 1,1,800,700);
    h1HH->SetLineColor(kRed);
    h2HH->SetLineColor(kBlue);
@@ -1477,6 +1587,9 @@ void make_histos2test(bool verbose=false) {
    legendHH->AddEntry(h2HH,"Data");
    legendHH->Draw();
    cnvs_w1->Update();
+
+   TFile* my_new_file28 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileWire_in1.root","RECREATE");
+   cnvs_w1->Write();
 
    TCanvas* cnvs_w0 = new TCanvas("cnvs_w0", "c1", 1,1,800,700);
    h1II->SetLineColor(kRed);
@@ -1496,7 +1609,8 @@ void make_histos2test(bool verbose=false) {
    cnvs_w0->Update();
 
 
-
+   TFile* my_new_file29 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileWire_in2.root","RECREATE");
+   cnvs_w0->Write();
 
 
    TCanvas* cnvs_ti2 = new TCanvas("cnvs_ti2", "c1", 1,1,800,700);
@@ -1516,6 +1630,9 @@ void make_histos2test(bool verbose=false) {
    legendJJ->Draw();
    cnvs_ti2->Update();
 
+   TFile* my_new_file30 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileTime_col.root","RECREATE");
+   cnvs_ti2->Write();
+
    TCanvas* cnvs_ti1 = new TCanvas("cnvs_ti1", "c1", 1,1,800,700);
    h1KK->SetLineColor(kRed);
    h2KK->SetLineColor(kBlue);
@@ -1532,6 +1649,9 @@ void make_histos2test(bool verbose=false) {
    legendKK->AddEntry(h2KK,"Data");
    legendKK->Draw();
    cnvs_ti1->Update();
+
+   TFile* my_new_file31 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileTime_in1.root","RECREATE");
+   cnvs_ti1->Write();
 
    TCanvas* cnvs_ti0 = new TCanvas("cnvs_ti0", "c1", 1,1,800,700);
    h1LL->SetLineColor(kRed);
@@ -1551,6 +1671,9 @@ void make_histos2test(bool verbose=false) {
    cnvs_ti0->Update();
 
 
+   TFile* my_new_file32 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileTime_in2.root","RECREATE");
+   cnvs_ti0->Write();
+
    TCanvas* cnvs_x2 = new TCanvas("cnvs_x2", "c1", 1,1,800,700);
    h1MM->SetLineColor(kRed);
    h2MM->SetLineColor(kBlue);
@@ -1568,6 +1691,9 @@ void make_histos2test(bool verbose=false) {
    legendMM->Draw();
    cnvs_x2->Update();
 
+   TFile* my_new_file33 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisX_col.root","RECREATE");
+   cnvs_x2->Write();
+
    TCanvas* cnvs_x1 = new TCanvas("cnvs_x1", "c1", 1,1,800,700);
    h1NN->SetLineColor(kRed);
    h2NN->SetLineColor(kBlue);
@@ -1584,6 +1710,10 @@ void make_histos2test(bool verbose=false) {
    legendNN->AddEntry(h2NN,"Data");
    legendNN->Draw();
    cnvs_x1->Update();
+
+
+   TFile* my_new_file34 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisX_in1.root","RECREATE");
+   cnvs_x1->Write();
 
    TCanvas* cnvs_x0 = new TCanvas("cnvs_x0", "c1", 1,1,800,700);
    h1OO->SetLineColor(kRed);
@@ -1603,7 +1733,8 @@ void make_histos2test(bool verbose=false) {
    cnvs_x0->Update();
 
 
-
+   TFile* my_new_file35 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisX_in2.root","RECREATE");
+   cnvs_x0->Write();
 
 
 
@@ -1624,6 +1755,11 @@ void make_histos2test(bool verbose=false) {
    legendPP->Draw();
    cnvs_y2->Update();
 
+
+   TFile* my_new_file36 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisY_col.root","RECREATE");
+   cnvs_y2->Write();
+
+
    TCanvas* cnvs_y1 = new TCanvas("cnvs_y1", "c1", 1,1,800,700);
    h1QQ->SetLineColor(kRed);
    h2QQ->SetLineColor(kBlue);
@@ -1640,6 +1776,10 @@ void make_histos2test(bool verbose=false) {
    legendQQ->AddEntry(h2QQ,"Data");
    legendQQ->Draw();
    cnvs_y1->Update();
+
+   TFile* my_new_file37 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisY_in1.root","RECREATE");
+   cnvs_y1->Write();
+
 
    TCanvas* cnvs_y0 = new TCanvas("cnvs_y0", "c1", 1,1,800,700);
    h1RR->SetLineColor(kRed);
@@ -1660,7 +1800,8 @@ void make_histos2test(bool verbose=false) {
 
 
 
-
+   TFile* my_new_file38 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisY_in2.root","RECREATE");
+   cnvs_y0->Write();
 
 
 
@@ -1681,6 +1822,12 @@ void make_histos2test(bool verbose=false) {
    legendSS->Draw();
    cnvs_z2->Update();
 
+
+
+   TFile* my_new_file39 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisZ_col.root","RECREATE");
+   cnvs_z2->Write();
+
+
    TCanvas* cnvs_z1 = new TCanvas("cnvs_z1", "c1", 1,1,800,700);
    h1TT->SetLineColor(kRed);
    h2TT->SetLineColor(kBlue);
@@ -1697,6 +1844,13 @@ void make_histos2test(bool verbose=false) {
    legendTT->AddEntry(h2TT,"Data");
    legendTT->Draw();
    cnvs_z1->Update();
+
+
+
+
+   TFile* my_new_file40 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisZ_in1.root","RECREATE");
+   cnvs_z1->Write();
+
 
    TCanvas* cnvs_z0 = new TCanvas("cnvs_z0", "c1", 1,1,800,700);
    h1UU->SetLineColor(kRed);
@@ -1716,7 +1870,8 @@ void make_histos2test(bool verbose=false) {
    cnvs_z0->Update();
 
 
-
+   TFile* my_new_file41 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_fileDisZ_in2.root","RECREATE");                                                                                          
+   cnvs_z0->Write();
 
 
    TCanvas* cnvs_p2 = new TCanvas("cnvs_p2", "c1", 1,1,800,700);
@@ -1736,6 +1891,12 @@ void make_histos2test(bool verbose=false) {
    legendVV->Draw();
    cnvs_p2->Update();
 
+
+   TFile* my_new_file42 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_Pitch_col.root","RECREATE"); // open new file in write mode                                                                                         
+   cnvs_p2->Write();
+
+
+
    TCanvas* cnvs_p1 = new TCanvas("cnvs_p1", "c1", 1,1,800,700);
    h1WW->SetLineColor(kRed);
    h2WW->SetLineColor(kBlue);
@@ -1752,6 +1913,10 @@ void make_histos2test(bool verbose=false) {
    legendWW->AddEntry(h2WW,"Data");
    legendWW->Draw();
    cnvs_p1->Update();
+
+
+   TFile* my_new_file43 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_Pitch_in1.root","RECREATE"); // open new file in write mode                                                                                            
+   cnvs_p1->Write();
 
    TCanvas* cnvs_p0 = new TCanvas("cnvs_p0", "c1", 1,1,800,700);
    h1XX->SetLineColor(kRed);
@@ -1770,6 +1935,9 @@ void make_histos2test(bool verbose=false) {
    legendXX->Draw();
    cnvs_p0->Update();
 
+
+   TFile* my_new_file44 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_output_tpc2_sel0_East_file_Pitch_in2.root","RECREATE"); // open new file in write mode                                                                               
+   cnvs_p0->Write();
 
 
 
