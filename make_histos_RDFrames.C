@@ -1,3 +1,8 @@
+/*
+*
+* See https://root.cern/doc/v626/classROOT_1_1RDataFrame.html for RDataFrame Details
+*/
+
 #include "TFile.h"
 #include "TH1D.h"
 #include "sbnobj/Common/Calibration/TrackCaloSkimmerObj.h"
@@ -46,6 +51,7 @@ TH1D_registry_t register_histograms()
 
 void make_histosRDFrames(TString input_file_names,
                          const char* selection,
+                         TString tree_name,
                          TString output_file_name="my_output_file.root",
                          unsigned int n_entries=0,
                          bool verbose=false) {
@@ -59,10 +65,8 @@ void make_histosRDFrames(TString input_file_names,
 
   std::cout<< "Number of files in our file list is " << my_files->GetNFiles() <<std::endl;
 
-  TChain chain_files("caloskimE/TrackCaloSkim");
+  TChain chain_files(tree_name);
   chain_files.AddFileInfoList(my_files->GetList());
-
-
 
   std::cout<<"files added to chain"<<std::endl;
 
