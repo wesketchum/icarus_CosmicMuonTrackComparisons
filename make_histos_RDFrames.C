@@ -1,12 +1,57 @@
 #include "TFile.h"
 #include "TH1D.h"
+#include "sbnobj/Common/Calibration/TrackCaloSkimmerObj.h"
 #include "ROOT/RDataFrame.hxx"
+
+#pragma link C++ class sbn::Vector3D+;
+#pragma link C++ class sbn::HitInfo+;
+#pragma link C++ class vector<sbn::HitInfo>+;
+
+typedef std::map<std::string,ROOT::RDF::TH1DModel> TH1D_registry_t;
+
+
+template <typename RDF>
+auto create_Histo1D(RDF df,std::string var,TH1D_registry_t hreg)
+{
+  auto hmod = hreg.find(var);
+  if(hmod==hreg.end())
+    return df.Histo1D(var);
+
+  return df.Histo1D(hmod->second,var);
+}
+
+TH1D_registry_t register_histograms()
+{
+  TH1D_registry_t hist_registry;
+
+  hist_registry["start.x"] = ROOT::RDF::TH1DModel("","Relative Frequency vs  Start (X); Start X (cm)", 100, -400., 400.);
+  hist_registry["start.y"] = ROOT::RDF::TH1DModel("","Relative Frequency vs  Start (Y); Start Y (cm)", 100, -150., 150.);
+  hist_registry["start.z"] = ROOT::RDF::TH1DModel("","Relative Frequency vs  Start (Z); Start Z (cm)", 100, -1000., 1000.);
+
+  hist_registry["end.x"] = ROOT::RDF::TH1DModel("","Relative Frequency vs  End (X);End X (cm)", 100, -400., 400.);
+  hist_registry["end.y"] = ROOT::RDF::TH1DModel("","Relative Frequency vs  End (Y);End Y (cm)", 100, -150., 150.);
+  hist_registry["end.z"] = ROOT::RDF::TH1DModel("","Relative Frequency vs  End (Z);End Z (cm);", 100, -1000., 1000.);
+
+  hist_registry["length"] = ROOT::RDF::TH1DModel("","Relative Frequency vs  Length;Muon Length (cm);",100,0,1500);
+  hist_registry["t0"] = ROOT::RDF::TH1DModel("","Relative Frequency vs  T_0;T_0 (#mus);",100,-1.5e6,1.5e6);
+  hist_registry["angle_azimuth"] = ROOT::RDF::TH1DModel("","Relative Frequency vs Azimuthal Angle;azimuth (rad);Tracks",100,-0.5*TMath::Pi(),0.5*TMath::Pi());
+  hist_registry["angle_zenith"] = ROOT::RDF::TH1DModel("","Relative Frequency vs Zenith Angle;zenith (rad);Tracks",100,-0.5*TMath::Pi(),0.5*TMath::Pi());
+
+  hist_registry["hits_dqdx_mean"] = ROOT::RDF::TH1DModel("","Relative Frequency vs dQ/dx",100,0,1500);
+  hist_registry["hits_integral_mean"] = ROOT::RDF::TH1DModel("","Relative Frequency vs Charge Integral",100,0,150.);
+  hist_registry["hits_width_mean"] = ROOT::RDF::TH1DModel("","Relative Frequency vs Width",100,0,20);
+
+  return hist_registry;
+}
 
 void make_histosRDFrames(TString input_file_names,
                          const char* selection,
                          TString output_file_name="my_output_file.root",
                          unsigned int n_entries=0,
                          bool verbose=false) {
+
+  //make histogram registry
+  auto hist_registry = register_histograms();
 
    //Get the files from ICARUS gpvm
   TFileCollection *my_files = new TFileCollection("my_files","My File List");
@@ -17,10 +62,17 @@ void make_histosRDFrames(TString input_file_names,
   TChain chain_files("caloskimE/TrackCaloSkim");
   chain_files.AddFileInfoList(my_files->GetList());
 
+
+
   std::cout<<"files added to chain"<<std::endl;
 
   //declare our dataframe object
-  ROOT::RDataFrame df_all(chain_files);
+  ROOT::RDataFrame df_all(chain_files,
+    {"trk.start","trk.end","trk.dir","trk.length","trk.t0",
+    "trk.hits0.dir","trk.hits1.dir","trk.hits2.dir",
+    "trk.hits0.dqdx","trk.hits1.dqdx","trk.hits2.dqdx",
+    "trk.hits0.h.integral","trk.hits1.h.integral","trk.hits2.h.integral",
+    "trk.hits0.h.width","trk.hits1.h.width","trk.hits2.h.width"});
 
   //limit Range
   auto df = df_all.Range(n_entries);
@@ -41,17 +93,17 @@ void make_histosRDFrames(TString input_file_names,
 
 
   //make histograms and save them
-  auto hist_start_x = df_sel.Histo1D("start.x");
-  auto hist_start_y = df_sel.Histo1D("start.y");
-  auto hist_start_z = df_sel.Histo1D("start.z");
-  auto hist_end_x = df_sel.Histo1D("end.x");
-  auto hist_end_y = df_sel.Histo1D("end.y");
-  auto hist_end_z = df_sel.Histo1D("end.z");
+  auto hist_start_x = create_Histo1D(df_sel,"start.x",hist_registry);//df_sel.Histo1D("start.x");
+  auto hist_start_y = create_Histo1D(df_sel,"start.y",hist_registry);//df_sel.Histo1D("start.y");
+  auto hist_start_z = create_Histo1D(df_sel,"start.z",hist_registry);//df_sel.Histo1D("start.z");
+  auto hist_end_x = create_Histo1D(df_sel,"end.x",hist_registry);//df_sel.Histo1D("end.x");
+  auto hist_end_y = create_Histo1D(df_sel,"end.y",hist_registry);//df_sel.Histo1D("end.y");
+  auto hist_end_z = create_Histo1D(df_sel,"end.z",hist_registry);//df_sel.Histo1D("end.z");
 
-  auto hist_length = df_sel.Histo1D("length");
-  auto hist_t0 = df_sel.Histo1D("t0");
-  auto hist_angle_azimuth = df_sel.Histo1D("angle_azimuth");
-  auto hist_angle_zenith = df_sel.Histo1D("angle_zenith");
+  auto hist_length = create_Histo1D(df_sel,"length",hist_registry);//df_sel.Histo1D("length");
+  auto hist_t0 = create_Histo1D(df_sel,"t0",hist_registry);//df_sel.Histo1D("t0");
+  auto hist_angle_azimuth = create_Histo1D(df_sel,"angle_azimuth",hist_registry);//df_sel.Histo1D("angle_azimuth");
+  auto hist_angle_zenith = create_Histo1D(df_sel,"angle_zenith",hist_registry);//df_sel.Histo1D("angle_zenith");
 
   hist_start_x->Write("hist_start_x");
   hist_start_y->Write("hist_start_y");
@@ -84,13 +136,9 @@ void make_histosRDFrames(TString input_file_names,
                           .Define("hits_integral_mean",str_hits_integral)
                           .Define("hits_width_mean",str_hits_width);
 
-    //df_plane = df_plane.Define("hits_dqdx_mean","ROOT::VecOps::Mean("+str_hits+".dqdx)");
-    //df_plane = df_plane.Define("hits_integral_mean","ROOT::VecOps::Mean("+str_hits+".h.integral)");
-    //df_plane = df_plane.Define("hits_width_mean","ROOT::VecOps::Mean("+str_hits+".h.width)");
-
-    auto hist_hits_dqdx_mean = df_plane.Histo1D("hits_dqdx_mean");
-    auto hist_hits_integral_mean = df_plane.Histo1D("hits_integral_mean");
-    auto hist_hits_width_mean = df_plane.Histo1D("hits_width_mean");
+    auto hist_hits_dqdx_mean = create_Histo1D(df_plane,"hits_dqdx_mean",hist_registry);//df_plane.Histo1D("hits_dqdx_mean");
+    auto hist_hits_integral_mean = create_Histo1D(df_plane,"hits_integral_mean",hist_registry);//df_plane.Histo1D("hits_integral_mean");
+    auto hist_hits_width_mean = create_Histo1D(df_plane,"hits_width_mean",hist_registry);//df_plane.Histo1D("hits_width_mean");
 
     sprintf(hname,"hist_hits%d_dqdx_mean",p);
     hist_hits_dqdx_mean->Write(hname);
