@@ -8,7 +8,7 @@ nohup: ignoring input
    ------------------------------------------------------------------
 
 
-Processing make_histos2test.C...
+Processing histos.C...
 TStack
 histos
 files read
@@ -267445,5 +267445,5 @@ HERE_C
  *** Break *** segmentation violation
     __boot()
     import os
-Error in <TList::Delete>: A list is accessing an object (0x7f729681a010) already deleted (list name = ClosedFiles)
-Error in <TList::Delete>: A list is accessing an object (0x7f729681a010) already deleted (list name = ClosedFiles)
+Error in <TList::Delete>: A list is accessing an object (0x7f4a0ab5a010) already deleted (list name = ClosedFiles)
+Error in <TList::Delete>: A list is accessing an object (0x7f4a0ab5a010) already deleted (list name = ClosedFiles)

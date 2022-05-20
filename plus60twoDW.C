@@ -14,69 +14,69 @@ void plus60twoDW(bool verbose=false) {
   ofstream outfile("test.txt");
 
 
-  ofstream outfile1("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Length_Az_col.txt");
-  ofstream outfile2("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Cint_Az_col.txt");
-  ofstream outfile3("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Width_Az_col.txt");
-  ofstream outfile4("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Length_Az_col.txt");
-  ofstream outfile5("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Cint_Az_col.txt");
-  ofstream outfile6("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Width_Az_col.txt");
+  ofstream outfile1("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Length_Az_col.txt");
+  ofstream outfile2("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Cint_Az_col.txt");
+  ofstream outfile3("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Width_Az_col.txt");
+  ofstream outfile4("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Length_Az_col.txt");
+  ofstream outfile5("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Cint_Az_col.txt");
+  ofstream outfile6("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Width_Az_col.txt");
 
 
-  ofstream outfile7("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Length_Z_col.txt");
-  ofstream outfile8("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Cint_Z_col.txt");
-  ofstream outfile9("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Width_Z_col.txt");
-  ofstream outfile10("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Length_Z_col.txt");
-  ofstream outfile11("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Cint_Z_col.txt");
-  ofstream outfile12("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_West_file_Width_Z_col.txt");
+  ofstream outfile7("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Length_Z_col.txt");
+  ofstream outfile8("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Cint_Z_col.txt");
+  ofstream outfile9("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Width_Z_col.txt");
+  ofstream outfile10("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Length_Z_col.txt");
+  ofstream outfile11("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Cint_Z_col.txt");
+  ofstream outfile12("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel1_East_file_Width_Z_col.txt");
 
 
 
 
   /*
-  ofstream outfileazc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_AzimuthalAngle_col.txt");
-  ofstream outfileaz1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_AzimuthalAngle_in1.txt");
-  ofstream outfileaz2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_AzimuthalAngle_in2.txt");
-  ofstream outfilezc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_ZenithAngle_col.txt");
-  ofstream outfilez1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_ZenithAngle_in1.txt");
-  ofstream outfilez2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_ZenithAngle_in2.txt");
-  ofstream outfileqc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Qdx_col.txt");
-  ofstream outfileq1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Qdx_in1.txt");
-  ofstream outfileq2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Qdx_col.txt");
-  ofstream outfilerrc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_RR_col.txt");
-  ofstream outfilerr1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_RR_in1.txt");
-  ofstream outfilerr2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_RR_col.txt");
-  ofstream outfilel("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Length.txt");
-  ofstream outfilet("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_To.txt");
-  ofstream outfilesx("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_StartX.txt");
-  ofstream outfilesy("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_StartY.txt");
-  ofstream outfilesz("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_StartZ.txt");
-  ofstream outfileex("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_EndX.txt");
-  ofstream outfileey("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_EndY.txt");
-  ofstream outfileez("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_EndZ.txt");
-  ofstream outfilecc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_cInt_col.txt");
-  ofstream outfilec1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_cInt_in1.txt");
-  ofstream outfilec2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_cInt_in2.txt");
-  ofstream outfilewc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Width_col.txt");
-  ofstream outfilew1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Width_in1.txt");
-  ofstream outfilew2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Width_in2.txt");
-  ofstream outfilewrc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Wire_col.txt");
-  ofstream outfilewr1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Wire_in1.txt");
-  ofstream outfilewr2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Wire_in2.txt");
-  ofstream outfiletic("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Time_col.txt");
-  ofstream outfileti1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Time_in1.txt");
-  ofstream outfileti2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Time_in2.txt");
-  ofstream outfiledxc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceX_col.txt");
-  ofstream outfiledx1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceX_in1.txt");
-  ofstream outfiledx2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceX_in2.txt");
-  ofstream outfiledyc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceY_col.txt");
-  ofstream outfiledy1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceY_in1.txt");
-  ofstream outfiledy2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceY_in2.txt");
-  ofstream outfiledzc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceZ_col.txt");
-  ofstream outfiledz1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceZ_in1.txt");
-  ofstream outfiledz2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_DistanceZ_in2.txt");
-  ofstream outfilepc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Pitch_col.txt");
-  ofstream outfilep1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Pitch_in1.txt");
-  ofstream outfilep2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_West_file_Pitch_in2.txt");
+  ofstream outfileazc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_AzimuthalAngle_col.txt");
+  ofstream outfileaz1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_AzimuthalAngle_in1.txt");
+  ofstream outfileaz2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_AzimuthalAngle_in2.txt");
+  ofstream outfilezc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_ZenithAngle_col.txt");
+  ofstream outfilez1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_ZenithAngle_in1.txt");
+  ofstream outfilez2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_ZenithAngle_in2.txt");
+  ofstream outfileqc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Qdx_col.txt");
+  ofstream outfileq1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Qdx_in1.txt");
+  ofstream outfileq2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Qdx_col.txt");
+  ofstream outfilerrc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_RR_col.txt");
+  ofstream outfilerr1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_RR_in1.txt");
+  ofstream outfilerr2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_RR_col.txt");
+  ofstream outfilel("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Length.txt");
+  ofstream outfilet("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_To.txt");
+  ofstream outfilesx("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_StartX.txt");
+  ofstream outfilesy("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_StartY.txt");
+  ofstream outfilesz("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_StartZ.txt");
+  ofstream outfileex("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_EndX.txt");
+  ofstream outfileey("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_EndY.txt");
+  ofstream outfileez("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_EndZ.txt");
+  ofstream outfilecc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_cInt_col.txt");
+  ofstream outfilec1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_cInt_in1.txt");
+  ofstream outfilec2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_cInt_in2.txt");
+  ofstream outfilewc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Width_col.txt");
+  ofstream outfilew1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Width_in1.txt");
+  ofstream outfilew2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Width_in2.txt");
+  ofstream outfilewrc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Wire_col.txt");
+  ofstream outfilewr1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Wire_in1.txt");
+  ofstream outfilewr2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Wire_in2.txt");
+  ofstream outfiletic("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Time_col.txt");
+  ofstream outfileti1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Time_in1.txt");
+  ofstream outfileti2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Time_in2.txt");
+  ofstream outfiledxc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceX_col.txt");
+  ofstream outfiledx1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceX_in1.txt");
+  ofstream outfiledx2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceX_in2.txt");
+  ofstream outfiledyc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceY_col.txt");
+  ofstream outfiledy1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceY_in1.txt");
+  ofstream outfiledy2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceY_in2.txt");
+  ofstream outfiledzc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceZ_col.txt");
+  ofstream outfiledz1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceZ_in1.txt");
+  ofstream outfiledz2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceZ_in2.txt");
+  ofstream outfilepc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Pitch_col.txt");
+  ofstream outfilep1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Pitch_in1.txt");
+  ofstream outfilep2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Pitch_in2.txt");
   */
 
 
@@ -213,57 +213,57 @@ void plus60twoDW(bool verbose=false) {
   cout<<"TStack"<<endl;
 
   // Create a histograms for the values we read.
-  TH1F *h_azangle2_mc   = new TH1F("h_azangle2_mc","Relative Frequency vs  Azimuthal Angle: West Cryostat", 100., 0., 1.6);
-  TH1F *h_azangle2_data = new TH1F("h_azangle2_data","Relative Frequency vs Azimuthal Angle: West Cryostat", 100., 0., 1.6);
+  TH1F *h_azangle2_mc   = new TH1F("h_azangle2_mc","Relative Frequency vs  Azimuthal Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_azangle2_data = new TH1F("h_azangle2_data","Relative Frequency vs Azimuthal Angle: East Cryostat", 100., 0., 1.6);
   h_azangle2_mc->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
   h_azangle2_mc->GetYaxis()->SetTitle("Relative Frequency");
  
-  TH1F *h_zangle2_mc   = new TH1F("h_zangle2_mc","Relative Frequency vs  Zenith Angle: West Cryostat", 100., 0., 1.6);
-  TH1F *h_zangle2_data = new TH1F("h_zangle2_data","Relative Frequency vs Zenith Angle: West Cryostat", 100., 0., 1.6);
+  TH1F *h_zangle2_mc   = new TH1F("h_zangle2_mc","Relative Frequency vs  Zenith Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_zangle2_data = new TH1F("h_zangle2_data","Relative Frequency vs Zenith Angle: East Cryostat", 100., 0., 1.6);
   h_zangle2_mc->GetXaxis()->SetTitle(" Zenith Angle in radians ");
   h_zangle2_mc->GetYaxis()->SetTitle("Relative Frequency");
  
 
-  TH1F *h_azangle1_mc   = new TH1F("h_azangle1_mc","Relative Frequency vs  Azimuthal Angle: West Cryostat", 100., 0., 1.6);
-  TH1F *h_azangle1_data = new TH1F("h_azangle1_data","Relative Frequency vs Azimuthal Angle: West Cryostat", 100., 0., 1.6);
+  TH1F *h_azangle1_mc   = new TH1F("h_azangle1_mc","Relative Frequency vs  Azimuthal Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_azangle1_data = new TH1F("h_azangle1_data","Relative Frequency vs Azimuthal Angle: East Cryostat", 100., 0., 1.6);
   h_azangle1_mc->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
   h_azangle1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_zangle1_mc   = new TH1F("h_zangle1_mc","Relative Frequency vs  Zenith Angle: West Cryostat", 100., 0., 1.6);
-  TH1F *h_zangle1_data = new TH1F("h_zangle1_data","Relative Frequency vs Zenith Angle: West Cryostat", 100., 0., 1.6);
+  TH1F *h_zangle1_mc   = new TH1F("h_zangle1_mc","Relative Frequency vs  Zenith Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_zangle1_data = new TH1F("h_zangle1_data","Relative Frequency vs Zenith Angle: East Cryostat", 100., 0., 1.6);
   h_zangle1_mc->GetXaxis()->SetTitle(" Zenith Angle in radians ");
   h_zangle1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_azangle0_mc   = new TH1F("h_azangle0_mc","Relative Frequency vs  Azimuthal Angle: West Cryostat", 100., 0., 1.6);
-  TH1F *h_azangle0_data = new TH1F("h_azangle0_data","Relative Frequency vs Azimuthal Angle: West Cryostat", 100., 0., 1.6);
+  TH1F *h_azangle0_mc   = new TH1F("h_azangle0_mc","Relative Frequency vs  Azimuthal Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_azangle0_data = new TH1F("h_azangle0_data","Relative Frequency vs Azimuthal Angle: East Cryostat", 100., 0., 1.6);
   h_azangle0_mc->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
   h_azangle0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_zangle0_mc   = new TH1F("h_zangle0_mc","Relative Frequency vs  Zenith Angle: West Cryostat", 100., 0., 1.6);
-  TH1F *h_zangle0_data = new TH1F("h_zangle0_data","Relative Frequency vs Zenith Angle: West Cryostat", 100., 0., 1.6);
+  TH1F *h_zangle0_mc   = new TH1F("h_zangle0_mc","Relative Frequency vs  Zenith Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_zangle0_data = new TH1F("h_zangle0_data","Relative Frequency vs Zenith Angle: East Cryostat", 100., 0., 1.6);
   h_zangle0_mc->GetXaxis()->SetTitle(" Zenith Angle in radians ");
   h_zangle0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_l_mc   = new TH1F("h_l_mc","Relative Frequency vs  Length: West Cryostat", 100., 0., 1500.);
-  TH1F *h_l_data = new TH1F("h_l_data","Relative Frequency vs Length: West Cryostat", 100., 0., 1500.);
+  TH1F *h_l_mc   = new TH1F("h_l_mc","Relative Frequency vs  Length: East Cryostat", 100., 0., 1500.);
+  TH1F *h_l_data = new TH1F("h_l_data","Relative Frequency vs Length: East Cryostat", 100., 0., 1500.);
   h_l_mc->GetXaxis()->SetTitle("Muon Length in cm ");
   h_l_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_l2Dc_mc   = new TH2F("h_l2Dc_mc","Azimuthal Angle vs  Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
-  TH2F *h_l2Dc_data = new TH2F("h_l2Dc_data","Azimuthal Angle vs Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *h_l2Dc_mc   = new TH2F("h_l2Dc_mc","Azimuthal Angle vs  Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *h_l2Dc_data = new TH2F("h_l2Dc_data","Azimuthal Angle vs Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
   h_l2Dc_mc->GetYaxis()->SetTitle("Muon Length in cm ");
   h_l2Dc_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
-  TH2F *h_l2D1_mc   = new TH2F("h_l2D1_mc","Azimuthal Angle vs  Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
-  TH2F *h_l2D1_data = new TH2F("h_l2D1_data","Azimuthal Angle vs Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *h_l2D1_mc   = new TH2F("h_l2D1_mc","Azimuthal Angle vs  Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *h_l2D1_data = new TH2F("h_l2D1_data","Azimuthal Angle vs Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
   h_l2D1_mc->GetYaxis()->SetTitle("Muon Length in cm ");
   h_l2D1_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
-  TH2F *h_l2D2_mc   = new TH2F("h_l2D2_mc","Azimuthal Angle vs  Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
-  TH2F *h_l2D2_data = new TH2F("h_l2D2_data","Azimuthal Angle vs Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *h_l2D2_mc   = new TH2F("h_l2D2_mc","Azimuthal Angle vs  Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *h_l2D2_data = new TH2F("h_l2D2_data","Azimuthal Angle vs Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
   h_l2D2_mc->GetYaxis()->SetTitle("Muon Length in cm ");
   h_l2D2_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
@@ -271,19 +271,19 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH2F *hz_l2Dc_mc   = new TH2F("hz_l2Dc_mc","Zenith Angle vs  Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
-  TH2F *hz_l2Dc_data = new TH2F("hz_l2Dc_data","Zenith Angle vs Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *hz_l2Dc_mc   = new TH2F("hz_l2Dc_mc","Zenith Angle vs  Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *hz_l2Dc_data = new TH2F("hz_l2Dc_data","Zenith Angle vs Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
   hz_l2Dc_mc->GetYaxis()->SetTitle("Muon Length in cm ");
   hz_l2Dc_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
-  TH2F *hz_l2D1_mc   = new TH2F("hz_l2D1_mc","Zenith Angle vs  Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
-  TH2F *hz_l2D1_data = new TH2F("hz_l2D1_data","Zenith Angle vs Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *hz_l2D1_mc   = new TH2F("hz_l2D1_mc","Zenith Angle vs  Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *hz_l2D1_data = new TH2F("hz_l2D1_data","Zenith Angle vs Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
   hz_l2D1_mc->GetYaxis()->SetTitle("Muon Length in cm ");
   hz_l2D1_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
 
-  TH2F *hz_l2D2_mc   = new TH2F("hz_l2D2_mc","Zenith Angle vs  Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
-  TH2F *hz_l2D2_data = new TH2F("hz_l2D2_data","Zenith Angle vs Length: West Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *hz_l2D2_mc   = new TH2F("hz_l2D2_mc","Zenith Angle vs  Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
+  TH2F *hz_l2D2_data = new TH2F("hz_l2D2_data","Zenith Angle vs Length: East Cryostat", 50., 0., 1.6, 50., 0., 1500.);
   hz_l2D2_mc->GetYaxis()->SetTitle("Muon Length in cm ");
   hz_l2D2_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
@@ -294,55 +294,55 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_t0_mc   = new TH1F("h_t0_mc","Relative Frequency vs  T0: West Cryostat", 100., -100000., 100000.);
-  TH1F *h_t0_data = new TH1F("h_t0_data","Relative Frequency vs T0: West Cryostat", 100., -100000., 100000.);
+  TH1F *h_t0_mc   = new TH1F("h_t0_mc","Relative Frequency vs  T0: East Cryostat", 100., -100000., 100000.);
+  TH1F *h_t0_data = new TH1F("h_t0_data","Relative Frequency vs T0: East Cryostat", 100., -100000., 100000.);
   h_t0_mc->GetXaxis()->SetTitle(" T0 in us ");
   h_t0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_sx_mc   = new TH1F("h_sx_mc","Relative Frequency vs  Start (X): West Cryostat", 100., -100., -20.);//-100000., 100000.);
-  TH1F *h_sx_data = new TH1F("h_sx_data","Relative Frequency vs Start (X): West Cryostat", 100., -100., -20.);//100., -100000., 100000.);
+  TH1F *h_sx_mc   = new TH1F("h_sx_mc","Relative Frequency vs  Start (X): East Cryostat", 100., -100., -20.);//-100000., 100000.);
+  TH1F *h_sx_data = new TH1F("h_sx_data","Relative Frequency vs Start (X): East Cryostat", 100., -100., -20.);//100., -100000., 100000.);
   h_sx_mc->GetXaxis()->SetTitle("Start (X) in cm ");
   h_sx_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH2F *h_sx2Dc_mc   = new TH2F("h_sx2Dc_mc","Azimuthal Angle vs  Start (X): West Cryostat", 50., 0., 1.6, 50., -100., -20.);
-  TH2F *h_sx2Dc_data = new TH2F("h_sx2Dc_data","Azimuthal Angle vs Start (X): West Cryostat", 50., 0., 1.6, 50., -100., -20.);
+  TH2F *h_sx2Dc_mc   = new TH2F("h_sx2Dc_mc","Azimuthal Angle vs  Start (X): East Cryostat", 50., 0., 1.6, 50., -100., -20.);
+  TH2F *h_sx2Dc_data = new TH2F("h_sx2Dc_data","Azimuthal Angle vs Start (X): East Cryostat", 50., 0., 1.6, 50., -100., -20.);
   h_sx2Dc_mc->GetYaxis()->SetTitle("Start (X) in cm ");
   h_sx2Dc_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
-  TH2F *h_sx2D1_mc   = new TH2F("h_sx2D1_mc","Azimuthal Angle vs  Start (X): West Cryostat", 50., 0., 1.6, 50., -100., -20.);
-  TH2F *h_sx2D1_data = new TH2F("h_sx2D1_data","Azimuthal Angle vs Start (X): West Cryostat", 50., 0., 1.6, 50., -100., -20.);
+  TH2F *h_sx2D1_mc   = new TH2F("h_sx2D1_mc","Azimuthal Angle vs  Start (X): East Cryostat", 50., 0., 1.6, 50., -100., -20.);
+  TH2F *h_sx2D1_data = new TH2F("h_sx2D1_data","Azimuthal Angle vs Start (X): East Cryostat", 50., 0., 1.6, 50., -100., -20.);
   h_sx2D1_mc->GetYaxis()->SetTitle("Start (X) in cm ");
   h_sx2D1_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
-  TH2F *h_sx2D2_mc   = new TH2F("h_sx2D2_mc","Azimuthal Angle vs  Start (X): West Cryostat", 50., 0., 1.6, 50., -100., -20.);
-  TH2F *h_sx2D2_data = new TH2F("h_sx2D2_data","Azimuthal Angle vs Start (X): West Cryostat", 50., 0., 1.6, 50., -100., -20.);
+  TH2F *h_sx2D2_mc   = new TH2F("h_sx2D2_mc","Azimuthal Angle vs  Start (X): East Cryostat", 50., 0., 1.6, 50., -100., -20.);
+  TH2F *h_sx2D2_data = new TH2F("h_sx2D2_data","Azimuthal Angle vs Start (X): East Cryostat", 50., 0., 1.6, 50., -100., -20.);
   h_sx2D2_mc->GetYaxis()->SetTitle("Start (X) in cm ");
   h_sx2D2_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
 
-  TH1F *h_ex_mc   = new TH1F("h_ex_mc","Relative Frequency vs  End (X): West Cryostat", 100.,  -100., 100.);//-100000., 100000.);
-  TH1F *h_ex_data = new TH1F("h_ex_data","Relative Frequency vs End (X): West Cryostat",  100., -100., 100.);//-100000., 100000.);
+  TH1F *h_ex_mc   = new TH1F("h_ex_mc","Relative Frequency vs  End (X): East Cryostat", 100.,  -100., 100.);//-100000., 100000.);
+  TH1F *h_ex_data = new TH1F("h_ex_data","Relative Frequency vs End (X): East Cryostat",  100., -100., 100.);//-100000., 100000.);
   h_ex_mc->GetXaxis()->SetTitle(" End (X) in cm ");
   h_ex_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_ex2Dc_mc   = new TH2F("h_ex2Dc_mc","Azimuthal Angle vs  End (X): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ex2Dc_data = new TH2F("h_ex2Dc_data","Azimuthal Angle vs End (X): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ex2Dc_mc   = new TH2F("h_ex2Dc_mc","Azimuthal Angle vs  End (X): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ex2Dc_data = new TH2F("h_ex2Dc_data","Azimuthal Angle vs End (X): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ex2Dc_mc->GetYaxis()->SetTitle("End (X) in cm ");
   h_ex2Dc_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
-  TH2F *h_ex2D1_mc   = new TH2F("h_ex2D1_mc","Azimuthal Angle vs  End (X): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ex2D1_data = new TH2F("h_ex2D1_data","Azimuthal Angle vs End (X): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ex2D1_mc   = new TH2F("h_ex2D1_mc","Azimuthal Angle vs  End (X): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ex2D1_data = new TH2F("h_ex2D1_data","Azimuthal Angle vs End (X): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ex2D1_mc->GetYaxis()->SetTitle("End (X) in cm ");
   h_ex2D1_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
-  TH2F *h_ex2D2_mc   = new TH2F("h_ex2D2_mc","Azimuthal Angle vs  End (X): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ex2D2_data = new TH2F("h_ex2D2_data","Azimuthal Angle vs End (X): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ex2D2_mc   = new TH2F("h_ex2D2_mc","Azimuthal Angle vs  End (X): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ex2D2_data = new TH2F("h_ex2D2_data","Azimuthal Angle vs End (X): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ex2D2_mc->GetYaxis()->SetTitle("End (X) in cm ");
   h_ex2D2_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
@@ -353,24 +353,24 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_sy_mc   = new TH1F("h_sy_mc","Relative Frequency vs  Start (Y): West Cryostat", 100.,  -100., 100.);//-100000., 100000.);
-  TH1F *h_sy_data = new TH1F("h_sy_data","Relative Frequency vs Start (Y): West Cryostat",  100., -100., 100.);//-100000., 100000.);
+  TH1F *h_sy_mc   = new TH1F("h_sy_mc","Relative Frequency vs  Start (Y): East Cryostat", 100.,  -100., 100.);//-100000., 100000.);
+  TH1F *h_sy_data = new TH1F("h_sy_data","Relative Frequency vs Start (Y): East Cryostat",  100., -100., 100.);//-100000., 100000.);
   h_sy_mc->GetXaxis()->SetTitle("Start (Y) in cm ");
   h_sy_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH2F *h_sy2Dc_mc   = new TH2F("h_sy2Dc_mc","Azimuthal Angle vs  Start (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_sy2Dc_data = new TH2F("h_sy2Dc_data","Azimuthal Angle vs Start (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sy2Dc_mc   = new TH2F("h_sy2Dc_mc","Azimuthal Angle vs  Start (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sy2Dc_data = new TH2F("h_sy2Dc_data","Azimuthal Angle vs Start (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_sy2Dc_mc->GetYaxis()->SetTitle("Start (Y) in cm ");
   h_sy2Dc_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
-  TH2F *h_sy2D1_mc   = new TH2F("h_sy2D1_mc","Azimuthal Angle vs  Start (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_sy2D1_data = new TH2F("h_sy2D1_data","Azimuthal Angle vs Start (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sy2D1_mc   = new TH2F("h_sy2D1_mc","Azimuthal Angle vs  Start (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sy2D1_data = new TH2F("h_sy2D1_data","Azimuthal Angle vs Start (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_sy2D1_mc->GetYaxis()->SetTitle("Start (Y) in cm ");
   h_sy2D1_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
-  TH2F *h_sy2D2_mc   = new TH2F("h_sy2D2_mc","Azimuthal Angle vs  Start (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_sy2D2_data = new TH2F("h_sy2D2_data","Azimuthal Angle vs Start (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sy2D2_mc   = new TH2F("h_sy2D2_mc","Azimuthal Angle vs  Start (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sy2D2_data = new TH2F("h_sy2D2_data","Azimuthal Angle vs Start (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_sy2D2_mc->GetYaxis()->SetTitle("Start (Y) in cm ");
   h_sy2D2_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
@@ -382,27 +382,27 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_ey_mc   = new TH1F("h_ey_mc","Relative Frequency vs  End (Y): West Cryostat", 100.,  -100., 100.);//-100000., 100000.);
-  TH1F *h_ey_data = new TH1F("h_ey_data","Relative Frequency vs End (Y): West Cryostat",  100., -100., 100.);//-100000., 100000.);
+  TH1F *h_ey_mc   = new TH1F("h_ey_mc","Relative Frequency vs  End (Y): East Cryostat", 100.,  -100., 100.);//-100000., 100000.);
+  TH1F *h_ey_data = new TH1F("h_ey_data","Relative Frequency vs End (Y): East Cryostat",  100., -100., 100.);//-100000., 100000.);
   h_ey_mc->GetXaxis()->SetTitle(" End (Y) in cm ");
   h_ey_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
 
-  TH2F *h_ey2Dc_mc   = new TH2F("h_ey2Dc_mc","Azimuthal Angle vs  End (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ey2Dc_data = new TH2F("h_ey2Dc_data","Azimuthal Angle vs End (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ey2Dc_mc   = new TH2F("h_ey2Dc_mc","Azimuthal Angle vs  End (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ey2Dc_data = new TH2F("h_ey2Dc_data","Azimuthal Angle vs End (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ey2Dc_mc->GetYaxis()->SetTitle("End (Y) in cm ");
   h_ey2Dc_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
-  TH2F *h_ey2D1_mc   = new TH2F("h_ey2D1_mc","Azimuthal Angle vs  End (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ey2D1_data = new TH2F("h_ey2D1_data","Azimuthal Angle vs End (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ey2D1_mc   = new TH2F("h_ey2D1_mc","Azimuthal Angle vs  End (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ey2D1_data = new TH2F("h_ey2D1_data","Azimuthal Angle vs End (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ey2D1_mc->GetYaxis()->SetTitle("End (Y) in cm ");
   h_ey2D1_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
-  TH2F *h_ey2D2_mc   = new TH2F("h_ey2D2_mc","Azimuthal Angle vs  End (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ey2D2_data = new TH2F("h_ey2D2_data","Azimuthal Angle vs End (Y): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ey2D2_mc   = new TH2F("h_ey2D2_mc","Azimuthal Angle vs  End (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ey2D2_data = new TH2F("h_ey2D2_data","Azimuthal Angle vs End (Y): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ey2D2_mc->GetYaxis()->SetTitle("End (Y) in cm ");
   h_ey2D2_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
@@ -416,27 +416,27 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_sz_mc   = new TH1F("h_sz_mc","Relative Frequency vs  Start (Z): West Cryostat", 100., -100., 100.);//-100000., 100000.);
-  TH1F *h_sz_data = new TH1F("h_sz_data","Relative Frequency vs Start (Z): West Cryostat",  100., -100., 100.);//-100000., 100000.);
+  TH1F *h_sz_mc   = new TH1F("h_sz_mc","Relative Frequency vs  Start (Z): East Cryostat", 100., -100., 100.);//-100000., 100000.);
+  TH1F *h_sz_data = new TH1F("h_sz_data","Relative Frequency vs Start (Z): East Cryostat",  100., -100., 100.);//-100000., 100000.);
   h_sz_mc->GetXaxis()->SetTitle("Start (Z) in cm ");
   h_sz_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_sz2Dc_mc   = new TH2F("h_sz2Dc_mc","Azimuthal Angle vs  Start (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_sz2Dc_data = new TH2F("h_sz2Dc_data","Azimuthal Angle vs Start (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sz2Dc_mc   = new TH2F("h_sz2Dc_mc","Azimuthal Angle vs  Start (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sz2Dc_data = new TH2F("h_sz2Dc_data","Azimuthal Angle vs Start (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_sz2Dc_mc->GetYaxis()->SetTitle("Start (Z) in cm ");
   h_sz2Dc_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *h_sz2D1_mc   = new TH2F("h_sz2D1_mc","Azimuthal Angle vs  Start (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_sz2D1_data = new TH2F("h_sz2D1_data","Azimuthal Angle vs Start (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sz2D1_mc   = new TH2F("h_sz2D1_mc","Azimuthal Angle vs  Start (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sz2D1_data = new TH2F("h_sz2D1_data","Azimuthal Angle vs Start (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_sz2D1_mc->GetYaxis()->SetTitle("Start (Z) in cm ");
   h_sz2D1_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
-  TH2F *h_sz2D2_mc   = new TH2F("h_sz2D2_mc","Azimuthal Angle vs  Start (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_sz2D2_data = new TH2F("h_sz2D2_data","Azimuthal Angle vs Start (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sz2D2_mc   = new TH2F("h_sz2D2_mc","Azimuthal Angle vs  Start (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_sz2D2_data = new TH2F("h_sz2D2_data","Azimuthal Angle vs Start (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_sz2D2_mc->GetYaxis()->SetTitle("Start (Z) in cm ");
   h_sz2D2_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
@@ -453,24 +453,24 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_ez_mc   = new TH1F("h_ez_mc","Relative Frequency vs  End (Z): West Cryostat", 100.,  -100., 100.);//-100000., 100000.);
-  TH1F *h_ez_data = new TH1F("h_ez_data","Relative Frequency vs End (Z): West Cryostat",  100., -100., 100.);//-100000., 100000.);
+  TH1F *h_ez_mc   = new TH1F("h_ez_mc","Relative Frequency vs  End (Z): East Cryostat", 100.,  -100., 100.);//-100000., 100000.);
+  TH1F *h_ez_data = new TH1F("h_ez_data","Relative Frequency vs End (Z): East Cryostat",  100., -100., 100.);//-100000., 100000.);
   h_ez_mc->GetXaxis()->SetTitle(" End (Z) in cm ");
   h_ez_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_ez2Dc_mc   = new TH2F("h_ez2Dc_mc","Azimuthal Angle vs  End (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ez2Dc_data = new TH2F("h_ez2Dc_data","Azimuthal Angle vs End (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ez2Dc_mc   = new TH2F("h_ez2Dc_mc","Azimuthal Angle vs  End (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ez2Dc_data = new TH2F("h_ez2Dc_data","Azimuthal Angle vs End (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ez2Dc_mc->GetYaxis()->SetTitle("End (Z) in cm ");
   h_ez2Dc_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
-  TH2F *h_ez2D1_mc   = new TH2F("h_ez2D1_mc","Azimuthal Angle vs  End (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ez2D1_data = new TH2F("h_ez2D1_data","Azimuthal Angle vs End (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ez2D1_mc   = new TH2F("h_ez2D1_mc","Azimuthal Angle vs  End (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ez2D1_data = new TH2F("h_ez2D1_data","Azimuthal Angle vs End (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ez2D1_mc->GetYaxis()->SetTitle("End (Z) in cm ");
   h_ez2D1_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
-  TH2F *h_ez2D2_mc   = new TH2F("h_ez2D2_mc","Azimuthal Angle vs  End (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
-  TH2F *h_ez2D2_data = new TH2F("h_ez2D2_data","Azimuthal Angle vs End (Z): West Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ez2D2_mc   = new TH2F("h_ez2D2_mc","Azimuthal Angle vs  End (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
+  TH2F *h_ez2D2_data = new TH2F("h_ez2D2_data","Azimuthal Angle vs End (Z): East Cryostat", 50., 0., 1.6, 50., -100., 100.);
   h_ez2D2_mc->GetYaxis()->SetTitle("End (Z) in cm ");
   h_ez2D2_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
@@ -485,94 +485,94 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_q0_mc   = new TH1F("h_q0_mc","Relative Frequency vs  dQ/dx: West Cryostat", 100., 0., 2000.);
-  TH1F *h_q0_data = new TH1F("h_q0_data","Relative Frequency vs dQ/dx: West Cryostat", 100., 0., 2000.);
+  TH1F *h_q0_mc   = new TH1F("h_q0_mc","Relative Frequency vs  dQ/dx: East Cryostat", 100., 0., 2000.);
+  TH1F *h_q0_data = new TH1F("h_q0_data","Relative Frequency vs dQ/dx: East Cryostat", 100., 0., 2000.);
   h_q0_mc->GetXaxis()->SetTitle(" dQ/dx ");
   h_q0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_q1_mc   = new TH1F("h_q1_mc","Relative Frequency vs  dQ/dx: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  TH1F *h_q1_data = new TH1F("h_q1_data","Relative Frequency vs dQ/dx: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_q1_mc   = new TH1F("h_q1_mc","Relative Frequency vs  dQ/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_q1_data = new TH1F("h_q1_data","Relative Frequency vs dQ/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
   h_q1_mc->GetXaxis()->SetTitle(" dQ/dx ");
   h_q1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_q2_mc   = new TH1F("h_q2_mc","Relative Frequency vs  dQ/dx: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  TH1F *h_q2_data = new TH1F("h_q2_data","Relative Frequency vs dQ/dx: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_q2_mc   = new TH1F("h_q2_mc","Relative Frequency vs  dQ/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_q2_data = new TH1F("h_q2_data","Relative Frequency vs dQ/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
   h_q2_mc->GetXaxis()->SetTitle(" dQ/dx ");
   h_q2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_r0_mc   = new TH1F("h_r0_mc","Relative Frequency vs  Residual Range: West Cryostat", 100., 0., 150.);//-100000., 100000.);
-  TH1F *h_r0_data = new TH1F("h_r0_data","Relative Frequency vs Residual Range: West Cryostat", 100., 0., 150.);// -100000., 100000.);
+  TH1F *h_r0_mc   = new TH1F("h_r0_mc","Relative Frequency vs  Residual Range: East Cryostat", 100., 0., 150.);//-100000., 100000.);
+  TH1F *h_r0_data = new TH1F("h_r0_data","Relative Frequency vs Residual Range: East Cryostat", 100., 0., 150.);// -100000., 100000.);
   h_r0_mc->GetXaxis()->SetTitle(" Residual Range in cm ");
   h_r0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_r1_mc   = new TH1F("h_r1_mc","Relative Frequency vs  Residual Range: West Cryostat", 100., 0., 150.);//100-100000., 100000.);
-  TH1F *h_r1_data = new TH1F("h_r1_data","Relative Frequency vs Residual Range: West Cryostat", 100., 0., 150.);//-100000., 100000.);
+  TH1F *h_r1_mc   = new TH1F("h_r1_mc","Relative Frequency vs  Residual Range: East Cryostat", 100., 0., 150.);//100-100000., 100000.);
+  TH1F *h_r1_data = new TH1F("h_r1_data","Relative Frequency vs Residual Range: East Cryostat", 100., 0., 150.);//-100000., 100000.);
   h_r1_mc->GetXaxis()->SetTitle(" Residual Range in cm ");
   h_r1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_r2_mc   = new TH1F("h_r2_mc","Relative Frequency vs  Residual Range: West Cryostat", 100., 0., 150.);//-100000., 100000.);
-  TH1F *h_r2_data = new TH1F("h_r2_data","Relative Frequency vs Residual Range: West Cryostat", 100., 0., 150.);//-100000., 100000.);
+  TH1F *h_r2_mc   = new TH1F("h_r2_mc","Relative Frequency vs  Residual Range: East Cryostat", 100., 0., 150.);//-100000., 100000.);
+  TH1F *h_r2_data = new TH1F("h_r2_data","Relative Frequency vs Residual Range: East Cryostat", 100., 0., 150.);//-100000., 100000.);
   h_r2_mc->GetXaxis()->SetTitle(" Residual Range in cm ");
   h_r2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
 
 
-  TH1F *h_ci0_mc   = new TH1F("h_ci0_mc","Relative Frequency vs  Charge Integral: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  TH1F *h_ci0_data = new TH1F("h_ci0_data","Relative Frequency vs Charge Integral: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci0_mc   = new TH1F("h_ci0_mc","Relative Frequency vs  Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci0_data = new TH1F("h_ci0_data","Relative Frequency vs Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
   h_ci0_mc->GetXaxis()->SetTitle(" Charge Integral in ADC ");
   h_ci0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_ci02D_mc   = new TH2F("h_ci02D_mc","Azimuthal Angle vs  Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *h_ci02D_data = new TH2F("h_ci02D_data","Azimuthal Angle vs Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci02D_mc   = new TH2F("h_ci02D_mc","Azimuthal Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci02D_data = new TH2F("h_ci02D_data","Azimuthal Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
   h_ci02D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
   h_ci02D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_ci02D_mc   = new TH2F("hz_ci02D_mc","Zenith Angle vs  Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *hz_ci02D_data = new TH2F("hz_ci02D_data","Zenith Angle vs Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci02D_mc   = new TH2F("hz_ci02D_mc","Zenith Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci02D_data = new TH2F("hz_ci02D_data","Zenith Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
   hz_ci02D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
   hz_ci02D_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
 
 
 
-  TH1F *h_ci1_mc   = new TH1F("h_ci1_mc","Relative Frequency vs  Charge Integral: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  TH1F *h_ci1_data = new TH1F("h_ci1_data","Relative Frequency vs Charge Integral: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci1_mc   = new TH1F("h_ci1_mc","Relative Frequency vs  Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci1_data = new TH1F("h_ci1_data","Relative Frequency vs Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
   h_ci1_mc->GetXaxis()->SetTitle(" Charge Integral in ADC ");
   h_ci1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_ci12D_mc   = new TH2F("h_ci12D_mc","Azimuthal Angle vs  Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *h_ci12D_data = new TH2F("h_ci12D_data","Azimuthal Angle vs Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci12D_mc   = new TH2F("h_ci12D_mc","Azimuthal Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci12D_data = new TH2F("h_ci12D_data","Azimuthal Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
   h_ci12D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
   h_ci12D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_ci12D_mc   = new TH2F("hz_ci12D_mc","Zenith Angle vs  Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *hz_ci12D_data = new TH2F("hz_ci12D_data","Zenith Angle vs Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci12D_mc   = new TH2F("hz_ci12D_mc","Zenith Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci12D_data = new TH2F("hz_ci12D_data","Zenith Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
   hz_ci12D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
   hz_ci12D_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
 
 
-  TH1F *h_ci2_mc   = new TH1F("h_ci2_mc","Relative Frequency vs  Charge Integral: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  TH1F *h_ci2_data = new TH1F("h_ci2_data","Relative Frequency vs Charge Integral: West Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci2_mc   = new TH1F("h_ci2_mc","Relative Frequency vs  Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci2_data = new TH1F("h_ci2_data","Relative Frequency vs Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
   h_ci2_mc->GetXaxis()->SetTitle(" Charge Integral in ADC ");
   h_ci2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH2F *h_ci22D_mc   = new TH2F("h_ci22D_mc","Azimuthal Angle vs  Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *h_ci22D_data = new TH2F("h_ci22D_data","Azimuthal Angle vs Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci22D_mc   = new TH2F("h_ci22D_mc","Azimuthal Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci22D_data = new TH2F("h_ci22D_data","Azimuthal Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
   h_ci22D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
   h_ci22D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_ci22D_mc   = new TH2F("hz_ci22D_mc","Zenith Angle vs  Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *hz_ci22D_data = new TH2F("hz_ci22D_data","Zenith Angle vs Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci22D_mc   = new TH2F("hz_ci22D_mc","Zenith Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci22D_data = new TH2F("hz_ci22D_data","Zenith Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
   hz_ci22D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
   hz_ci22D_mc->GetXaxis()->SetTitle("Zenith Angle in radians");
 
@@ -583,21 +583,21 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_wi0_mc   = new TH1F("h_wi0_mc","Relative Frequency vs  Width: West Cryostat", 100., 0., 20.);//-100000., 100000.);
-  TH1F *h_wi0_data = new TH1F("h_wi0_data","Relative Frequency vs Width: West Cryostat", 100., 0., 20.);//-100000., 100000.);
+  TH1F *h_wi0_mc   = new TH1F("h_wi0_mc","Relative Frequency vs  Width: East Cryostat", 100., 0., 20.);//-100000., 100000.);
+  TH1F *h_wi0_data = new TH1F("h_wi0_data","Relative Frequency vs Width: East Cryostat", 100., 0., 20.);//-100000., 100000.);
   h_wi0_mc->GetXaxis()->SetTitle(" Width in ticks");
   h_wi0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_wi02D_mc   = new TH2F("h_wi02D_mc","Azimuthal Angle vs  Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
-  TH2F *h_wi02D_data = new TH2F("h_wi02D_data","Azimuthal Angle vs Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *h_wi02D_mc   = new TH2F("h_wi02D_mc","Azimuthal Angle vs  Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *h_wi02D_data = new TH2F("h_wi02D_data","Azimuthal Angle vs Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
   h_wi02D_mc->GetYaxis()->SetTitle("Width in ticks ");
   h_wi02D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_wi02D_mc   = new TH2F("hz_wi02D_mc","Zenith Angle vs  Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
-  TH2F *hz_wi02D_data = new TH2F("hz_wi02D_data","Zenith Angle vs Charge Integral in ADC: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *hz_wi02D_mc   = new TH2F("hz_wi02D_mc","Zenith Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *hz_wi02D_data = new TH2F("hz_wi02D_data","Zenith Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
   hz_wi02D_mc->GetYaxis()->SetTitle("Width in ticks ");
   hz_wi02D_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
@@ -607,21 +607,21 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_wi1_mc   = new TH1F("h_wi1_mc","Relative Frequency vs  Width: West Cryostat", 100., 0., 20.);//-100000., 100000.);
-  TH1F *h_wi1_data = new TH1F("h_wi1_data","Relative Frequency vs Width: West Cryostat", 100., 0., 20.);//-100000., 100000.);
+  TH1F *h_wi1_mc   = new TH1F("h_wi1_mc","Relative Frequency vs  Width: East Cryostat", 100., 0., 20.);//-100000., 100000.);
+  TH1F *h_wi1_data = new TH1F("h_wi1_data","Relative Frequency vs Width: East Cryostat", 100., 0., 20.);//-100000., 100000.);
   h_wi1_mc->GetXaxis()->SetTitle(" Width in ticks");
   h_wi1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_wi12D_mc   = new TH2F("h_wi12D_mc","Azimuthal Angle vs  Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
-  TH2F *h_wi12D_data = new TH2F("h_wi12D_data","Azimuthal Angle vs Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *h_wi12D_mc   = new TH2F("h_wi12D_mc","Azimuthal Angle vs  Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *h_wi12D_data = new TH2F("h_wi12D_data","Azimuthal Angle vs Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
   h_wi12D_mc->GetYaxis()->SetTitle("Width in ticks ");
   h_wi12D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_wi12D_mc   = new TH2F("hz_wi12D_mc","Zenith Angle vs  Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
-  TH2F *hz_wi12D_data = new TH2F("hz_wi12D_data","Zenith Angle vs Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *hz_wi12D_mc   = new TH2F("hz_wi12D_mc","Zenith Angle vs  Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *hz_wi12D_data = new TH2F("hz_wi12D_data","Zenith Angle vs Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
   hz_wi12D_mc->GetYaxis()->SetTitle("Width in ticks ");
   hz_wi12D_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
@@ -630,128 +630,128 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH1F *h_wi2_mc   = new TH1F("h_wi2_mc","Relative Frequency vs  Width: West Cryostat", 100., 0., 20.);// -100000., 100000.);
-  TH1F *h_wi2_data = new TH1F("h_wi2_data","Relative Frequency vs Width: West Cryostat", 100., 0., 20.);// -100000., 100000.);
+  TH1F *h_wi2_mc   = new TH1F("h_wi2_mc","Relative Frequency vs  Width: East Cryostat", 100., 0., 20.);// -100000., 100000.);
+  TH1F *h_wi2_data = new TH1F("h_wi2_data","Relative Frequency vs Width: East Cryostat", 100., 0., 20.);// -100000., 100000.);
   h_wi2_mc->GetXaxis()->SetTitle(" Width in ticks");
   h_wi2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
 
-  TH2F *h_wi22D_mc   = new TH2F("h_wi22D_mc","Azimuthal Angle vs  Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
-  TH2F *h_wi22D_data = new TH2F("h_wi22D_data","Azimuthal Angle vs Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *h_wi22D_mc   = new TH2F("h_wi22D_mc","Azimuthal Angle vs  Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *h_wi22D_data = new TH2F("h_wi22D_data","Azimuthal Angle vs Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
   h_wi22D_mc->GetYaxis()->SetTitle("Width in ticks ");
   h_wi22D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_wi22D_mc   = new TH2F("hz_wi22D_mc","Zenith Angle vs  Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
-  TH2F *hz_wi22D_data = new TH2F("hz_wi22D_data","Zenith Angle vs Width: West Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *hz_wi22D_mc   = new TH2F("hz_wi22D_mc","Zenith Angle vs  Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *hz_wi22D_data = new TH2F("hz_wi22D_data","Zenith Angle vs Width: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
   hz_wi22D_mc->GetYaxis()->SetTitle("Width in ticks ");
   hz_wi22D_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
 
 
-  TH1F *h_w0_mc   = new TH1F("h_w0_mc","Relative Frequency vs  Wire: West Cryostat", 100., 0., 100.);//-100., 100.);
-  TH1F *h_w0_data = new TH1F("h_w0_data","Relative Frequency vs Wire: West Cryostat", 100., 0., 100.);//-100., 100.);
+  TH1F *h_w0_mc   = new TH1F("h_w0_mc","Relative Frequency vs  Wire: East Cryostat", 100., 0., 100.);//-100., 100.);
+  TH1F *h_w0_data = new TH1F("h_w0_data","Relative Frequency vs Wire: East Cryostat", 100., 0., 100.);//-100., 100.);
   h_w0_mc->GetXaxis()->SetTitle(" Wire Number");
   h_w0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_w1_mc   = new TH1F("h_w1_mc","Relative Frequency vs  Wire: West Cryostat", 100.,0., 100.);// -100000., 100000.);
-  TH1F *h_w1_data = new TH1F("h_w1_data","Relative Frequency vs Wire: West Cryostat", 100.,0., 100.);// -100000., 100000.);
+  TH1F *h_w1_mc   = new TH1F("h_w1_mc","Relative Frequency vs  Wire: East Cryostat", 100.,0., 100.);// -100000., 100000.);
+  TH1F *h_w1_data = new TH1F("h_w1_data","Relative Frequency vs Wire: East Cryostat", 100.,0., 100.);// -100000., 100000.);
   h_w1_mc->GetXaxis()->SetTitle(" Wire Number");
   h_w1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_w2_mc   = new TH1F("h_w2_mc","Relative Frequency vs  Wire: West Cryostat", 100., 0., 100.);//-100000., 100000.);
-  TH1F *h_w2_data = new TH1F("h_w2_data","Relative Frequency vs Wire: West Cryostat", 100., 0., 100.);//-100000., 100000.);
+  TH1F *h_w2_mc   = new TH1F("h_w2_mc","Relative Frequency vs  Wire: East Cryostat", 100., 0., 100.);//-100000., 100000.);
+  TH1F *h_w2_data = new TH1F("h_w2_data","Relative Frequency vs Wire: East Cryostat", 100., 0., 100.);//-100000., 100000.);
   h_w2_mc->GetXaxis()->SetTitle(" Wire Number");
   h_w2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
 
-  TH1F *h_ti0_mc   = new TH1F("h_ti0_mc","Relative Frequency vs  Time: West Cryostat", 100., 0., 20.); //-1000., 100.);
-  TH1F *h_ti0_data = new TH1F("h_ti0_data","Relative Frequency vs Time: West Cryostat", 100., 0., 20.); //-100000., 100000.); //0., 100.);// -100000., 100000.);
+  TH1F *h_ti0_mc   = new TH1F("h_ti0_mc","Relative Frequency vs  Time: East Cryostat", 100., 0., 20.); //-1000., 100.);
+  TH1F *h_ti0_data = new TH1F("h_ti0_data","Relative Frequency vs Time: East Cryostat", 100., 0., 20.); //-100000., 100000.); //0., 100.);// -100000., 100000.);
   h_ti0_mc->GetXaxis()->SetTitle(" Time in ticks");
   h_ti0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_ti1_mc   = new TH1F("h_ti1_mc","Relative Frequency vs  Time: West Cryostat", 100., 0., 20.); //-100000., 100000.); //0., 100.);//-100000., 100000.);
-  TH1F *h_ti1_data = new TH1F("h_ti1_data","Relative Frequency vs Time: West Cryostat", 100.,0., 20.); //-100000., 100000.); // 0., 100.);//-100000., 100000.);
+  TH1F *h_ti1_mc   = new TH1F("h_ti1_mc","Relative Frequency vs  Time: East Cryostat", 100., 0., 20.); //-100000., 100000.); //0., 100.);//-100000., 100000.);
+  TH1F *h_ti1_data = new TH1F("h_ti1_data","Relative Frequency vs Time: East Cryostat", 100.,0., 20.); //-100000., 100000.); // 0., 100.);//-100000., 100000.);
   h_ti1_mc->GetXaxis()->SetTitle(" Time in ticks");
   h_ti1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_ti2_mc   = new TH1F("h_ti2_mc","Relative Frequency vs  Time: West Cryostat", 100., 0., 20.); //-100000., 100000.); //0., 100.);//-100000., 100000.);
-  TH1F *h_ti2_data = new TH1F("h_ti2_data","Relative Frequency vs Time: West Cryostat", 100., 0., 20.); //-100000., 100000.); //0., 100.);//-100000., 100000.);
+  TH1F *h_ti2_mc   = new TH1F("h_ti2_mc","Relative Frequency vs  Time: East Cryostat", 100., 0., 20.); //-100000., 100000.); //0., 100.);//-100000., 100000.);
+  TH1F *h_ti2_data = new TH1F("h_ti2_data","Relative Frequency vs Time: East Cryostat", 100., 0., 20.); //-100000., 100000.); //0., 100.);//-100000., 100000.);
   h_ti2_mc->GetXaxis()->SetTitle(" Time in ticks");
   h_ti2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_x0_mc   = new TH1F("h_x0_mc","Relative Frequency vs  Direction (X): West Cryostat", 100., -5., 5.);// -100000., 100000.);
-  TH1F *h_x0_data = new TH1F("h_x0_data","Relative Frequency vs Direction (X): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_x0_mc   = new TH1F("h_x0_mc","Relative Frequency vs  Direction (X): East Cryostat", 100., -5., 5.);// -100000., 100000.);
+  TH1F *h_x0_data = new TH1F("h_x0_data","Relative Frequency vs Direction (X): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_x0_mc->GetXaxis()->SetTitle(" Direction (X) in cm");
   h_x0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_x1_mc   = new TH1F("h_x1_mc","Relative Frequency vs  Direction (X): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
-  TH1F *h_x1_data = new TH1F("h_x1_data","Relative Frequency vs Direction (X): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_x1_mc   = new TH1F("h_x1_mc","Relative Frequency vs  Direction (X): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_x1_data = new TH1F("h_x1_data","Relative Frequency vs Direction (X): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_x1_mc->GetXaxis()->SetTitle(" Direction (X) in cm");
   h_x1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_x2_mc   = new TH1F("h_x2_mc","Relative Frequency vs  Direction (X): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
-  TH1F *h_x2_data = new TH1F("h_x2_data","Relative Frequency vs Direction (X): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_x2_mc   = new TH1F("h_x2_mc","Relative Frequency vs  Direction (X): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_x2_data = new TH1F("h_x2_data","Relative Frequency vs Direction (X): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_x2_mc->GetXaxis()->SetTitle(" Direction (X) in cm");
   h_x2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_y0_mc   = new TH1F("h_y0_mc","Relative Frequency vs  Direction (Y): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
-  TH1F *h_y0_data = new TH1F("h_y0_data","Relative Frequency vs Direction (Y): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_y0_mc   = new TH1F("h_y0_mc","Relative Frequency vs  Direction (Y): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_y0_data = new TH1F("h_y0_data","Relative Frequency vs Direction (Y): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_y0_mc->GetXaxis()->SetTitle(" Direction (Y) in cm");
   h_y0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_y1_mc   = new TH1F("h_y1_mc","Relative Frequency vs  Direction (Y): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
-  TH1F *h_y1_data = new TH1F("h_y1_data","Relative Frequency vs Direction (Y): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_y1_mc   = new TH1F("h_y1_mc","Relative Frequency vs  Direction (Y): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_y1_data = new TH1F("h_y1_data","Relative Frequency vs Direction (Y): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_y1_mc->GetXaxis()->SetTitle(" Direction (Y) in cm");
   h_y1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_y2_mc   = new TH1F("h_y2_mc","Relative Frequency vs  Direction (Y): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
-  TH1F *h_y2_data = new TH1F("h_y2_data","Relative Frequency vs Direction (Y): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_y2_mc   = new TH1F("h_y2_mc","Relative Frequency vs  Direction (Y): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_y2_data = new TH1F("h_y2_data","Relative Frequency vs Direction (Y): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_y2_mc->GetXaxis()->SetTitle(" Direction (Y) in cm");
   h_y2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
 
-  TH1F *h_z0_mc   = new TH1F("h_z0_mc","Relative Frequency vs  Direction (Z): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
-  TH1F *h_z0_data = new TH1F("h_z0_data","Relative Frequency vs Direction (Z): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_z0_mc   = new TH1F("h_z0_mc","Relative Frequency vs  Direction (Z): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_z0_data = new TH1F("h_z0_data","Relative Frequency vs Direction (Z): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_z0_mc->GetXaxis()->SetTitle(" Direction (Z) in cm");
   h_z0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_z1_mc   = new TH1F("h_z1_mc","Relative Frequency vs  Direction (Z): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
-  TH1F *h_z1_data = new TH1F("h_z1_data","Relative Frequency vs Direction (Z): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_z1_mc   = new TH1F("h_z1_mc","Relative Frequency vs  Direction (Z): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_z1_data = new TH1F("h_z1_data","Relative Frequency vs Direction (Z): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_z1_mc->GetXaxis()->SetTitle(" Direction (Z) in cm");
   h_z1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_z2_mc   = new TH1F("h_z2_mc","Relative Frequency vs  Direction (Z): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
-  TH1F *h_z2_data = new TH1F("h_z2_data","Relative Frequency vs Direction (Z): West Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_z2_mc   = new TH1F("h_z2_mc","Relative Frequency vs  Direction (Z): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
+  TH1F *h_z2_data = new TH1F("h_z2_data","Relative Frequency vs Direction (Z): East Cryostat", 100., -5., 5.);//-10., 10.);//-100000., 100000.);
   h_z2_mc->GetXaxis()->SetTitle(" Direction (Z) in cm");
   h_z2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
 
-  TH1F *h_p0_mc   = new TH1F("h_p0_mc","Relative Frequency vs  Pitch: West Cryostat", 100., 0., 25.);
-  TH1F *h_p0_data = new TH1F("h_p0_data","Relative Frequency vs Pitch: West Cryostat", 100., 0., 25.);
+  TH1F *h_p0_mc   = new TH1F("h_p0_mc","Relative Frequency vs  Pitch: East Cryostat", 100., 0., 25.);
+  TH1F *h_p0_data = new TH1F("h_p0_data","Relative Frequency vs Pitch: East Cryostat", 100., 0., 25.);
   h_p0_mc->GetXaxis()->SetTitle(" Pitch in cm");
   h_p0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH1F *h_p1_mc   = new TH1F("h_p1_mc","Relative Frequency vs  Pitch: West Cryostat", 100., 0., 25.);
-  TH1F *h_p1_data = new TH1F("h_p1_data","Relative Frequency vs Pitch: West Cryostat", 100., 0., 25.);
+  TH1F *h_p1_mc   = new TH1F("h_p1_mc","Relative Frequency vs  Pitch: East Cryostat", 100., 0., 25.);
+  TH1F *h_p1_data = new TH1F("h_p1_data","Relative Frequency vs Pitch: East Cryostat", 100., 0., 25.);
   h_p1_mc->GetXaxis()->SetTitle(" Pitch in cm");
   h_p1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH1F *h_p2_mc   = new TH1F("h_p2_mc","Relative Frequency vs Pitch: West Cryostat", 100., 0., 25.);
-  TH1F *h_p2_data = new TH1F("h_p2_data","Relative Frequency vs Pitch: West Cryostat", 100., 0., 25.);
+  TH1F *h_p2_mc   = new TH1F("h_p2_mc","Relative Frequency vs Pitch: East Cryostat", 100., 0., 25.);
+  TH1F *h_p2_data = new TH1F("h_p2_data","Relative Frequency vs Pitch: East Cryostat", 100., 0., 25.);
   h_p2_mc->GetXaxis()->SetTitle(" Pitch in cm");
   h_p2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
@@ -780,7 +780,7 @@ void plus60twoDW(bool verbose=false) {
 ///pnfs/icarus/persistent/calibration/calib_ntuples/mc/ICARUS_NuMI_Nu_Cosmics/
 //hist_prodcorsika_genie_protononly_icarus_numi*.root");//hist_prodcorsika_genie_protononly_icarus_numi_volDetEnclosure_tpc_gen_filter_g4_detsim_48288511_9_reco1_20210912T103409_reco2.root");//hist*.root");
  outfile<< "Number of files in our MC list is " << my_files->GetNFiles() <<endl;
-  TChain myfile("caloskimW/TrackCaloSkim");
+  TChain myfile("caloskimE/TrackCaloSkim");
   myfile.AddFileInfoList(my_files->GetList());
 
   TFileCollection *my_files2 = new TFileCollection("my_files2","My File List2");
@@ -800,7 +800,7 @@ void plus60twoDW(bool verbose=false) {
 //pnfs/icarus/persistent/calibration/calib_ntuples/data/hist_data_dl4_fstrmNUMI*.root"); 
   ///icarus/data/users/obitter/CalibrationWS21/hist_data_dl4_fstrmNUMI*.root");///pnfs/icarus/persistent/calibration/calib_ntuples/data/hist_data_dl4_fstrmNUMI_run6106_50_20210627T040512_20210812T023813_stage0_20210812T121941_stage1-008e44f5-2b5f-49f3-9bf3-927a0c4bd7c1.root");//hist_data_dl4_fstrmNUMI*.root");
   outfile<< "Number of files in our data list is " << my_files2->GetNFiles()<<endl;
-  TChain myfile2("caloskimW/TrackCaloSkim");
+  TChain myfile2("caloskimE/TrackCaloSkim");
   myfile2.AddFileInfoList(my_files2->GetList());
 
   cout<<"files read"<<endl;
@@ -1019,9 +1019,10 @@ void plus60twoDW(bool verbose=false) {
 
 
      //60 degrees plus:
-
-     x_c[last_h_mc_c] = (0.5)*x_c[last_h_mc_c] - (sqrt(3)/2.0)*y_c[last_h_mc_c];
-     y_c[last_h_mc_c] = (sqrt(3)/2.0)*x_c[last_h_mc_c] + (0.5)*y_c[last_h_mc_c];
+     double yc =   y_c[last_h_mc_c];
+     double zc =   z_c[last_h_mc_c];
+     y_c[last_h_mc_c] = (0.5)*yc - (sqrt(3)/2.0)*zc;
+     z_c[last_h_mc_c] = (sqrt(3)/2.0)*yc + (0.5)*zc;
      // z_c[last_h_mc_c] = z_c[last_h_mc_c];
 
 
@@ -1105,9 +1106,11 @@ void plus60twoDW(bool verbose=false) {
      if(tpc_i2[last_h_mc_i2]!=tpc_num )continue;//==0) continue;
 
 
-     //60 degrees plus:                                                                                                                                   
-     x_i2[last_h_mc_i2] = (0.5)*x_i2[last_h_mc_i2] - (sqrt(3)/2.0)*y_i2[last_h_mc_i2];
-     y_i2[last_h_mc_i2] = (sqrt(3)/2.0)*x_i2[last_h_mc_i2] + (0.5)*y_i2[last_h_mc_i2];
+     //60 degrees plus:
+     double yi2 =   y_i2[last_h_mc_i2];
+     double zi2 =   z_i2[last_h_mc_i2];                                                                                                                                   
+     y_i2[last_h_mc_i2] = (0.5)*yi2 - (sqrt(3)/2.0)*zi2;
+     z_i2[last_h_mc_i2] = (sqrt(3)/2.0)*yi2 + (0.5)*zi2;
 
      h_azangle1_mc->Fill( TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) );
      h_zangle1_mc->Fill( abs( TMath::ATan(abs( (sqrt(x_i2[last_h_mc_i2]*x_i2[last_h_mc_i2] + z_i2[last_h_mc_i2]*z_i2[last_h_mc_i2]))) / (y_i2[last_h_mc_i2]) ) ));
@@ -1173,9 +1176,11 @@ void plus60twoDW(bool verbose=false) {
      if(tpc_i1[last_h_mc_i1]!=tpc_num )continue;//==0) continue;
 
      //60 degrees plus:                                                                                                                                  
-                             
-     x_i1[last_h_mc_i1] = (0.5)*x_i1[last_h_mc_i1] - (sqrt(3)/2.0)*y_i1[last_h_mc_i1];
-     y_i1[last_h_mc_i1] = (sqrt(3)/2.0)*x_i1[last_h_mc_i1] + (0.5)*y_i1[last_h_mc_i1] ;
+          
+     double yi1 =   y_i1[last_h_mc_i1];
+     double zi1 =   z_i1[last_h_mc_i1];                   
+     y_i1[last_h_mc_i1] = (0.5)*yi1 - (sqrt(3)/2.0)*zi1;
+     z_i1[last_h_mc_i1] = (sqrt(3)/2.0)*yi1 + (0.5)*zi1;
 
      h_azangle0_mc->Fill( TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) );
      h_zangle0_mc->Fill( abs( TMath::ATan(abs( (sqrt(x_i1[last_h_mc_i1]*x_i1[last_h_mc_i1] + z_i1[last_h_mc_i1]*z_i1[last_h_mc_i1]))) / (y_i1[last_h_mc_i1]) ) ));
@@ -1294,9 +1299,10 @@ void plus60twoDW(bool verbose=false) {
 
 
      //60 degrees plus:                                                                                                                                  
-                           
-     x2_c[last_h_data_c] = (0.5)*x2_c[last_h_data_c] - (sqrt(3)/2.0)*y2_c[last_h_data_c];
-     y2_c[last_h_data_c] = (sqrt(3)/2.0)*x2_c[last_h_data_c] + (0.5)*y2_c[last_h_data_c];
+     double y2c =   y2_c[last_h_data_c];
+     double z2c =   z2_c[last_h_data_c];                  
+     y2_c[last_h_data_c] = (0.5)*y2c - (sqrt(3)/2.0)*z2c;
+     z2_c[last_h_data_c] = (sqrt(3)/2.0)*y2c + (0.5)*z2c;
 
 
      h_azangle2_data->Fill( TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) );
@@ -1385,9 +1391,10 @@ void plus60twoDW(bool verbose=false) {
 
 
      //60 degrees plus:                                                                                                                                  
-
-     x2_i2[last_h_data_i2] = (0.5)*x2_i2[last_h_data_i2] - (sqrt(3)/2.0)*y2_i2[last_h_data_i2];
-     y2_i2[last_h_data_i2] = (sqrt(3)/2.0)*x2_i2[last_h_data_i2] + (0.5)*y2_i2[last_h_data_i2];
+     double y2i2 =   y2_i2[last_h_data_i2];
+     double z2i2 =   z2_i2[last_h_data_i2];
+     y2_i2[last_h_data_i2] = (0.5)*y2i2 - (sqrt(3)/2.0)*z2i2;
+     z2_i2[last_h_data_i2] = (sqrt(3)/2.0)*y2i2 + (0.5)*z2i2;
 
 
 
@@ -1461,9 +1468,10 @@ void plus60twoDW(bool verbose=false) {
 
 
      //60 degrees plus:                                                                                                                                  
-
-     x2_i1[last_h_data_i1] = (0.5)*x2_i1[last_h_data_i1] - (sqrt(3)/2.0)*y2_i1[last_h_data_i1];
-     y2_i1[last_h_data_i1] = (sqrt(3)/2.0)*x2_i1[last_h_data_i1] + (0.5)*y2_i1[last_h_data_i1];
+     double y2i1 =   y2_i1[last_h_data_i1];
+     double z2i1 =   z2_i1[last_h_data_i1];
+     y2_i1[last_h_data_i1] = (0.5)*y2i1 - (sqrt(3)/2.0)*z2i1;
+     z2_i1[last_h_data_i1] = (sqrt(3)/2.0)*y2i1 + (0.5)*z2i1;
 
 
 
@@ -2046,7 +2054,7 @@ void plus60twoDW(bool verbose=false) {
    hs_az2->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
    hs_az2->GetYaxis()->SetTitle("Relative Frequency");
    TText T; T.SetTextFont(42); T.SetTextAlign(21);
-   T.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (col): West Cryostat");
+   T.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (col): East Cryostat");
    auto legend = new TLegend(0.1,0.8,0.2,0.9);
    legend->AddEntry(h1,"MC");
    legend->AddEntry(h2,"Data");
@@ -2061,9 +2069,9 @@ void plus60twoDW(bool verbose=false) {
    cout<<"HERE_B"<<endl;
    //h_azangle2_data->KolmogorovTest(h_azangle2_mc,"U O N D ");
    cout<<"HERE_C"<<endl;
-   cnvs_az2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_AzimuthalAngle_colTEST.pdf");
+   cnvs_az2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_AzimuthalAngle_colTEST.pdf");
 
-   //   TFile* my_new_file1 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_AzimuthalAngle_col.root","RECREATE");
+   //   TFile* my_new_file1 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_AzimuthalAngle_col.root","RECREATE");
    // cnvs_az2->Write();
 
    cout<<"HERE"<<endl;
@@ -2077,7 +2085,7 @@ void plus60twoDW(bool verbose=false) {
    hs_az1->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
    hs_az1->GetYaxis()->SetTitle("Relative Frequency");
    TText Ta; Ta.SetTextFont(42); Ta.SetTextAlign(21);
-   Ta.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in1): West Cryostat");
+   Ta.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in1): East Cryostat");
    auto legenda = new TLegend(0.1,0.8,0.2,0.9);
    legenda->AddEntry(h1a,"MC");
    legenda->AddEntry(h2a,"Data");
@@ -2091,7 +2099,7 @@ void plus60twoDW(bool verbose=false) {
    //h_azangle1_data->KolmogorovTest(//h_azangle1_mc,"U O N D ");
 
 
-   cnvs_az1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_AzimuthalAngle_in1TEST.pdf");
+   cnvs_az1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_AzimuthalAngle_in1TEST.pdf");
    //cnvs_az1->Write();
 
    TCanvas* cnvs_az0 = new TCanvas("cnvs_az0", "c2", 1,1,800,700);
@@ -2104,14 +2112,14 @@ void plus60twoDW(bool verbose=false) {
    hs_az0->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
    hs_az0->GetYaxis()->SetTitle("Relative Frequency");
    TText Tb; Tb.SetTextFont(42); Tb.SetTextAlign(21);
-   Tb.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in2): West Cryostat");
+   Tb.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in2): East Cryostat");
    auto legendb = new TLegend(0.1,0.8,0.2,0.9);
    legendb->AddEntry(h1b,"MC");
    legendb->AddEntry(h2b,"Data");
    legendb->Draw();
    cnvs_az0->Update();
   
-   cnvs_az0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_AzimuthalAngle_in2TEST.pdf");//,"RECREATE");
+   cnvs_az0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_AzimuthalAngle_in2TEST.pdf");//,"RECREATE");
    //  cnvs_az0->Write();
  cout<<"az0"<<endl;
    Double_t res_az0[20];
@@ -2119,7 +2127,7 @@ void plus60twoDW(bool verbose=false) {
    //h_azangle0_data->KolmogorovTest(//h_azangle0_mc,"U O N D ");
    
 
-   //      cnvs_az0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_AzimuthalAngle_in2.root","RECREATE");
+   //      cnvs_az0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_AzimuthalAngle_in2.root","RECREATE");
       //cnvs_az0->Write();
 
    TCanvas* cnvs_zz2 = new TCanvas("cnvs_zz2", "c3", 1,1,800,700);
@@ -2133,7 +2141,7 @@ void plus60twoDW(bool verbose=false) {
    hs_zz2->GetXaxis()->SetTitle(" Zenith Angle in radians ");
    hs_zz2->GetYaxis()->SetTitle("Relative Frequency");
    TText Tc; Tc.SetTextFont(42); Tc.SetTextAlign(21);
-   Tc.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (col): West Cryostat");
+   Tc.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (col): East Cryostat");
    auto legendc = new TLegend(0.1,0.8,0.2,0.9);
    legendc->AddEntry(h1c,"MC");
    legendc->AddEntry(h2c,"Data");
@@ -2141,7 +2149,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_zz2->Update();
 
    //TFile* my_new_file4 = new TFile(
-  cnvs_zz2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_ZenithAngle_colTEST.pdf");//,"RECREATE");
+  cnvs_zz2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_ZenithAngle_colTEST.pdf");//,"RECREATE");
    //   cnvs_zz2->Write();
 
    cout<<"zz2"<<endl;
@@ -2150,7 +2158,7 @@ void plus60twoDW(bool verbose=false) {
    //h_zangle2_data->KolmogorovTest(//h_zangle2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file4 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_ZenithAngle_col.root","RECREATE");
+   //   TFile* my_new_file4 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_ZenithAngle_col.root","RECREATE");
    //cnvs_zz2->Write();
 
 
@@ -2165,21 +2173,21 @@ void plus60twoDW(bool verbose=false) {
    hs_zz1->GetXaxis()->SetTitle(" Zenith Angle in radians ");
    hs_zz1->GetYaxis()->SetTitle("Relative Frequency");
    TText Td; Td.SetTextFont(42); Td.SetTextAlign(21);
-   Td.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in1): West Cryostat");
+   Td.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in1): East Cryostat");
    auto legendd = new TLegend(0.1,0.8,0.2,0.9);
    legendd->AddEntry(h1d,"MC");
    legendd->AddEntry(h2d,"Data");
    legendd->Draw();
    cnvs_zz1->Update();
 
-   cnvs_zz1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_ZenithAngle_in1TEST.pdf");//,"RECREATE");
+   cnvs_zz1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_ZenithAngle_in1TEST.pdf");//,"RECREATE");
    //   cnvs_zz1->Write();
    cout<<"zz1"<<endl;
    Double_t res_zz1[20];
    //h_zangle1_data->Chi2Test(//h_zangle1_mc,"UW OF UF P",res_zz1);// h2d->Chi2Test(h1d,"UU NORM  P",res_zz1);                     
    //h_zangle1_data->KolmogorovTest(//h_zangle1_mc,"U O N D ");
    
-   //   TFile* my_new_file5 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_ZenithAngle_in1.root","RECREATE");
+   //   TFile* my_new_file5 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_ZenithAngle_in1.root","RECREATE");
    // cnvs_zz1->Write();
 
    TCanvas* cnvs_zz0 = new TCanvas("cnvs_zz0", "c5", 1,1,800,700);
@@ -2193,13 +2201,13 @@ void plus60twoDW(bool verbose=false) {
    hs_zz0->GetXaxis()->SetTitle(" Zenith Angle in radians ");
    hs_zz0->GetYaxis()->SetTitle("Relative Frequency");
    TText Te; Te.SetTextFont(42); Te.SetTextAlign(21);
-   Te.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in2): West Cryostat");
+   Te.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in2): East Cryostat");
    auto legende = new TLegend(0.1,0.8,0.2,0.9);
    legende->AddEntry(h1e,"MC");
    legende->AddEntry(h2e,"Data");
    legende->Draw();
    cnvs_zz0->Update();
-   cnvs_zz0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_ZenithAngle_in2TEST.pdf");//,"RECREATE");
+   cnvs_zz0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_ZenithAngle_in2TEST.pdf");//,"RECREATE");
    //   cnvs_zz0->Write();
    cout<<"zz0"<<endl;
    Double_t res_zz0[20];
@@ -2207,7 +2215,7 @@ void plus60twoDW(bool verbose=false) {
    //h_zangle0_data->KolmogorovTest(//h_zangle0_mc,"U O N D ");
    
 
-   //   TFile* my_new_file6 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_ZenithAngle_in2.root","RECREATE");
+   //   TFile* my_new_file6 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_ZenithAngle_in2.root","RECREATE");
    // cnvs_zz0->Write();
 
    TCanvas* cnvs_q2 = new TCanvas("cnvs_q2", "c6", 1,1,800,700);
@@ -2221,7 +2229,7 @@ void plus60twoDW(bool verbose=false) {
    hs_q2->GetXaxis()->SetTitle(" dQ/dx  ");
    hs_q2->GetYaxis()->SetTitle("Relative Frequency");
    TText Tf; Tf.SetTextFont(42); Tf.SetTextAlign(21);
-   Tf.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (col): West Cryostat");
+   Tf.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (col): East Cryostat");
    auto legendf = new TLegend(0.1,0.8,0.2,0.9);
    legendf->AddEntry(h1f,"MC");
    legendf->AddEntry(h2f,"Data");
@@ -2229,7 +2237,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_q2->Update();
 
 
-   cnvs_q2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_filedQdx_colTEST.pdf");//,"RECREATE");
+   cnvs_q2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_filedQdx_colTEST.pdf");//,"RECREATE");
    //   cnvs_q2->Write();
 
    cout<<"q2"<<endl;
@@ -2238,7 +2246,7 @@ void plus60twoDW(bool verbose=false) {
    //h_q2_data->KolmogorovTest(//h_q2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file7 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_filedQdx_col.root","RECREATE");
+   //   TFile* my_new_file7 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_filedQdx_col.root","RECREATE");
    //cnvs_q2->Write();
 
 
@@ -2252,14 +2260,14 @@ void plus60twoDW(bool verbose=false) {
    hs_q1->GetXaxis()->SetTitle(" dQ/dx  ");
    hs_q1->GetYaxis()->SetTitle("Relative Frequency");
    TText Tg; Tg.SetTextFont(42); Tg.SetTextAlign(21);
-   Tg.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in1): West Cryostat");
+   Tg.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in1): East Cryostat");
    auto legendg = new TLegend(0.1,0.8,0.2,0.9);
    legendg->AddEntry(h1g,"MC");
    legendg->AddEntry(h2g,"Data");
    legendg->Draw();
    cnvs_q1->Update();
 
-   cnvs_q1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_filedQdx_in1TEST.pdf");//,"RECREATE");
+   cnvs_q1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_filedQdx_in1TEST.pdf");//,"RECREATE");
    //   cnvs_q1->Write();
 
 
@@ -2268,7 +2276,7 @@ void plus60twoDW(bool verbose=false) {
    //h_q1_data->Chi2Test(//h_q1_mc,"UW OF UF P",res_q1);//h2g->Chi2Test(h1g,"UU NORM  P",res_q1);                                  
    //h_q1_data->KolmogorovTest(//h_q1_mc,"U O N D ");
   
-   //   TFile* my_new_file8 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_filedQdx_in1.root","RECREATE");
+   //   TFile* my_new_file8 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_filedQdx_in1.root","RECREATE");
    //cnvs_q1->Write();
 
    TCanvas* cnvs_q0 = new TCanvas("cnvs_q0", "c8", 1,1,800,700);
@@ -2282,7 +2290,7 @@ void plus60twoDW(bool verbose=false) {
    hs_q0->GetXaxis()->SetTitle(" dQ/dx  ");
    hs_q0->GetYaxis()->SetTitle("Relative Frequency");
    TText Th; Th.SetTextFont(42); Th.SetTextAlign(21);
-   Th.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in2): West Cryostat");
+   Th.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in2): East Cryostat");
    auto legendh = new TLegend(0.1,0.8,0.2,0.9);
    legendh->AddEntry(h1h,"MC");
    legendh->AddEntry(h2h,"Data");
@@ -2290,7 +2298,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_q0->Update();
 
 
-   cnvs_q0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_filedQdx_in2TEST.pdf");//,"RECREATE");
+   cnvs_q0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_filedQdx_in2TEST.pdf");//,"RECREATE");
    //   cnvs_q0->Write();
    cout<<"q0"<<endl;
    Double_t res_q0[20];
@@ -2298,7 +2306,7 @@ void plus60twoDW(bool verbose=false) {
    //h_q0_data->KolmogorovTest(//h_q0_mc,"U O N D ");
 
 
-   //   TFile* my_new_file9 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_filedQdx_in2.root","RECREATE");
+   //   TFile* my_new_file9 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_filedQdx_in2.root","RECREATE");
    // cnvs_q0->Write();
 
    TCanvas* cnvs_r2 = new TCanvas("cnvs_r2", "c9", 1,1,800,700);
@@ -2311,14 +2319,14 @@ void plus60twoDW(bool verbose=false) {
    hs_r2->GetXaxis()->SetTitle(" Residual Range in cm ");
    hs_r2->GetYaxis()->SetTitle("Relative Frequency");
    TText Ti; Ti.SetTextFont(42); Ti.SetTextAlign(21);
-   Ti.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (col): West Cryostat");
+   Ti.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (col): East Cryostat");
    auto legendi = new TLegend(0.1,0.8,0.2,0.9);
    legendi->AddEntry(h1i,"MC");
    legendi->AddEntry(h2i,"Data");
    legendi->Draw();
    cnvs_r2->Update();
 
-   cnvs_r2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileRR_colTEST.pdf");//,"RECREATE");
+   cnvs_r2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileRR_colTEST.pdf");//,"RECREATE");
    //   cnvs_r2->Write();
    cout<<"r2"<<endl;
    Double_t res_r2[20];
@@ -2326,7 +2334,7 @@ void plus60twoDW(bool verbose=false) {
    //h_r2_data->KolmogorovTest(//h_r2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file10 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileRR_col.root","RECREATE");
+   //   TFile* my_new_file10 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileRR_col.root","RECREATE");
    //  cnvs_r2->Write();
 
    TCanvas* cnvs_r1 = new TCanvas("cnvs_r1", "c10", 1,1,800,700);
@@ -2340,7 +2348,7 @@ void plus60twoDW(bool verbose=false) {
    hs_r1->GetXaxis()->SetTitle(" Residual Range in cm ");
    hs_r1->GetYaxis()->SetTitle("Relative Frequency");
    TText Tj; Tj.SetTextFont(42); Tj.SetTextAlign(21);
-   Tj.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in1): West Cryostat");
+   Tj.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in1): East Cryostat");
    auto legendj = new TLegend(0.1,0.8,0.2,0.9);
    legendj->AddEntry(h1j,"MC");
    legendj->AddEntry(h2j,"Data");
@@ -2350,7 +2358,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file11 = new TFile(
-   cnvs_r1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileRR_in1TEST.pdf");//,"RECREATE");
+   cnvs_r1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileRR_in1TEST.pdf");//,"RECREATE");
    //cnvs_r1->Write();
 
 
@@ -2360,7 +2368,7 @@ void plus60twoDW(bool verbose=false) {
    //h_r1_data->KolmogorovTest(//h_r1_mc,"U O N D ");
   
 
-   //   TFile* my_new_file11 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileRR_in1.root","RECREATE");
+   //   TFile* my_new_file11 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileRR_in1.root","RECREATE");
    //cnvs_r1->Write();
 
    TCanvas* cnvs_r0 = new TCanvas("cnvs_r0", "c11", 1,1,800,700);
@@ -2373,7 +2381,7 @@ void plus60twoDW(bool verbose=false) {
    hs_r0->GetXaxis()->SetTitle(" Residual Range in cm ");
    hs_r0->GetYaxis()->SetTitle("Relative Frequency");
    TText Tk; Tk.SetTextFont(42); Tk.SetTextAlign(21);
-   Tk.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in2): West Cryostat");
+   Tk.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in2): East Cryostat");
    auto legendk = new TLegend(0.1,0.8,0.2,0.9);
    legendk->AddEntry(h1k,"MC");
    legendk->AddEntry(h2k,"Data");
@@ -2381,7 +2389,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_r0->Update();
 
    //TFile* my_new_file12 = new TFile(
-   cnvs_r0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileRR_in2TEST.pdf");//,"RECREATE");
+   cnvs_r0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileRR_in2TEST.pdf");//,"RECREATE");
    //   cnvs_r0->Write();
 
 
@@ -2392,7 +2400,7 @@ void plus60twoDW(bool verbose=false) {
    //h_r0_data->KolmogorovTest(//h_r0_mc,"U O N D ");
    
 
-   //   TFile* my_new_file12 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileRR_in2.root","RECREATE");
+   //   TFile* my_new_file12 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileRR_in2.root","RECREATE");
    //cnvs_r0->Write();
 
    TCanvas* cnvs_l = new TCanvas("cnvs_l", "c12", 1,1,800,700);
@@ -2406,7 +2414,7 @@ void plus60twoDW(bool verbose=false) {
    hs_l->GetXaxis()->SetTitle(" Muon Length in cm  ");
    hs_l->GetYaxis()->SetTitle("Relative Frequency");
    TText Tl; Tl.SetTextFont(42); Tl.SetTextAlign(21);
-   Tl.DrawTextNDC(.5,.95,"Relative Frequency vs Muon Length: West Cryostat");
+   Tl.DrawTextNDC(.5,.95,"Relative Frequency vs Muon Length: East Cryostat");
    auto legendl = new TLegend(0.1,0.8,0.2,0.9);
    legendl->AddEntry(h1l,"MC");
    legendl->AddEntry(h2l,"Data");
@@ -2414,7 +2422,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_l->Update();
 
    // TFile* my_new_file13 = new TFile(
-   cnvs_l->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileLengthTEST.pdf");//,"RECREATE");
+   cnvs_l->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileLengthTEST.pdf");//,"RECREATE");
    //   cnvs_l->Write();
 
 
@@ -2444,12 +2452,12 @@ void plus60twoDW(bool verbose=false) {
    legendl2Dc->Draw();
    cnvs_l2Dc->Update();
 
-   TFile output_file1("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Az_col.root","RECREATE");
+   TFile output_file1("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Az_col.root","RECREATE");
    h1l2Dc_prof->Write();
    h2l2Dc_prof->Write();
    cnvs_l2Dc->Write();
 
-   cnvs_l2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Az_col.pdf");
+   cnvs_l2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Az_col.pdf");
 
 
    TCanvas* cnvs_zl2Dc = new TCanvas("cnvs_zl2Dc", "zc122Dc", 1,1,800,700);
@@ -2468,12 +2476,12 @@ void plus60twoDW(bool verbose=false) {
    legendzl2Dc->Draw();
    cnvs_zl2Dc->Update();
 
-   TFile output_file1z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Z_col.root","RECREATE");
+   TFile output_file1z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Z_col.root","RECREATE");
    hz1l2Dc_prof->Write();
    hz2l2Dc_prof->Write();
    cnvs_zl2Dc->Write();
 
-   cnvs_zl2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Z_col.pdf");
+   cnvs_zl2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Z_col.pdf");
 
 
 
@@ -2489,14 +2497,14 @@ void plus60twoDW(bool verbose=false) {
    h1l2Dc_prof->GetYaxis()->SetTitle(" Muon Length in cm  ");
    h1l2Dc_prof->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    TText Tl2Dc; Tl2Dc.SetTextFont(42); Tl2Dc.SetTextAlign(21);
-   Tl2Dc.DrawTextNDC(.5,.95,"  Muon Length vs Azimuthal Angle: West Cryostat");
+   Tl2Dc.DrawTextNDC(.5,.95,"  Muon Length vs Azimuthal Angle: East Cryostat");
    auto legendl2Dc = new TLegend(0.1,0.8,0.2,0.9);
    legendl2Dc->AddEntry(h1l2Dc_prof,"MC");
    legendl2Dc->AddEntry(h2l2Dc_prof,"Data");
    legendl2Dc->Draw();
    cnvs_l2Dc->Update();
    */
-   //   cnvs_l2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Az_col.pdf");
+   //   cnvs_l2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Az_col.pdf");
 
    
    TCanvas* cnvs_l2D1 = new TCanvas("cnvs_l2D1", "c122D1", 1,1,800,700);
@@ -2514,17 +2522,17 @@ void plus60twoDW(bool verbose=false) {
    legendl2D1->Draw();
    cnvs_l2D1->Update();
 
-   TFile output_file2("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Az_in1.root","RECREATE");
+   TFile output_file2("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Az_in1.root","RECREATE");
    h1l2D1_prof->Write();
    h2l2D1_prof->Write();
    cnvs_l2D1->Write();
 
-   cnvs_l2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Az_in1.pdf");
+   cnvs_l2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Az_in1.pdf");
 
    /*h1l2D1_prof->GetYaxis()->SetTitle(" Muon Length in cm  ");
    h1l2D1_prof->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    TText Tl2D1; Tl2D1.SetTextFont(42); Tl2D1.SetTextAlign(21);
-   Tl2D1.DrawTextNDC(.5,.95,"  Muon Length vs Azimuthal Angle: West Cryostat");
+   Tl2D1.DrawTextNDC(.5,.95,"  Muon Length vs Azimuthal Angle: East Cryostat");
    auto legendl2D1 = new TLegend(0.1,0.8,0.2,0.9);
    legendl2D1->AddEntry(h1l2D1_prof,"MC");
    legendl2D1->AddEntry(h2l2D1_prof,"Data");
@@ -2537,7 +2545,7 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   //   cnvs_l2D1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Az_in1.pdf");
+   //   cnvs_l2D1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Az_in1.pdf");
 
 
    TCanvas* cnvs_l2D2 = new TCanvas("cnvs_l2D2", "c122D2", 1,1,800,700);
@@ -2555,7 +2563,7 @@ void plus60twoDW(bool verbose=false) {
    legendl2D2->Draw();
    cnvs_l2D2->Update();
 
-   TFile output_file3("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Az_in2.root","RECREATE");
+   TFile output_file3("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Az_in2.root","RECREATE");
    h1l2D2_prof->Write();
    h2l2D2_prof->Write();
    cnvs_l2D2->Write();
@@ -2564,14 +2572,14 @@ void plus60twoDW(bool verbose=false) {
    h1l2D2_prof->GetYaxis()->SetTitle(" Muon Length in cm  ");
    h1l2D2_prof->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    TText Tl2D2; Tl2D2.SetTextFont(42); Tl2D2.SetTextAlign(21);
-   Tl2D2.DrawTextNDC(.5,.95,"  Muon Length vs Azimuthal Angle: West Cryostat");
+   Tl2D2.DrawTextNDC(.5,.95,"  Muon Length vs Azimuthal Angle: East Cryostat");
    auto legendl2D2 = new TLegend(0.1,0.8,0.2,0.9);
    legendl2D2->AddEntry(h1l2D2_prof,"MC");
    legendl2D2->AddEntry(h2l2D2_prof,"Data");
    legendl2D2->Draw();
    cnvs_l2D2->Update();
    */
-   cnvs_l2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength_Az_in2.pdf");
+   cnvs_l2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength_Az_in2.pdf");
   
 
 
@@ -2588,7 +2596,7 @@ void plus60twoDW(bool verbose=false) {
    //h_l_data->Chi2Test(//h_l_mc,"UW OF UF P",res_l);// h2l->Chi2Test(h1l,"UU NORM  P",res_l);                                     
    //h_l_data->KolmogorovTest(//h_l_mc,"U O N D ");
    
-   //   TFile* my_new_file13 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileLength.root","RECREATE");
+   //   TFile* my_new_file13 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileLength.root","RECREATE");
    //cnvs_l->Write();
 
    TCanvas* cnvs_t0 = new TCanvas("cnvs_t0", "c13", 1,1,800,700);
@@ -2601,7 +2609,7 @@ void plus60twoDW(bool verbose=false) {
    hs_t0->GetXaxis()->SetTitle(" T0 in us  ");
    hs_t0->GetYaxis()->SetTitle("Relative Frequency");
    TText Tm; Tm.SetTextFont(42); Tm.SetTextAlign(21);
-   Tm.DrawTextNDC(.5,.95,"Relative Frequency vs To: West Cryostat");
+   Tm.DrawTextNDC(.5,.95,"Relative Frequency vs To: East Cryostat");
    auto legendm = new TLegend(0.1,0.8,0.2,0.9);
    legendm->AddEntry(h1m,"MC");
    legendm->AddEntry(h2m,"Data");
@@ -2609,7 +2617,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_t0->Update();
 
    //TFile* my_new_file14 = new TFile(
-   cnvs_t0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileT0TEST.pdf");//,"RECREATE");
+   cnvs_t0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileT0TEST.pdf");//,"RECREATE");
    //   cnvs_t0->Write();
 
    cout<<"t0"<<endl;
@@ -2618,7 +2626,7 @@ void plus60twoDW(bool verbose=false) {
    //h_t0_data->KolmogorovTest(//h_t0_mc,"U O N D ");
    
 
-   //   TFile* my_new_file14 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileT0.root","RECREATE");
+   //   TFile* my_new_file14 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileT0.root","RECREATE");
    //cnvs_t0->Write();
 
    TCanvas* cnvs_sx = new TCanvas("cnvs_sx", "c14", 1,1,800,700);
@@ -2632,7 +2640,7 @@ void plus60twoDW(bool verbose=false) {
    hs_sx->GetXaxis()->SetTitle(" Track Start (X) in cm  ");
    hs_sx->GetYaxis()->SetTitle("Relative Frequency");
    TText Tn; Tn.SetTextFont(42); Tn.SetTextAlign(21);
-   Tn.DrawTextNDC(.5,.95,"Relative Frequency vs Track Start (X): West Cryostat");
+   Tn.DrawTextNDC(.5,.95,"Relative Frequency vs Track Start (X): East Cryostat");
    auto legendn = new TLegend(0.1,0.8,0.2,0.9);
    legendn->AddEntry(h1n,"MC");
    legendn->AddEntry(h2n,"Data");
@@ -2640,7 +2648,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sx->Update();
 
    //TFile* my_new_file15 = new TFile(
-   cnvs_sx->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartX_colTEST.pdf");//,"RECREATE");
+   cnvs_sx->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartX_colTEST.pdf");//,"RECREATE");
    //   cnvs_sx->Write();
 
 
@@ -2659,13 +2667,13 @@ void plus60twoDW(bool verbose=false) {
    legendn2Dc->Draw();
    cnvs_sx2Dc->Update();
 
-   TFile output_file4("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartX_Az_col.root","RECREATE");
+   TFile output_file4("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartX_Az_col.root","RECREATE");
    h1n2Dc_prof->Write();
    h2n2Dc_prof->Write();
    cnvs_sx2Dc->Write();
 
 
-   cnvs_sx2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartX_Az_col.pdf");
+   cnvs_sx2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartX_Az_col.pdf");
 
    TCanvas* cnvs_sx2D1 = new TCanvas("cnvs_sx2D1", "c142D1", 1,1,800,700);
    auto h1n2D1_prof = h1n2D1->ProfileX();
@@ -2678,7 +2686,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_sx2D1->GetYaxis()->SetTitle(" Track Start (X) in cm  ");
    //hs_sx2D1->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tn2D1; Tn2D1.SetTextFont(42); Tn2D1.SetTextAlign(21);
-   //Tn2D1.DrawTextNDC(.5,.95, "Track Start (X) vs Azimuthal Angle: West Cryostat");
+   //Tn2D1.DrawTextNDC(.5,.95, "Track Start (X) vs Azimuthal Angle: East Cryostat");
    auto legendn2D1 = new TLegend(0.1,0.8,0.2,0.9);
    legendn2D1->AddEntry(h1n2D1,"MC");
    legendn2D1->AddEntry(h2n2D1,"Data");
@@ -2686,12 +2694,12 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sx2D1->Update();
 
 
-   TFile output_file5("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartX_Az_in1.root","RECREATE");
+   TFile output_file5("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartX_Az_in1.root","RECREATE");
    h1n2D1_prof->Write();
    h2n2D1_prof->Write();
    cnvs_sx2D1->Write();
 
-   cnvs_sx2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartX_Az_in1.pdf");
+   cnvs_sx2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartX_Az_in1.pdf");
 
    TCanvas* cnvs_sx2D2 = new TCanvas("cnvs_sx2D2", "c142D2", 1,1,800,700);
    auto h1n2D2_prof = h1n2D2->ProfileX();
@@ -2704,7 +2712,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_sx2D2->GetYaxis()->SetTitle(" Track Start (X) in cm  ");
    //hs_sx2D2->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tn2D2; Tn2D2.SetTextFont(42); Tn2D2.SetTextAlign(21);
-   // Tn2D2.DrawTextNDC(.5,.95, "Track Start (X) vs Azimuthal Angle: West Cryostat");
+   // Tn2D2.DrawTextNDC(.5,.95, "Track Start (X) vs Azimuthal Angle: East Cryostat");
    auto legendn2D2 = new TLegend(0.1,0.8,0.2,0.9);
    legendn2D2->AddEntry(h1n2D2,"MC");
    legendn2D2->AddEntry(h2n2D2,"Data");
@@ -2712,7 +2720,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sx2D2->Update();
 
 
-   TFile output_file6("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartX_Az_in2.root","RECREATE");
+   TFile output_file6("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartX_Az_in2.root","RECREATE");
    h1n2D2_prof->Write();
    h2n2D2_prof->Write();
    cnvs_sx2D2->Write();
@@ -2720,7 +2728,7 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   cnvs_sx2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartX_Az_in2.pdf");
+   cnvs_sx2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartX_Az_in2.pdf");
 
 
 
@@ -2732,7 +2740,7 @@ void plus60twoDW(bool verbose=false) {
    //h_sx_data->Chi2Test(//h_sx_mc,"UW OF UF P",res_sx);// h2n->Chi2Test(h1n,"UU NORM  P",res_sx);                                 
    //h_sx_data->KolmogorovTest(//h_sx_mc,"U O N D ");
    
-   //   TFile* my_new_file15 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartX_col.root","RECREATE");
+   //   TFile* my_new_file15 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartX_col.root","RECREATE");
    // cnvs_sx->Write();
 
    TCanvas* cnvs_sy = new TCanvas("cnvs_sy", "c15", 1,1,800,700);
@@ -2745,7 +2753,7 @@ void plus60twoDW(bool verbose=false) {
    hs_sy->GetXaxis()->SetTitle(" Track Start (Y) in cm  ");
    hs_sy->GetYaxis()->SetTitle("Relative Frequency");
    TText To; To.SetTextFont(42); To.SetTextAlign(21);
-   To.DrawTextNDC(.5,.95,"Relative Frequency vs Track Start (Y): West Cryostat");
+   To.DrawTextNDC(.5,.95,"Relative Frequency vs Track Start (Y): East Cryostat");
    auto legendo = new TLegend(0.1,0.8,0.2,0.9);
    legendo->AddEntry(h1o,"MC");
    legendo->AddEntry(h2o,"Data");
@@ -2753,7 +2761,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sy->Update();
 
    //TFile* my_new_file16 = new TFile(
-   cnvs_sy->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartY_in1TEST.pdf");//,"RECREATE");
+   cnvs_sy->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartY_in1TEST.pdf");//,"RECREATE");
    //  cnvs_sy->Write();
 
 
@@ -2771,19 +2779,19 @@ void plus60twoDW(bool verbose=false) {
    //   hs_sy2Dc->GetYaxis()->SetTitle(" Track Start (Y) in cm  ");
    //hs_sy2Dc->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText To2Dc; To2Dc.SetTextFont(42); To2Dc.SetTextAlign(21);
-   //To2Dc.DrawTextNDC(.5,.95, "Track Start (Y) vs Azimuthal Angle: West Cryostat");
+   //To2Dc.DrawTextNDC(.5,.95, "Track Start (Y) vs Azimuthal Angle: East Cryostat");
    auto legendo2Dc = new TLegend(0.1,0.8,0.2,0.9);
    legendo2Dc->AddEntry(h1o2Dc,"MC");
    legendo2Dc->AddEntry(h2o2Dc,"Data");
    legendo2Dc->Draw();
    cnvs_sy2Dc->Update();
 
-   TFile output_file7("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartY_Az_col.root","RECREATE");
+   TFile output_file7("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartY_Az_col.root","RECREATE");
    h1o2Dc_prof->Write();
    h2o2Dc_prof->Write();
    cnvs_sy2Dc->Write();
 
-   cnvs_sy2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartY_Az_col.pdf");
+   cnvs_sy2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartY_Az_col.pdf");
 
    TCanvas* cnvs_sy2D1 = new TCanvas("cnvs_sy2D1", "c152D1", 1,1,800,700);
    auto h1o2D1_prof = h1o2D1->ProfileX();
@@ -2796,7 +2804,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_sy2D1->GetYaxis()->SetTitle(" Track Start (Y) in cm  ");
    //hs_sy2D1->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText To2D1; To2D1.SetTextFont(42); To2D1.SetTextAlign(21);
-   //To2D1.DrawTextNDC(.5,.95, "Track Start (Y) vs Azimuthal Angle: West Cryostat");
+   //To2D1.DrawTextNDC(.5,.95, "Track Start (Y) vs Azimuthal Angle: East Cryostat");
    auto legendo2D1 = new TLegend(0.1,0.8,0.2,0.9);
    legendo2D1->AddEntry(h1o2D1,"MC");
    legendo2D1->AddEntry(h2o2D1,"Data");
@@ -2804,13 +2812,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sy2D1->Update();
 
 
-   TFile output_file8("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartY_Az_in1.root","RECREATE");
+   TFile output_file8("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartY_Az_in1.root","RECREATE");
    h1o2D1_prof->Write();
    h2o2D1_prof->Write();
    cnvs_sy2D1->Write();
 
 
-   cnvs_sy2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartY_Az_in1.pdf");
+   cnvs_sy2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartY_Az_in1.pdf");
 
    TCanvas* cnvs_sy2D2 = new TCanvas("cnvs_sy2D2", "c152D2", 1,1,800,700);
    auto h1o2D2_prof = h1o2D2->ProfileX();
@@ -2823,7 +2831,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_sy2D2->GetYaxis()->SetTitle(" Track Start (Y) in cm  ");
    //hs_sy2D2->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText To2D2; To2D2.SetTextFont(42); To2D2.SetTextAlign(21);
-   //To2D2.DrawTextNDC(.5,.95, "Track Start (Y) vs Azimuthal Angle: West Cryostat");
+   //To2D2.DrawTextNDC(.5,.95, "Track Start (Y) vs Azimuthal Angle: East Cryostat");
    auto legendo2D2 = new TLegend(0.1,0.8,0.2,0.9);
    legendo2D2->AddEntry(h1o2D2,"MC");
    legendo2D2->AddEntry(h2o2D2,"Data");
@@ -2831,13 +2839,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sy2D2->Update();
 
 
-   TFile output_file9("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartY_Az_in2.root","RECREATE");
+   TFile output_file9("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartY_Az_in2.root","RECREATE");
    h1o2D2_prof->Write();
    h2o2D2_prof->Write();
    cnvs_sy2D2->Write();
 
 
-   cnvs_sy2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartY_Az_in2.pdf");
+   cnvs_sy2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartY_Az_in2.pdf");
 
 
 
@@ -2853,7 +2861,7 @@ void plus60twoDW(bool verbose=false) {
    //h_sy_data->Chi2Test(//h_sy_mc,"UW OF UF P",res_sy);//h2o->Chi2Test(h1o,"UU NORM  P",res_sy);                                  
    //h_sy_data->KolmogorovTest(//h_sy_mc,"U O N D ");
   
-   //   TFile* my_new_file16 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartY_in1.root","RECREATE");
+   //   TFile* my_new_file16 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartY_in1.root","RECREATE");
    //cnvs_sy->Write();
 
    TCanvas* cnvs_sz = new TCanvas("cnvs_sz", "c17", 1,1,800,700);
@@ -2866,14 +2874,14 @@ void plus60twoDW(bool verbose=false) {
    hs_sz->GetXaxis()->SetTitle(" Track Start (Z) in cm  ");
    hs_sz->GetYaxis()->SetTitle("Relative Frequency");
    TText Tp; Tp.SetTextFont(42); Tp.SetTextAlign(21);
-   Tp.DrawTextNDC(.5,.95,"Relative Frequency vs Track Start (Z): West Cryostat");
+   Tp.DrawTextNDC(.5,.95,"Relative Frequency vs Track Start (Z): East Cryostat");
    auto legendp = new TLegend(0.1,0.8,0.2,0.9);
    legendp->AddEntry(h1p,"MC");
    legendp->AddEntry(h2p,"Data");
    legendp->Draw();
    cnvs_sz->Update();
    //   TFile* my_new_file17 = new TFile(
-   cnvs_sz->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartZ_in2TEST.pdf");//,"RECREATE");
+   cnvs_sz->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartZ_in2TEST.pdf");//,"RECREATE");
    //   cnvs_sz->Write();
 
 
@@ -2893,7 +2901,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_sz2Dc->GetYaxis()->SetTitle(" Track Start (Z) in cm  ");
    //hs_sz2Dc->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tp2Dc; Tp2Dc.SetTextFont(42); Tp2Dc.SetTextAlign(21);
-   //Tp2Dc.DrawTextNDC(.5,.95, "Track Start (Z) vs Azimuthal Angle: West Cryostat");
+   //Tp2Dc.DrawTextNDC(.5,.95, "Track Start (Z) vs Azimuthal Angle: East Cryostat");
    auto legendp2Dc = new TLegend(0.1,0.8,0.2,0.9);
    legendp2Dc->AddEntry(h1p2Dc,"MC");
    legendp2Dc->AddEntry(h2p2Dc,"Data");
@@ -2902,12 +2910,12 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file10("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartZ_Az_col.root","RECREATE");
+   TFile output_file10("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartZ_Az_col.root","RECREATE");
    h1p2Dc_prof->Write();
    h2p2Dc_prof->Write();
    cnvs_sz2Dc->Write();
 
-   cnvs_sz2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartZ_Az_col.pdf");
+   cnvs_sz2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartZ_Az_col.pdf");
 
    TCanvas* cnvs_sz2D1 = new TCanvas("cnvs_sz2D1", "c162D1", 1,1,800,700);
    auto h1p2D1_prof = h1p2D1->ProfileX();
@@ -2920,7 +2928,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_sz2D1->GetYaxis()->SetTitle(" Track Start (Z) in cm  ");
    //hs_sz2D1->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tp2D1; Tp2D1.SetTextFont(42); Tp2D1.SetTextAlign(21);
-   //Tp2D1.DrawTextNDC(.5,.95, "Track Start (Z) vs Azimuthal Angle: West Cryostat");
+   //Tp2D1.DrawTextNDC(.5,.95, "Track Start (Z) vs Azimuthal Angle: East Cryostat");
    auto legendp2D1 = new TLegend(0.1,0.8,0.2,0.9);
    legendp2D1->AddEntry(h1p2D1,"MC");
    legendp2D1->AddEntry(h2p2D1,"Data");
@@ -2928,12 +2936,12 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sz2D1->Update();
 
 
-   TFile output_file11("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartZ_Az_in1.root","RECREATE");
+   TFile output_file11("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartZ_Az_in1.root","RECREATE");
    h1p2D1_prof->Write();
    h2p2D1_prof->Write();
    cnvs_sz2D1->Write();
 
-   cnvs_sz2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartZ_Az_in1.pdf");
+   cnvs_sz2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartZ_Az_in1.pdf");
 
    TCanvas* cnvs_sz2D2 = new TCanvas("cnvs_sz2D2", "c162D2", 1,1,800,700);
    auto h1p2D2_prof = h1p2D2->ProfileX();
@@ -2947,7 +2955,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_sz2D2->GetYaxis()->SetTitle(" Track Start (Z) in cm  ");
    //hs_sz2D2->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tp2D2; Tp2D2.SetTextFont(42); Tp2D2.SetTextAlign(21);
-   //Tp2D2.DrawTextNDC(.5,.95, "Track Start (Z) vs Azimuthal Angle: West Cryostat");
+   //Tp2D2.DrawTextNDC(.5,.95, "Track Start (Z) vs Azimuthal Angle: East Cryostat");
    auto legendp2D2 = new TLegend(0.1,0.8,0.2,0.9);
    legendp2D2->AddEntry(h1p2D2,"MC");
    legendp2D2->AddEntry(h2p2D2,"Data");
@@ -2955,13 +2963,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sz2D2->Update();
 
 
-   TFile output_file12("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartZ_Az_in2.root","RECREATE");
+   TFile output_file12("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartZ_Az_in2.root","RECREATE");
    h1p2D2_prof->Write();
    h2p2D2_prof->Write();
    cnvs_sz2D2->Write();
 
 
-   cnvs_sz2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartZ_Az_in2.pdf");
+   cnvs_sz2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartZ_Az_in2.pdf");
 
 
 
@@ -2982,7 +2990,7 @@ void plus60twoDW(bool verbose=false) {
    //h_sz_data->KolmogorovTest(//h_sz_mc,"U O N D ");
 
 
-   //   TFile* my_new_file17 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileStartZ_in2.root","RECREATE");
+   //   TFile* my_new_file17 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileStartZ_in2.root","RECREATE");
    //cnvs_sz->Write();
 
 
@@ -2997,14 +3005,14 @@ void plus60twoDW(bool verbose=false) {
    hs_ex->GetXaxis()->SetTitle(" Track End (X) in cm  ");
    hs_ex->GetYaxis()->SetTitle("Relative Frequency");
    TText Tq; Tq.SetTextFont(42); Tq.SetTextAlign(21);
-   Tq.DrawTextNDC(.5,.95,"Relative Frequency vs Track End (X): West Cryostat");
+   Tq.DrawTextNDC(.5,.95,"Relative Frequency vs Track End (X): East Cryostat");
    auto legendq = new TLegend(0.1,0.8,0.2,0.9);
    legendq->AddEntry(h1q,"MC");
    legendq->AddEntry(h2q,"Data");
    legendq->Draw();
    cnvs_ex->Update();
    //TFile* my_new_file18 = new TFile(
-   cnvs_ex->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndX_colTEST.pdf");//,"RECREATE");
+   cnvs_ex->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndX_colTEST.pdf");//,"RECREATE");
    //  cnvs_ex->Write();
 
 
@@ -3021,7 +3029,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ex2Dc->GetYaxis()->SetTitle(" Track End (X) in cm  ");
    //hs_ex2Dc->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tq2Dc; Tq2Dc.SetTextFont(42); Tq2Dc.SetTextAlign(21);
-   //Tq2Dc.DrawTextNDC(.5,.95, "Track End (X) vs Azimuthal Angle: West Cryostat");
+   //Tq2Dc.DrawTextNDC(.5,.95, "Track End (X) vs Azimuthal Angle: East Cryostat");
    auto legendq2Dc = new TLegend(0.1,0.8,0.2,0.9);
    legendn2Dc->AddEntry(h1q2Dc,"MC");
    legendn2Dc->AddEntry(h2q2Dc,"Data");
@@ -3030,13 +3038,13 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file13("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndX_Az_col.root","RECREATE");
+   TFile output_file13("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndX_Az_col.root","RECREATE");
    h1q2Dc_prof->Write();
    h2q2Dc_prof->Write();
    cnvs_ex2Dc->Write();
 
 
-   cnvs_ex2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndX_Az_col.pdf");
+   cnvs_ex2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndX_Az_col.pdf");
 
    TCanvas* cnvs_ex2D1 = new TCanvas("cnvs_ex2D1", "c182D1", 1,1,800,700);
    auto h1q2D1_prof = h1q2D1->ProfileX();
@@ -3049,7 +3057,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ex2D1->GetYaxis()->SetTitle(" Track End (X) in cm  ");
    //hs_ex2D1->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tq2D1; Tq2D1.SetTextFont(42); Tq2D1.SetTextAlign(21);
-   //Tq2D1.DrawTextNDC(.5,.95, "Track End (X) vs Azimuthal Angle: West Cryostat");
+   //Tq2D1.DrawTextNDC(.5,.95, "Track End (X) vs Azimuthal Angle: East Cryostat");
    auto legendq2D1 = new TLegend(0.1,0.8,0.2,0.9);
    legendq2D1->AddEntry(h1q2D1,"MC");
    legendq2D1->AddEntry(h2q2D1,"Data");
@@ -3058,13 +3066,13 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file14("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndX_Az_in1.root","RECREATE");
+   TFile output_file14("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndX_Az_in1.root","RECREATE");
    h1q2D1_prof->Write();
    h2q2D1_prof->Write();
    cnvs_ex2D1->Write();
 
 
-   cnvs_ex2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndX_Az_in1.pdf");
+   cnvs_ex2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndX_Az_in1.pdf");
 
    TCanvas* cnvs_ex2D2 = new TCanvas("cnvs_ex2D2", "c182D2", 1,1,800,700);
    auto h1q2D2_prof = h1q2D2->ProfileX();
@@ -3077,7 +3085,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ex2D2->GetYaxis()->SetTitle(" Track End (X) in cm  ");
    //hs_ex2D2->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tq2D2; Tq2D2.SetTextFont(42); Tq2D2.SetTextAlign(21);
-   //Tq2D2.DrawTextNDC(.5,.95, "Track End (X) vs Azimuthal Angle: West Cryostat");
+   //Tq2D2.DrawTextNDC(.5,.95, "Track End (X) vs Azimuthal Angle: East Cryostat");
    auto legendq2D2 = new TLegend(0.1,0.8,0.2,0.9);
    legendq2D2->AddEntry(h1q2D2,"MC");
    legendq2D2->AddEntry(h2q2D2,"Data");
@@ -3086,14 +3094,14 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file15("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndX_Az_in2.root","RECREATE");
+   TFile output_file15("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndX_Az_in2.root","RECREATE");
    h1q2D2_prof->Write();
    h2q2D2_prof->Write();
    cnvs_ex2D2->Write();
 
 
 
-   cnvs_ex2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndX_Az_in2.pdf");
+   cnvs_ex2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndX_Az_in2.pdf");
 
 
 
@@ -3113,7 +3121,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ex_data->Chi2Test(//h_ex_mc,"UW OF UF P",res_ex);// h2q->Chi2Test(h1q,"UU NORM  P",res_ex);                                 
    //h_ex_data->KolmogorovTest(//h_ex_mc,"U O N D ");
   
-   //   TFile* my_new_file18 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndX_col.root","RECREATE");
+   //   TFile* my_new_file18 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndX_col.root","RECREATE");
    // cnvs_ex->Write();
 
 
@@ -3129,14 +3137,14 @@ void plus60twoDW(bool verbose=false) {
    hs_ey->GetXaxis()->SetTitle(" Track End (Y) in cm  ");
    hs_ey->GetYaxis()->SetTitle("Relative Frequency");
    TText Tr; Tr.SetTextFont(42); Tr.SetTextAlign(21);
-   Tr.DrawTextNDC(.5,.95,"Relative Frequency vs Track End (Y): West Cryostat");
+   Tr.DrawTextNDC(.5,.95,"Relative Frequency vs Track End (Y): East Cryostat");
    auto legendr = new TLegend(0.1,0.8,0.2,0.9);
    legendr->AddEntry(h1r,"MC");
    legendr->AddEntry(h2r,"Data");
    legendr->Draw();
    cnvs_ey->Update();
    //TFile* my_new_file19 = new TFile(
-   cnvs_ey->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndY_in1TEST.pdf");//,"RECREATE");
+   cnvs_ey->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndY_in1TEST.pdf");//,"RECREATE");
    //  cnvs_ey->Write();
 
 
@@ -3154,7 +3162,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ey2Dc->GetYaxis()->SetTitle(" Track End (Y) in cm  ");
    //hs_ey2Dc->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tr2Dc; Tr2Dc.SetTextFont(42); Tr2Dc.SetTextAlign(21);
-   //Tr2Dc.DrawTextNDC(.5,.95, "Track End (Y) vs Azimuthal Angle: West Cryostat");
+   //Tr2Dc.DrawTextNDC(.5,.95, "Track End (Y) vs Azimuthal Angle: East Cryostat");
    auto legendr2Dc = new TLegend(0.1,0.8,0.2,0.9);
    legendr2Dc->AddEntry(h1r2Dc,"MC");
    legendr2Dc->AddEntry(h2r2Dc,"Data");
@@ -3164,14 +3172,14 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file16("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndY_Az_col.root","RECREATE");
+   TFile output_file16("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndY_Az_col.root","RECREATE");
    h1r2Dc_prof->Write();
    h2r2Dc_prof->Write();
    cnvs_ey2Dc->Write();
 
 
 
-   cnvs_ey2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndY_Az_col.pdf");
+   cnvs_ey2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndY_Az_col.pdf");
 
    TCanvas* cnvs_ey2D1 = new TCanvas("cnvs_ey2D1", "c192D1", 1,1,800,700);
    auto h1r2D1_prof = h1r2D1->ProfileX();
@@ -3184,7 +3192,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ey2D1->GetYaxis()->SetTitle(" Track End (Y) in cm  ");
    //hs_ey2D1->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tr2D1; Tr2D1.SetTextFont(42); Tr2D1.SetTextAlign(21);
-   //Tr2D1.DrawTextNDC(.5,.95, "Track End (Y) vs Azimuthal Angle: West Cryostat");
+   //Tr2D1.DrawTextNDC(.5,.95, "Track End (Y) vs Azimuthal Angle: East Cryostat");
    auto legendr2D1 = new TLegend(0.1,0.8,0.2,0.9);
    legendr2D1->AddEntry(h1r2D1,"MC");
    legendr2D1->AddEntry(h2r2D1,"Data");
@@ -3192,13 +3200,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ey2D1->Update();
 
 
-   TFile output_file17("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndY_Az_in1.root","RECREATE");
+   TFile output_file17("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndY_Az_in1.root","RECREATE");
    h1r2D1_prof->Write();
    h2r2D1_prof->Write();
    cnvs_ey2D1->Write();
 
 
-   cnvs_ey2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndY_Az_in1.pdf");
+   cnvs_ey2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndY_Az_in1.pdf");
 
    TCanvas* cnvs_ey2D2 = new TCanvas("cnvs_ey2D2", "c192D2", 1,1,800,700);
    auto h1r2D2_prof = h1r2D2->ProfileX();
@@ -3212,7 +3220,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ey2D2->GetYaxis()->SetTitle(" Track End (Y) in cm  ");
    //hs_ey2D2->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Tr2D2; Tr2D2.SetTextFont(42); Tr2D2.SetTextAlign(21);
-   //Tr2D2.DrawTextNDC(.5,.95, "Track End (Y) vs Azimuthal Angle: West Cryostat");
+   //Tr2D2.DrawTextNDC(.5,.95, "Track End (Y) vs Azimuthal Angle: East Cryostat");
    auto legendr2D2 = new TLegend(0.1,0.8,0.2,0.9);
    legendr2D2->AddEntry(h1r2D2,"MC");
    legendr2D2->AddEntry(h2r2D2,"Data");
@@ -3220,14 +3228,14 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ey2D2->Update();
 
 
-   TFile output_file18("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndY_Az_in2.root","RECREATE");
+   TFile output_file18("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndY_Az_in2.root","RECREATE");
    h1r2D2_prof->Write();
    h2r2D2_prof->Write();
    cnvs_ey2D2->Write();
 
 
 
-   cnvs_ey2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndY_Az_in2.pdf");
+   cnvs_ey2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndY_Az_in2.pdf");
 
 
 
@@ -3245,7 +3253,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ey_data->Chi2Test(//h_ey_mc,"UW OF UF P",res_ey);// h2r->Chi2Test(h1r,"UU NORM  P",res_ey);                                 
    //h_ey_data->KolmogorovTest(//h_ey_mc,"U O N D ");
   
-   //   TFile* my_new_file19 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndY_in1.root","RECREATE");
+   //   TFile* my_new_file19 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndY_in1.root","RECREATE");
    //cnvs_ey->Write();
 
 
@@ -3260,7 +3268,7 @@ void plus60twoDW(bool verbose=false) {
    hs_ez->GetXaxis()->SetTitle(" Track End (Z) in cm  ");
    hs_ez->GetYaxis()->SetTitle("Relative Frequency");
    TText Ts; Ts.SetTextFont(42); Ts.SetTextAlign(21);
-   Ts.DrawTextNDC(.5,.95,"Relative Frequency vs Track End (Z): West Cryostat");
+   Ts.DrawTextNDC(.5,.95,"Relative Frequency vs Track End (Z): East Cryostat");
    auto legends = new TLegend(0.1,0.8,0.2,0.9);
    legends->AddEntry(h1s,"MC");
    legends->AddEntry(h2s,"Data");
@@ -3268,7 +3276,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ez->Update();
 
    //T//File* my_new_file20 = new TFile(
-   cnvs_ez->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndZ_in2TEST.pdf");//,"RECREATE");
+   cnvs_ez->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndZ_in2TEST.pdf");//,"RECREATE");
    //   cnvs_ez->Write();
 
 
@@ -3285,7 +3293,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ez2Dc->GetYaxis()->SetTitle(" Track End (Z) in cm  ");
    //hs_ez2Dc->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Ts2Dc; Ts2Dc.SetTextFont(42); Ts2Dc.SetTextAlign(21);
-   //Ts2Dc.DrawTextNDC(.5,.95, "Track End (Z) vs Azimuthal Angle: West Cryostat");
+   //Ts2Dc.DrawTextNDC(.5,.95, "Track End (Z) vs Azimuthal Angle: East Cryostat");
    auto legends2Dc = new TLegend(0.1,0.8,0.2,0.9);
    legends2Dc->AddEntry(h1s2Dc,"MC");
    legends2Dc->AddEntry(h2s2Dc,"Data");
@@ -3296,7 +3304,7 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file19("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndZ_Az_col.root","RECREATE");
+   TFile output_file19("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndZ_Az_col.root","RECREATE");
    h1s2Dc_prof->Write();
    h2s2Dc_prof->Write();
    cnvs_ez2Dc->Write();
@@ -3304,7 +3312,7 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   cnvs_ez2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndZ_Az_col.pdf");
+   cnvs_ez2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndZ_Az_col.pdf");
 
    TCanvas* cnvs_ez2D1 = new TCanvas("cnvs_ez2D1", "c202D1", 1,1,800,700);
    auto h1s2D1_prof = h1s2D1->ProfileX();
@@ -3317,7 +3325,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ez2D1->GetYaxis()->SetTitle(" Track End (Z) in cm  ");
    //hs_ez2D1->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Ts2D1; Ts2D1.SetTextFont(42); Ts2D1.SetTextAlign(21);
-   //Ts2D1.DrawTextNDC(.5,.95, "Track End (Z) vs Azimuthal Angle: West Cryostat");
+   //Ts2D1.DrawTextNDC(.5,.95, "Track End (Z) vs Azimuthal Angle: East Cryostat");
    auto legends2D1 = new TLegend(0.1,0.8,0.2,0.9);
    legends2D1->AddEntry(h1s2D1,"MC");
    legends2D1->AddEntry(h2s2D1,"Data");
@@ -3325,14 +3333,14 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ez2D1->Update();
 
 
-   TFile output_file20("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndZ_Az_in1.root","RECREATE");
+   TFile output_file20("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndZ_Az_in1.root","RECREATE");
    h1s2D1_prof->Write();
    h2s2D1_prof->Write();
    cnvs_ez2D1->Write();
 
 
 
-   cnvs_ez2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndZ_Az_in1.pdf");
+   cnvs_ez2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndZ_Az_in1.pdf");
 
    TCanvas* cnvs_ez2D2 = new TCanvas("cnvs_ez2D2", "c202D2", 1,1,800,700);
    auto h1s2D2_prof = h1s2D2->ProfileX();
@@ -3346,7 +3354,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ez2D2->GetYaxis()->SetTitle(" Track End (Z) in cm  ");
    //hs_ez2D2->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText Ts2D2; Ts2D2.SetTextFont(42); Ts2D2.SetTextAlign(21);
-   //Ts2D2.DrawTextNDC(.5,.95, "Track End (Z) vs Azimuthal Angle: West Cryostat");
+   //Ts2D2.DrawTextNDC(.5,.95, "Track End (Z) vs Azimuthal Angle: East Cryostat");
    auto legends2D2 = new TLegend(0.1,0.8,0.2,0.9);
    legends2D2->AddEntry(h1s2D2,"MC");
    legends2D2->AddEntry(h2s2D2,"Data");
@@ -3356,14 +3364,14 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file21("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndZ_Az_in2.root","RECREATE");
+   TFile output_file21("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndZ_Az_in2.root","RECREATE");
    h1s2D2_prof->Write();
    h2s2D2_prof->Write();
    cnvs_ez2D2->Write();
 
 
 
-   cnvs_ez2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndZ_Az_in2.pdf");
+   cnvs_ez2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndZ_Az_in2.pdf");
 
 
 
@@ -3384,7 +3392,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ez_data->Chi2Test(//h_ez_mc,"UW OF UF P",res_ez);//h2s->Chi2Test(h1s,"UU NORM  P",res_ez);                                  
    //h_ez_data->KolmogorovTest(//h_ez_mc,"U O N D ");
 
-   //   TFile* my_new_file20 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileEndZ_in2.root","RECREATE");
+   //   TFile* my_new_file20 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileEndZ_in2.root","RECREATE");
    //cnvs_ez->Write();
 
 
@@ -3399,7 +3407,7 @@ void plus60twoDW(bool verbose=false) {
    hs_ci2->GetXaxis()->SetTitle(" Charge Integral in ADC  ");
    hs_ci2->GetYaxis()->SetTitle("Relative Frequency");
    TText TAA; TAA.SetTextFont(42); TAA.SetTextAlign(21);
-   TAA.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (col): West Cryostat");
+   TAA.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (col): East Cryostat");
    auto legendAA = new TLegend(0.1,0.8,0.2,0.9);
    legendAA->AddEntry(h1AA,"MC");
    legendAA->AddEntry(h2AA,"Data");
@@ -3407,7 +3415,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ci2->Update();
 
    //TFile* my_new_file21 = new TFile(
-   cnvs_ci2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileInt_colTEST.pdf");//,"RECREATE");
+   cnvs_ci2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileInt_colTEST.pdf");//,"RECREATE");
    // cnvs_ci2->Write();
 
    TCanvas* cnvs_ci02D = new TCanvas("cnvs_ci02D", "ci02D", 1,1,800,700);
@@ -3425,13 +3433,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ci02D->Update();
 
 
-   TFile output_file22("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Az_col.root","RECREATE");
+   TFile output_file22("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Az_col.root","RECREATE");
    h1ci02D_prof->Write();
    h2ci02D_prof->Write();
    cnvs_ci02D->Write();
 
 
-   cnvs_ci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_az_col.pdf");
+   cnvs_ci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_az_col.pdf");
 
 
 
@@ -3457,13 +3465,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_zci02D->Update();
 
 
-   TFile output_file22z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Z_col.root","RECREATE");
+   TFile output_file22z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Z_col.root","RECREATE");
    hz1ci02D_prof->Write();
    hz2ci02D_prof->Write();
    cnvs_zci02D->Write();
 
 
-   cnvs_zci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Z_col.pdf");
+   cnvs_zci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Z_col.pdf");
 
 
 
@@ -3490,11 +3498,11 @@ void plus60twoDW(bool verbose=false) {
    legendBB2D->AddEntry(h2BB2D,"Data");
    legendBB2D->Draw();
    cnvs_ci12D->Update();
-   TFile output_file221("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Az_in1.root","RECREATE");
+   TFile output_file221("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Az_in1.root","RECREATE");
    h1ci12D_prof->Write();
    h2ci12D_prof->Write();
    cnvs_ci12D->Write();
-   cnvs_ci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_az_in1.pdf");
+   cnvs_ci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_az_in1.pdf");
 
    TCanvas* cnvs_zci12D = new TCanvas("cnvs_zci12D", "zci112D", 1,1,800,700);
    auto hz1ci12D_prof = hz1BB2D->ProfileX();
@@ -3509,11 +3517,11 @@ void plus60twoDW(bool verbose=false) {
    legendzBB2D->AddEntry(hz2BB2D,"Data");
    legendzBB2D->Draw();
    cnvs_zci12D->Update();
-   TFile output_file221z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Z_in1.root","RECREATE");
+   TFile output_file221z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Z_in1.root","RECREATE");
    hz1ci12D_prof->Write();
    hz2ci12D_prof->Write();
    cnvs_zci12D->Write();
-   cnvs_zci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Z_in1.pdf");
+   cnvs_zci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Z_in1.pdf");
 
 
 
@@ -3532,11 +3540,11 @@ void plus60twoDW(bool verbose=false) {
    legendAA2D->AddEntry(h2AA2D,"Data");
    legendAA2D->Draw();
    cnvs_ci22D->Update();
-   TFile output_file2212("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Az_in2.root","RECREATE");
+   TFile output_file2212("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Az_in2.root","RECREATE");
    h1ci22D_prof->Write();
    h2ci22D_prof->Write();
    cnvs_ci22D->Write();
-   cnvs_ci22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_az_in2.pdf");
+   cnvs_ci22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_az_in2.pdf");
 
    TCanvas* cnvs_zci22D = new TCanvas("cnvs_zci22D", "zci212D", 1,1,800,700);
    auto hz1ci22D_prof = hz1AA2D->ProfileX();
@@ -3551,11 +3559,11 @@ void plus60twoDW(bool verbose=false) {
    legendzAA2D->AddEntry(hz2AA2D,"Data");
    legendzAA2D->Draw();
    cnvs_zci22D->Update();
-   TFile output_file2212z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Z_in2.root","RECREATE");
+   TFile output_file2212z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Z_in2.root","RECREATE");
    hz1ci22D_prof->Write();
    hz2ci22D_prof->Write();
    cnvs_zci22D->Write();
-   cnvs_zci22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Z_in2.pdf");
+   cnvs_zci22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Z_in2.pdf");
 
 
 
@@ -3586,11 +3594,11 @@ void plus60twoDW(bool verbose=false) {
    legendFF2D->AddEntry(h2FF2D,"Data");
    legendFF2D->Draw();
    cnvs_wi02D->Update();
-   TFile output_file22w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Az_col.root","RECREATE");
+   TFile output_file22w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Az_col.root","RECREATE");
    h1wi02D_prof->Write();
    h2wi02D_prof->Write();
    cnvs_wi02D->Write();
-   cnvs_wi02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_az_col.pdf");
+   cnvs_wi02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_az_col.pdf");
    TCanvas* cnvs_zwi02D = new TCanvas("cnvs_zwi02D", "zwi012D", 1,1,800,700);
    auto hz1wi02D_prof = hz1FF2D->ProfileX();
    auto hz2wi02D_prof = hz2FF2D->ProfileX();
@@ -3604,11 +3612,11 @@ void plus60twoDW(bool verbose=false) {
    legendzFF2D->AddEntry(hz2FF2D,"Data");
    legendzFF2D->Draw();
    cnvs_zwi02D->Update();
-   TFile output_file22wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Z_col.root","RECREATE");
+   TFile output_file22wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Z_col.root","RECREATE");
    hz1wi02D_prof->Write();
    hz2wi02D_prof->Write();
    cnvs_zwi02D->Write();
-   cnvs_zwi02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Z_col.pdf");
+   cnvs_zwi02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Z_col.pdf");
 
 
    TCanvas* cnvs_wi12D = new TCanvas("cnvs_wi12D", "wi12D", 1,1,800,700);
@@ -3624,11 +3632,11 @@ void plus60twoDW(bool verbose=false) {
    legendEE2D->AddEntry(h2EE2D,"Data");
    legendEE2D->Draw();
    cnvs_wi12D->Update();
-   TFile output_file2211w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Az_in1.root","RECREATE");
+   TFile output_file2211w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Az_in1.root","RECREATE");
    h1wi12D_prof->Write();
    h2wi12D_prof->Write();
    cnvs_wi12D->Write();
-   cnvs_wi12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_az_in1.pdf");
+   cnvs_wi12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_az_in1.pdf");
 
 
    TCanvas* cnvs_zwi12D = new TCanvas("cnvs_zwi12D", "zwi112D", 1,1,800,700);
@@ -3644,11 +3652,11 @@ void plus60twoDW(bool verbose=false) {
    legendzEE2D->AddEntry(hz2EE2D,"Data");
    legendzEE2D->Draw();
    cnvs_zwi12D->Update();
-   TFile output_file221wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Z_in1.root","RECREATE");
+   TFile output_file221wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Z_in1.root","RECREATE");
    hz1wi12D_prof->Write();
    hz2wi12D_prof->Write();
    cnvs_zwi12D->Write();
-   cnvs_zwi12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Z_in1.pdf");
+   cnvs_zwi12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Z_in1.pdf");
 
 
 
@@ -3668,11 +3676,11 @@ void plus60twoDW(bool verbose=false) {
    legendDD2D->AddEntry(h2DD2D,"Data");
    legendDD2D->Draw();
    cnvs_wi22D->Update();
-   TFile output_file2212w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Az_in2.root","RECREATE");
+   TFile output_file2212w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Az_in2.root","RECREATE");
    h1wi22D_prof->Write();
    h2wi22D_prof->Write();
    cnvs_wi22D->Write();
-   cnvs_wi22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_az_in2.pdf");
+   cnvs_wi22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_az_in2.pdf");
  
 
 
@@ -3689,11 +3697,11 @@ void plus60twoDW(bool verbose=false) {
    legendzDD2D->AddEntry(hz2DD2D,"Data");
    legendzDD2D->Draw();
    cnvs_zwi22D->Update();
-   TFile output_file222wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Z_in2.root","RECREATE");
+   TFile output_file222wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Z_in2.root","RECREATE");
    hz1wi22D_prof->Write();
    hz2wi22D_prof->Write();
    cnvs_zwi22D->Write();
-   cnvs_zwi22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_Z_in2.pdf");
+   cnvs_zwi22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_Z_in2.pdf");
 
 
 
@@ -3709,7 +3717,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ci2_data->Chi2Test(//h_ci2_mc,"UW OF UF P",res_ci2);//h2AA->Chi2Test(h1AA,"UU NORM  P",res_ci2);                            
    //h_ci2_data->KolmogorovTest(//h_ci2_mc,"U O N D "); 
 
-   //   TFile* my_new_file21 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileInt_col.root","RECREATE");
+   //   TFile* my_new_file21 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileInt_col.root","RECREATE");
    // cnvs_ci2->Write();
 
    TCanvas* cnvs_ci1 = new TCanvas("cnvs_ci1", "c22", 1,1,800,700);
@@ -3723,7 +3731,7 @@ void plus60twoDW(bool verbose=false) {
    hs_ci1->GetXaxis()->SetTitle(" Charge Integral in ADC  ");
    hs_ci1->GetYaxis()->SetTitle("Relative Frequency");
    TText TBB; TBB.SetTextFont(42); TBB.SetTextAlign(21);
-   TBB.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in1): West Cryostat");
+   TBB.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in1): East Cryostat");
    auto legendBB = new TLegend(0.1,0.8,0.2,0.9);
    legendBB->AddEntry(h1BB,"MC");
    legendBB->AddEntry(h2BB,"Data");
@@ -3731,7 +3739,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ci1->Update();
 
    //TFile* my_new_file22 = new TFile(
-   cnvs_ci1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileInt_in1TEST.pdf");//,"RECREATE");
+   cnvs_ci1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileInt_in1TEST.pdf");//,"RECREATE");
    //   cnvs_ci1->Write();
 
    /*
@@ -3747,7 +3755,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ci12D->GetYaxis()->SetTitle(" Charge Integral in ADC  ");
    //hs_ci12D->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText TBB2D; TBB2D.SetTextFont(42); TBB2D.SetTextAlign(21);
-   //TBB2D.DrawTextNDC(.5,.95,"Charge Integral vs Azimuthal Angle (in1): West Cryostat");
+   //TBB2D.DrawTextNDC(.5,.95,"Charge Integral vs Azimuthal Angle (in1): East Cryostat");
    auto legendBB2D = new TLegend(0.1,0.8,0.2,0.9);
    legendBB2D->AddEntry(h1BB2D,"MC");
    legendBB2D->AddEntry(h2BB2D,"Data");
@@ -3755,13 +3763,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ci12D->Update();
    */
    /*
-   TFile output_file23("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Az_in1.root","RECREATE");
+   TFile output_file23("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Az_in1.root","RECREATE");
    h1ci12D_prof->Write();
    h2ci12D_prof->Write();
    cnvs_ci12D->Write();
 
 
-   cnvs_ci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileInt_az_in1.pdf");
+   cnvs_ci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileInt_az_in1.pdf");
    */
 
    cout<<"ci1"<<endl;
@@ -3769,7 +3777,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ci1_data->Chi2Test(//h_ci1_mc,"UW OF UF P",res_ci1);//h2BB->Chi2Test(h1BB,"UU NORM  P",res_ci1);                            
    //h_ci1_data->KolmogorovTest(//h_ci1_mc,"U O N D ");
   
-   //   TFile* my_new_file22 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileInt_in1.root","RECREATE");
+   //   TFile* my_new_file22 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileInt_in1.root","RECREATE");
    //cnvs_ci1->Write();
    /*
    TCanvas* cnvs_ci0 = new TCanvas("cnvs_ci0", "c23", 1,1,800,700);
@@ -3782,14 +3790,14 @@ void plus60twoDW(bool verbose=false) {
    hs_ci0->GetXaxis()->SetTitle(" Charge Integral in ADC  ");
    hs_ci0->GetYaxis()->SetTitle("Relative Frequency");
    TText TCC; TCC.SetTextFont(42); TCC.SetTextAlign(21);
-   TCC.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in2): West Cryostat");
+   TCC.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in2): East Cryostat");
    auto legendCC = new TLegend(0.1,0.8,0.2,0.9);
    legendCC->AddEntry(h1CC,"MC");
    legendCC->AddEntry(h2CC,"Data");
    legendCC->Draw();
    cnvs_ci0->Update();
    //TFile* my_new_file23 = new TFile(
-   cnvs_ci0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileInt_in2TEST.pdf");//,"RECREATE");
+   cnvs_ci0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileInt_in2TEST.pdf");//,"RECREATE");
    //   cnvs_ci0->Write();
 
 
@@ -3809,7 +3817,7 @@ void plus60twoDW(bool verbose=false) {
    //   hs_ci02D->GetYaxis()->SetTitle(" Charge Integral in ADC  ");
    //hs_ci02D->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText TCC2D; TCC2D.SetTextFont(42); TCC2D.SetTextAlign(21);
-   //TCC2D.DrawTextNDC(.5,.95,"Charge Integral vs Azimuthal Angle (in2): West Cryostat");
+   //TCC2D.DrawTextNDC(.5,.95,"Charge Integral vs Azimuthal Angle (in2): East Cryostat");
    auto legendCC2D = new TLegend(0.1,0.8,0.2,0.9);
    legendCC2D->AddEntry(h1AA2D,"MC");
    legendCC2D->AddEntry(h2AA2D,"Data");
@@ -3818,13 +3826,13 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file24("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileCint_Az_in2.root","RECREATE");
+   TFile output_file24("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileCint_Az_in2.root","RECREATE");
    h1ci02D_prof->Write();
    h2ci02D_prof->Write();
    cnvs_ci02D->Write();
 
 
-   cnvs_ci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_West_fileInt_az_in2.pdf");
+   cnvs_ci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel1_East_fileInt_az_in2.pdf");
 
    */
 
@@ -3844,7 +3852,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ci0_data->KolmogorovTest(//h_ci0_mc,"U O N D ");
    
 
-   //   TFile* my_new_file23 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileInt_in2.root","RECREATE");
+   //   TFile* my_new_file23 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileInt_in2.root","RECREATE");
    //cnvs_ci0->Write();
 
 
@@ -3859,7 +3867,7 @@ void plus60twoDW(bool verbose=false) {
    hs_wi2->GetXaxis()->SetTitle(" Width in ticks  ");
    hs_wi2->GetYaxis()->SetTitle("Relative Frequency");
    TText TDD; TDD.SetTextFont(42); TDD.SetTextAlign(21);
-   TDD.DrawTextNDC(.5,.95,"Relative Frequency vs Width (col): West Cryostat");
+   TDD.DrawTextNDC(.5,.95,"Relative Frequency vs Width (col): East Cryostat");
    auto legendDD = new TLegend(0.1,0.8,0.2,0.9);
    legendDD->AddEntry(h1DD,"MC");
    legendDD->AddEntry(h2DD,"Data");
@@ -3867,7 +3875,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_wi2->Update();
 
    //TFile* my_new_file24 = new TFile(
-   cnvs_wi2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_colTEST.pdf");//,"RECREATE");
+   cnvs_wi2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_colTEST.pdf");//,"RECREATE");
    //  cnvs_wi2->Write();
    cout<<"wi2"<<endl;
    Double_t res_wi2[20];
@@ -3875,7 +3883,7 @@ void plus60twoDW(bool verbose=false) {
    //h_wi2_data->KolmogorovTest(//h_wi2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file24 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidt//h_col.root","RECREATE");
+   //   TFile* my_new_file24 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidt//h_col.root","RECREATE");
    //cnvs_wi2->Write();
 
    TCanvas* cnvs_wi1 = new TCanvas("cnvs_wi1", "c25", 1,1,800,700);
@@ -3888,7 +3896,7 @@ void plus60twoDW(bool verbose=false) {
    hs_wi1->GetXaxis()->SetTitle(" Width in ticks  ");
    hs_wi1->GetYaxis()->SetTitle("Relative Frequency");
    TText TEE; TEE.SetTextFont(42); TEE.SetTextAlign(21);
-   TEE.DrawTextNDC(.5,.95,"Relative Frequency vs Width (in1): West Cryostat");
+   TEE.DrawTextNDC(.5,.95,"Relative Frequency vs Width (in1): East Cryostat");
    auto legendEE = new TLegend(0.1,0.8,0.2,0.9);
    legendEE->AddEntry(h1EE,"MC");
    legendEE->AddEntry(h2EE,"Data");
@@ -3896,7 +3904,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_wi1->Update();
 
    //   TFile* my_new_file25 = new TFile(
-   cnvs_wi1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_in1TEST.pdf");//,"RECREATE");
+   cnvs_wi1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_in1TEST.pdf");//,"RECREATE");
    //cnvs_wi1->Write();
 
    cout<<"wi1"<<endl;
@@ -3905,7 +3913,7 @@ void plus60twoDW(bool verbose=false) {
    //h_wi1_data->KolmogorovTest(//h_wi1_mc,"U O N D ");
   
 
-   //   TFile* my_new_file25 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidt//h_in1.root","RECREATE");
+   //   TFile* my_new_file25 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidt//h_in1.root","RECREATE");
    // cnvs_wi1->Write();
 
    TCanvas* cnvs_wi0 = new TCanvas("cnvs_wi0", "c26", 1,1,800,700);
@@ -3918,14 +3926,14 @@ void plus60twoDW(bool verbose=false) {
    hs_wi0->GetXaxis()->SetTitle(" Width in ticks  ");
    hs_wi0->GetYaxis()->SetTitle("Relative Frequency");
    TText TFF; TFF.SetTextFont(42); TFF.SetTextAlign(21);
-   TFF.DrawTextNDC(.5,.95,"Relative Frequency vs Width (in2): West Cryostat");
+   TFF.DrawTextNDC(.5,.95,"Relative Frequency vs Width (in2): East Cryostat");
    auto legendFF = new TLegend(0.1,0.8,0.2,0.9);
    legendFF->AddEntry(h1FF,"MC");
    legendFF->AddEntry(h2FF,"Data");
    legendFF->Draw();
    cnvs_wi0->Update();
    //TFile* my_new_file26 = new TFile(
-   cnvs_wi0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidth_in2TEST.pdf");//,"RECREATE");
+   cnvs_wi0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidth_in2TEST.pdf");//,"RECREATE");
    // cnvs_wi0->Write();
 
    cout<<"wi0"<<endl;
@@ -3934,7 +3942,7 @@ void plus60twoDW(bool verbose=false) {
    //h_wi0_data->KolmogorovTest(//h_wi0_mc,"U O N D ");
  
 
-   //   TFile* my_new_file26 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWidt//h_in2.root","RECREATE");
+   //   TFile* my_new_file26 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWidt//h_in2.root","RECREATE");
    //cnvs_wi0->Write();
 
 
@@ -3948,14 +3956,14 @@ void plus60twoDW(bool verbose=false) {
    hs_w2->GetXaxis()->SetTitle(" Wire Number  ");
    hs_w2->GetYaxis()->SetTitle("Relative Frequency");
    TText TGG; TGG.SetTextFont(42); TGG.SetTextAlign(21);
-   TGG.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (col): West Cryostat");
+   TGG.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (col): East Cryostat");
    auto legendGG = new TLegend(0.1,0.8,0.2,0.9);
    legendGG->AddEntry(h1GG,"MC");
    legendGG->AddEntry(h2GG,"Data");
    legendGG->Draw();
    cnvs_w2->Update();
    //   TFile* my_new_file27 = new TFile(
-   cnvs_w2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWire_colTEST.pdf");//,"RECREATE");
+   cnvs_w2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWire_colTEST.pdf");//,"RECREATE");
    // cnvs_w2->Write();
    cout<<"w2"<<endl;
    Double_t res_w2[20];
@@ -3963,7 +3971,7 @@ void plus60twoDW(bool verbose=false) {
    //h_w2_data->KolmogorovTest(//h_w2_mc,"U O N D ");
   
 
-   //   TFile* my_new_file27 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWire_col.root","RECREATE");
+   //   TFile* my_new_file27 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWire_col.root","RECREATE");
    //cnvs_w2->Write();
 
    TCanvas* cnvs_w1 = new TCanvas("cnvs_w1", "c28", 1,1,800,700);
@@ -3976,21 +3984,21 @@ void plus60twoDW(bool verbose=false) {
    hs_w1->GetXaxis()->SetTitle(" Wire Number  ");
    hs_w1->GetYaxis()->SetTitle("Relative Frequency");
    TText THH; THH.SetTextFont(42); THH.SetTextAlign(21);
-   THH.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (in1): West Cryostat");
+   THH.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (in1): East Cryostat");
    auto legendHH = new TLegend(0.1,0.8,0.2,0.9);
    legendHH->AddEntry(h1HH,"MC");
    legendHH->AddEntry(h2HH,"Data");
    legendHH->Draw();
    cnvs_w1->Update();
    //   TFile* my_new_file28 = new TFile(
-   cnvs_w1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWire_in1TEST.pdf");//,"RECREATE");
+   cnvs_w1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWire_in1TEST.pdf");//,"RECREATE");
    // cnvs_w1->Write();
    cout<<"w1"<<endl;
    Double_t res_w1[20];
    //h_w1_data->Chi2Test(//h_w1_mc,"UW OF UF P",res_w1);//h2HH->Chi2Test(h1HH,"UU NORM  P",res_w1);                                
    //h_w1_data->KolmogorovTest(//h_w1_mc,"U O N D ");
   
-   //   TFile* my_new_file28 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWire_in1.root","RECREATE");
+   //   TFile* my_new_file28 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWire_in1.root","RECREATE");
    //cnvs_w1->Write();
 
    TCanvas* cnvs_w0 = new TCanvas("cnvs_w0", "c29", 1,1,800,700);
@@ -4003,21 +4011,21 @@ void plus60twoDW(bool verbose=false) {
    hs_w0->GetXaxis()->SetTitle(" Wire Number  ");
    hs_w0->GetYaxis()->SetTitle("Relative Frequency");
    TText TII; TII.SetTextFont(42); TII.SetTextAlign(21);
-   TII.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (in2): West Cryostat");
+   TII.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (in2): East Cryostat");
    auto legendII = new TLegend(0.1,0.8,0.2,0.9);
    legendII->AddEntry(h1II,"MC");
    legendII->AddEntry(h2II,"Data");
    legendII->Draw();
    cnvs_w0->Update();
    //   TFile* my_new_file29 = new TFile(
-   cnvs_w0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWire_in2TEST.pdf");//,"RECREATE");
+   cnvs_w0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWire_in2TEST.pdf");//,"RECREATE");
    //cnvs_w0->Write();
    cout<<"w0"<<endl;
    Double_t res_w0[20];
    //h_w0_data->Chi2Test(//h_w0_mc,"UW OF UF P",res_w0);//h2II->Chi2Test(h1II,"UU NORM  P",res_w0);                                
    //h_w0_data->KolmogorovTest(//h_w0_mc,"U O N D ");
   
-   //   TFile* my_new_file29 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileWire_in2.root","RECREATE");
+   //   TFile* my_new_file29 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileWire_in2.root","RECREATE");
    //cnvs_w0->Write();
 
 
@@ -4031,7 +4039,7 @@ void plus60twoDW(bool verbose=false) {
    hs_ti2->GetXaxis()->SetTitle(" Time in ticks  ");
    hs_ti2->GetYaxis()->SetTitle("Relative Frequency");
    TText TJJ; TJJ.SetTextFont(42); TJJ.SetTextAlign(21);
-   TJJ.DrawTextNDC(.5,.95,"Relative Frequency vs Time (col): West Cryostat");
+   TJJ.DrawTextNDC(.5,.95,"Relative Frequency vs Time (col): East Cryostat");
    auto legendJJ = new TLegend(0.1,0.8,0.2,0.9);
    legendJJ->AddEntry(h1JJ,"MC");
    legendJJ->AddEntry(h2JJ,"Data");
@@ -4040,7 +4048,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file30 = new TFile(
-   cnvs_ti2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileTime_colTEST.pdf");//,"RECREATE");
+   cnvs_ti2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileTime_colTEST.pdf");//,"RECREATE");
    //cnvs_ti2->Write();
 
 
@@ -4050,7 +4058,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ti2_data->KolmogorovTest(//h_ti2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file30 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileTime_col.root","RECREATE");
+   //   TFile* my_new_file30 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileTime_col.root","RECREATE");
    //cnvs_ti2->Write();
 
    TCanvas* cnvs_ti1 = new TCanvas("cnvs_ti1", "c31", 1,1,800,700);
@@ -4063,7 +4071,7 @@ void plus60twoDW(bool verbose=false) {
    hs_ti1->GetXaxis()->SetTitle(" Time in ticks  ");
    hs_ti1->GetYaxis()->SetTitle("Relative Frequency");
    TText TKK; TKK.SetTextFont(42); TKK.SetTextAlign(21);
-   TKK.DrawTextNDC(.5,.95,"Relative Frequency vs Time (in1): West Cryostat");
+   TKK.DrawTextNDC(.5,.95,"Relative Frequency vs Time (in1): East Cryostat");
    auto legendKK = new TLegend(0.1,0.8,0.2,0.9);
    legendKK->AddEntry(h1KK,"MC");
    legendKK->AddEntry(h2KK,"Data");
@@ -4072,7 +4080,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file31 = new TFile(
-   cnvs_ti1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileTime_in1TEST.pdf");//,"RECREATE");
+   cnvs_ti1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileTime_in1TEST.pdf");//,"RECREATE");
    // cnvs_ti1->Write();
 
 
@@ -4083,7 +4091,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ti1_data->KolmogorovTest(//h_ti1_mc,"U O N D ");
   
 
-   //   TFile* my_new_file31 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileTime_in1.root","RECREATE");
+   //   TFile* my_new_file31 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileTime_in1.root","RECREATE");
    //cnvs_ti1->Write();
 
    TCanvas* cnvs_ti0 = new TCanvas("cnvs_ti0", "c32", 1,1,800,700);
@@ -4096,7 +4104,7 @@ void plus60twoDW(bool verbose=false) {
    hs_ti0->GetXaxis()->SetTitle(" Time in ticks  ");
    hs_ti0->GetYaxis()->SetTitle("Relative Frequency");
    TText TLL; TLL.SetTextFont(42); TLL.SetTextAlign(21);
-   TLL.DrawTextNDC(.5,.95,"Relative Frequency vs Time (in2): West Cryostat");
+   TLL.DrawTextNDC(.5,.95,"Relative Frequency vs Time (in2): East Cryostat");
    auto legendLL = new TLegend(0.1,0.8,0.2,0.9);
    legendLL->AddEntry(h1LL,"MC");
    legendLL->AddEntry(h2LL,"Data");
@@ -4104,7 +4112,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ti0->Update();
 
    //   TFile* my_new_file32 = new TFile(
-   cnvs_ti0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileTime_in2TEST.pdf");//,"RECREATE");
+   cnvs_ti0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileTime_in2TEST.pdf");//,"RECREATE");
    //cnvs_ti0->Write();
 
 
@@ -4114,7 +4122,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ti0_data->Chi2Test(//h_ti0_mc,"UW OF UF P",res_ti0);//h2LL->Chi2Test(h1LL,"UU NORM  P",res_ti0);                            
    //h_ti0_data->KolmogorovTest(//h_ti0_mc,"U O N D ");
   
-   //   TFile* my_new_file32 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileTime_in2.root","RECREATE");
+   //   TFile* my_new_file32 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileTime_in2.root","RECREATE");
    //cnvs_ti0->Write();
 
    TCanvas* cnvs_x2 = new TCanvas("cnvs_x2", "c33", 1,1,800,700);
@@ -4127,7 +4135,7 @@ void plus60twoDW(bool verbose=false) {
    hs_x2->GetXaxis()->SetTitle(" Distance (X) in cm  ");
    hs_x2->GetYaxis()->SetTitle("Relative Frequency");
    TText TMM; TMM.SetTextFont(42); TMM.SetTextAlign(21);
-   TMM.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (col): West Cryostat");
+   TMM.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (col): East Cryostat");
    auto legendMM = new TLegend(0.1,0.8,0.2,0.9);
    legendMM->AddEntry(h1MM,"MC");
    legendMM->AddEntry(h2MM,"Data");
@@ -4135,7 +4143,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_x2->Update();
 
    //   TFile* my_new_file33 = new TFile(
-   cnvs_x2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisy_colTEST.pdf");//,"RECREATE");
+   cnvs_x2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisy_colTEST.pdf");//,"RECREATE");
    //cnvs_x2->Write();
 
 
@@ -4144,7 +4152,7 @@ void plus60twoDW(bool verbose=false) {
    //h_x2_data->Chi2Test(//h_x2_mc,"UW OF UF P",res_x2);//h2MM->Chi2Test(h1MM,"UU NORM  P",res_x2);                                
    //h_x2_data->KolmogorovTest(//h_x2_mc,"U O N D ");
 
-   //   TFile* my_new_file33 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisy_col.root","RECREATE");
+   //   TFile* my_new_file33 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisy_col.root","RECREATE");
    //cnvs_x2->Write();
 
    TCanvas* cnvs_x1 = new TCanvas("cnvs_x1", "c34", 1,1,800,700);
@@ -4157,7 +4165,7 @@ void plus60twoDW(bool verbose=false) {
    hs_x1->GetXaxis()->SetTitle(" Distance (X) in cm  ");
    hs_x1->GetYaxis()->SetTitle("Relative Frequency");
    TText TNN; TNN.SetTextFont(42); TNN.SetTextAlign(21);
-   TNN.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (in1): West Cryostat");
+   TNN.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (in1): East Cryostat");
    auto legendNN = new TLegend(0.1,0.8,0.2,0.9);
    legendNN->AddEntry(h1NN,"MC");
    legendNN->AddEntry(h2NN,"Data");
@@ -4165,14 +4173,14 @@ void plus60twoDW(bool verbose=false) {
    cnvs_x1->Update();
 
    //   TFile* my_new_file34 = new TFile(
-   cnvs_x1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisy_in1TEST.pdf");//,"RECREATE");
+   cnvs_x1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisy_in1TEST.pdf");//,"RECREATE");
    //cnvs_x1->Write();
    cout<<"x1"<<endl;
    Double_t res_x1[20];
    //h_x1_data->Chi2Test(//h_x1_mc,"UW OF UF P",res_x1);//h2NN->Chi2Test(h1NN,"UU NORM  P",res_x1);                                
    //h_x1_data->KolmogorovTest(//h_x1_mc,"U O N D ");
   
-   //   TFile* my_new_file34 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisy_in1.root","RECREATE");
+   //   TFile* my_new_file34 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisy_in1.root","RECREATE");
    //cnvs_x1->Write();
 
    TCanvas* cnvs_x0 = new TCanvas("cnvs_x0", "c35", 1,1,800,700);
@@ -4185,7 +4193,7 @@ void plus60twoDW(bool verbose=false) {
    hs_x0->GetXaxis()->SetTitle(" Distance (X) in cm  ");
    hs_x0->GetYaxis()->SetTitle("Relative Frequency");
    TText TOO; TOO.SetTextFont(42); TOO.SetTextAlign(21);
-   TOO.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (in2): West Cryostat");
+   TOO.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (in2): East Cryostat");
    auto legendOO = new TLegend(0.1,0.8,0.2,0.9);
    legendOO->AddEntry(h1OO,"MC");
    legendOO->AddEntry(h2OO,"Data");
@@ -4193,7 +4201,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_x0->Update();
 
    //   TFile* my_new_file35 = new TFile(
-   cnvs_x0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisy_in2TEST.pdf");//,"RECREATE");
+   cnvs_x0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisy_in2TEST.pdf");//,"RECREATE");
    //cnvs_x0->Write();
 
 
@@ -4203,7 +4211,7 @@ void plus60twoDW(bool verbose=false) {
    //h_x0_data->KolmogorovTest(//h_x0_mc,"U O N D ");
   
 
-   //   TFile* my_new_file35 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisy_in2.root","RECREATE");
+   //   TFile* my_new_file35 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisy_in2.root","RECREATE");
    //cnvs_x0->Write();
 
 
@@ -4218,21 +4226,21 @@ void plus60twoDW(bool verbose=false) {
    hs_y2->GetXaxis()->SetTitle(" Distance (Y) in cm  ");
    hs_y2->GetYaxis()->SetTitle("Relative Frequency");
    TText TPP; TPP.SetTextFont(42); TPP.SetTextAlign(21);
-   TPP.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (col): West Cryostat");
+   TPP.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (col): East Cryostat");
    auto legendPP = new TLegend(0.1,0.8,0.2,0.9);
    legendPP->AddEntry(h1PP,"MC");
    legendPP->AddEntry(h2PP,"Data");
    legendPP->Draw();
    cnvs_y2->Update();
    //   TFile* my_new_file36 = new TFile(
-   cnvs_y2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisY_colTEST.pdf");//,"RECREATE");
+   cnvs_y2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisY_colTEST.pdf");//,"RECREATE");
    //cnvs_y2->Write();
    cout<<"y2"<<endl;
    Double_t res_y2[20];
    //h_y2_data->Chi2Test(//h_y2_mc,"UW OF UF P",res_y2);//h2PP->Chi2Test(h1PP,"UU NORM  P",res_y2);                                
    //h_y2_data->KolmogorovTest(//h_y2_mc,"U O N D ");
 
-   //   TFile* my_new_file36 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisY_col.root","RECREATE");
+   //   TFile* my_new_file36 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisY_col.root","RECREATE");
    //cnvs_y2->Write();
 
 
@@ -4246,7 +4254,7 @@ void plus60twoDW(bool verbose=false) {
    hs_y1->GetXaxis()->SetTitle(" Distance (Y) in cm  ");
    hs_y1->GetYaxis()->SetTitle("Relative Frequency");
    TText TQQ; TQQ.SetTextFont(42); TQQ.SetTextAlign(21);
-   TQQ.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (in1): West Cryostat");
+   TQQ.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (in1): East Cryostat");
    auto legendQQ = new TLegend(0.1,0.8,0.2,0.9);
    legendQQ->AddEntry(h1QQ,"MC");
    legendQQ->AddEntry(h2QQ,"Data");
@@ -4254,7 +4262,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_y1->Update();
 
    // TFile* my_new_file37 = new TFile(
-   cnvs_y1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisY_in1TEST.pdf");//,"RECREATE");
+   cnvs_y1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisY_in1TEST.pdf");//,"RECREATE");
    //cnvs_y1->Write();
 
    cout<<"y1"<<endl;
@@ -4262,7 +4270,7 @@ void plus60twoDW(bool verbose=false) {
    //h_y1_data->Chi2Test(//h_y1_mc,"UW OF UF P",res_y1);//h2QQ->Chi2Test(h1QQ,"UU NORM  P",res_y1);                                
    //h_y1_data->KolmogorovTest(//h_y1_mc,"U O N D ");
   
-   //   TFile* my_new_file37 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisY_in1.root","RECREATE");
+   //   TFile* my_new_file37 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisY_in1.root","RECREATE");
    //cnvs_y1->Write();
 
 
@@ -4276,7 +4284,7 @@ void plus60twoDW(bool verbose=false) {
    hs_y0->GetXaxis()->SetTitle(" Distance (Y) in cm  ");
    hs_y0->GetYaxis()->SetTitle("Relative Frequency");
    TText TRR; TRR.SetTextFont(42); TRR.SetTextAlign(21);
-   TRR.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (in2): West Cryostat");
+   TRR.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (in2): East Cryostat");
    auto legendRR = new TLegend(0.1,0.8,0.2,0.9);
    legendRR->AddEntry(h1RR,"MC");
    legendRR->AddEntry(h2RR,"Data");
@@ -4285,7 +4293,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //  TFile* my_new_file38 = new TFile(
-   cnvs_y0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisY_in2TEST.pdf");//,"RECREATE");
+   cnvs_y0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisY_in2TEST.pdf");//,"RECREATE");
    //cnvs_y0->Write();
 
    cout<<"y0"<<endl;
@@ -4293,7 +4301,7 @@ void plus60twoDW(bool verbose=false) {
    //h_y0_data->Chi2Test(//h_y0_mc,"UW OF UF P",res_y0);//h2RR->Chi2Test(h1RR,"UU NORM  P",res_y0);                                
    //h_y0_data->KolmogorovTest(//h_y0_mc,"U O N D ");
   
-   //   TFile* my_new_file38 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisY_in2.root","RECREATE");
+   //   TFile* my_new_file38 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisY_in2.root","RECREATE");
    //cnvs_y0->Write();
 
 
@@ -4308,7 +4316,7 @@ void plus60twoDW(bool verbose=false) {
    hs_z2->GetXaxis()->SetTitle(" Distance (Z) in cm  ");
    hs_z2->GetYaxis()->SetTitle("Relative Frequency");
    TText TSS; TSS.SetTextFont(42); TSS.SetTextAlign(21);
-   TSS.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (col): West Cryostat");
+   TSS.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (col): East Cryostat");
    auto legendSS = new TLegend(0.1,0.8,0.2,0.9);
    legendSS->AddEntry(h1SS,"MC");
    legendSS->AddEntry(h2SS,"Data");
@@ -4316,7 +4324,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_z2->Update();
    
    //   TFile* my_new_file39 = new TFile(
-   cnvs_z2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisZ_colTEST.pdf");//,"RECREATE");
+   cnvs_z2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisZ_colTEST.pdf");//,"RECREATE");
    //cnvs_z2->Write();
 
    cout<<"z2"<<endl;
@@ -4324,7 +4332,7 @@ void plus60twoDW(bool verbose=false) {
    //h_z2_data->Chi2Test(//h_z2_mc,"UW OF UF P",res_z2);//h2SS->Chi2Test(h1SS,"UU NORM  P",res_z2);                                
    //h_z2_data->KolmogorovTest(//h_z2_mc,"U O N D ");
   
-   //   TFile* my_new_file39 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisZ_col.root","RECREATE");
+   //   TFile* my_new_file39 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisZ_col.root","RECREATE");
    //cnvs_z2->Write();
 
 
@@ -4338,7 +4346,7 @@ void plus60twoDW(bool verbose=false) {
    hs_z1->GetXaxis()->SetTitle(" Distance (Z) in cm  ");
    hs_z1->GetYaxis()->SetTitle("Relative Frequency");
    TText TTT; TTT.SetTextFont(42); TTT.SetTextAlign(21);
-   TTT.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (in1): West Cryostat");
+   TTT.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (in1): East Cryostat");
    auto legendTT = new TLegend(0.1,0.8,0.2,0.9);
    legendTT->AddEntry(h1TT,"MC");
    legendTT->AddEntry(h2TT,"Data");
@@ -4347,7 +4355,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //TFile* my_new_file40 = new TFile(
-   cnvs_z1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisZ_in1TEST.pdf");//,"RECREATE");
+   cnvs_z1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisZ_in1TEST.pdf");//,"RECREATE");
    //   cnvs_z1->Write();
 
    cout<<"z1"<<endl;
@@ -4355,7 +4363,7 @@ void plus60twoDW(bool verbose=false) {
    //h_z1_data->Chi2Test(//h_z1_mc,"UW OF UF P",res_z1);// h2TT->Chi2Test(h1TT,"UU NORM  P",res_z1);                               
    //h_z1_data->KolmogorovTest(//h_z1_mc,"U O N D ");
   
-   //   TFile* my_new_file40 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisZ_in1.root","RECREATE");
+   //   TFile* my_new_file40 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisZ_in1.root","RECREATE");
    //cnvs_z1->Write();
 
 
@@ -4369,7 +4377,7 @@ void plus60twoDW(bool verbose=false) {
    hs_z0->GetXaxis()->SetTitle(" Distance (Z) in cm  ");
    hs_z0->GetYaxis()->SetTitle("Relative Frequency");
    TText TUU; TUU.SetTextFont(42); TUU.SetTextAlign(21);
-   TUU.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (in2): West Cryostat");
+   TUU.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (in2): East Cryostat");
    auto legendUU = new TLegend(0.1,0.8,0.2,0.9);
    legendUU->AddEntry(h1UU,"MC");
    legendUU->AddEntry(h2UU,"Data");
@@ -4377,14 +4385,14 @@ void plus60twoDW(bool verbose=false) {
    cnvs_z0->Update();
 
    //TFile* my_new_file41 = new TFile(
-   cnvs_z0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisZ_in2TEST.pdf");//,"RECREATE");
+   cnvs_z0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisZ_in2TEST.pdf");//,"RECREATE");
    // cnvs_z0->Write();
    cout<<"z0"<<endl;
    Double_t res_z0[20];
    //h_z0_data->Chi2Test(//h_z0_mc,"UW OF UF P",res_z0);//h2UU->Chi2Test(h1UU,"UU NORM  P",res_z0);                                
    //h_z0_data->KolmogorovTest(//h_z0_mc,"U O N D ");
   
-   //   TFile* my_new_file41 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_fileDisZ_in2.root","RECREATE");                                                                                          
+   //   TFile* my_new_file41 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_fileDisZ_in2.root","RECREATE");                                                                                          
    //cnvs_z0->Write();
 
 
@@ -4398,7 +4406,7 @@ void plus60twoDW(bool verbose=false) {
    hs_p2->GetXaxis()->SetTitle(" Pitch in cm  ");
    hs_p2->GetYaxis()->SetTitle("Relative Frequency");
    TText TVV; TVV.SetTextFont(42); TVV.SetTextAlign(21);
-   TVV.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (col): West Cryostat");
+   TVV.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (col): East Cryostat");
    auto legendVV = new TLegend(0.1,0.8,0.2,0.9);
    legendVV->AddEntry(h1VV,"MC");
    legendVV->AddEntry(h2VV,"Data");
@@ -4407,7 +4415,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file42 = new TFile(
-   cnvs_p2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_Pitch_colTEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
+   cnvs_p2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_Pitch_colTEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
                                                                                                                                
   //  cnvs_p2->Write();
 
@@ -4417,7 +4425,7 @@ void plus60twoDW(bool verbose=false) {
    //h_p2_data->KolmogorovTest(//h_p2_mc,"U O N D ");
   
 
-   //   TFile* my_new_file42 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_Pitc//h_col.root","RECREATE"); // open new file in write mode                                                                                         
+   //   TFile* my_new_file42 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_Pitc//h_col.root","RECREATE"); // open new file in write mode                                                                                         
    //cnvs_p2->Write();
 
 
@@ -4432,7 +4440,7 @@ void plus60twoDW(bool verbose=false) {
    hs_p1->GetXaxis()->SetTitle(" Pitch in cm  ");
    hs_p1->GetYaxis()->SetTitle("Relative Frequency");
    TText TWW; TWW.SetTextFont(42); TWW.SetTextAlign(21);
-   TWW.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (in1): West Cryostat");
+   TWW.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (in1): East Cryostat");
    auto legendWW = new TLegend(0.1,0.8,0.2,0.9);
    legendWW->AddEntry(h1WW,"MC");
    legendWW->AddEntry(h2WW,"Data");
@@ -4441,7 +4449,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file43 = new TFile(
-   cnvs_p1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_Pitch_in1TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
+   cnvs_p1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_Pitch_in1TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
                                                                                                                                
   //  cnvs_p1->Write();
 
@@ -4451,7 +4459,7 @@ void plus60twoDW(bool verbose=false) {
    //h_p1_data->Chi2Test(//h_p1_mc,"UW OF UF P",res_p1);//h2WW->Chi2Test(h1WW,"UU NORM  P",res_p1);                                
    //h_p1_data->KolmogorovTest(//h_p1_mc,"U O N D ");
   
-   //   TFile* my_new_file43 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_Pitc//h_in1.root","RECREATE"); // open new file in write mode                                                                                            
+   //   TFile* my_new_file43 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_Pitc//h_in1.root","RECREATE"); // open new file in write mode                                                                                            
    //cnvs_p1->Write();
 
    TCanvas* cnvs_p0 = new TCanvas("cnvs_p0", "c44", 1,1,800,700);
@@ -4464,7 +4472,7 @@ void plus60twoDW(bool verbose=false) {
    hs_p0->GetXaxis()->SetTitle(" Pitch in cm  ");
    hs_p0->GetYaxis()->SetTitle("Relative Frequency");
    TText TXX; TXX.SetTextFont(42); TXX.SetTextAlign(21);
-   TXX.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (in2): West Cryostat");
+   TXX.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (in2): East Cryostat");
    auto legendXX = new TLegend(0.1,0.8,0.2,0.9);
    legendXX->AddEntry(h1XX,"MC");
    legendXX->AddEntry(h2XX,"Data");
@@ -4472,7 +4480,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_p0->Update();
 
    //   TFile* my_new_file44 = new TFile(
-   cnvs_p0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_Pitch_in2TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
+   cnvs_p0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_Pitch_in2TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
                                                                                                                                
    // cnvs_p0->Write();
 
@@ -4483,7 +4491,7 @@ void plus60twoDW(bool verbose=false) {
    //h_p0_data->Chi2Test(//h_p0_mc,"UW OF UF P",res_p0);//h2XX->Chi2Test(h1XX,"UU NORM  P",res_p0);                                
    //h_p0_data->KolmogorovTest(//h_p0_mc,"U O N D ");
  
-   //   TFile* my_new_file44 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_West_file_Pitc//h_in2.root","RECREATE"); // open new file in write mode                                                                               
+   //   TFile* my_new_file44 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel1_East_file_Pitc//h_in2.root","RECREATE"); // open new file in write mode                                                                               
    //cnvs_p0->Write();
 
    

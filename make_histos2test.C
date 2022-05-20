@@ -1138,7 +1138,7 @@ void make_histos2test(bool verbose=false) {
    cnvs_az2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_AzimuthalAngle_col.pdf");
 
    //   TFile* my_new_file1 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_AzimuthalAngle_col.root","RECREATE");
-   //cnvs_az2->Write();
+   cnvs_az2->Write();
 
    cout<<"HERE"<<endl;
    TCanvas* cnvs_az1 = new TCanvas("cnvs_az1", "c1", 1,1,800,700);
@@ -1166,9 +1166,9 @@ void make_histos2test(bool verbose=false) {
 
 
    cnvs_az1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_AzimuthalAngle_in1.pdf");
-   //cnvs_az1->Write();
+   cnvs_az1->Write();
 
-   TCanvas* cnvs_az0 = new TCanvas("cnvs_az0", "c1", 1,1,800,700);
+   TCanvas* cnvs_az0 = new TCanvas("cnvs_az0", "c2", 1,1,800,700);
    h1b->SetLineColor(kRed);
    h2b->SetLineColor(kBlue);
    hs_az0->Add(h1b);
@@ -1194,9 +1194,9 @@ void make_histos2test(bool verbose=false) {
    
 
    //   cnvs_az2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_AzimuthalAngle_in2.root","RECREATE");
-   //cnvs_az0->Write();
+   cnvs_az0->Write();
 
-   TCanvas* cnvs_zz2 = new TCanvas("cnvs_zz2", "c1", 1,1,800,700);
+   TCanvas* cnvs_zz2 = new TCanvas("cnvs_zz2", "c3", 1,1,800,700);
    h1c->SetLineColor(kRed);
    h2c->SetLineColor(kBlue);
    hs_zz2->Add(h1c);
@@ -1215,7 +1215,7 @@ void make_histos2test(bool verbose=false) {
    cnvs_zz2->Update();
 
    //TFile* my_new_file4 = new TFile(
-   cnvs_zz2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_ZenithAngle_col.pdf");//,"RECREATE");
+   // cnvs_zz2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_ZenithAngle_col.pdf");//,"RECREATE");
    //   cnvs_zz2->Write();
 
    cout<<"zz2"<<endl;
@@ -1225,10 +1225,10 @@ void make_histos2test(bool verbose=false) {
    
 
    //   TFile* my_new_file4 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_ZenithAngle_col.root","RECREATE");
-   //cnvs_zz2->Write();
+   cnvs_zz2->Write();
 
 
-   TCanvas* cnvs_zz1 = new TCanvas("cnvs_zz1", "c1", 1,1,800,700);
+   TCanvas* cnvs_zz1 = new TCanvas("cnvs_zz1", "c4", 1,1,800,700);
    h1d->SetLineColor(kRed);
    h2d->SetLineColor(kBlue);
    hs_zz1->Add(h1d);
@@ -1254,9 +1254,9 @@ void make_histos2test(bool verbose=false) {
    h_zangle1_data->KolmogorovTest(h_zangle1_mc,"U O N D ");
    
    //   TFile* my_new_file5 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_ZenithAngle_in1.root","RECREATE");
-   //cnvs_zz1->Write();
+   cnvs_zz1->Write();
 
-   TCanvas* cnvs_zz0 = new TCanvas("cnvs_zz0", "c1", 1,1,800,700);
+   TCanvas* cnvs_zz0 = new TCanvas("cnvs_zz0", "c5", 1,1,800,700);
    h1e->SetLineColor(kRed);
    h2e->SetLineColor(kBlue);
    hs_zz0->Add(h1e);
@@ -1282,9 +1282,9 @@ void make_histos2test(bool verbose=false) {
    
 
    //   TFile* my_new_file6 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_ZenithAngle_in2.root","RECREATE");
-   //cnvs_zz0->Write();
+   cnvs_zz0->Write();
 
-   TCanvas* cnvs_q2 = new TCanvas("cnvs_q2", "c1", 1,1,800,700);
+   TCanvas* cnvs_q2 = new TCanvas("cnvs_q2", "c6", 1,1,800,700);
    h1f->SetLineColor(kRed);
    h2f->SetLineColor(kBlue);
    hs_q2->Add(h1f);
@@ -1313,10 +1313,10 @@ void make_histos2test(bool verbose=false) {
    
 
    //   TFile* my_new_file7 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_filedQdx_col.root","RECREATE");
-   //cnvs_q2->Write();
+   cnvs_q2->Write();
 
 
-   TCanvas* cnvs_q1 = new TCanvas("cnvs_q1", "c1", 1,1,800,700);
+   TCanvas* cnvs_q1 = new TCanvas("cnvs_q1", "c7", 1,1,800,700);
    h1g->SetLineColor(kRed);
    h2g->SetLineColor(kBlue);
    hs_q1->Add(h1g);
@@ -1343,9 +1343,9 @@ void make_histos2test(bool verbose=false) {
    h_q1_data->KolmogorovTest(h_q1_mc,"U O N D ");
   
    //   TFile* my_new_file8 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_filedQdx_in1.root","RECREATE");
-   //cnvs_q1->Write();
+   cnvs_q1->Write();
 
-   TCanvas* cnvs_q0 = new TCanvas("cnvs_q0", "c1", 1,1,800,700);
+   TCanvas* cnvs_q0 = new TCanvas("cnvs_q0", "c8", 1,1,800,700);
    h1h->SetLineColor(kRed);
    h2h->SetLineColor(kBlue);
    hs_q0->Add(h1h);
@@ -1373,9 +1373,9 @@ void make_histos2test(bool verbose=false) {
 
 
    //   TFile* my_new_file9 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_filedQdx_in2.root","RECREATE");
-   //cnvs_q0->Write();
+   cnvs_q0->Write();
 
-   TCanvas* cnvs_r2 = new TCanvas("cnvs_r2", "c1", 1,1,800,700);
+   TCanvas* cnvs_r2 = new TCanvas("cnvs_r2", "c9", 1,1,800,700);
    h1i->SetLineColor(kRed);
    h2i->SetLineColor(kBlue);
    hs_r2->Add(h1i);
@@ -1403,7 +1403,7 @@ void make_histos2test(bool verbose=false) {
    //   TFile* my_new_file10 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileRR_col.root","RECREATE");
    //  cnvs_r2->Write();
 
-   TCanvas* cnvs_r1 = new TCanvas("cnvs_r1", "c1", 1,1,800,700);
+   TCanvas* cnvs_r1 = new TCanvas("cnvs_r1", "c10", 1,1,800,700);
    h1j->SetLineColor(kRed);
    h2j->SetLineColor(kBlue);
    hs_r1->Add(h1j);
@@ -1435,9 +1435,9 @@ void make_histos2test(bool verbose=false) {
   
 
    //   TFile* my_new_file11 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileRR_in1.root","RECREATE");
-   //cnvs_r1->Write();
+   cnvs_r1->Write();
 
-   TCanvas* cnvs_r0 = new TCanvas("cnvs_r0", "c1", 1,1,800,700);
+   TCanvas* cnvs_r0 = new TCanvas("cnvs_r0", "c11", 1,1,800,700);
    h1k->SetLineColor(kRed);
    h2k->SetLineColor(kBlue);
    hs_r0->Add(h1k);
@@ -1467,9 +1467,9 @@ void make_histos2test(bool verbose=false) {
    
 
    //   TFile* my_new_file12 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileRR_in2.root","RECREATE");
-   //cnvs_r0->Write();
+   cnvs_r0->Write();
 
-   TCanvas* cnvs_l = new TCanvas("cnvs_l", "c1", 1,1,800,700);
+   TCanvas* cnvs_l = new TCanvas("cnvs_l", "c12", 1,1,800,700);
    h1l->SetLineColor(kRed);
    h2l->SetLineColor(kBlue);
    hs_l->Add(h1l);
@@ -1498,9 +1498,9 @@ void make_histos2test(bool verbose=false) {
    h_l_data->KolmogorovTest(h_l_mc,"U O N D ");
    
    //   TFile* my_new_file13 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileLength.root","RECREATE");
-   //cnvs_l->Write();
+   cnvs_l->Write();
 
-   TCanvas* cnvs_t0 = new TCanvas("cnvs_t0", "c1", 1,1,800,700);
+   TCanvas* cnvs_t0 = new TCanvas("cnvs_t0", "c13", 1,1,800,700);
    h1m->SetLineColor(kRed);
    h2m->SetLineColor(kBlue);
    hs_t0->Add(h1m);
@@ -1528,9 +1528,9 @@ void make_histos2test(bool verbose=false) {
    
 
    //   TFile* my_new_file14 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileT0.root","RECREATE");
-   //cnvs_t0->Write();
+   cnvs_t0->Write();
 
-   TCanvas* cnvs_sx = new TCanvas("cnvs_sx", "c1", 1,1,800,700);
+   TCanvas* cnvs_sx = new TCanvas("cnvs_sx", "c14", 1,1,800,700);
    h1n->SetLineColor(kRed);
    h2n->SetLineColor(kBlue);
    hs_sx->Add(h1n);
@@ -1562,7 +1562,7 @@ void make_histos2test(bool verbose=false) {
    //   TFile* my_new_file15 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileStartX_col.root","RECREATE");
    // cnvs_sx->Write();
 
-   TCanvas* cnvs_sy = new TCanvas("cnvs_sy", "c1", 1,1,800,700);
+   TCanvas* cnvs_sy = new TCanvas("cnvs_sy", "c15", 1,1,800,700);
    h1o->SetLineColor(kRed);
    h2o->SetLineColor(kBlue);
    hs_sy->Add(h1o);
@@ -1590,9 +1590,9 @@ void make_histos2test(bool verbose=false) {
    h_sy_data->KolmogorovTest(h_sy_mc,"U O N D ");
   
    //   TFile* my_new_file16 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileStartY_in1.root","RECREATE");
-   //cnvs_sy->Write();
+   cnvs_sy->Write();
 
-   TCanvas* cnvs_sz = new TCanvas("cnvs_sz", "c1", 1,1,800,700);
+   TCanvas* cnvs_sz = new TCanvas("cnvs_sz", "c17", 1,1,800,700);
    h1p->SetLineColor(kRed);
    h2p->SetLineColor(kBlue);
    hs_sz->Add(h1p);
@@ -1618,10 +1618,10 @@ void make_histos2test(bool verbose=false) {
 
 
    //   TFile* my_new_file17 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileStartZ_in2.root","RECREATE");
-   //cnvs_sz->Write();
+   cnvs_sz->Write();
 
 
-   TCanvas* cnvs_ex = new TCanvas("cnvs_ex", "c1", 1,1,800,700);
+   TCanvas* cnvs_ex = new TCanvas("cnvs_ex", "c18", 1,1,800,700);
    h1q->SetLineColor(kRed);
    h2q->SetLineColor(kBlue);
    hs_ex->Add(h1q);
@@ -1647,10 +1647,10 @@ void make_histos2test(bool verbose=false) {
    h_ex_data->KolmogorovTest(h_ex_mc,"U O N D ");
   
    //   TFile* my_new_file18 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileEndX_col.root","RECREATE");
-   //cnvs_ex->Write();
+   cnvs_ex->Write();
 
 
-   TCanvas* cnvs_ey = new TCanvas("cnvs_ey", "c1", 1,1,800,700);
+   TCanvas* cnvs_ey = new TCanvas("cnvs_ey", "c19", 1,1,800,700);
    h1r->SetLineColor(kRed);
    h2r->SetLineColor(kBlue);
    hs_ey->Add(h1r);
@@ -1677,10 +1677,10 @@ void make_histos2test(bool verbose=false) {
    h_ey_data->KolmogorovTest(h_ey_mc,"U O N D ");
   
    //   TFile* my_new_file19 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileEndY_in1.root","RECREATE");
-   //cnvs_ey->Write();
+   cnvs_ey->Write();
 
 
-   TCanvas* cnvs_ez = new TCanvas("cnvs_ez", "c1", 1,1,800,700);
+   TCanvas* cnvs_ez = new TCanvas("cnvs_ez", "c20", 1,1,800,700);
    h1s->SetLineColor(kRed);
    h2s->SetLineColor(kBlue);
    hs_ez->Add(h1s);
@@ -1707,11 +1707,11 @@ void make_histos2test(bool verbose=false) {
    h_ez_data->KolmogorovTest(h_ez_mc,"U O N D ");
 
    //   TFile* my_new_file20 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileEndZ_in2.root","RECREATE");
-   //cnvs_ez->Write();
+   cnvs_ez->Write();
 
 
 
-   TCanvas* cnvs_ci2 = new TCanvas("cnvs_ci2", "c1", 1,1,800,700);
+   TCanvas* cnvs_ci2 = new TCanvas("cnvs_ci2", "c21", 1,1,800,700);
    h1AA->SetLineColor(kRed);
    h2AA->SetLineColor(kBlue);
    hs_ci2->Add(h1AA);
@@ -1741,7 +1741,7 @@ void make_histos2test(bool verbose=false) {
    //   TFile* my_new_file21 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileInt_col.root","RECREATE");
    // cnvs_ci2->Write();
 
-   TCanvas* cnvs_ci1 = new TCanvas("cnvs_ci1", "c1", 1,1,800,700);
+   TCanvas* cnvs_ci1 = new TCanvas("cnvs_ci1", "c22", 1,1,800,700);
    h1BB->SetLineColor(kRed);
    h2BB->SetLineColor(kBlue);
    hs_ci1->Add(h1BB);
@@ -1767,9 +1767,9 @@ void make_histos2test(bool verbose=false) {
    h_ci1_data->KolmogorovTest(h_ci1_mc,"U O N D ");
   
    //   TFile* my_new_file22 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileInt_in1.root","RECREATE");
-   //cnvs_ci1->Write();
+   cnvs_ci1->Write();
 
-   TCanvas* cnvs_ci0 = new TCanvas("cnvs_ci0", "c1", 1,1,800,700);
+   TCanvas* cnvs_ci0 = new TCanvas("cnvs_ci0", "c23", 1,1,800,700);
    h1CC->SetLineColor(kRed);
    h2CC->SetLineColor(kBlue);
    hs_ci0->Add(h1CC);
@@ -1795,11 +1795,11 @@ void make_histos2test(bool verbose=false) {
    
 
    //   TFile* my_new_file23 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileInt_in2.root","RECREATE");
-   //cnvs_ci0->Write();
+   cnvs_ci0->Write();
 
 
 
-   TCanvas* cnvs_wi2 = new TCanvas("cnvs_wi2", "c1", 1,1,800,700);
+   TCanvas* cnvs_wi2 = new TCanvas("cnvs_wi2", "c24", 1,1,800,700);
    h1DD->SetLineColor(kRed);
    h2DD->SetLineColor(kBlue);
    hs_wi2->Add(h1DD);
@@ -1818,7 +1818,7 @@ void make_histos2test(bool verbose=false) {
 
    //TFile* my_new_file24 = new TFile(
    cnvs_wi2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWidth_col.pdf");//,"RECREATE");
-   //cnvs_wi2->Write();
+   cnvs_wi2->Write();
    cout<<"wi2"<<endl;
    Double_t res_wi2[20];
    h_wi2_data->Chi2Test(h_wi2_mc,"UW OF UF P",res_wi2);//h2DD->Chi2Test(h1DD,"UU NORM  P",res_wi2);                            
@@ -1826,9 +1826,9 @@ void make_histos2test(bool verbose=false) {
    
 
    //   TFile* my_new_file24 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWidth_col.root","RECREATE");
-   //cnvs_wi2->Write();
+   cnvs_wi2->Write();
 
-   TCanvas* cnvs_wi1 = new TCanvas("cnvs_wi1", "c1", 1,1,800,700);
+   TCanvas* cnvs_wi1 = new TCanvas("cnvs_wi1", "c25", 1,1,800,700);
    h1EE->SetLineColor(kRed);
    h2EE->SetLineColor(kBlue);
    hs_wi1->Add(h1EE);
@@ -1847,7 +1847,7 @@ void make_histos2test(bool verbose=false) {
 
    //   TFile* my_new_file25 = new TFile(
    cnvs_wi1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWidth_in1.pdf");//,"RECREATE");
-   //cnvs_wi1->Write();
+   cnvs_wi1->Write();
 
    cout<<"wi1"<<endl;
    Double_t res_wi1[20];
@@ -1856,9 +1856,9 @@ void make_histos2test(bool verbose=false) {
   
 
    //   TFile* my_new_file25 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWidth_in1.root","RECREATE");
-   //cnvs_wi1->Write();
+   cnvs_wi1->Write();
 
-   TCanvas* cnvs_wi0 = new TCanvas("cnvs_wi0", "c1", 1,1,800,700);
+   TCanvas* cnvs_wi0 = new TCanvas("cnvs_wi0", "c26", 1,1,800,700);
    h1FF->SetLineColor(kRed);
    h2FF->SetLineColor(kBlue);
    hs_wi0->Add(h1FF);
@@ -1885,10 +1885,10 @@ void make_histos2test(bool verbose=false) {
  
 
    //   TFile* my_new_file26 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWidth_in2.root","RECREATE");
-   //cnvs_wi0->Write();
+   cnvs_wi0->Write();
 
 
-   TCanvas* cnvs_w2 = new TCanvas("cnvs_w2", "c1", 1,1,800,700);
+   TCanvas* cnvs_w2 = new TCanvas("cnvs_w2", "c27", 1,1,800,700);
    h1GG->SetLineColor(kRed);
    h2GG->SetLineColor(kBlue);
    hs_w2->Add(h1GG);
@@ -1914,9 +1914,9 @@ void make_histos2test(bool verbose=false) {
   
 
    //   TFile* my_new_file27 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWire_col.root","RECREATE");
-   //cnvs_w2->Write();
+   cnvs_w2->Write();
 
-   TCanvas* cnvs_w1 = new TCanvas("cnvs_w1", "c1", 1,1,800,700);
+   TCanvas* cnvs_w1 = new TCanvas("cnvs_w1", "c28", 1,1,800,700);
    h1HH->SetLineColor(kRed);
    h2HH->SetLineColor(kBlue);
    hs_w1->Add(h1HH);
@@ -1941,9 +1941,9 @@ void make_histos2test(bool verbose=false) {
    h_w1_data->KolmogorovTest(h_w1_mc,"U O N D ");
   
    //   TFile* my_new_file28 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWire_in1.root","RECREATE");
-   //cnvs_w1->Write();
+   cnvs_w1->Write();
 
-   TCanvas* cnvs_w0 = new TCanvas("cnvs_w0", "c1", 1,1,800,700);
+   TCanvas* cnvs_w0 = new TCanvas("cnvs_w0", "c29", 1,1,800,700);
    h1II->SetLineColor(kRed);
    h2II->SetLineColor(kBlue);
    hs_w0->Add(h1II);
@@ -1961,17 +1961,17 @@ void make_histos2test(bool verbose=false) {
    cnvs_w0->Update();
    //   TFile* my_new_file29 = new TFile(
    cnvs_w0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWire_in2.pdf");//,"RECREATE");
-   //cnvs_w0->Write();
+   cnvs_w0->Write();
    cout<<"w0"<<endl;
    Double_t res_w0[20];
    h_w0_data->Chi2Test(h_w0_mc,"UW OF UF P",res_w0);//h2II->Chi2Test(h1II,"UU NORM  P",res_w0);                                
    h_w0_data->KolmogorovTest(h_w0_mc,"U O N D ");
   
    //   TFile* my_new_file29 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileWire_in2.root","RECREATE");
-   //cnvs_w0->Write();
+   cnvs_w0->Write();
 
 
-   TCanvas* cnvs_ti2 = new TCanvas("cnvs_ti2", "c1", 1,1,800,700);
+   TCanvas* cnvs_ti2 = new TCanvas("cnvs_ti2", "c30", 1,1,800,700);
    h1JJ->SetLineColor(kRed);
    h2JJ->SetLineColor(kBlue);
    hs_ti2->Add(h1JJ);
@@ -1991,7 +1991,7 @@ void make_histos2test(bool verbose=false) {
 
    //   TFile* my_new_file30 = new TFile(
    cnvs_ti2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileTime_col.pdf");//,"RECREATE");
-   //cnvs_ti2->Write();
+   cnvs_ti2->Write();
 
 
    cout<<"ti2"<<endl;
@@ -2001,9 +2001,9 @@ void make_histos2test(bool verbose=false) {
    
 
    //   TFile* my_new_file30 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileTime_col.root","RECREATE");
-   //cnvs_ti2->Write();
+   cnvs_ti2->Write();
 
-   TCanvas* cnvs_ti1 = new TCanvas("cnvs_ti1", "c1", 1,1,800,700);
+   TCanvas* cnvs_ti1 = new TCanvas("cnvs_ti1", "c31", 1,1,800,700);
    h1KK->SetLineColor(kRed);
    h2KK->SetLineColor(kBlue);
    hs_ti1->Add(h1KK);
@@ -2034,9 +2034,9 @@ void make_histos2test(bool verbose=false) {
   
 
    //   TFile* my_new_file31 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileTime_in1.root","RECREATE");
-   //cnvs_ti1->Write();
+   cnvs_ti1->Write();
 
-   TCanvas* cnvs_ti0 = new TCanvas("cnvs_ti0", "c1", 1,1,800,700);
+   TCanvas* cnvs_ti0 = new TCanvas("cnvs_ti0", "c32", 1,1,800,700);
    h1LL->SetLineColor(kRed);
    h2LL->SetLineColor(kBlue);
    hs_ti0->Add(h1LL);
@@ -2055,7 +2055,7 @@ void make_histos2test(bool verbose=false) {
 
    //   TFile* my_new_file32 = new TFile(
    cnvs_ti0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileTime_in2.pdf");//,"RECREATE");
-   //cnvs_ti0->Write();
+   cnvs_ti0->Write();
 
 
 
@@ -2065,9 +2065,9 @@ void make_histos2test(bool verbose=false) {
    h_ti0_data->KolmogorovTest(h_ti0_mc,"U O N D ");
   
    //   TFile* my_new_file32 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileTime_in2.root","RECREATE");
-   //cnvs_ti0->Write();
+   cnvs_ti0->Write();
 
-   TCanvas* cnvs_x2 = new TCanvas("cnvs_x2", "c1", 1,1,800,700);
+   TCanvas* cnvs_x2 = new TCanvas("cnvs_x2", "c33", 1,1,800,700);
    h1MM->SetLineColor(kRed);
    h2MM->SetLineColor(kBlue);
    hs_x2->Add(h1MM);
@@ -2086,7 +2086,7 @@ void make_histos2test(bool verbose=false) {
 
    //   TFile* my_new_file33 = new TFile(
    cnvs_x2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisX_col.pdf");//,"RECREATE");
-   //cnvs_x2->Write();
+   cnvs_x2->Write();
 
 
    cout<<"x2"<<endl;
@@ -2095,9 +2095,9 @@ void make_histos2test(bool verbose=false) {
    h_x2_data->KolmogorovTest(h_x2_mc,"U O N D ");
 
    //   TFile* my_new_file33 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisX_col.root","RECREATE");
-   //cnvs_x2->Write();
+   cnvs_x2->Write();
 
-   TCanvas* cnvs_x1 = new TCanvas("cnvs_x1", "c1", 1,1,800,700);
+   TCanvas* cnvs_x1 = new TCanvas("cnvs_x1", "c34", 1,1,800,700);
    h1NN->SetLineColor(kRed);
    h2NN->SetLineColor(kBlue);
    hs_x1->Add(h1NN);
@@ -2116,16 +2116,16 @@ void make_histos2test(bool verbose=false) {
 
    //   TFile* my_new_file34 = new TFile(
    cnvs_x1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisX_in1.pdf");//,"RECREATE");
-   //cnvs_x1->Write();
+   cnvs_x1->Write();
    cout<<"x1"<<endl;
    Double_t res_x1[20];
    h_x1_data->Chi2Test(h_x1_mc,"UW OF UF P",res_x1);//h2NN->Chi2Test(h1NN,"UU NORM  P",res_x1);                                
    h_x1_data->KolmogorovTest(h_x1_mc,"U O N D ");
   
    //   TFile* my_new_file34 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisX_in1.root","RECREATE");
-   //cnvs_x1->Write();
+   cnvs_x1->Write();
 
-   TCanvas* cnvs_x0 = new TCanvas("cnvs_x0", "c1", 1,1,800,700);
+   TCanvas* cnvs_x0 = new TCanvas("cnvs_x0", "c35", 1,1,800,700);
    h1OO->SetLineColor(kRed);
    h2OO->SetLineColor(kBlue);
    hs_x0->Add(h1OO);
@@ -2144,7 +2144,7 @@ void make_histos2test(bool verbose=false) {
 
    //   TFile* my_new_file35 = new TFile(
    cnvs_x0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisX_in2.pdf");//,"RECREATE");
-   //cnvs_x0->Write();
+   cnvs_x0->Write();
 
 
    cout<<"x0"<<endl;
@@ -2154,11 +2154,11 @@ void make_histos2test(bool verbose=false) {
   
 
    //   TFile* my_new_file35 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisX_in2.root","RECREATE");
-   //cnvs_x0->Write();
+   cnvs_x0->Write();
 
 
 
-   TCanvas* cnvs_y2 = new TCanvas("cnvs_y2", "c1", 1,1,800,700);
+   TCanvas* cnvs_y2 = new TCanvas("cnvs_y2", "c36", 1,1,800,700);
    h1PP->SetLineColor(kRed);
    h2PP->SetLineColor(kBlue);
    hs_y2->Add(h1PP);
@@ -2176,17 +2176,17 @@ void make_histos2test(bool verbose=false) {
    cnvs_y2->Update();
    //   TFile* my_new_file36 = new TFile(
    cnvs_y2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisY_col.pdf");//,"RECREATE");
-   //cnvs_y2->Write();
+   cnvs_y2->Write();
    cout<<"y2"<<endl;
    Double_t res_y2[20];
    h_y2_data->Chi2Test(h_y2_mc,"UW OF UF P",res_y2);//h2PP->Chi2Test(h1PP,"UU NORM  P",res_y2);                                
    h_y2_data->KolmogorovTest(h_y2_mc,"U O N D ");
 
    //   TFile* my_new_file36 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisY_col.root","RECREATE");
-   //cnvs_y2->Write();
+   cnvs_y2->Write();
 
 
-   TCanvas* cnvs_y1 = new TCanvas("cnvs_y1", "c1", 1,1,800,700);
+   TCanvas* cnvs_y1 = new TCanvas("cnvs_y1", "c37", 1,1,800,700);
    h1QQ->SetLineColor(kRed);
    h2QQ->SetLineColor(kBlue);
    hs_y1->Add(h1QQ);
@@ -2205,7 +2205,7 @@ void make_histos2test(bool verbose=false) {
 
    // TFile* my_new_file37 = new TFile(
    cnvs_y1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisY_in1.pdf");//,"RECREATE");
-   //cnvs_y1->Write();
+   cnvs_y1->Write();
 
    cout<<"y1"<<endl;
    Double_t res_y1[20];
@@ -2213,10 +2213,10 @@ void make_histos2test(bool verbose=false) {
    h_y1_data->KolmogorovTest(h_y1_mc,"U O N D ");
   
    //   TFile* my_new_file37 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisY_in1.root","RECREATE");
-   //cnvs_y1->Write();
+   cnvs_y1->Write();
 
 
-   TCanvas* cnvs_y0 = new TCanvas("cnvs_y0", "c1", 1,1,800,700);
+   TCanvas* cnvs_y0 = new TCanvas("cnvs_y0", "c38", 1,1,800,700);
    h1RR->SetLineColor(kRed);
    h2RR->SetLineColor(kBlue);
    hs_y0->Add(h1RR);
@@ -2236,7 +2236,7 @@ void make_histos2test(bool verbose=false) {
 
    //  TFile* my_new_file38 = new TFile(
    cnvs_y0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisY_in2.pdf");//,"RECREATE");
-   //cnvs_y0->Write();
+   cnvs_y0->Write();
 
    cout<<"y0"<<endl;
    Double_t res_y0[20];
@@ -2244,11 +2244,11 @@ void make_histos2test(bool verbose=false) {
    h_y0_data->KolmogorovTest(h_y0_mc,"U O N D ");
   
    //   TFile* my_new_file38 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisY_in2.root","RECREATE");
-   //cnvs_y0->Write();
+   cnvs_y0->Write();
 
 
 
-   TCanvas* cnvs_z2 = new TCanvas("cnvs_z2", "c1", 1,1,800,700);
+   TCanvas* cnvs_z2 = new TCanvas("cnvs_z2", "c39", 1,1,800,700);
    h1SS->SetLineColor(kRed);
    h2SS->SetLineColor(kBlue);
    hs_z2->Add(h1SS);
@@ -2267,7 +2267,7 @@ void make_histos2test(bool verbose=false) {
    
    //   TFile* my_new_file39 = new TFile(
    cnvs_z2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisZ_col.pdf");//,"RECREATE");
-   //cnvs_z2->Write();
+   cnvs_z2->Write();
 
    cout<<"z2"<<endl;
    Double_t res_z2[20];
@@ -2278,7 +2278,7 @@ void make_histos2test(bool verbose=false) {
    cnvs_z2->Write();
 
 
-   TCanvas* cnvs_z1 = new TCanvas("cnvs_z1", "c1", 1,1,800,700);
+   TCanvas* cnvs_z1 = new TCanvas("cnvs_z1", "c40", 1,1,800,700);
    h1TT->SetLineColor(kRed);
    h2TT->SetLineColor(kBlue);
    hs_z1->Add(h1TT);
@@ -2306,10 +2306,10 @@ void make_histos2test(bool verbose=false) {
    h_z1_data->KolmogorovTest(h_z1_mc,"U O N D ");
   
    //   TFile* my_new_file40 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisZ_in1.root","RECREATE");
-   //cnvs_z1->Write();
+   cnvs_z1->Write();
 
 
-   TCanvas* cnvs_z0 = new TCanvas("cnvs_z0", "c1", 1,1,800,700);
+   TCanvas* cnvs_z0 = new TCanvas("cnvs_z0", "c41", 1,1,800,700);
    h1UU->SetLineColor(kRed);
    h2UU->SetLineColor(kBlue);
    hs_z0->Add(h1UU);
@@ -2335,10 +2335,10 @@ void make_histos2test(bool verbose=false) {
    h_z0_data->KolmogorovTest(h_z0_mc,"U O N D ");
   
    //   TFile* my_new_file41 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_fileDisZ_in2.root","RECREATE");                                                                                          
-   //cnvs_z0->Write();
+   cnvs_z0->Write();
 
 
-   TCanvas* cnvs_p2 = new TCanvas("cnvs_p2", "c1", 1,1,800,700);
+   TCanvas* cnvs_p2 = new TCanvas("cnvs_p2", "c42", 1,1,800,700);
    h1VV->SetLineColor(kRed);
    h2VV->SetLineColor(kBlue);
    hs_p2->Add(h1VV);
@@ -2368,11 +2368,11 @@ void make_histos2test(bool verbose=false) {
   
 
    //   TFile* my_new_file42 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_Pitch_col.root","RECREATE"); // open new file in write mode                                                                                         
-   //cnvs_p2->Write();
+   cnvs_p2->Write();
 
 
 
-   TCanvas* cnvs_p1 = new TCanvas("cnvs_p1", "c1", 1,1,800,700);
+   TCanvas* cnvs_p1 = new TCanvas("cnvs_p1", "c43", 1,1,800,700);
    h1WW->SetLineColor(kRed);
    h2WW->SetLineColor(kBlue);
    hs_p1->Add(h1WW);
@@ -2402,9 +2402,9 @@ void make_histos2test(bool verbose=false) {
    h_p1_data->KolmogorovTest(h_p1_mc,"U O N D ");
   
    //   TFile* my_new_file43 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_Pitch_in1.root","RECREATE"); // open new file in write mode                                                                                            
-   //cnvs_p1->Write();
+   cnvs_p1->Write();
 
-   TCanvas* cnvs_p0 = new TCanvas("cnvs_p0", "c1", 1,1,800,700);
+   TCanvas* cnvs_p0 = new TCanvas("cnvs_p0", "c44", 1,1,800,700);
    h1XX->SetLineColor(kRed);
    h2XX->SetLineColor(kBlue);
    hs_p0->Add(h1XX);
@@ -2434,7 +2434,7 @@ void make_histos2test(bool verbose=false) {
    h_p0_data->KolmogorovTest(h_p0_mc,"U O N D ");
  
    //   TFile* my_new_file44 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_outputNUMI_tpc0_sel0_East_file_Pitch_in2.root","RECREATE"); // open new file in write mode                                                                               
-   //cnvs_p0->Write();
+   cnvs_p0->Write();
 
 
 
@@ -2455,7 +2455,7 @@ void make_histos2test(bool verbose=false) {
    // h2->DrawNormalized("same");
    
 
-   //cnvs_az2->Update();
+// cnvs_az2->Update();
    /*
     hs_az2->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
     hs_az2->GetYaxis()->SetTitle("Relative Frequency");

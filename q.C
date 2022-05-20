@@ -2111,8 +2111,14 @@ void q(bool verbose=false) {
    legendl2Dc->AddEntry(h2l2Dc_prof,"Data");
    legendl2Dc->Draw();
    cnvs_l2Dc->Update();
+
+   TFile output_file("my_output_file_2D_my_outputNUMI_tpc0_sel12_East_fileLength_Az_col.root","RECREATE");
+   h1l2Dc_prof->Write();
+   h2l2Dc_prof->Write();
+   cnvs_l2Dc->Write();
+   //   auto h1l2Dc_prof = h1l2Dc->ProfileX("h1l2Dc_prof");
    
-    cnvs_l2Dc->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/test/2D_my_outputNUMI_tpc0_sel12_East_fileLength_Az_col.pdf");
+     cnvs_l2Dc->SaveAs("2D_my_outputNUMI_tpc0_sel12_East_fileLength_Az_col.pdf");
 
    /*
    TCanvas* cnvs_l2D1 = new TCanvas("cnvs_l2D1", "c122D1", 1,1,800,700);
