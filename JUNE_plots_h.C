@@ -118,27 +118,27 @@ void JUNE_plots_h(){
 
   //  TCanvas* cnvs1= new TCanvas("cnvs1", "TPC3 East Cryostat MC",1,1,600,500);
   TH1F *h1 = new TH1F("h1","TPC3 East Cryostat MC (COL)", 100., -1.0, 1.0);
-  h1->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
+  h1->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
   //  TCanvas* cnvs2= new TCanvas("cnvs2", "TPC3 East Cryostat MC",1,1,600,500);
   TH1F *h2 = new TH1F("h2","TPC3 East Cryostat MC (IN1)", 50.,-1.0, 1.0); //-1.0, 1.0);0., 7.0);
-  h2->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
+  h2->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
   //TCanvas* cnvs3= new TCanvas("cnvs3", "TPC3 East Cryostat MC",1,1,600,500);
   TH1F *h3 = new TH1F("h3","TPC3 East Cryostat MC (IN2)", 100., -1.0, 1.0); //0., 7.0);
-  h3->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
+  h3->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
   //TCanvas* cnvs7= new TCanvas("cnvs7", "TPC3 West Cryostat MC",1,1,600,500);
   TH1F *h4 = new TH1F("h4","TPC3 West Cryostat MC (COL)", 100., -1.0, 1.0); //0., 7.0);
-  h4->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
+  h4->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
   //TCanvas* cnvs8= new TCanvas("cnvs8", "TPC3 West Cryostat MC",1,1,600,500);
   TH1F *h5 = new TH1F("h5","TPC3 West Cryostat MC (IN1)", 100., -1.0, 1.0); //0., 7.0);
-  h5->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
+  h5->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
   //TCanvas* cnvs9= new TCanvas("cnvs9", "TPC3 West Cryostat MC",1,1,600,500);
   TH1F *h6 = new TH1F("h6","TPC3 West Cryostat MC (IN2)", 100., -1.0, 1.0); //0., 7.0);
-  h6->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
+  h6->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
 
 
