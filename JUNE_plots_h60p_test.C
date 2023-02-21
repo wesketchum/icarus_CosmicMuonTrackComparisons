@@ -108,36 +108,36 @@ void JUNE_plots_h60p_test(){
   int kk = 0;
   int ll = 0;
 
-  ifstream infile1("mcJUNE_NUMI_tpc3_sel12_East_file_ZenithAngle_col.txt");
-  ifstream infile2("mcJUNE_NUMI_tpc3_sel12_East_file_ZenithAngle_in1.txt");
-  ifstream infile3("mcJUNE_NUMI_tpc3_sel12_East_file_ZenithAngle_in2.txt");
-  ifstream infile4("mcJUNE_NUMI_tpc3_sel12_West_file_ZenithAngle_col.txt");
-  ifstream infile5("mcJUNE_NUMI_tpc3_sel12_West_file_ZenithAngle_in1.txt");
-  ifstream infile6("mcJUNE_NUMI_tpc3_sel12_West_file_ZenithAngle_in2.txt");
+  ifstream infile1("mcJUNE_NUMI_tpc0_sel12_East_file_ZenithAngle_col.txt");
+  ifstream infile2("mcJUNE_NUMI_tpc0_sel12_East_file_ZenithAngle_in1.txt");
+  ifstream infile3("mcJUNE_NUMI_tpc0_sel12_East_file_ZenithAngle_in2.txt");
+  ifstream infile4("mcJUNE_NUMI_tpc0_sel12_West_file_ZenithAngle_col.txt");
+  ifstream infile5("mcJUNE_NUMI_tpc0_sel12_West_file_ZenithAngle_in1.txt");
+  ifstream infile6("mcJUNE_NUMI_tpc0_sel12_West_file_ZenithAngle_in2.txt");
 
 
-  //  TCanvas* cnvs1= new TCanvas("cnvs1", "TPC3 East Cryostat MC +60",1,1,600,500);
-  TH1F *h1 = new TH1F("h1","TPC3 East Cryostat MC +60 (COL)", 100., -1.0, 1.0);
+  //  TCanvas* cnvs1= new TCanvas("cnvs1", "TPC0 East Cryostat MC +60",1,1,600,500);
+  TH1F *h1 = new TH1F("h1","TPC0 East Cryostat MC +60 (COL)", 100., -1.0, 1.0);
   h1->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
-  //  TCanvas* cnvs2= new TCanvas("cnvs2", "TPC3 East Cryostat MC +60",1,1,600,500);
-  TH1F *h2 = new TH1F("h2","TPC3 East Cryostat MC +60 (IN1)", 100.,-1.0, 1.0); //-1.0, 1.0);0., 7.0);
+  //  TCanvas* cnvs2= new TCanvas("cnvs2", "TPC0 East Cryostat MC +60",1,1,600,500);
+  TH1F *h2 = new TH1F("h2","TPC0 East Cryostat MC +60 (IN1)", 100.,-1.0, 1.0); //-1.0, 1.0);0., 7.0);
   h2->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
-  //TCanvas* cnvs3= new TCanvas("cnvs3", "TPC3 East Cryostat MC +60",1,1,600,500);
-  TH1F *h3 = new TH1F("h3","TPC3 East Cryostat MC +60 (IN2)", 100., -1.0, 1.0); //0., 7.0);
+  //TCanvas* cnvs3= new TCanvas("cnvs3", "TPC0 East Cryostat MC +60",1,1,600,500);
+  TH1F *h3 = new TH1F("h3","TPC0 East Cryostat MC +60 (IN2)", 100., -1.0, 1.0); //0., 7.0);
   h3->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
-  //TCanvas* cnvs7= new TCanvas("cnvs7", "TPC3 West Cryostat MC +60",1,1,600,500);
-  TH1F *h4 = new TH1F("h4","TPC3 West Cryostat MC +60 (COL)", 100., -1.0, 1.0); //0., 7.0);
+  //TCanvas* cnvs7= new TCanvas("cnvs7", "TPC0 West Cryostat MC +60",1,1,600,500);
+  TH1F *h4 = new TH1F("h4","TPC0 West Cryostat MC +60 (COL)", 100., -1.0, 1.0); //0., 7.0);
   h4->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
-  //TCanvas* cnvs8= new TCanvas("cnvs8", "TPC3 West Cryostat MC +60",1,1,600,500);
-  TH1F *h5 = new TH1F("h5","TPC3 West Cryostat MC +60 (IN1)", 100., -1.0, 1.0); //0., 7.0);
+  //TCanvas* cnvs8= new TCanvas("cnvs8", "TPC0 West Cryostat MC +60",1,1,600,500);
+  TH1F *h5 = new TH1F("h5","TPC0 West Cryostat MC +60 (IN1)", 100., -1.0, 1.0); //0., 7.0);
   h5->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
-  //TCanvas* cnvs9= new TCanvas("cnvs9", "TPC3 West Cryostat MC +60",1,1,600,500);
-  TH1F *h6 = new TH1F("h6","TPC3 West Cryostat MC +60 (IN2)", 100., -1.0, 1.0); //0., 7.0);
+  //TCanvas* cnvs9= new TCanvas("cnvs9", "TPC0 West Cryostat MC +60",1,1,600,500);
+  TH1F *h6 = new TH1F("h6","TPC0 West Cryostat MC +60 (IN2)", 100., -1.0, 1.0); //0., 7.0);
   h6->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
 
 
@@ -196,7 +196,7 @@ void JUNE_plots_h60p_test(){
 
     h1->Fill(TMath::Cos(  (TMath::Pi()/3.0) + z_SEL12_East_MC_col[aa2] ) );
     cout<<TMath::Cos(z_SEL12_East_MC_col[aa2])<<" "<<z_SEL12_East_MC_col[aa2]<<endl;
-    //" "<<TMath::Cos(z60m_SEL12_East_MC_col[aa2])<<endl;
+    cout<<TMath::Cos(  (TMath::Pi()/3.0) + z_SEL12_East_MC_col[aa2] )<<endl;//" "<<TMath::Cos(z60m_SEL12_East_MC_col[aa2])<<endl;
   }
 
 
@@ -253,41 +253,41 @@ void JUNE_plots_h60p_test(){
 
 
 
-  TCanvas* cnvs1= new TCanvas("cnvs1", "TPC3 East Cryostat MC +60",1,1,600,500);
+  TCanvas* cnvs1= new TCanvas("cnvs1", "TPC0 East Cryostat MC +60",1,1,600,500);
   h1->Draw("HIST");
 
 
-  TCanvas* cnvs2= new TCanvas("cnvs2", "TPC3 East Cryostat MC +60",1,1,600,500);
+  TCanvas* cnvs2= new TCanvas("cnvs2", "TPC0 East Cryostat MC +60",1,1,600,500);
   h2->Draw("HIST");
 
-  TCanvas* cnvs3= new TCanvas("cnvs3", "TPC3 East Cryostat MC +60",1,1,600,500);
+  TCanvas* cnvs3= new TCanvas("cnvs3", "TPC0 East Cryostat MC +60",1,1,600,500);
   h3->Draw("HIST");
 
 
 
-  TCanvas* cnvs4= new TCanvas("cnvs4", "TPC3 West Cryostat MC +60",1,1,600,500);
+  TCanvas* cnvs4= new TCanvas("cnvs4", "TPC0 West Cryostat MC +60",1,1,600,500);
   h4->Draw("HIST");
 
-  TCanvas* cnvs5= new TCanvas("cnvs5", "TPC3 West Cryostat MC +60",1,1,600,500);
+  TCanvas* cnvs5= new TCanvas("cnvs5", "TPC0 West Cryostat MC +60",1,1,600,500);
   h5->Draw("HIST");
 
 
-  TCanvas* cnvs6= new TCanvas("cnvs6", "TPC3 West Cryostat MC +60",1,1,600,500);
+  TCanvas* cnvs6= new TCanvas("cnvs6", "TPC0 West Cryostat MC +60",1,1,600,500);
   h6->Draw("HIST");
 
 
-   cnvs1->SaveAs("MC_tpc3_sel12_East_file_HAngle_p60_test_col.pdf");
+   cnvs1->SaveAs("MC_tpc0_sel12_East_file_HAngle_p60_test_col.pdf");
 
-  cnvs2->SaveAs("MC_tpc3_sel12_East_file_HAngle_p60_test_in1.pdf");
+  cnvs2->SaveAs("MC_tpc0_sel12_East_file_HAngle_p60_test_in1.pdf");
 
-  cnvs3->SaveAs("MC_tpc3_sel12_East_file_HAngle_p60_test_in2.pdf");
+  cnvs3->SaveAs("MC_tpc0_sel12_East_file_HAngle_p60_test_in2.pdf");
 
 
-  cnvs4->SaveAs("MC_tpc3_sel12_West_file_HAngle_p60_test_col.pdf");
+  cnvs4->SaveAs("MC_tpc0_sel12_West_file_HAngle_p60_test_col.pdf");
 
-  cnvs5->SaveAs("MC_tpc3_sel12_West_file_HAngle_p60_test_in1.pdf");
+  cnvs5->SaveAs("MC_tpc0_sel12_West_file_HAngle_p60_test_in1.pdf");
 
-  cnvs6->SaveAs("MC_tpc3_sel12_West_file_HAngle_p60_test_in2.pdf");
+  cnvs6->SaveAs("MC_tpc0_sel12_West_file_HAngle_p60_test_in2.pdf");
 
  
 

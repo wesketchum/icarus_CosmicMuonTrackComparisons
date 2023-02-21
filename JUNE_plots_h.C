@@ -117,28 +117,28 @@ void JUNE_plots_h(){
 
 
   //  TCanvas* cnvs1= new TCanvas("cnvs1", "TPC3 East Cryostat MC",1,1,600,500);
-  TH1F *h1 = new TH1F("h1","TPC3 East Cryostat MC (COL)", 100., -1.0, 1.0);
-  h1->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
+  TH1F *h1 = new TH1F("h1","TPC3 East Cryostat MC (COL)", 100., -1.0, 1.0);//
+  h1->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
 
   //  TCanvas* cnvs2= new TCanvas("cnvs2", "TPC3 East Cryostat MC",1,1,600,500);
-  TH1F *h2 = new TH1F("h2","TPC3 East Cryostat MC (IN1)", 50.,-1.0, 1.0); //-1.0, 1.0);0., 7.0);
-  h2->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
+  TH1F *h2 = new TH1F("h2","TPC3 East Cryostat MC (IN1)", 50.,-1.0, 1.0);// //-1.0, 1.0);//0., 7.0);
+  h2->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
 
   //TCanvas* cnvs3= new TCanvas("cnvs3", "TPC3 East Cryostat MC",1,1,600,500);
-  TH1F *h3 = new TH1F("h3","TPC3 East Cryostat MC (IN2)", 100., -1.0, 1.0); //0., 7.0);
-  h3->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
+  TH1F *h3 = new TH1F("h3","TPC3 East Cryostat MC (IN2)", 100., -1.0, 1.0);// //0., 7.0);
+  h3->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
 
   //TCanvas* cnvs7= new TCanvas("cnvs7", "TPC3 West Cryostat MC",1,1,600,500);
-  TH1F *h4 = new TH1F("h4","TPC3 West Cryostat MC (COL)", 100., -1.0, 1.0); //0., 7.0);
-  h4->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
+  TH1F *h4 = new TH1F("h4","TPC3 West Cryostat MC (COL)", 100., -1.0, 1.0);// //0., 7.0);
+  h4->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
 
   //TCanvas* cnvs8= new TCanvas("cnvs8", "TPC3 West Cryostat MC",1,1,600,500);
-  TH1F *h5 = new TH1F("h5","TPC3 West Cryostat MC (IN1)", 100., -1.0, 1.0); //0., 7.0);
-  h5->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
+  TH1F *h5 = new TH1F("h5","TPC3 West Cryostat MC (IN1)", 100., -1.0, 1.0);// //0., 7.0);
+  h5->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
 
   //TCanvas* cnvs9= new TCanvas("cnvs9", "TPC3 West Cryostat MC",1,1,600,500);
-  TH1F *h6 = new TH1F("h6","TPC3 West Cryostat MC (IN2)", 100., -1.0, 1.0); //0., 7.0);
-  h6->GetXaxis()->SetTitle("Cosine of angle wrt horizontal");
+  TH1F *h6 = new TH1F("h6","TPC3 West Cryostat MC (IN2)", 100., -1.0, 1.0);// //0., 7.0);
+  h6->GetXaxis()->SetTitle("Cosine of angle wrt horizontal in radians");
 
 
 
@@ -202,13 +202,13 @@ void JUNE_plots_h(){
   for(int bb2 = 0; bb2<bb; bb2++){
 
     z_SEL12_East_MC_in1[bb2] =  abs( (TMath::Pi()/2.0) - SEL12_East_MC_in1[bb2] );
-    h2->Fill(z_SEL12_East_MC_in1[bb2]);
+    h2->Fill(TMath::Cos(z_SEL12_East_MC_in1[bb2]));
     }
 
 
   for(int cc2 = 0; cc2<cc; cc2++){
     z_SEL12_East_MC_in2[cc2] =  abs( (TMath::Pi()/2.0) - SEL12_East_MC_in2[cc2] );
-    h3->Fill(z_SEL12_East_MC_in2[cc2]);
+    h3->Fill(TMath::Cos(z_SEL12_East_MC_in2[cc2]));
     }
 
 
@@ -217,7 +217,7 @@ void JUNE_plots_h(){
   for(int dd2 = 0; dd2<dd; dd2++){
 
     z_SEL12_West_MC_col[dd2] =  abs( (TMath::Pi()/2.0) - SEL12_West_MC_col[dd2] );
-    h4->Fill(z_SEL12_West_MC_col[dd2]);
+    h4->Fill(TMath::Cos(z_SEL12_West_MC_col[dd2]));
      }
 
 
@@ -225,13 +225,13 @@ void JUNE_plots_h(){
   for(int ee2 = 0; ee2<ee; ee2++){
 
      z_SEL12_West_MC_in1[ee2] =  abs( (TMath::Pi()/2.0) - SEL12_West_MC_in1[ee2] );
-    h5->Fill(SEL12_West_MC_in1[ee2]);
+     h5->Fill(TMath::Cos(z_SEL12_West_MC_in1[ee2]));
      }
 
 
   for(int ff2 = 0; ff2<ff; ff2++){
     z_SEL12_West_MC_in2[ff2] =  abs( (TMath::Pi()/2.0) - SEL12_West_MC_in2[ff2] );
-    h6->Fill(z_SEL12_West_MC_in2[ff2]);
+    h6->Fill(TMath::Cos(z_SEL12_West_MC_in2[ff2]));
   }
 
 

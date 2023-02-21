@@ -351,7 +351,7 @@ void histos2W(bool verbose=false) {
 
   TFileCollection *my_files = new TFileCollection("my_files","My File List");
 
-  my_files->AddFromFile("mc_april22version.txt");
+  my_files->AddFromFile("mc_april22versiontest2.txt");
 
   //  TFileCollection *my_files = new TFileCollection("my_files","My File List");
   //my_files->Add("/pnfs/icarus/persistent/calibration/calib_ntuples/mc/ICARUS_NuMI_Nu_Cosmics/hist_prodcorsika_genie_protononly_icarus_numi*.root");///pnfs/icarus/persistent/calibration/calib_ntuples/mc/ICARUS_BNB_Nu_Cosmics/hist_prodcorsika_bnb*.root");//_genie_protononly_overburden_icarus_gen_filter_g4_detsim_48288510_9_reco1_20210916T052145_reco2.root");//hist_prodcorsika_genie_protononly_icarus_numi_volDetEnclosure_tpc_gen_filter_g4_detsim_48288511_98_reco1_20210912T202552_reco2.root");//*.root");//
@@ -370,7 +370,7 @@ void histos2W(bool verbose=false) {
   myfile.AddFileInfoList(my_files->GetList());
 
   TFileCollection *my_files2 = new TFileCollection("my_files2","My File List2");
-  my_files2->AddFromFile("data_april22version.txt");
+  my_files2->AddFromFile("data_april22versiontest2.txt");
 
 
   //  TFileCollection *my_files2 = new TFileCollection("my_files2","My File List2");
@@ -564,7 +564,7 @@ void histos2W(bool verbose=false) {
      a++;
      cout<<"track "<<a<<endl;
      outfile<<"track "<<a<<endl;
-     if(*selected == 0) continue; //if not stopping, move one.
+     if(*selected == 0) continue; //if stopping, move one.
      //if(*tpc2 != 0) continue;
      //only here if stopping 
  
@@ -1157,7 +1157,7 @@ void histos2W(bool verbose=false) {
    hs_az1->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
    hs_az1->GetYaxis()->SetTitle("Relative Frequency");
    TText Ta; Ta.SetTextFont(42); Ta.SetTextAlign(21);
-   Ta.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in1): West Cryostat");
+   Ta.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in2): West Cryostat");
    auto legenda = new TLegend(0.1,0.8,0.2,0.9);
    legenda->AddEntry(h1a,"MC");
    legenda->AddEntry(h2a,"Data");
@@ -1171,7 +1171,7 @@ void histos2W(bool verbose=false) {
    //h_azangle1_data->KolmogorovTest(//h_azangle1_mc,"U O N D ");
 
 
-   cnvs_az1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_AzimuthalAngle_in1TEST.pdf");
+   cnvs_az1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_AzimuthalAngle_in2TEST.pdf");
    //cnvs_az1->Write();
 
    TCanvas* cnvs_az0 = new TCanvas("cnvs_az0", "c2", 1,1,800,700);
@@ -1184,14 +1184,14 @@ void histos2W(bool verbose=false) {
    hs_az0->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
    hs_az0->GetYaxis()->SetTitle("Relative Frequency");
    TText Tb; Tb.SetTextFont(42); Tb.SetTextAlign(21);
-   Tb.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in2): West Cryostat");
+   Tb.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in1): West Cryostat");
    auto legendb = new TLegend(0.1,0.8,0.2,0.9);
    legendb->AddEntry(h1b,"MC");
    legendb->AddEntry(h2b,"Data");
    legendb->Draw();
    cnvs_az0->Update();
   
-   cnvs_az0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_AzimuthalAngle_in2TEST.pdf");//,"RECREATE");
+   cnvs_az0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_AzimuthalAngle_in1TEST.pdf");//,"RECREATE");
    //  cnvs_az0->Write();
  cout<<"az0"<<endl;
    Double_t res_az0[20];
@@ -1245,14 +1245,14 @@ void histos2W(bool verbose=false) {
    hs_zz1->GetXaxis()->SetTitle(" Zenith Angle in radians ");
    hs_zz1->GetYaxis()->SetTitle("Relative Frequency");
    TText Td; Td.SetTextFont(42); Td.SetTextAlign(21);
-   Td.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in1): West Cryostat");
+   Td.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in2): West Cryostat");
    auto legendd = new TLegend(0.1,0.8,0.2,0.9);
    legendd->AddEntry(h1d,"MC");
    legendd->AddEntry(h2d,"Data");
    legendd->Draw();
    cnvs_zz1->Update();
 
-   cnvs_zz1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_ZenithAngle_in1TEST.pdf");//,"RECREATE");
+   cnvs_zz1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_ZenithAngle_in2TEST.pdf");//,"RECREATE");
    //   cnvs_zz1->Write();
    cout<<"zz1"<<endl;
    Double_t res_zz1[20];
@@ -1273,13 +1273,13 @@ void histos2W(bool verbose=false) {
    hs_zz0->GetXaxis()->SetTitle(" Zenith Angle in radians ");
    hs_zz0->GetYaxis()->SetTitle("Relative Frequency");
    TText Te; Te.SetTextFont(42); Te.SetTextAlign(21);
-   Te.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in2): West Cryostat");
+   Te.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in1): West Cryostat");
    auto legende = new TLegend(0.1,0.8,0.2,0.9);
    legende->AddEntry(h1e,"MC");
    legende->AddEntry(h2e,"Data");
    legende->Draw();
    cnvs_zz0->Update();
-   cnvs_zz0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_ZenithAngle_in2TEST.pdf");//,"RECREATE");
+   cnvs_zz0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_ZenithAngle_in1TEST.pdf");//,"RECREATE");
    //   cnvs_zz0->Write();
    cout<<"zz0"<<endl;
    Double_t res_zz0[20];
@@ -1332,14 +1332,14 @@ void histos2W(bool verbose=false) {
    hs_q1->GetXaxis()->SetTitle(" dQ/dx  ");
    hs_q1->GetYaxis()->SetTitle("Relative Frequency");
    TText Tg; Tg.SetTextFont(42); Tg.SetTextAlign(21);
-   Tg.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in1): West Cryostat");
+   Tg.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in2): West Cryostat");
    auto legendg = new TLegend(0.1,0.8,0.2,0.9);
    legendg->AddEntry(h1g,"MC");
    legendg->AddEntry(h2g,"Data");
    legendg->Draw();
    cnvs_q1->Update();
 
-   cnvs_q1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_filedQdx_in1TEST.pdf");//,"RECREATE");
+   cnvs_q1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_filedQdx_in2TEST.pdf");//,"RECREATE");
    //   cnvs_q1->Write();
 
 
@@ -1362,7 +1362,7 @@ void histos2W(bool verbose=false) {
    hs_q0->GetXaxis()->SetTitle(" dQ/dx  ");
    hs_q0->GetYaxis()->SetTitle("Relative Frequency");
    TText Th; Th.SetTextFont(42); Th.SetTextAlign(21);
-   Th.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in2): West Cryostat");
+   Th.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in1): West Cryostat");
    auto legendh = new TLegend(0.1,0.8,0.2,0.9);
    legendh->AddEntry(h1h,"MC");
    legendh->AddEntry(h2h,"Data");
@@ -1370,7 +1370,7 @@ void histos2W(bool verbose=false) {
    cnvs_q0->Update();
 
 
-   cnvs_q0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_filedQdx_in2TEST.pdf");//,"RECREATE");
+   cnvs_q0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_filedQdx_in1TEST.pdf");//,"RECREATE");
    //   cnvs_q0->Write();
    cout<<"q0"<<endl;
    Double_t res_q0[20];
@@ -1420,7 +1420,7 @@ void histos2W(bool verbose=false) {
    hs_r1->GetXaxis()->SetTitle(" Residual Range in cm ");
    hs_r1->GetYaxis()->SetTitle("Relative Frequency");
    TText Tj; Tj.SetTextFont(42); Tj.SetTextAlign(21);
-   Tj.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in1): West Cryostat");
+   Tj.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in2): West Cryostat");
    auto legendj = new TLegend(0.1,0.8,0.2,0.9);
    legendj->AddEntry(h1j,"MC");
    legendj->AddEntry(h2j,"Data");
@@ -1430,7 +1430,7 @@ void histos2W(bool verbose=false) {
 
 
    //   TFile* my_new_file11 = new TFile(
-   cnvs_r1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileRR_in1TEST.pdf");//,"RECREATE");
+   cnvs_r1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileRR_in2TEST.pdf");//,"RECREATE");
    //cnvs_r1->Write();
 
 
@@ -1453,7 +1453,7 @@ void histos2W(bool verbose=false) {
    hs_r0->GetXaxis()->SetTitle(" Residual Range in cm ");
    hs_r0->GetYaxis()->SetTitle("Relative Frequency");
    TText Tk; Tk.SetTextFont(42); Tk.SetTextAlign(21);
-   Tk.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in2): West Cryostat");
+   Tk.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in1): West Cryostat");
    auto legendk = new TLegend(0.1,0.8,0.2,0.9);
    legendk->AddEntry(h1k,"MC");
    legendk->AddEntry(h2k,"Data");
@@ -1461,7 +1461,7 @@ void histos2W(bool verbose=false) {
    cnvs_r0->Update();
 
    //TFile* my_new_file12 = new TFile(
-   cnvs_r0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileRR_in2TEST.pdf");//,"RECREATE");
+   cnvs_r0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileRR_in1TEST.pdf");//,"RECREATE");
    //   cnvs_r0->Write();
 
 
@@ -1586,7 +1586,7 @@ void histos2W(bool verbose=false) {
    cnvs_sy->Update();
 
    //TFile* my_new_file16 = new TFile(
-   cnvs_sy->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileStartY_in1TEST.pdf");//,"RECREATE");
+   cnvs_sy->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileStartY_in2TEST.pdf");//,"RECREATE");
    //  cnvs_sy->Write();
 
 
@@ -1675,7 +1675,7 @@ void histos2W(bool verbose=false) {
    legendr->Draw();
    cnvs_ey->Update();
    //TFile* my_new_file19 = new TFile(
-   cnvs_ey->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileEndY_in1TEST.pdf");//,"RECREATE");
+   cnvs_ey->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileEndY_in2TEST.pdf");//,"RECREATE");
    //  cnvs_ey->Write();
    cout<<"ey"<<endl;
    Double_t res_ey[20];
@@ -1757,7 +1757,7 @@ void histos2W(bool verbose=false) {
    hs_ci1->GetXaxis()->SetTitle(" Charge Integral in ADC  ");
    hs_ci1->GetYaxis()->SetTitle("Relative Frequency");
    TText TBB; TBB.SetTextFont(42); TBB.SetTextAlign(21);
-   TBB.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in1): West Cryostat");
+   TBB.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in2): West Cryostat");
    auto legendBB = new TLegend(0.1,0.8,0.2,0.9);
    legendBB->AddEntry(h1BB,"MC");
    legendBB->AddEntry(h2BB,"Data");
@@ -1765,7 +1765,7 @@ void histos2W(bool verbose=false) {
    cnvs_ci1->Update();
 
    //TFile* my_new_file22 = new TFile(
-   cnvs_ci1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileInt_in1TEST.pdf");//,"RECREATE");
+   cnvs_ci1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileInt_in2TEST.pdf");//,"RECREATE");
    //   cnvs_ci1->Write();
    cout<<"ci1"<<endl;
    Double_t res_ci1[20];
@@ -1785,14 +1785,14 @@ void histos2W(bool verbose=false) {
    hs_ci0->GetXaxis()->SetTitle(" Charge Integral in ADC  ");
    hs_ci0->GetYaxis()->SetTitle("Relative Frequency");
    TText TCC; TCC.SetTextFont(42); TCC.SetTextAlign(21);
-   TCC.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in2): West Cryostat");
+   TCC.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in1): West Cryostat");
    auto legendCC = new TLegend(0.1,0.8,0.2,0.9);
    legendCC->AddEntry(h1CC,"MC");
    legendCC->AddEntry(h2CC,"Data");
    legendCC->Draw();
    cnvs_ci0->Update();
    //TFile* my_new_file23 = new TFile(
-   cnvs_ci0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileInt_in2TEST.pdf");//,"RECREATE");
+   cnvs_ci0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileInt_in1TEST.pdf");//,"RECREATE");
    //   cnvs_ci0->Write();
    cout<<"ci0"<<endl;
    Double_t res_ci0[20];
@@ -1844,7 +1844,7 @@ void histos2W(bool verbose=false) {
    hs_wi1->GetXaxis()->SetTitle(" Width in ticks  ");
    hs_wi1->GetYaxis()->SetTitle("Relative Frequency");
    TText TEE; TEE.SetTextFont(42); TEE.SetTextAlign(21);
-   TEE.DrawTextNDC(.5,.95,"Relative Frequency vs Width (in1): West Cryostat");
+   TEE.DrawTextNDC(.5,.95,"Relative Frequency vs Width (in2): West Cryostat");
    auto legendEE = new TLegend(0.1,0.8,0.2,0.9);
    legendEE->AddEntry(h1EE,"MC");
    legendEE->AddEntry(h2EE,"Data");
@@ -1852,7 +1852,7 @@ void histos2W(bool verbose=false) {
    cnvs_wi1->Update();
 
    //   TFile* my_new_file25 = new TFile(
-   cnvs_wi1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileWidth_in1TEST.pdf");//,"RECREATE");
+   cnvs_wi1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileWidth_in2TEST.pdf");//,"RECREATE");
    //cnvs_wi1->Write();
 
    cout<<"wi1"<<endl;
@@ -1874,14 +1874,14 @@ void histos2W(bool verbose=false) {
    hs_wi0->GetXaxis()->SetTitle(" Width in ticks  ");
    hs_wi0->GetYaxis()->SetTitle("Relative Frequency");
    TText TFF; TFF.SetTextFont(42); TFF.SetTextAlign(21);
-   TFF.DrawTextNDC(.5,.95,"Relative Frequency vs Width (in2): West Cryostat");
+   TFF.DrawTextNDC(.5,.95,"Relative Frequency vs Width (in1): West Cryostat");
    auto legendFF = new TLegend(0.1,0.8,0.2,0.9);
    legendFF->AddEntry(h1FF,"MC");
    legendFF->AddEntry(h2FF,"Data");
    legendFF->Draw();
    cnvs_wi0->Update();
    //TFile* my_new_file26 = new TFile(
-   cnvs_wi0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileWidth_in2TEST.pdf");//,"RECREATE");
+   cnvs_wi0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileWidth_in1TEST.pdf");//,"RECREATE");
    // cnvs_wi0->Write();
 
    cout<<"wi0"<<endl;
@@ -1932,14 +1932,14 @@ void histos2W(bool verbose=false) {
    hs_w1->GetXaxis()->SetTitle(" Wire Number  ");
    hs_w1->GetYaxis()->SetTitle("Relative Frequency");
    TText THH; THH.SetTextFont(42); THH.SetTextAlign(21);
-   THH.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (in1): West Cryostat");
+   THH.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (in2): West Cryostat");
    auto legendHH = new TLegend(0.1,0.8,0.2,0.9);
    legendHH->AddEntry(h1HH,"MC");
    legendHH->AddEntry(h2HH,"Data");
    legendHH->Draw();
    cnvs_w1->Update();
    //   TFile* my_new_file28 = new TFile(
-   cnvs_w1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileWire_in1TEST.pdf");//,"RECREATE");
+   cnvs_w1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileWire_in2TEST.pdf");//,"RECREATE");
    // cnvs_w1->Write();
    cout<<"w1"<<endl;
    Double_t res_w1[20];
@@ -1959,14 +1959,14 @@ void histos2W(bool verbose=false) {
    hs_w0->GetXaxis()->SetTitle(" Wire Number  ");
    hs_w0->GetYaxis()->SetTitle("Relative Frequency");
    TText TII; TII.SetTextFont(42); TII.SetTextAlign(21);
-   TII.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (in2): West Cryostat");
+   TII.DrawTextNDC(.5,.95,"Relative Frequency vs Wire (in1): West Cryostat");
    auto legendII = new TLegend(0.1,0.8,0.2,0.9);
    legendII->AddEntry(h1II,"MC");
    legendII->AddEntry(h2II,"Data");
    legendII->Draw();
    cnvs_w0->Update();
    //   TFile* my_new_file29 = new TFile(
-   cnvs_w0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileWire_in2TEST.pdf");//,"RECREATE");
+   cnvs_w0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileWire_in1TEST.pdf");//,"RECREATE");
    //cnvs_w0->Write();
    cout<<"w0"<<endl;
    Double_t res_w0[20];
@@ -2019,7 +2019,7 @@ void histos2W(bool verbose=false) {
    hs_ti1->GetXaxis()->SetTitle(" Time in ticks  ");
    hs_ti1->GetYaxis()->SetTitle("Relative Frequency");
    TText TKK; TKK.SetTextFont(42); TKK.SetTextAlign(21);
-   TKK.DrawTextNDC(.5,.95,"Relative Frequency vs Time (in1): West Cryostat");
+   TKK.DrawTextNDC(.5,.95,"Relative Frequency vs Time (in2): West Cryostat");
    auto legendKK = new TLegend(0.1,0.8,0.2,0.9);
    legendKK->AddEntry(h1KK,"MC");
    legendKK->AddEntry(h2KK,"Data");
@@ -2028,7 +2028,7 @@ void histos2W(bool verbose=false) {
 
 
    //   TFile* my_new_file31 = new TFile(
-   cnvs_ti1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileTime_in1TEST.pdf");//,"RECREATE");
+   cnvs_ti1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileTime_in2TEST.pdf");//,"RECREATE");
    // cnvs_ti1->Write();
 
 
@@ -2052,7 +2052,7 @@ void histos2W(bool verbose=false) {
    hs_ti0->GetXaxis()->SetTitle(" Time in ticks  ");
    hs_ti0->GetYaxis()->SetTitle("Relative Frequency");
    TText TLL; TLL.SetTextFont(42); TLL.SetTextAlign(21);
-   TLL.DrawTextNDC(.5,.95,"Relative Frequency vs Time (in2): West Cryostat");
+   TLL.DrawTextNDC(.5,.95,"Relative Frequency vs Time (in1): West Cryostat");
    auto legendLL = new TLegend(0.1,0.8,0.2,0.9);
    legendLL->AddEntry(h1LL,"MC");
    legendLL->AddEntry(h2LL,"Data");
@@ -2060,7 +2060,7 @@ void histos2W(bool verbose=false) {
    cnvs_ti0->Update();
 
    //   TFile* my_new_file32 = new TFile(
-   cnvs_ti0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileTime_in2TEST.pdf");//,"RECREATE");
+   cnvs_ti0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileTime_in1TEST.pdf");//,"RECREATE");
    //cnvs_ti0->Write();
 
 
@@ -2113,7 +2113,7 @@ void histos2W(bool verbose=false) {
    hs_x1->GetXaxis()->SetTitle(" Distance (X) in cm  ");
    hs_x1->GetYaxis()->SetTitle("Relative Frequency");
    TText TNN; TNN.SetTextFont(42); TNN.SetTextAlign(21);
-   TNN.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (in1): West Cryostat");
+   TNN.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (in2): West Cryostat");
    auto legendNN = new TLegend(0.1,0.8,0.2,0.9);
    legendNN->AddEntry(h1NN,"MC");
    legendNN->AddEntry(h2NN,"Data");
@@ -2121,7 +2121,7 @@ void histos2W(bool verbose=false) {
    cnvs_x1->Update();
 
    //   TFile* my_new_file34 = new TFile(
-   cnvs_x1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisX_in1TEST.pdf");//,"RECREATE");
+   cnvs_x1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisX_in2TEST.pdf");//,"RECREATE");
    //cnvs_x1->Write();
    cout<<"x1"<<endl;
    Double_t res_x1[20];
@@ -2141,7 +2141,7 @@ void histos2W(bool verbose=false) {
    hs_x0->GetXaxis()->SetTitle(" Distance (X) in cm  ");
    hs_x0->GetYaxis()->SetTitle("Relative Frequency");
    TText TOO; TOO.SetTextFont(42); TOO.SetTextAlign(21);
-   TOO.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (in2): West Cryostat");
+   TOO.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (X) (in1): West Cryostat");
    auto legendOO = new TLegend(0.1,0.8,0.2,0.9);
    legendOO->AddEntry(h1OO,"MC");
    legendOO->AddEntry(h2OO,"Data");
@@ -2149,7 +2149,7 @@ void histos2W(bool verbose=false) {
    cnvs_x0->Update();
 
    //   TFile* my_new_file35 = new TFile(
-   cnvs_x0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisX_in2TEST.pdf");//,"RECREATE");
+   cnvs_x0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisX_in1TEST.pdf");//,"RECREATE");
    //cnvs_x0->Write();
 
 
@@ -2202,7 +2202,7 @@ void histos2W(bool verbose=false) {
    hs_y1->GetXaxis()->SetTitle(" Distance (Y) in cm  ");
    hs_y1->GetYaxis()->SetTitle("Relative Frequency");
    TText TQQ; TQQ.SetTextFont(42); TQQ.SetTextAlign(21);
-   TQQ.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (in1): West Cryostat");
+   TQQ.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (in2): West Cryostat");
    auto legendQQ = new TLegend(0.1,0.8,0.2,0.9);
    legendQQ->AddEntry(h1QQ,"MC");
    legendQQ->AddEntry(h2QQ,"Data");
@@ -2210,7 +2210,7 @@ void histos2W(bool verbose=false) {
    cnvs_y1->Update();
 
    // TFile* my_new_file37 = new TFile(
-   cnvs_y1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisY_in1TEST.pdf");//,"RECREATE");
+   cnvs_y1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisY_in2TEST.pdf");//,"RECREATE");
    //cnvs_y1->Write();
 
    cout<<"y1"<<endl;
@@ -2232,7 +2232,7 @@ void histos2W(bool verbose=false) {
    hs_y0->GetXaxis()->SetTitle(" Distance (Y) in cm  ");
    hs_y0->GetYaxis()->SetTitle("Relative Frequency");
    TText TRR; TRR.SetTextFont(42); TRR.SetTextAlign(21);
-   TRR.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (in2): West Cryostat");
+   TRR.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Y) (in1): West Cryostat");
    auto legendRR = new TLegend(0.1,0.8,0.2,0.9);
    legendRR->AddEntry(h1RR,"MC");
    legendRR->AddEntry(h2RR,"Data");
@@ -2241,7 +2241,7 @@ void histos2W(bool verbose=false) {
 
 
    //  TFile* my_new_file38 = new TFile(
-   cnvs_y0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisY_in2TEST.pdf");//,"RECREATE");
+   cnvs_y0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisY_in1TEST.pdf");//,"RECREATE");
    //cnvs_y0->Write();
 
    cout<<"y0"<<endl;
@@ -2294,7 +2294,7 @@ void histos2W(bool verbose=false) {
    hs_z1->GetXaxis()->SetTitle(" Distance (Z) in cm  ");
    hs_z1->GetYaxis()->SetTitle("Relative Frequency");
    TText TTT; TTT.SetTextFont(42); TTT.SetTextAlign(21);
-   TTT.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (in1): West Cryostat");
+   TTT.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (in2): West Cryostat");
    auto legendTT = new TLegend(0.1,0.8,0.2,0.9);
    legendTT->AddEntry(h1TT,"MC");
    legendTT->AddEntry(h2TT,"Data");
@@ -2303,7 +2303,7 @@ void histos2W(bool verbose=false) {
 
 
    //TFile* my_new_file40 = new TFile(
-   cnvs_z1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisZ_in1TEST.pdf");//,"RECREATE");
+   cnvs_z1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisZ_in2TEST.pdf");//,"RECREATE");
    //   cnvs_z1->Write();
 
    cout<<"z1"<<endl;
@@ -2325,7 +2325,7 @@ void histos2W(bool verbose=false) {
    hs_z0->GetXaxis()->SetTitle(" Distance (Z) in cm  ");
    hs_z0->GetYaxis()->SetTitle("Relative Frequency");
    TText TUU; TUU.SetTextFont(42); TUU.SetTextAlign(21);
-   TUU.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (in2): West Cryostat");
+   TUU.DrawTextNDC(.5,.95,"Relative Frequency vs Distance (Z) (in1): West Cryostat");
    auto legendUU = new TLegend(0.1,0.8,0.2,0.9);
    legendUU->AddEntry(h1UU,"MC");
    legendUU->AddEntry(h2UU,"Data");
@@ -2333,7 +2333,7 @@ void histos2W(bool verbose=false) {
    cnvs_z0->Update();
 
    //TFile* my_new_file41 = new TFile(
-   cnvs_z0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisZ_in2TEST.pdf");//,"RECREATE");
+   cnvs_z0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_fileDisZ_in1TEST.pdf");//,"RECREATE");
    // cnvs_z0->Write();
    cout<<"z0"<<endl;
    Double_t res_z0[20];
@@ -2388,7 +2388,7 @@ void histos2W(bool verbose=false) {
    hs_p1->GetXaxis()->SetTitle(" Pitch in cm  ");
    hs_p1->GetYaxis()->SetTitle("Relative Frequency");
    TText TWW; TWW.SetTextFont(42); TWW.SetTextAlign(21);
-   TWW.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (in1): West Cryostat");
+   TWW.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (in2): West Cryostat");
    auto legendWW = new TLegend(0.1,0.8,0.2,0.9);
    legendWW->AddEntry(h1WW,"MC");
    legendWW->AddEntry(h2WW,"Data");
@@ -2397,7 +2397,7 @@ void histos2W(bool verbose=false) {
 
 
    //   TFile* my_new_file43 = new TFile(
-   cnvs_p1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_Pitch_in1TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
+   cnvs_p1->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_Pitch_in2TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
                                                                                                                                
   //  cnvs_p1->Write();
 
@@ -2420,7 +2420,7 @@ void histos2W(bool verbose=false) {
    hs_p0->GetXaxis()->SetTitle(" Pitch in cm  ");
    hs_p0->GetYaxis()->SetTitle("Relative Frequency");
    TText TXX; TXX.SetTextFont(42); TXX.SetTextAlign(21);
-   TXX.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (in2): West Cryostat");
+   TXX.DrawTextNDC(.5,.95,"Relative Frequency vs Pitch (in1): West Cryostat");
    auto legendXX = new TLegend(0.1,0.8,0.2,0.9);
    legendXX->AddEntry(h1XX,"MC");
    legendXX->AddEntry(h2XX,"Data");
@@ -2428,7 +2428,7 @@ void histos2W(bool verbose=false) {
    cnvs_p0->Update();
 
    //   TFile* my_new_file44 = new TFile(
-   cnvs_p0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_Pitch_in2TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
+   cnvs_p0->SaveAs("my_TESToutputNUMI_tpc3_SEL12_West_file_Pitch_in1TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
                                                                                                                                
    // cnvs_p0->Write();
 
@@ -2477,7 +2477,7 @@ void histos2W(bool verbose=false) {
     hs_az1->GetXaxis()->SetTitle(" Azimuthal Angle in radians ");
     hs_az1->GetYaxis()->SetTitle("Relative Frequency");
     TText Ta; Ta.SetTextFont(42); Ta.SetTextAlign(21);
-    Ta.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in1): West Cryostat");
+    Ta.DrawTextNDC(.5,.95,"Relative Frequency vs Azimuthal Angle (in2): West Cryostat");
     auto legenda = new TLegend(0.1,0.8,0.2,0.9);
     legenda->AddEntry(h1a,"MC");
     legenda->AddEntry(h2a,"Data");
@@ -2512,7 +2512,7 @@ void histos2W(bool verbose=false) {
     hs_z1->GetXaxis()->SetTitle(" Zenith Angle in radians ");
     hs_z1->GetYaxis()->SetTitle("Relative Frequency");
     TText Td; Td.SetTextFont(42); Td.SetTextAlign(21);
-    Td.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in1): West Cryostat");
+    Td.DrawTextNDC(.5,.95,"Relative Frequency vs Zenith Angle (in2): West Cryostat");
     auto legendd = new TLegend(0.1,0.8,0.2,0.9);
     legendd->AddEntry(h1d,"MC");
     legendd->AddEntry(h2d,"Data");
@@ -2547,7 +2547,7 @@ void histos2W(bool verbose=false) {
     hs_r1->GetXaxis()->SetTitle(" Residual Range in cm ");
     hs_r1->GetYaxis()->SetTitle("Relative Frequency");
     TText Tg; Tg.SetTextFont(42); Tg.SetTextAlign(21);
-    Tg.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in1): West Cryostat");
+    Tg.DrawTextNDC(.5,.95,"Relative Frequency vs Residual Range (in2): West Cryostat");
     auto legendg = new TLegend(0.1,0.8,0.2,0.9);
     legendg->AddEntry(h1g,"MC");
     legendg->AddEntry(h2g,"Data");
@@ -2578,7 +2578,7 @@ void histos2W(bool verbose=false) {
     hs_q1->GetXaxis()->SetTitle(" dQ/dx  ");
     hs_q1->GetYaxis()->SetTitle("Relative Frequency");
     TText Tj; Tj.SetTextFont(42); Tj.SetTextAlign(21);
-    Tj.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in1): West Cryostat");
+    Tj.DrawTextNDC(.5,.95,"Relative Frequency vs dQ/dx (in2): West Cryostat");
     auto legendj = new TLegend(0.1,0.8,0.2,0.9);
     legendj->AddEntry(h1j,"MC");
     legendj->AddEntry(h2j,"Data");

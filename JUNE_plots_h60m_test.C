@@ -196,7 +196,7 @@ void JUNE_plots_h60m_test(){
 
     h1->Fill(TMath::Cos(  (TMath::Pi()/3.0) - z_SEL12_East_MC_col[aa2] ) );
     cout<<TMath::Cos(z_SEL12_East_MC_col[aa2])<<" "<<z_SEL12_East_MC_col[aa2]<<endl;
-    //" "<<TMath::Cos(z60m_SEL12_East_MC_col[aa2])<<endl;
+    cout<<TMath::Cos(  (TMath::Pi()/3.0) - z_SEL12_East_MC_col[aa2] )<<endl;    //" "<<TMath::Cos(z60m_SEL12_East_MC_col[aa2])<<endl;
   }
 
 
