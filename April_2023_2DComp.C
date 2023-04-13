@@ -62,7 +62,7 @@ void April_2023_2DComp(bool verbose=false) {
   // Create a histograms for the values we read.
   */
 
-  TH1F *h_angle   = new TH1F("h_angle","Relative Frequency vs  Pitch: West Cryostat", 100., 0., 25.);
+  TH1F *h_angle = new TH1F("h_angle","Relative Frequency vs  Pitch: West Cryostat", 100., 0., 25.);
   TH1F *h_dqdx = new TH1F("h_dqdx","Relative Frequency vs Pitch: West Cryostat", 100., 0., 25.);
   h_angle->GetXaxis()->SetTitle(" Pitch in cm");
   h_angle->GetYaxis()->SetTitle("Relative Frequency");
@@ -117,7 +117,17 @@ void April_2023_2DComp(bool verbose=false) {
   }
 
   cout<<E0<<" "<<W0<<" "<<E1<<" "<<W1<<" "<<E2<<" "<<W2<<" "<<E3<<" "<<W3<<" "<<endl;
+  for(int n = 0; n < W3; n++){
 
+    h_dqdx->Fill(dqdx_1[n]);
+
+  }
+
+  for(int m = 0; m < E0; m++){
+
+    h_angle->Fill(h1[m]);
+
+  }
 
 
   /*     h_l2Dc_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , *length);
@@ -125,10 +135,13 @@ void April_2023_2DComp(bool verbose=false) {
    //normalizing MC distribution
    */
 
-  TH2*ha = (TH2*)(h_angle->Clone("h1m"));
+
+
+
+  TH2F*ha = (TH2F*)(h_angle->Clone("ha"));
   ha->Scale(1./ha->Integral());
 
-  TH2*hq = (TH2*)(h_dqdx->Clone("h1n"));
+  TH2F*hq = (TH2F*)(h_dqdx->Clone("hq"));
   hq->Scale(1./hq->Integral());
 
 
@@ -139,9 +152,11 @@ void April_2023_2DComp(bool verbose=false) {
    cout<<"norm"<<endl;
 
    TCanvas* cnvs_l2Dc = new TCanvas("cnvs_l2Dc", "c122Dc", 1,1,800,700);
+   
+   cout<<"CANVAS_1"<<endl;
    auto h1l2Dc_prof = ha->ProfileX();
    auto h2l2Dc_prof = hq->ProfileX();
-   cout<<"CANVAS"<<endl;
+   cout<<"CANVAS_2"<<endl;
    //h1l2Dc_prof->SetLineColor(kRed);
    //h2l2Dc_prof->SetLineColor(kBlue);
    h1l2Dc_prof->Draw();
