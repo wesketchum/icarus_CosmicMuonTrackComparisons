@@ -3,7 +3,7 @@
 #include "TTreeReader.h"
 #include "TTreeReaderValue.h"
 
-void Nov2D(bool verbose=false) {
+void April_2023_2DComp(bool verbose=false) {
 
 
   gStyle->SetOptStat(0);
@@ -13,9 +13,10 @@ void Nov2D(bool verbose=false) {
   ifstream infile2b("p60noCOSangle_by_in2_E_tpc0.txt");
   ifstream infile3a("m60noCOSangle_by_col_E_tpc0.txt");
   ifstream infile3b("m60noCOSangle_by_in2_E_tpc0.txt");
-  ifstream infile4("OUTFILE_my_testTESToutputNUMI_tpc0_sel0_East_file_Qdx_in1.txt");
-  ifstream infile5("OUTFILE_my_testTESToutputNUMI_tpc0_sel0_East_file_Qdx_col.txt");
-  ifstream infile6("OUTFILE_my_testTESToutputNUMI_tpc0_sel0_East_file_Qdx_in2.txt");
+  ifstream infile4("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
+  ifstream infile5("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
+//OUTFILE_my_testTESToutputNUMI_tpc0_sel0_East_file_Qdx_col.txt");
+  ifstream infile6("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
   cout<<"HERE"<<endl;
   int E0 = 0;
   int W0 = 0;

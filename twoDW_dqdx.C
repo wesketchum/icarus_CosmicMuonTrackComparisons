@@ -2481,10 +2481,7 @@ void twoDW_dqdx(bool verbose=false) {
 
 
 
-
-
-
-   TCanvas* cnvs_l2Dc = new TCanvas("cnvs_l2Dc", "c122Dc", 1,1,800,700);
+   TCanvas* cnvs_l2Dc = new TCanvas("cnvs_l2Dc", "c122Dc", 1,1,800,700);   
    auto h1l2Dc_prof = h1l2Dc->ProfileX();
    auto h2l2Dc_prof = h2l2Dc->ProfileX();
    h1l2Dc_prof->SetLineColor(kRed);
@@ -2493,7 +2490,7 @@ void twoDW_dqdx(bool verbose=false) {
    h1l2Dc_prof->SetMaximum(900);
    h1l2Dc_prof->Draw();
    h2l2Dc_prof->Draw("same");
-   
+
 
    auto legendl2Dc = new TLegend(0.1,0.8,0.2,0.9);
    legendl2Dc->AddEntry(h1l2Dc_prof,"MC");
@@ -2507,7 +2504,6 @@ void twoDW_dqdx(bool verbose=false) {
    cnvs_l2Dc->Write();
 
    cnvs_l2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel12_JUNE_East_fileLength_Az_col.pdf");
-
 
    TCanvas* cnvs_zl2Dc = new TCanvas("cnvs_zl2Dc", "zc122Dc", 1,1,800,700);
    auto hz1l2Dc_prof = hz1l2Dc->ProfileX();

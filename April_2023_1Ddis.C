@@ -5,78 +5,87 @@
 #include "sbnobj/Common/Calibration/TrackCaloSkimmerObj.h"
 
 
-
-void plus60twoDW(bool verbose=false) {
+void April_2023_1Ddis(bool verbose=false) {
 
 
   gStyle->SetOptStat(0);
+  ofstream outfile("t.txt");
+  ofstream out0("mcJUNE_NUMI_tpc0_sel122_East_file_ZenithAngle_col.txt");
+  ofstream out1("mcJUNE_NUMI_tpc0_sel122_East_file_ZenithAngle_in1.txt");
+  ofstream out2("mcJUNE_NUMI_tpc0_sel122_East_file_ZenithAngle_in2.txt");
 
-  ofstream outfile("test.txt");
-
-
-  ofstream outfile1("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Length_Az_col.txt");
-  ofstream outfile2("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Cint_Az_col.txt");
-  ofstream outfile3("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Width_Az_col.txt");
-  ofstream outfile4("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Length_Az_col.txt");
-  ofstream outfile5("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Cint_Az_col.txt");
-  ofstream outfile6("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Width_Az_col.txt");
+  ofstream outb0("dataJUNE_NUMI_tpc0_sel122_East_file_ZenithAngle_col.txt");
+  ofstream outb1("dataJUNE_NUMI_tpc0_sel122_East_file_ZenithAngle_in1.txt");
+  ofstream outb2("dataJUNE_NUMI_tpc0_sel122_East_file_ZenithAngle_in2.txt");
 
 
-  ofstream outfile7("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Length_Z_col.txt");
-  ofstream outfile8("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Cint_Z_col.txt");
-  ofstream outfile9("OUTFILE_mc_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Width_Z_col.txt");
-  ofstream outfile10("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Length_Z_col.txt");
-  ofstream outfile11("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Cint_Z_col.txt");
-  ofstream outfile12("OUTFILE_data_my_60plusTESToutputNUMI_tpc0_sel2_East_file_Width_Z_col.txt");
+
+  ofstream outfile1("OUTFILE_mc_my_testTESToutputNUMI_tpc0_sel12_East_file_Length_Az_col.txt");
+  ofstream outfile2("OUTFILE_mc_my_testTESToutputNUMI_tpc0_sel12_East_file_Cint_Az_col.txt");
+  ofstream outfile3("OUTFILE_mc_my_testTESToutputNUMI_tpc0_sel12_East_file_Width_Az_col.txt");
+  ofstream outfile4("OUTFILE_data_my_testTESToutputNUMI_tpc0_sel12_East_file_Length_Az_col.txt");
+  ofstream outfile5("OUTFILE_data_my_testTESToutputNUMI_tpc0_sel12_East_file_Cint_Az_col.txt");
+  ofstream outfile6("OUTFILE_data_my_testTESToutputNUMI_tpc0_sel12_East_file_Width_Az_col.txt");
+
+
+  ofstream outfile7("QDOUTFILE_mc_my_testTESToutputNUMI_tpc0_sel12_East_file_Length_Z_col.txt");
+  ofstream outfile8("QDOUTFILE_mc_my_testTESToutputNUMI_tpc0_sel12_East_file_Cint_Z_col.txt");
+  ofstream outfile9("QDOUTFILE_mc_my_testTESToutputNUMI_tpc0_sel12_East_file_Width_Z_col.txt");
+  ofstream outfile10("QDOUTFILE_data_my_testTESToutputNUMI_tpc0_sel12_East_file_Length_Z_col.txt");
+  ofstream outfile11("QDOUTFILE_data_my_testTESToutputNUMI_tpc0_sel12_East_file_Cint_Z_col.txt");
+  ofstream outfile12("QDOUTFILE_data_my_testTESToutputNUMI_tpc0_sel12_East_file_Width_Z_col.txt");
 
 
 
 
   /*
-  ofstream outfileazc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_AzimuthalAngle_col.txt");
-  ofstream outfileaz1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_AzimuthalAngle_in1.txt");
-  ofstream outfileaz2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_AzimuthalAngle_in2.txt");
-  ofstream outfilezc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_ZenithAngle_col.txt");
-  ofstream outfilez1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_ZenithAngle_in1.txt");
-  ofstream outfilez2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_ZenithAngle_in2.txt");
-  ofstream outfileqc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Qdx_col.txt");
-  ofstream outfileq1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Qdx_in1.txt");
-  ofstream outfileq2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Qdx_col.txt");
-  ofstream outfilerrc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_RR_col.txt");
-  ofstream outfilerr1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_RR_in1.txt");
-  ofstream outfilerr2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_RR_col.txt");
-  ofstream outfilel("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Length.txt");
-  ofstream outfilet("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_To.txt");
-  ofstream outfilesx("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_StartX.txt");
-  ofstream outfilesy("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_StartY.txt");
-  ofstream outfilesz("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_StartZ.txt");
-  ofstream outfileex("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_EndX.txt");
-  ofstream outfileey("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_EndY.txt");
-  ofstream outfileez("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_EndZ.txt");
-  ofstream outfilecc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_cInt_col.txt");
-  ofstream outfilec1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_cInt_in1.txt");
-  ofstream outfilec2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_cInt_in2.txt");
-  ofstream outfilewc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Width_col.txt");
-  ofstream outfilew1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Width_in1.txt");
-  ofstream outfilew2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Width_in2.txt");
-  ofstream outfilewrc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Wire_col.txt");
-  ofstream outfilewr1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Wire_in1.txt");
-  ofstream outfilewr2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Wire_in2.txt");
-  ofstream outfiletic("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Time_col.txt");
-  ofstream outfileti1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Time_in1.txt");
-  ofstream outfileti2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Time_in2.txt");
-  ofstream outfiledxc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceX_col.txt");
-  ofstream outfiledx1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceX_in1.txt");
-  ofstream outfiledx2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceX_in2.txt");
-  ofstream outfiledyc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceY_col.txt");
-  ofstream outfiledy1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceY_in1.txt");
-  ofstream outfiledy2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceY_in2.txt");
-  ofstream outfiledzc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceZ_col.txt");
-  ofstream outfiledz1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceZ_in1.txt");
-  ofstream outfiledz2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_DistanceZ_in2.txt");
-  ofstream outfilepc("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Pitch_col.txt");
-  ofstream outfilep1("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Pitch_in1.txt");
-  ofstream outfilep2("OUTFILE_my_60plusTESToutputNUMI_tpc1_sel0_East_file_Pitch_in2.txt");
+  ofstream outfileazc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_AzimuthalAngle_col.txt");
+  ofstream outfileaz1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_AzimuthalAngle_in1.txt");
+  ofstream outfileaz2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_AzimuthalAngle_in2.txt");
+  ofstream outfilezc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_ZenithAngle_col.txt");
+  ofstream outfilez1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_ZenithAngle_in1.txt");
+  ofstream outfilez2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_ZenithAngle_in2.txt");
+ 
+  */
+ ofstream outfileqc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
+  ofstream outfileq1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
+  ofstream outfileq2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
+  /*
+  ofstream outfilerrc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_RR_col.txt");
+  ofstream outfilerr1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_RR_in1.txt");
+  ofstream outfilerr2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_RR_col.txt");
+  ofstream outfilel("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Length.txt");
+  ofstream outfilet("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_To.txt");
+  ofstream outfilesx("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_StartX.txt");
+  ofstream outfilesy("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_StartY.txt");
+  ofstream outfilesz("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_StartZ.txt");
+  ofstream outfileex("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_EndX.txt");
+  ofstream outfileey("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_EndY.txt");
+  ofstream outfileez("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_EndZ.txt");
+  ofstream outfilecc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_cInt_col.txt");
+  ofstream outfilec1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_cInt_in1.txt");
+  ofstream outfilec2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_cInt_in2.txt");
+  ofstream outfilewc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Width_col.txt");
+  ofstream outfilew1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Width_in1.txt");
+  ofstream outfilew2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Width_in2.txt");
+  ofstream outfilewrc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Wire_col.txt");
+  ofstream outfilewr1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Wire_in1.txt");
+  ofstream outfilewr2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Wire_in2.txt");
+  ofstream outfiletic("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Time_col.txt");
+  ofstream outfileti1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Time_in1.txt");
+  ofstream outfileti2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Time_in2.txt");
+  ofstream outfiledxc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceX_col.txt");
+  ofstream outfiledx1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceX_in1.txt");
+  ofstream outfiledx2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceX_in2.txt");
+  ofstream outfiledyc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceY_col.txt");
+  ofstream outfiledy1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceY_in1.txt");
+  ofstream outfiledy2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceY_in2.txt");
+  ofstream outfiledzc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceZ_col.txt");
+  ofstream outfiledz1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceZ_in1.txt");
+  ofstream outfiledz2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_DistanceZ_in2.txt");
+  ofstream outfilepc("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Pitch_col.txt");
+  ofstream outfilep1("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Pitch_in1.txt");
+  ofstream outfilep2("OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Pitch_in2.txt");
   */
 
 
@@ -515,70 +524,89 @@ void plus60twoDW(bool verbose=false) {
   h_r2_mc->GetXaxis()->SetTitle(" Residual Range in cm ");
   h_r2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
+  //real dq/dx plots begin
 
 
-
-  TH1F *h_ci0_mc   = new TH1F("h_ci0_mc","Relative Frequency vs  Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  TH1F *h_ci0_data = new TH1F("h_ci0_data","Relative Frequency vs Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  h_ci0_mc->GetXaxis()->SetTitle(" Charge Integral in ADC ");
+  TH1F *h_ci0_mc   = new TH1F("h_ci0_mc","Relative Frequency vs  dq/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci0_data = new TH1F("h_ci0_data","Relative Frequency vs dq/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  h_ci0_mc->GetXaxis()->SetTitle(" dq/dx in ADC/cm ");
   h_ci0_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_ci02D_mc   = new TH2F("h_ci02D_mc","Azimuthal Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *h_ci02D_data = new TH2F("h_ci02D_data","Azimuthal Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  h_ci02D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
+  TH2F *h_ci02D_mc   = new TH2F("h_ci02D_mc","Azimuthal Angle vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci02D_data = new TH2F("h_ci02D_data","Azimuthal Angle vs dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  h_ci02D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
   h_ci02D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_ci02D_mc   = new TH2F("hz_ci02D_mc","Zenith Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *hz_ci02D_data = new TH2F("hz_ci02D_data","Zenith Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  hz_ci02D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
+  TH2F *hz_ci02D_mc   = new TH2F("hz_ci02D_mc","Zenith Angle vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci02D_data = new TH2F("hz_ci02D_data","Zenith Angle vs dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  hz_ci02D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
   hz_ci02D_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
 
 
+  TH2F *h_pi02D_mc   = new TH2F("h_pi02D_mc","Pitch vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 25., 50., 0., 2000.);
+  TH2F *h_pi02D_data = new TH2F("h_pi02D_data","Pitch vs dq/dx in ADC/cm: East Cryostat", 50., 0., 25., 50., 0., 2000.);
+  h_pi02D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
+  h_pi02D_mc->GetXaxis()->SetTitle("Pitch in cm");
 
-  TH1F *h_ci1_mc   = new TH1F("h_ci1_mc","Relative Frequency vs  Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  TH1F *h_ci1_data = new TH1F("h_ci1_data","Relative Frequency vs Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  h_ci1_mc->GetXaxis()->SetTitle(" Charge Integral in ADC ");
+
+
+
+  TH1F *h_ci1_mc   = new TH1F("h_ci1_mc","Relative Frequency vs  dq/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci1_data = new TH1F("h_ci1_data","Relative Frequency vs dq/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  h_ci1_mc->GetXaxis()->SetTitle(" dq/dx in ADC/cm ");
   h_ci1_mc->GetYaxis()->SetTitle("Relative Frequency");
 
 
-  TH2F *h_ci12D_mc   = new TH2F("h_ci12D_mc","Azimuthal Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *h_ci12D_data = new TH2F("h_ci12D_data","Azimuthal Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  h_ci12D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
+  TH2F *h_ci12D_mc   = new TH2F("h_ci12D_mc","Azimuthal Angle vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci12D_data = new TH2F("h_ci12D_data","Azimuthal Angle vs dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  h_ci12D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
   h_ci12D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_ci12D_mc   = new TH2F("hz_ci12D_mc","Zenith Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *hz_ci12D_data = new TH2F("hz_ci12D_data","Zenith Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  hz_ci12D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
+  TH2F *hz_ci12D_mc   = new TH2F("hz_ci12D_mc","Zenith Angle vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci12D_data = new TH2F("hz_ci12D_data","Zenith Angle vs dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  hz_ci12D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
   hz_ci12D_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
 
 
-  TH1F *h_ci2_mc   = new TH1F("h_ci2_mc","Relative Frequency vs  Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  TH1F *h_ci2_data = new TH1F("h_ci2_data","Relative Frequency vs Charge Integral: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
-  h_ci2_mc->GetXaxis()->SetTitle(" Charge Integral in ADC ");
+
+  TH2F *h_pi12D_mc   = new TH2F("h_pi12D_mc","Pitch vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 25., 50., 0., 2000.);
+  TH2F *h_pi12D_data = new TH2F("h_pi12D_data","Pitch vs dq/dx in ADC/cm: East Cryostat", 50., 0., 25., 50., 0., 2000.);
+  h_pi12D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
+  h_pi12D_mc->GetXaxis()->SetTitle("Pitch in cm");
+
+
+
+
+  TH1F *h_ci2_mc   = new TH1F("h_ci2_mc","Relative Frequency vs  dq/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  TH1F *h_ci2_data = new TH1F("h_ci2_data","Relative Frequency vs dq/dx: East Cryostat", 100., 0., 2000.);//-100000., 100000.);
+  h_ci2_mc->GetXaxis()->SetTitle(" dq/dx in ADC/cm ");
   h_ci2_mc->GetYaxis()->SetTitle("Relative Frequency");
 
-  TH2F *h_ci22D_mc   = new TH2F("h_ci22D_mc","Azimuthal Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *h_ci22D_data = new TH2F("h_ci22D_data","Azimuthal Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  h_ci22D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
+  TH2F *h_ci22D_mc   = new TH2F("h_ci22D_mc","Azimuthal Angle vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *h_ci22D_data = new TH2F("h_ci22D_data","Azimuthal Angle vs dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  h_ci22D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
   h_ci22D_mc->GetXaxis()->SetTitle("Azimuthal angle in radians");
 
 
 
-  TH2F *hz_ci22D_mc   = new TH2F("hz_ci22D_mc","Zenith Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  TH2F *hz_ci22D_data = new TH2F("hz_ci22D_data","Zenith Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
-  hz_ci22D_mc->GetYaxis()->SetTitle("Charge Integral in ADC ");
+  TH2F *hz_ci22D_mc   = new TH2F("hz_ci22D_mc","Zenith Angle vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  TH2F *hz_ci22D_data = new TH2F("hz_ci22D_data","Zenith Angle vs dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 2000.);
+  hz_ci22D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
   hz_ci22D_mc->GetXaxis()->SetTitle("Zenith Angle in radians");
 
 
 
-
+  TH2F *h_pi22D_mc   = new TH2F("h_pi22D_mc","Pitch vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 25., 50., 0., 2000.);
+  TH2F *h_pi22D_data = new TH2F("h_pi22D_data","Pitch vs dq/dx in ADC/cm: East Cryostat", 50., 0., 25., 50., 0., 2000.);
+  h_pi22D_mc->GetYaxis()->SetTitle("dq/dx in ADC/cm ");
+  h_pi22D_mc->GetXaxis()->SetTitle("Pitch in cm");
 
 
 
@@ -596,8 +624,8 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-  TH2F *hz_wi02D_mc   = new TH2F("hz_wi02D_mc","Zenith Angle vs  Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
-  TH2F *hz_wi02D_data = new TH2F("hz_wi02D_data","Zenith Angle vs Charge Integral in ADC: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *hz_wi02D_mc   = new TH2F("hz_wi02D_mc","Zenith Angle vs  dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
+  TH2F *hz_wi02D_data = new TH2F("hz_wi02D_data","Zenith Angle vs dq/dx in ADC/cm: East Cryostat", 50., 0., 1.6, 50., 0., 20.);
   hz_wi02D_mc->GetYaxis()->SetTitle("Width in ticks ");
   hz_wi02D_mc->GetXaxis()->SetTitle("Zenith angle in radians");
 
@@ -922,13 +950,13 @@ void plus60twoDW(bool verbose=false) {
   TTreeReaderArray<float> width2_i1(myReader2, "trk.hits0.h.width");
 
   TTreeReaderArray<uint16_t> tpc_c(myReader, "trk.hits2.h.tpc");
-  TTreeReaderArray<uint16_t> tpc2_c(myReader2, "trk.hits2.h.tpc");
+  TTreeReaderArray<uint16_t> tpc3_c(myReader2, "trk.hits2.h.tpc");
 
   TTreeReaderArray<uint16_t> tpc_i2(myReader, "trk.hits1.h.tpc");
-  TTreeReaderArray<uint16_t> tpc2_i2(myReader2, "trk.hits1.h.tpc");
+  TTreeReaderArray<uint16_t> tpc3_i2(myReader2, "trk.hits1.h.tpc");
 
   TTreeReaderArray<uint16_t> tpc_i1(myReader, "trk.hits0.h.tpc");
-  TTreeReaderArray<uint16_t> tpc2_i1(myReader2, "trk.hits0.h.tpc");
+  TTreeReaderArray<uint16_t> tpc3_i1(myReader2, "trk.hits0.h.tpc");
 
   TTreeReaderArray<uint16_t> wire_c(myReader, "trk.hits2.h.wire");
   TTreeReaderArray<uint16_t> wire2_c(myReader2, "trk.hits2.h.wire");
@@ -969,7 +997,7 @@ void plus60twoDW(bool verbose=false) {
    double zangle[52000];
    double zangle2[52000];
    cout<<"vars declared"<<endl;
-   int tpc_num = 0;
+   double tpc_num = 0;
 
 
    //MC Azimuthal Angle
@@ -977,8 +1005,8 @@ void plus60twoDW(bool verbose=false) {
      a++;
      cout<<"track "<<a<<endl;
      outfile<<"track "<<a<<endl;
-     if(*selected != 2) continue; //if not stopping, move one.
-     //if(*tpc2 != 0) continue;
+     if( (*selected == 1)|| (*selected == 2) ) continue; //if not stopping, move one.
+     //if(*tpc3 != 0) continue;
      //only here if stopping 
  
      //can add other track-level variables here
@@ -1015,26 +1043,26 @@ void plus60twoDW(bool verbose=false) {
      //if not on thr trajectory, continue
      if(ontraj_c[last_h_mc_c]!=1) continue;
 
-     if(tpc_c[last_h_mc_c]!=tpc_num ) continue;
+     if(tpc_c[last_h_mc_c]!=tpc_num) continue;
 
 
      //60 degrees plus:
-     double xc =   x_c[last_h_mc_c];
-     double yc =   y_c[last_h_mc_c];
-     double zc =   z_c[last_h_mc_c];
-     yc = (0.5)*y_c[last_h_mc_c] - (sqrt(3)/2.0)*z_c[last_h_mc_c];
-     zc = (sqrt(3)/2.0)*y_c[last_h_mc_c] + (0.5)*z_c[last_h_mc_c];
+     //x_c[last_h_mc_c] = (0.5)*x_c[last_h_mc_c] - (sqrt(3)/2.0)*y_c[last_h_mc_c];
+     //y_c[last_h_mc_c] = (sqrt(3)/2.0)*x_c[last_h_mc_c] + (0.5)*y_c[last_h_mc_c];
      // z_c[last_h_mc_c] = z_c[last_h_mc_c];
 
 
 
-     h_azangle2_mc->Fill( TMath::ATan(xc/zc) );
+     h_azangle2_mc->Fill( TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) );
 
-     h_zangle2_mc->Fill( abs( TMath::ATan(abs( (sqrt(xc*xc+ zc*zc))) / (yc) ) ) );
+     h_zangle2_mc->Fill( abs( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + z_c[last_h_mc_c]*z_c[last_h_mc_c]))) / (y_c[last_h_mc_c]) ) ) );
      //     h_q2_mc->Fill(dqdx_c[last_h_mc_c]);
+
+     //     outfileqc<<dqdx_c[last_h_mc_c]<<endl;
+
      h_r2_mc->Fill(rr_c[last_h_mc_c]);
 
-
+     out0<<abs( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + z_c[last_h_mc_c]*z_c[last_h_mc_c]))) / (y_c[last_h_mc_c]) ) )<<endl;
      //     h_ci2_mc->Fill(integral_c[last_h_mc_c]);
      // h_wi2_mc->Fill(width_c[last_h_mc_c]);
      h_w2_mc->Fill(wire_c[last_h_mc_c]);
@@ -1047,49 +1075,49 @@ void plus60twoDW(bool verbose=false) {
      double sum_integral_mc_c = 0.0;
      double sum_width_mc_c =0.0;
      double sum_dqdx_mc_c =0.0;
-
+     double sum_pitch_mc_c =0.0;
      for(int i = 0; i < last_h_mc_c; i++){
        sum_integral_mc_c += integral_c[i];
        sum_width_mc_c += width_c[i];        
        sum_dqdx_mc_c += dqdx_c[i];
-
+       sum_pitch_mc_c += pitch_c[i];
      }
 
      double av_integral_mc_c = sum_integral_mc_c/last_h_mc_c;
      double av_width_mc_c = sum_width_mc_c/last_h_mc_c;
      double av_dqdx_mc_c = sum_dqdx_mc_c/last_h_mc_c;
-
-     h_ci2_mc->Fill(av_integral_mc_c);
+     double av_pitch_mc_c = sum_pitch_mc_c/last_h_mc_c;
+     h_ci2_mc->Fill(av_dqdx_mc_c);
      h_wi2_mc->Fill(av_width_mc_c);
      h_q2_mc->Fill(av_dqdx_mc_c);
+     //h_pi2_mc->Fill(av_pitch_mc_c);
+
+     outfileqc<<av_dqdx_mc_c<<endl;
 
 
 
+     h_l2Dc_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , *length);
+     h_sx2Dc_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , *startX);
+     h_ex2Dc_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , *endX);
+     h_sy2Dc_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , *startY);
+     h_ey2Dc_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , *endY);
+     h_sz2Dc_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , *startZ);
+     h_ez2Dc_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , *endZ);
+     h_ci02D_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , av_dqdx_mc_c);
+     h_wi02D_mc->Fill(TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) , av_width_mc_c);
+     h_pi02D_mc->Fill(av_pitch_mc_c , av_integral_mc_c);
+     hz_l2Dc_mc->Fill( abs( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + z_c[last_h_mc_c]*z_c[last_h_mc_c]))) / (y_c[last_h_mc_c]) ) ) , *length);
+     hz_ci02D_mc->Fill(abs( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + z_c[last_h_mc_c]*z_c[last_h_mc_c]))) / (y_c[last_h_mc_c]) ) )  , av_dqdx_mc_c);
+     hz_wi02D_mc->Fill(abs( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + z_c[last_h_mc_c]*z_c[last_h_mc_c]))) / (y_c[last_h_mc_c]) ) )  , av_width_mc_c);
 
 
+          outfile1<<x_c[last_h_mc_c]/z_c[last_h_mc_c]<< " "<<*length<<endl;
+	  outfile2<<x_c[last_h_mc_c]/z_c[last_h_mc_c]<< " "<<endl;//av_integral_mc_c<<endl;
+     outfile3<<x_c[last_h_mc_c]/z_c[last_h_mc_c]<< " "<<av_width_mc_c<<endl;
 
-     h_l2Dc_mc->Fill(TMath::ATan(xc/zc) , *length);
-     h_sx2Dc_mc->Fill(TMath::ATan(xc/zc) , *startX);
-     h_ex2Dc_mc->Fill(TMath::ATan(xc/zc) , *endX);
-     h_sy2Dc_mc->Fill(TMath::ATan(xc/zc) , *startY);
-     h_ey2Dc_mc->Fill(TMath::ATan(xc/zc) , *endY);
-     h_sz2Dc_mc->Fill(TMath::ATan(xc/zc) , *startZ);
-     h_ez2Dc_mc->Fill(TMath::ATan(xc/zc) , *endZ);
-     h_ci02D_mc->Fill(TMath::ATan(xc/zc) , av_integral_mc_c);
-     h_wi02D_mc->Fill(TMath::ATan(xc/zc) , av_width_mc_c);
-     
-     hz_l2Dc_mc->Fill( abs( TMath::ATan(abs( (sqrt(xc*xc + zc*zc))) / (yc) ) ) , *length);
-     hz_ci02D_mc->Fill(abs( TMath::ATan(abs( (sqrt(xc*xc + zc*zc))) / (yc) ) )  , av_integral_mc_c);
-     hz_wi02D_mc->Fill(abs( TMath::ATan(abs( (sqrt(xc*xc + zc*zc))) / (yc) ) )  , av_width_mc_c);
-
-
-          outfile1<<xc/zc<< " "<<*length<<endl;
-     outfile2<<xc/zc<< " "<<av_integral_mc_c<<endl;
-     outfile3<<xc/zc<< " "<<av_width_mc_c<<endl;
-
-     outfile7<<abs( TMath::ATan(abs( (sqrt(xc*xc + zc*zc))) / (yc) ) )<<" "<< *length<<endl;
-     outfile8<<abs( TMath::ATan(abs( (sqrt(xc*xc + zc*zc))) / (yc) ) )  <<" "<<av_integral_mc_c<<endl;
-     outfile9<<abs( TMath::ATan(abs( (sqrt(xc*xc + zc*zc))) / (yc) ) )  <<" "<<av_width_mc_c<<endl;
+     outfile7<<abs( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + z_c[last_h_mc_c]*z_c[last_h_mc_c]))) / (y_c[last_h_mc_c]) ) )<<" "<< *length<<endl;
+     outfile8<<abs( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + z_c[last_h_mc_c]*z_c[last_h_mc_c]))) / (y_c[last_h_mc_c]) ) )  <<" "<<endl;//av_integral_mc_c<<endl;
+     outfile9<<abs( TMath::ATan(abs( (sqrt(x_c[last_h_mc_c]*x_c[last_h_mc_c] + z_c[last_h_mc_c]*z_c[last_h_mc_c]))) / (y_c[last_h_mc_c]) ) )  <<" "<<av_width_mc_c<<endl;
 
 
 
@@ -1097,76 +1125,76 @@ void plus60twoDW(bool verbose=false) {
      cout<<"collection done"<<endl;
 
      //     if(verbose) 
-     // cout << "MC angle " << TMath::ATan(xc/zc) << endl;
+     // cout << "MC angle " << TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) << endl;
 
      //and fill all the other histograms related to traj points too
      
 
      if(ontraj_i2[last_h_mc_i2]!=1) continue;
 
-     if(tpc_i2[last_h_mc_i2]!=tpc_num )continue;//==0) continue;
+     if(tpc_i2[last_h_mc_i2]!=tpc_num)continue;//==0) continue;
 
 
-     //60 degrees plus:
-     double xi2 =   x_i2[last_h_mc_i2];
-     double yi2 =   y_i2[last_h_mc_i2];
-     double zi2 =   z_i2[last_h_mc_i2];                                                                                                                                   
-     yi2 = (0.5)*y_i2[last_h_mc_i2] - (sqrt(3)/2.0)*z_i2[last_h_mc_i2];
-     zi2 = (sqrt(3)/2.0)*y_i2[last_h_mc_i2] + (0.5)*z_i2[last_h_mc_i2];
+     //60 degrees plus:                                                                                                                                   
+     //x_i2[last_h_mc_i2] = (0.5)*x_i2[last_h_mc_i2] - (sqrt(3)/2.0)*y_i2[last_h_mc_i2];
+     //y_i2[last_h_mc_i2] = (sqrt(3)/2.0)*x_i2[last_h_mc_i2] + (0.5)*y_i2[last_h_mc_i2];
 
-     h_azangle1_mc->Fill( TMath::ATan(xi2/zi2) );
-     h_zangle1_mc->Fill( abs( TMath::ATan(abs( (sqrt(xi2*xi2 + zi2*zi2))) / (yi2) ) ));
-     //     h_q1_mc->Fill(dqdxi2);
+     h_azangle1_mc->Fill( TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) );
+     h_zangle1_mc->Fill( abs( TMath::ATan(abs( (sqrt(x_i2[last_h_mc_i2]*x_i2[last_h_mc_i2] + z_i2[last_h_mc_i2]*z_i2[last_h_mc_i2]))) / (y_i2[last_h_mc_i2]) ) ));
+
+     out2<<abs( TMath::ATan(abs( (sqrt(x_i2[last_h_mc_i2]*x_i2[last_h_mc_i2] + z_i2[last_h_mc_i2]*z_i2[last_h_mc_i2]))) / (y_i2[last_h_mc_i2]) ) )<<endl;
+
+     //     h_q1_mc->Fill(dqdx_i2[last_h_mc_i2]);
      h_r1_mc->Fill(rr_i2[last_h_mc_i2]);
 
      //h_ci1_mc->Fill(integral_i2[last_h_mc_i2]);
      //h_wi1_mc->Fill(width_i2[last_h_mc_i2]);
      h_w1_mc->Fill(wire_i2[last_h_mc_i2]);
      h_ti1_mc->Fill(time_i2[last_h_mc_i2]);
-     h_x1_mc->Fill(xi2);
-     h_y1_mc->Fill(yi2);
-     h_z1_mc->Fill(zi2);
+     h_x1_mc->Fill(x_i2[last_h_mc_i2]);
+     h_y1_mc->Fill(y_i2[last_h_mc_i2]);
+     h_z1_mc->Fill(z_i2[last_h_mc_i2]);
      h_p1_mc->Fill(pitch_i2[last_h_mc_i2]);
 
      double sum_integral_mc_i2 =0.0;
      double sum_width_mc_i2 =0.0;
      double sum_dqdx_mc_i2 =0.0;
-
+     double sum_pitch_mc_i2 =0.0;
      for(int j = 0; j <last_h_mc_i2; j++){
        sum_integral_mc_i2 += integral_i2[j];
        sum_width_mc_i2 += width_i2[j];
        sum_dqdx_mc_i2 += dqdx_i2[j];
-
+       sum_pitch_mc_i2 += pitch_i2[j];
      }
      double av_integral_mc_i2 = sum_integral_mc_i2/last_h_mc_i2;
      double av_width_mc_i2 = sum_width_mc_i2/last_h_mc_i2;
      double av_dqdx_mc_i2 = sum_dqdx_mc_i2/last_h_mc_i2;
-
-     h_ci1_mc->Fill(av_integral_mc_i2);
+     double av_pitch_mc_i2 = sum_pitch_mc_i2/last_h_mc_i2;
+     h_ci1_mc->Fill(av_dqdx_mc_i2);
      h_wi1_mc->Fill(av_width_mc_i2);
      h_q1_mc->Fill(av_dqdx_mc_i2);
 
 
+     outfileq2<<av_dqdx_mc_i2<<endl;
 
 
-
-     h_l2D2_mc->Fill(TMath::ATan(xi2/zi2) , *length);
-     h_sx2D2_mc->Fill(TMath::ATan(xi2/zi2) , *startX);
-     h_ex2D2_mc->Fill(TMath::ATan(xi2/zi2) , *endX);
-     h_sy2D2_mc->Fill(TMath::ATan(xi2/zi2) , *startY);
-     h_ey2D2_mc->Fill(TMath::ATan(xi2/zi2) , *endY);
-     h_sz2D2_mc->Fill(TMath::ATan(xi2/zi2) , *startZ);
-     h_ez2D2_mc->Fill(TMath::ATan(xi2/zi2) , *endZ);
-     h_ci22D_mc->Fill(TMath::ATan(xi2/zi2) , av_integral_mc_i2);
-
+     h_l2D2_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , *length);
+     h_sx2D2_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , *startX);
+     h_ex2D2_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , *endX);
+     h_sy2D2_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , *startY);
+     h_ey2D2_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , *endY);
+     h_sz2D2_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , *startZ);
+     h_ez2D2_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , *endZ);
+     h_ci22D_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , av_dqdx_mc_i2);
 
 
+     h_pi22D_mc->Fill(av_pitch_mc_i2 , av_integral_mc_i2);
 
-     h_wi22D_mc->Fill(TMath::ATan(xi2/zi2) , av_width_mc_i2);
+     h_wi22D_mc->Fill(TMath::ATan(x_i2[last_h_mc_i2]/z_i2[last_h_mc_i2]) , av_width_mc_i2);
 
-     hz_l2D2_mc->Fill( abs( TMath::ATan(abs( (sqrt(xi2*xi2 + zi2*zi2))) / (yi2) ) ) , *length);
-     hz_ci22D_mc->Fill(abs( TMath::ATan(abs( (sqrt(xi2*xi2 + zi2*zi2))) / (yi2) ) )  , av_integral_mc_i2);
-     hz_wi22D_mc->Fill(abs( TMath::ATan(abs( (sqrt(xi2*xi2 + zi2*zi2))) / (yi2) ) )  , av_width_mc_i2);
+     hz_l2D2_mc->Fill( abs( TMath::ATan(abs( (sqrt(x_i2[last_h_mc_i2]*x_i2[last_h_mc_i2] + z_i2[last_h_mc_i2]*z_i2[last_h_mc_i2]))) / (y_i2[last_h_mc_i2]) ) ) , *length);
+     hz_ci22D_mc->Fill(abs( TMath::ATan(abs( (sqrt(x_i2[last_h_mc_i2]*x_i2[last_h_mc_i2] + z_i2[last_h_mc_i2]*z_i2[last_h_mc_i2]))) / (y_i2[last_h_mc_i2]) ) )  , av_dqdx_mc_i2);
+     hz_wi22D_mc->Fill(abs( TMath::ATan(abs( (sqrt(x_i2[last_h_mc_i2]*x_i2[last_h_mc_i2] + z_i2[last_h_mc_i2]*z_i2[last_h_mc_i2]))) / (y_i2[last_h_mc_i2]) ) )  , av_width_mc_i2);
 
 
 
@@ -1175,47 +1203,48 @@ void plus60twoDW(bool verbose=false) {
 
      cout<<"induction 2 done"<<endl;
      if(ontraj_i1[last_h_mc_i1]!=1) continue;
-     if(tpc_i1[last_h_mc_i1]!=tpc_num )continue;//==0) continue;
+     if(tpc_i1[last_h_mc_i1]!=tpc_num)continue;//==0) continue;
 
      //60 degrees plus:                                                                                                                                  
-     double xi1 =   x_i1[last_h_mc_i1];
-     double yi1 =   y_i1[last_h_mc_i1];
-     double zi1 =   z_i1[last_h_mc_i1];                   
-     yi1 = (0.5)*y_i1[last_h_mc_i1] - (sqrt(3)/2.0)*z_i1[last_h_mc_i1];
-     zi1 = (sqrt(3)/2.0)*y_i1[last_h_mc_i1] + (0.5)*z_i1[last_h_mc_i1];
+                                                                                                                                                          
+     //x_i1[last_h_mc_i1] = (0.5)*x_i1[last_h_mc_i1] - (sqrt(3)/2.0)*y_i1[last_h_mc_i1];
+     //y_i1[last_h_mc_i1] = (sqrt(3)/2.0)*x_i1[last_h_mc_i1] + (0.5)*y_i1[last_h_mc_i1];
 
-     h_azangle0_mc->Fill( TMath::ATan(xi1/zi1) );
-     h_zangle0_mc->Fill( abs( TMath::ATan(abs( (sqrt(xi1*xi1 + zi1*zi1))) / (yi1) ) ));
-     //h_q0_mc->Fill(dqdxi1);
+     h_azangle0_mc->Fill( TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) );
+     h_zangle0_mc->Fill( abs( TMath::ATan(abs( (sqrt(x_i1[last_h_mc_i1]*x_i1[last_h_mc_i1] + z_i1[last_h_mc_i1]*z_i1[last_h_mc_i1]))) / (y_i1[last_h_mc_i1]) ) ));
+
+     out1<<abs( TMath::ATan(abs( (sqrt(x_i1[last_h_mc_i1]*x_i1[last_h_mc_i1] + z_i1[last_h_mc_i1]*z_i1[last_h_mc_i1]))) / (y_i1[last_h_mc_i1]) ) )<<endl;
+
+     //h_q0_mc->Fill(dqdx_i1[last_h_mc_i1]);
      h_r0_mc->Fill(rr_i1[last_h_mc_i1]);
      //h_ci0_mc->Fill(integral_i1[last_h_mc_i1]);
      //h_wi0_mc->Fill(width_i1[last_h_mc_i1]);
      h_w0_mc->Fill(wire_i1[last_h_mc_i1]);
      h_ti0_mc->Fill(time_i1[last_h_mc_i1]);
-     h_x0_mc->Fill(xi1);
-     h_y0_mc->Fill(yi1);
-     h_z0_mc->Fill(zi1);
+     h_x0_mc->Fill(x_i1[last_h_mc_i1]);
+     h_y0_mc->Fill(y_i1[last_h_mc_i1]);
+     h_z0_mc->Fill(z_i1[last_h_mc_i1]);
      h_p0_mc->Fill(pitch_i1[last_h_mc_i1]);
 
 
      double sum_integral_mc_i1 =0.0;
      double sum_width_mc_i1 =0.0;
      double sum_dqdx_mc_i1 =0.0;
-
+     double sum_pitch_mc_i1 =0.0;
      for(int k = 0; k <last_h_mc_i1; k++){
        sum_integral_mc_i1 += integral_i1[k];
        sum_width_mc_i1 += width_i1[k];
        sum_dqdx_mc_i1 += dqdx_i1[k];
-
+       sum_pitch_mc_i1 += pitch_i1[k];
      }
      double av_integral_mc_i1 = sum_integral_mc_i1/last_h_mc_i1;
      double av_width_mc_i1 = sum_width_mc_i1/last_h_mc_i1;
      double av_dqdx_mc_i1 = sum_dqdx_mc_i1/last_h_mc_i1;
-
-     h_ci0_mc->Fill(av_integral_mc_i1);
+     double av_pitch_mc_i1 = sum_pitch_mc_i1/last_h_mc_i1;
+     h_ci0_mc->Fill(av_dqdx_mc_i1);
      h_wi0_mc->Fill(av_width_mc_i1);
      h_q0_mc->Fill(av_dqdx_mc_i1);
-
+     outfileq1<<av_dqdx_mc_i1<<endl;
      // cout<<"induction 1 done"<<endl;
 
 
@@ -1223,22 +1252,22 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-     h_l2D1_mc->Fill(TMath::ATan(xi1/zi1) , *length);
-     h_sx2D1_mc->Fill(TMath::ATan(xi1/zi1) , *startX);
-     h_ex2D1_mc->Fill(TMath::ATan(xi1/zi1) , *endX);
-     h_sy2D1_mc->Fill(TMath::ATan(xi1/zi1) , *startY);
-     h_ey2D1_mc->Fill(TMath::ATan(xi1/zi1) , *endY);
-     h_sz2D1_mc->Fill(TMath::ATan(xi1/zi1) , *startZ);
-     h_ez2D1_mc->Fill(TMath::ATan(xi1/zi1) , *endZ);
-     h_ci12D_mc->Fill(TMath::ATan(xi1/zi1) , av_integral_mc_i1);
+     h_l2D1_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , *length);
+     h_sx2D1_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , *startX);
+     h_ex2D1_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , *endX);
+     h_sy2D1_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , *startY);
+     h_ey2D1_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , *endY);
+     h_sz2D1_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , *startZ);
+     h_ez2D1_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , *endZ);
+     h_ci12D_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , av_dqdx_mc_i1);
 
+     h_pi12D_mc->Fill(av_pitch_mc_i1 , av_integral_mc_i1);
 
+     h_wi12D_mc->Fill(TMath::ATan(x_i1[last_h_mc_i1]/z_i1[last_h_mc_i1]) , av_width_mc_i1);
 
-     h_wi12D_mc->Fill(TMath::ATan(xi1/zi1) , av_width_mc_i1);
-
-     hz_l2D1_mc->Fill( abs( TMath::ATan(abs( (sqrt(xi1*xi1 + zi1*zi1))) / (yi1) ) ) , *length);
-     hz_ci12D_mc->Fill(abs( TMath::ATan(abs( (sqrt(xi1*xi1 + zi1*zi1))) / (yi1) ) )  , av_integral_mc_i1);
-     hz_wi12D_mc->Fill(abs( TMath::ATan(abs( (sqrt(xi1*xi1 + zi1*zi1))) / (yi1) ) )  , av_width_mc_i1);
+     hz_l2D1_mc->Fill( abs( TMath::ATan(abs( (sqrt(x_i1[last_h_mc_i1]*x_i1[last_h_mc_i1] + z_i1[last_h_mc_i1]*z_i1[last_h_mc_i1]))) / (y_i1[last_h_mc_i1]) ) ) , *length);
+     hz_ci12D_mc->Fill(abs( TMath::ATan(abs( (sqrt(x_i1[last_h_mc_i1]*x_i1[last_h_mc_i1] + z_i1[last_h_mc_i1]*z_i1[last_h_mc_i1]))) / (y_i1[last_h_mc_i1]) ) )  , av_dqdx_mc_i1);
+     hz_wi12D_mc->Fill(abs( TMath::ATan(abs( (sqrt(x_i1[last_h_mc_i1]*x_i1[last_h_mc_i1] + z_i1[last_h_mc_i1]*z_i1[last_h_mc_i1]))) / (y_i1[last_h_mc_i1]) ) )  , av_width_mc_i1);
 
 
 
@@ -1253,9 +1282,9 @@ void plus60twoDW(bool verbose=false) {
    outfile<<"MC done"<<endl;//track "<<a<<endl;
    //Data Azimuthal Angle
    while (myReader2.Next()) {
-     if(*selected2 != 2) continue; //if not stopping, move one.
+     if( (*selected2 == 1)|| (*selected2 == 2) )//if(*selected2 == 0) continue; //if not stopping, move one.
 
-     //if(*tpc2 != 0) continue;
+     //if(*tpc3 != 0) continue;
 
      b++;
      cout<<"track "<<b<<endl;
@@ -1289,38 +1318,36 @@ void plus60twoDW(bool verbose=false) {
      cout<<" x c "<<x2_c.GetSize()-1<<" x i2 " <<x2_i2.GetSize()-1<<" x i1 "<<x2_i1.GetSize()-1<<endl;
      cout<<" y c "<<y2_c.GetSize()-1<<" y i2 " <<y2_i2.GetSize()-1<<" y i1 "<<y2_i1.GetSize()-1<<endl;
      cout<<" z c "<<z2_c.GetSize()-1<<" z i2 " <<z2_i2.GetSize()-1<<" z i1 "<<z2_i1.GetSize()-1<<endl;
-     cout<<" tpc c "<<tpc2_c[last_h_data_c]<<endl;
-     cout<<" tpc i2 "<<tpc2_i2[last_h_data_i2]<<endl;
-     cout<<" tpc i1 "<<tpc2_i1[last_h_data_i1]<<endl;
+     cout<<" tpc c "<<tpc3_c[last_h_data_c]<<endl;
+     cout<<" tpc i2 "<<tpc3_i2[last_h_data_i2]<<endl;
+     cout<<" tpc i1 "<<tpc3_i1[last_h_data_i1]<<endl;
      //cout<<*run2<<endl;
      //cout<<*event2<<endl;
 
      //if not on thr trajectory, continue
      if(ontraj2_c[last_h_data_c]!=1) continue;
-     if(tpc2_c[last_h_data_c]!=tpc_num )continue;//==0) continue;
+     if(tpc3_c[last_h_data_c]!=tpc_num)continue;//==0) continue;
 
 
-     //60 degrees plus:
-     double x2c =   x2_c[last_h_data_c];                                                                                                                  
-     double y2c =   y2_c[last_h_data_c];
-     double z2c =   z2_c[last_h_data_c];                  
-     y2_c[last_h_data_c] = (0.5)*y2c - (sqrt(3)/2.0)*z2c;
-     z2_c[last_h_data_c] = (sqrt(3)/2.0)*y2c + (0.5)*z2c;
+     //60 degrees plus:                                                                                                                                  
+                                                                                                                                                         
+     // x_c[last_h_data_c] = (0.5)*x_c[last_h_data_c] - (sqrt(3)/2.0)*y_c[last_h_data_c];
+     //y_c[last_h_data_c] = (sqrt(3)/2.0)*x_c[last_h_data_c] + (0.5)*y_c[last_h_data_c];
 
-
-     h_azangle2_data->Fill( TMath::ATan(x2c/z2c) );
-     h_zangle2_data->Fill( abs( TMath::ATan(abs( (sqrt(x2c*x2c + z2c*z2c))) / (y2c) ) ));
-     //h_q2_data->Fill(dqdx2c);
+     cout<<x2_c[last_h_data_c]<<" "<<y2_c[last_h_data_c]<<" "<<z2_c[last_h_data_c]<<endl;
+     h_azangle2_data->Fill( TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) );
+     h_zangle2_data->Fill( abs( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + z2_c[last_h_data_c]*z2_c[last_h_data_c]))) / (y2_c[last_h_data_c]) ) ));
+     //h_q2_data->Fill(dqdx2_c[last_h_data_c]);
      h_r2_data->Fill(rr2_c[last_h_data_c]);
 
-
+     outb0<<abs( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + z2_c[last_h_data_c]*z2_c[last_h_data_c]))) / (y2_c[last_h_data_c]) ) )<<endl;
      //h_ci2_data->Fill(integral2_c[last_h_data_c]);
      //h_wi2_data->Fill(width2_c[last_h_data_c]);
      h_w2_data->Fill(wire2_c[last_h_data_c]);
      h_ti2_data->Fill(time2_c[last_h_data_c]);
-     h_x2_data->Fill(x2c);
-     h_y2_data->Fill(y2c);
-     h_z2_data->Fill(z2c);
+     h_x2_data->Fill(x2_c[last_h_data_c]);
+     h_y2_data->Fill(y2_c[last_h_data_c]);
+     h_z2_data->Fill(z2_c[last_h_data_c]);
      h_p2_data->Fill(pitch2_c[last_h_data_c]);
 
 
@@ -1328,19 +1355,19 @@ void plus60twoDW(bool verbose=false) {
      double sum_integral_data_c =0.0;
      double sum_width_data_c =0.0;
      double sum_dqdx_data_c =0.0;
-
+     double sum_pitch_data_c =0.0;
      for(int x = 0; x <last_h_data_c; x++){
        sum_integral_data_c += integral2_c[x];
        sum_width_data_c += width2_c[x];
        sum_dqdx_data_c += dqdx2_c[x];
-
+       sum_pitch_data_c += pitch2_c[x];
      }
      double av_integral_data_c = sum_integral_data_c/last_h_data_c;
      double av_width_data_c = sum_width_data_c/last_h_data_c;
      double av_dqdx_data_c = sum_dqdx_data_c/last_h_data_c;
+     double av_pitch_data_c = sum_pitch_data_c/last_h_data_c;
 
-
-     h_ci2_data->Fill(av_integral_data_c);
+     h_ci2_data->Fill(av_dqdx_data_c);
      h_wi2_data->Fill(av_width_data_c);
      h_q2_data->Fill(av_dqdx_data_c);
 
@@ -1349,31 +1376,31 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-     h_l2Dc_data->Fill(TMath::ATan(x2c/z2c) , *length2);
-     h_sx2Dc_data->Fill(TMath::ATan(x2c/z2c) , *startX2);
-     h_ex2Dc_data->Fill(TMath::ATan(x2c/z2c) , *endX2);
-     h_sy2Dc_data->Fill(TMath::ATan(x2c/z2c) , *startY2);
-     h_ey2Dc_data->Fill(TMath::ATan(x2c/z2c) , *endY2);
-     h_sz2Dc_data->Fill(TMath::ATan(x2c/z2c) , *startZ2);
-     h_ez2Dc_data->Fill(TMath::ATan(x2c/z2c) , *endZ2);
-     h_ci02D_data->Fill(TMath::ATan(x2c/z2c) , av_integral_data_c);
+     h_l2Dc_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , *length2);
+     h_sx2Dc_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , *startX2);
+     h_ex2Dc_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , *endX2);
+     h_sy2Dc_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , *startY2);
+     h_ey2Dc_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , *endY2);
+     h_sz2Dc_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , *startZ2);
+     h_ez2Dc_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , *endZ2);
+     h_ci02D_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , av_dqdx_data_c);
+
+     h_pi02D_data->Fill(av_pitch_data_c , av_integral_data_c);
 
 
+     h_wi02D_data->Fill(TMath::ATan(x2_c[last_h_data_c]/z2_c[last_h_data_c]) , av_width_data_c);
 
+     hz_l2Dc_data->Fill( abs( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + z2_c[last_h_data_c]*z2_c[last_h_data_c]))) / (y2_c[last_h_data_c]) ) ) , *length2);
+     hz_ci02D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + z2_c[last_h_data_c]*z2_c[last_h_data_c]))) / (y2_c[last_h_data_c]) ) )  , av_dqdx_data_c);
+     hz_wi02D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + z2_c[last_h_data_c]*z2_c[last_h_data_c]))) / (y2_c[last_h_data_c]) ) )  , av_width_data_c);
 
-     h_wi02D_data->Fill(TMath::ATan(x2c/z2c) , av_width_data_c);
+     outfile4<<x2_c[last_h_data_c]/z2_c[last_h_data_c]<< " "<<*length2<<endl;
+     outfile5<<x2_c[last_h_data_c]/z2_c[last_h_data_c]<< " "<<av_integral_data_c<<endl;
+     outfile6<<x2_c[last_h_data_c]/z2_c[last_h_data_c]<< " "<<av_width_data_c<<endl;
 
-     hz_l2Dc_data->Fill( abs( TMath::ATan(abs( (sqrt(x2c*x2c + z2c*z2c))) / (y2c) ) ) , *length2);
-     hz_ci02D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2c*x2c + z2c*z2c))) / (y2c) ) )  , av_integral_data_c);
-     hz_wi02D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2c*x2c + z2c*z2c))) / (y2c) ) )  , av_width_data_c);
-
-     outfile4<<x2c/z2c<< " "<<*length2<<endl;
-     outfile5<<x2c/z2c<< " "<<av_integral_data_c<<endl;
-     outfile6<<x2c/z2c<< " "<<av_width_data_c<<endl;
-
-     outfile10<<abs( TMath::ATan(abs( (sqrt(x2c*x2c + z2c*z2c))) / (y2c) ) )<<" "<< *length2<<endl;
-     outfile11<<abs( TMath::ATan(abs( (sqrt(x2c*x2c + z2c*z2c))) / (y2c) ) )  <<" "<<av_integral_data_c<<endl;
-     outfile12<<abs( TMath::ATan(abs( (sqrt(x2c*x2c + z2c*z2c))) / (y2c) ) )  <<" "<<av_width_data_c<<endl;
+     outfile10<<abs( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + z2_c[last_h_data_c]*z2_c[last_h_data_c]))) / (y2_c[last_h_data_c]) ) )<<" "<< *length2<<endl;
+     outfile11<<abs( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + z2_c[last_h_data_c]*z2_c[last_h_data_c]))) / (y2_c[last_h_data_c]) ) )  <<" "<<av_integral_data_c<<endl;
+     outfile12<<abs( TMath::ATan(abs( (sqrt(x2_c[last_h_data_c]*x2_c[last_h_data_c] + z2_c[last_h_data_c]*z2_c[last_h_data_c]))) / (y2_c[last_h_data_c]) ) )  <<" "<<av_width_data_c<<endl;
 
 
 
@@ -1383,28 +1410,30 @@ void plus60twoDW(bool verbose=false) {
 
      cout<<"collection done"<<endl;
      //if(verbose) 
-     //cout << "MC angle " << TMath::ATan(xc/zc) << endl;
+     //cout << "MC angle " << TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) << endl;
 
      //and fill all the other histograms related to traj points too
      
 
      if(ontraj2_i2[last_h_data_i2]!=1) continue;
-     if(tpc2_i2[last_h_data_i2]!=tpc_num )continue;//==0) continue;
+     if(tpc3_i2[last_h_data_i2]!=tpc_num)continue;//==0) continue;
 
 
 
-     //60 degrees plus:                                                     
-     double x2i2 =   x2_i2[last_h_data_i2];                                                                             
-     double y2i2 =   y2_i2[last_h_data_i2];
-     double z2i2 =   z2_i2[last_h_data_i2];
-     y2i2 = (0.5)*y2_i2[last_h_data_i2] - (sqrt(3)/2.0)*z2_i2[last_h_data_i2];
-     z2i2 = (sqrt(3)/2.0)*y2_i2[last_h_data_i2] + (0.5)*z2_i2[last_h_data_i2];
+     //60 degrees plus:                                                                                                                                  
+
+     //x_i2[last_h_data_i2] = (0.5)*x_i2[last_h_data_i2] - (sqrt(3)/2.0)*y_i2[last_h_data_i2];
+     //y_i2[last_h_data_i2] = (sqrt(3)/2.0)*x_i2[last_h_data_i2] + (0.5)*y_i2[last_h_data_i2];
 
 
 
-     h_azangle1_data->Fill( TMath::ATan(x2i2/z2i2) );
-     h_zangle1_data->Fill( abs( TMath::ATan(abs( (sqrt(x2i2*x2i2 + z2i2*z2i2))) / (y2i2) ) ));
-     //     h_q1_data->Fill(dqdx2i2);
+     h_azangle1_data->Fill( TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) );
+     h_zangle1_data->Fill( abs( TMath::ATan(abs( (sqrt(x2_i2[last_h_data_i2]*x2_i2[last_h_data_i2] + z2_i2[last_h_data_i2]*z2_i2[last_h_data_i2]))) / (y2_i2[last_h_data_i2]) ) ));
+
+
+     outb2<<abs( TMath::ATan(abs( (sqrt(x2_i2[last_h_data_i2]*x2_i2[last_h_data_i2] + z2_i2[last_h_data_i2]*z2_i2[last_h_data_i2]))) / (y2_i2[last_h_data_i2]) ) )<<endl;
+
+     //     h_q1_data->Fill(dqdx2_i2[last_h_data_i2]);
      h_r1_data->Fill(rr2_i2[last_h_data_i2]);
 
 
@@ -1413,9 +1442,9 @@ void plus60twoDW(bool verbose=false) {
      //h_wi1_data->Fill(width2_i2[last_h_data_i2]);
      h_w1_data->Fill(wire2_i2[last_h_data_i2]);
      h_ti1_data->Fill(time2_i2[last_h_data_i2]);
-     h_x1_data->Fill(x2i2);
-     h_y1_data->Fill(y2i2);
-     h_z1_data->Fill(z2i2);
+     h_x1_data->Fill(x2_i2[last_h_data_i2]);
+     h_y1_data->Fill(y2_i2[last_h_data_i2]);
+     h_z1_data->Fill(z2_i2[last_h_data_i2]);
      h_p1_data->Fill(pitch2_i2[last_h_data_i2]);
 
 
@@ -1423,19 +1452,19 @@ void plus60twoDW(bool verbose=false) {
      double sum_integral_data_i2 =0.0;
      double sum_width_data_i2 =0.0;
      double sum_dqdx_data_i2 =0.0;
-
+     double sum_pitch_data_i2 =0.0;
      for(int y = 0; y <last_h_data_i2; y++){
        sum_integral_data_i2 += integral2_i2[y];
        sum_width_data_i2 += width2_i2[y];
        sum_dqdx_data_i2 += dqdx2_i2[y];
-
+       sum_pitch_data_i2 += pitch2_i2[y];
      }
      double av_integral_data_i2 = sum_integral_data_i2/last_h_data_i2;
      double av_width_data_i2 = sum_width_data_i2/last_h_data_i2;
      double av_dqdx_data_i2 = sum_dqdx_data_i2/last_h_data_i2;
+     double av_pitch_data_i2 = sum_pitch_data_i2/last_h_data_i2;
 
-
-     h_ci1_data->Fill(av_integral_data_i2);
+     h_ci1_data->Fill(av_dqdx_data_i2);
      h_wi1_data->Fill(av_width_data_i2);
      h_q1_data->Fill(av_dqdx_data_i2);
 
@@ -1443,21 +1472,21 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-     h_l2D2_data->Fill(TMath::ATan(x2i2/z2i2) , *length2);
-     h_sx2D2_data->Fill(TMath::ATan(x2i2/z2i2) , *startX2);
-     h_ex2D2_data->Fill(TMath::ATan(x2i2/z2i2) , *endX2);
-     h_sy2D2_data->Fill(TMath::ATan(x2i2/z2i2) , *startY2);
-     h_ey2D2_data->Fill(TMath::ATan(x2i2/z2i2) , *endY2);
-     h_sz2D2_data->Fill(TMath::ATan(x2i2/z2i2) , *startZ2);
-     h_ez2D2_data->Fill(TMath::ATan(x2i2/z2i2) , *endZ2);
-     h_ci22D_data->Fill(TMath::ATan(x2i2/z2i2) , av_integral_data_i2);
+     h_l2D2_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , *length2);
+     h_sx2D2_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , *startX2);
+     h_ex2D2_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , *endX2);
+     h_sy2D2_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , *startY2);
+     h_ey2D2_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , *endY2);
+     h_sz2D2_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , *startZ2);
+     h_ez2D2_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , *endZ2);
+     h_ci22D_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , av_dqdx_data_i2);
 
+     h_pi22D_data->Fill(av_pitch_data_i2 , av_integral_data_i2);
+     h_wi22D_data->Fill(TMath::ATan(x2_i2[last_h_data_i2]/z2_i2[last_h_data_i2]) , av_width_data_i2);
 
-     h_wi22D_data->Fill(TMath::ATan(x2i2/z2i2) , av_width_data_i2);
-
-     hz_l2D2_data->Fill( abs( TMath::ATan(abs( (sqrt(x2i2*x2i2 + z2i2*z2i2))) / (y2i2) ) ) , *length2);
-     hz_ci22D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2i2*x2i2 + z2i2*z2i2))) / (y2i2) ) )  , av_integral_data_i2);
-     hz_wi22D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2i2*x2i2 + z2i2*z2i2))) / (y2i2) ) )  , av_width_data_i2);
+     hz_l2D2_data->Fill( abs( TMath::ATan(abs( (sqrt(x2_i2[last_h_data_i2]*x2_i2[last_h_data_i2] + z2_i2[last_h_data_i2]*z2_i2[last_h_data_i2]))) / (y2_i2[last_h_data_i2]) ) ) , *length2);
+     hz_ci22D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2_i2[last_h_data_i2]*x2_i2[last_h_data_i2] + z2_i2[last_h_data_i2]*z2_i2[last_h_data_i2]))) / (y2_i2[last_h_data_i2]) ) )  , av_dqdx_data_i2);
+     hz_wi22D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2_i2[last_h_data_i2]*x2_i2[last_h_data_i2] + z2_i2[last_h_data_i2]*z2_i2[last_h_data_i2]))) / (y2_i2[last_h_data_i2]) ) )  , av_width_data_i2);
 
 
 
@@ -1468,32 +1497,30 @@ void plus60twoDW(bool verbose=false) {
 
 
      if(ontraj2_i1[last_h_data_i1]!=1) continue;
-     if(tpc2_i1[last_h_data_i1]!=tpc_num )continue;//==0) continue;
+     if(tpc3_i1[last_h_data_i1]!=tpc_num)continue;//==0) continue;
 
 
-     //60 degrees plus:                                                   
-     double x2i1 =   x2_i1[last_h_data_i1];                                                                               
-     double y2i1 =   y2_i1[last_h_data_i1];
-     double z2i1 =   z2_i1[last_h_data_i1];
-     y2i1 = (0.5)*y2_i1[last_h_data_i1] - (sqrt(3)/2.0)*z2_i1[last_h_data_i1];
-     z2i1 = (sqrt(3)/2.0)*y2_i1[last_h_data_i1] + (0.5)*z2_i1[last_h_data_i1];
+     //60 degrees plus:                                                                                                                                  
+
+     //x_i1[last_h_data_i1] = (0.5)*x_i1[last_h_data_i1] - (sqrt(3)/2.0)*y_i1[last_h_data_i1];
+     //y_i1[last_h_data_i1] = (sqrt(3)/2.0)*x_i1[last_h_data_i1] + (0.5)*y_i1[last_h_data_i1];
 
 
 
 
-     h_azangle0_data->Fill( TMath::ATan(x2i1/z2i1) );
-     h_zangle0_data->Fill( abs( TMath::ATan(abs( (sqrt(x2i1*x2i1 + z2i1*z2i1))) / (y2i1) ) ));
-     //h_q0_data->Fill(dqdx2i1);
+     h_azangle0_data->Fill( TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) );
+     h_zangle0_data->Fill( abs( TMath::ATan(abs( (sqrt(x2_i1[last_h_data_i1]*x2_i1[last_h_data_i1] + z2_i1[last_h_data_i1]*z2_i1[last_h_data_i1]))) / (y2_i1[last_h_data_i1]) ) ));
+     //h_q0_data->Fill(dqdx2_i1[last_h_data_i1]);
      h_r0_data->Fill(rr2_i1[last_h_data_i1]);
 
-
+     outb1<<abs( TMath::ATan(abs( (sqrt(x2_i1[last_h_data_i1]*x2_i1[last_h_data_i1] + z2_i1[last_h_data_i1]*z2_i1[last_h_data_i1]))) / (y2_i1[last_h_data_i1]) ) )<<endl;
      //h_ci0_data->Fill(integral2_i1[last_h_data_i1]);
      //h_wi0_data->Fill(width2_i1[last_h_data_i1]);
      h_w0_data->Fill(wire2_i1[last_h_data_i1]);
      h_ti0_data->Fill(time2_i1[last_h_data_i1]);
-     h_x0_data->Fill(x2i1);
-     h_y0_data->Fill(y2i1);
-     h_z0_data->Fill(z2i1);
+     h_x0_data->Fill(x2_i1[last_h_data_i1]);
+     h_y0_data->Fill(y2_i1[last_h_data_i1]);
+     h_z0_data->Fill(z2_i1[last_h_data_i1]);
      h_p0_data->Fill(pitch2_i1[last_h_data_i1]);
 
 
@@ -1503,19 +1530,19 @@ void plus60twoDW(bool verbose=false) {
      double sum_integral_data_i1 =0.0;
      double sum_width_data_i1 =0.0;
      double sum_dqdx_data_i1 =0.0;
-
+     double sum_pitch_data_i1 =0.0;
      for(int z = 0; z <last_h_data_i1; z++){
        sum_integral_data_i1 += integral2_i1[z];
        sum_width_data_i1 += width2_i1[z];
        sum_dqdx_data_i1 += dqdx2_i1[z];
-
+       sum_pitch_data_i1 += pitch2_i1[z];
      }
      double av_integral_data_i1 = sum_integral_data_i1/last_h_data_i1;
      double av_width_data_i1 = sum_width_data_i1/last_h_data_i1;
      double av_dqdx_data_i1 = sum_dqdx_data_i1/last_h_data_i1;
+     double av_pitch_data_i1 = sum_pitch_data_i1/last_h_data_i1;
 
-
-     h_ci0_data->Fill(av_integral_data_i1);
+     h_ci0_data->Fill(av_dqdx_data_i1);
      h_wi0_data->Fill(av_width_data_i1);
      h_q0_data->Fill(av_dqdx_data_i1);
 
@@ -1524,21 +1551,21 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-     h_l2D1_data->Fill(TMath::ATan(x2i1/z2i1) , *length2);
-     h_sx2D1_data->Fill(TMath::ATan(x2i1/z2i1) , *startX2);
-     h_ex2D1_data->Fill(TMath::ATan(x2i1/z2i1) , *endX2);
-     h_sy2D1_data->Fill(TMath::ATan(x2i1/z2i1) , *startY2);
-     h_ey2D1_data->Fill(TMath::ATan(x2i1/z2i1) , *endY2);
-     h_sz2D1_data->Fill(TMath::ATan(x2i1/z2i1) , *startZ2);
-     h_ez2D1_data->Fill(TMath::ATan(x2i1/z2i1) , *endZ2);
-     h_ci12D_data->Fill(TMath::ATan(x2i1/z2i1) , av_integral_data_i1);
+     h_l2D1_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , *length2);
+     h_sx2D1_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , *startX2);
+     h_ex2D1_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , *endX2);
+     h_sy2D1_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , *startY2);
+     h_ey2D1_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , *endY2);
+     h_sz2D1_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , *startZ2);
+     h_ez2D1_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , *endZ2);
+     h_ci12D_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , av_dqdx_data_i1);
 
+     h_pi12D_data->Fill(av_pitch_data_i1 , av_integral_data_i1);
+     h_wi12D_data->Fill(TMath::ATan(x2_i1[last_h_data_i1]/z2_i1[last_h_data_i1]) , av_width_data_i1);
 
-     h_wi12D_data->Fill(TMath::ATan(x2i1/z2i1) , av_width_data_i1);
-
-     hz_l2D1_data->Fill( abs( TMath::ATan(abs( (sqrt(x2i1*x2i1 + z2i1*z2i1))) / (y2i1) ) ) , *length2);
-     hz_ci12D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2i1*x2i1 + z2i1*z2i1))) / (y2i1) ) )  , av_integral_data_i1);
-     hz_wi12D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2i1*x2i1 + z2i1*z2i1))) / (y2i1) ) )  , av_width_data_i1);
+     hz_l2D1_data->Fill( abs( TMath::ATan(abs( (sqrt(x2_i1[last_h_data_i1]*x2_i1[last_h_data_i1] + z2_i1[last_h_data_i1]*z2_i1[last_h_data_i1]))) / (y2_i1[last_h_data_i1]) ) ) , *length2);
+     hz_ci12D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2_i1[last_h_data_i1]*x2_i1[last_h_data_i1] + z2_i1[last_h_data_i1]*z2_i1[last_h_data_i1]))) / (y2_i1[last_h_data_i1]) ) )  , av_dqdx_data_i1);
+     hz_wi12D_data->Fill(abs( TMath::ATan(abs( (sqrt(x2_i1[last_h_data_i1]*x2_i1[last_h_data_i1] + z2_i1[last_h_data_i1]*z2_i1[last_h_data_i1]))) / (y2_i1[last_h_data_i1]) ) )  , av_width_data_i1);
 
 
 
@@ -1712,6 +1739,15 @@ void plus60twoDW(bool verbose=false) {
 
    TH2*h1BB2D = (TH2*)(h_ci12D_mc->Clone("h1BB2D"));
    h1BB2D->Scale(1./h1BB2D->Integral());
+
+   TH2*h13332D = (TH2*)(h_pi02D_mc->Clone("h13332D"));
+   h13332D->Scale(1./h13332D->Integral());
+   TH2*h13332Da = (TH2*)(h_pi12D_mc->Clone("h13332Da"));
+   h13332Da->Scale(1./h13332Da->Integral());
+   TH2*h13332Db = (TH2*)(h_pi22D_mc->Clone("h13332Db"));
+   h13332Db->Scale(1./h13332Db->Integral());
+
+
 
    TH2*hz1BB2D = (TH2*)(hz_ci12D_mc->Clone("hz1BB2D"));
    hz1BB2D->Scale(1./hz1BB2D->Integral());
@@ -1973,6 +2009,16 @@ void plus60twoDW(bool verbose=false) {
    TH2*h2CC2D = (TH2*)(h_ci02D_data->Clone("h2CC2D"));
    h2CC2D->Scale(1./h2CC2D->Integral());
 
+
+   TH2*h14442D = (TH2*)(h_pi02D_data->Clone("h14442D"));
+   h14442D->Scale(1./h14442D->Integral());
+   TH2*h14442Da = (TH2*)(h_pi12D_data->Clone("h14442Da"));
+   h14442Da->Scale(1./h14442Da->Integral());
+   TH2*h14442Db = (TH2*)(h_pi22D_data->Clone("h14442Db"));
+   h14442Db->Scale(1./h14442Db->Integral());
+
+
+
    TH2*hz2CC2D = (TH2*)(hz_ci02D_data->Clone("hz2CC2D"));
    hz2CC2D->Scale(1./hz2CC2D->Integral());
 
@@ -2074,9 +2120,9 @@ void plus60twoDW(bool verbose=false) {
    cout<<"HERE_B"<<endl;
    //h_azangle2_data->KolmogorovTest(h_azangle2_mc,"U O N D ");
    cout<<"HERE_C"<<endl;
-   cnvs_az2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_AzimuthalAngle_colTEST.pdf");
+   cnvs_az2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_AzimuthalAngle_colTEST.pdf");
 
-   //   TFile* my_new_file1 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_AzimuthalAngle_col.root","RECREATE");
+   //   TFile* my_new_file1 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tpc0_sel122_East_file_AzimuthalAngle_col.root","RECREATE");
    // cnvs_az2->Write();
 
    cout<<"HERE"<<endl;
@@ -2104,7 +2150,7 @@ void plus60twoDW(bool verbose=false) {
    //h_azangle1_data->KolmogorovTest(//h_azangle1_mc,"U O N D ");
 
 
-   cnvs_az1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_AzimuthalAngle_in1TEST.pdf");
+   cnvs_az1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_AzimuthalAngle_in1TEST.pdf");
    //cnvs_az1->Write();
 
    TCanvas* cnvs_az0 = new TCanvas("cnvs_az0", "c2", 1,1,800,700);
@@ -2124,7 +2170,7 @@ void plus60twoDW(bool verbose=false) {
    legendb->Draw();
    cnvs_az0->Update();
   
-   cnvs_az0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_AzimuthalAngle_in2TEST.pdf");//,"RECREATE");
+   cnvs_az0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_AzimuthalAngle_in2TEST.pdf");//,"RECREATE");
    //  cnvs_az0->Write();
  cout<<"az0"<<endl;
    Double_t res_az0[20];
@@ -2132,7 +2178,7 @@ void plus60twoDW(bool verbose=false) {
    //h_azangle0_data->KolmogorovTest(//h_azangle0_mc,"U O N D ");
    
 
-   //      cnvs_az0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_AzimuthalAngle_in2.root","RECREATE");
+   //      cnvs_az0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_AzimuthalAngle_in2.root","RECREATE");
       //cnvs_az0->Write();
 
    TCanvas* cnvs_zz2 = new TCanvas("cnvs_zz2", "c3", 1,1,800,700);
@@ -2154,7 +2200,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_zz2->Update();
 
    //TFile* my_new_file4 = new TFile(
-  cnvs_zz2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_ZenithAngle_colTEST.pdf");//,"RECREATE");
+  cnvs_zz2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_ZenithAngle_colTEST.pdf");//,"RECREATE");
    //   cnvs_zz2->Write();
 
    cout<<"zz2"<<endl;
@@ -2163,7 +2209,7 @@ void plus60twoDW(bool verbose=false) {
    //h_zangle2_data->KolmogorovTest(//h_zangle2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file4 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_ZenithAngle_col.root","RECREATE");
+   //   TFile* my_new_file4 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_ZenithAngle_col.root","RECREATE");
    //cnvs_zz2->Write();
 
 
@@ -2185,14 +2231,14 @@ void plus60twoDW(bool verbose=false) {
    legendd->Draw();
    cnvs_zz1->Update();
 
-   cnvs_zz1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_ZenithAngle_in1TEST.pdf");//,"RECREATE");
+   cnvs_zz1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_ZenithAngle_in1TEST.pdf");//,"RECREATE");
    //   cnvs_zz1->Write();
    cout<<"zz1"<<endl;
    Double_t res_zz1[20];
    //h_zangle1_data->Chi2Test(//h_zangle1_mc,"UW OF UF P",res_zz1);// h2d->Chi2Test(h1d,"UU NORM  P",res_zz1);                     
    //h_zangle1_data->KolmogorovTest(//h_zangle1_mc,"U O N D ");
    
-   //   TFile* my_new_file5 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_ZenithAngle_in1.root","RECREATE");
+   //   TFile* my_new_file5 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_ZenithAngle_in1.root","RECREATE");
    // cnvs_zz1->Write();
 
    TCanvas* cnvs_zz0 = new TCanvas("cnvs_zz0", "c5", 1,1,800,700);
@@ -2212,7 +2258,7 @@ void plus60twoDW(bool verbose=false) {
    legende->AddEntry(h2e,"Data");
    legende->Draw();
    cnvs_zz0->Update();
-   cnvs_zz0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_ZenithAngle_in2TEST.pdf");//,"RECREATE");
+   cnvs_zz0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_ZenithAngle_in2TEST.pdf");//,"RECREATE");
    //   cnvs_zz0->Write();
    cout<<"zz0"<<endl;
    Double_t res_zz0[20];
@@ -2220,7 +2266,7 @@ void plus60twoDW(bool verbose=false) {
    //h_zangle0_data->KolmogorovTest(//h_zangle0_mc,"U O N D ");
    
 
-   //   TFile* my_new_file6 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_ZenithAngle_in2.root","RECREATE");
+   //   TFile* my_new_file6 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_ZenithAngle_in2.root","RECREATE");
    // cnvs_zz0->Write();
 
    TCanvas* cnvs_q2 = new TCanvas("cnvs_q2", "c6", 1,1,800,700);
@@ -2242,7 +2288,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_q2->Update();
 
 
-   cnvs_q2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_filedQdx_colTEST.pdf");//,"RECREATE");
+   cnvs_q2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_filedQdx_colTEST.pdf");//,"RECREATE");
    //   cnvs_q2->Write();
 
    cout<<"q2"<<endl;
@@ -2251,7 +2297,7 @@ void plus60twoDW(bool verbose=false) {
    //h_q2_data->KolmogorovTest(//h_q2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file7 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_filedQdx_col.root","RECREATE");
+   //   TFile* my_new_file7 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_filedQdx_col.root","RECREATE");
    //cnvs_q2->Write();
 
 
@@ -2272,7 +2318,7 @@ void plus60twoDW(bool verbose=false) {
    legendg->Draw();
    cnvs_q1->Update();
 
-   cnvs_q1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_filedQdx_in1TEST.pdf");//,"RECREATE");
+   cnvs_q1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_filedQdx_in1TEST.pdf");//,"RECREATE");
    //   cnvs_q1->Write();
 
 
@@ -2281,7 +2327,7 @@ void plus60twoDW(bool verbose=false) {
    //h_q1_data->Chi2Test(//h_q1_mc,"UW OF UF P",res_q1);//h2g->Chi2Test(h1g,"UU NORM  P",res_q1);                                  
    //h_q1_data->KolmogorovTest(//h_q1_mc,"U O N D ");
   
-   //   TFile* my_new_file8 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_filedQdx_in1.root","RECREATE");
+   //   TFile* my_new_file8 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_filedQdx_in1.root","RECREATE");
    //cnvs_q1->Write();
 
    TCanvas* cnvs_q0 = new TCanvas("cnvs_q0", "c8", 1,1,800,700);
@@ -2303,7 +2349,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_q0->Update();
 
 
-   cnvs_q0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_filedQdx_in2TEST.pdf");//,"RECREATE");
+   cnvs_q0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_filedQdx_in2TEST.pdf");//,"RECREATE");
    //   cnvs_q0->Write();
    cout<<"q0"<<endl;
    Double_t res_q0[20];
@@ -2311,7 +2357,7 @@ void plus60twoDW(bool verbose=false) {
    //h_q0_data->KolmogorovTest(//h_q0_mc,"U O N D ");
 
 
-   //   TFile* my_new_file9 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_filedQdx_in2.root","RECREATE");
+   //   TFile* my_new_file9 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_filedQdx_in2.root","RECREATE");
    // cnvs_q0->Write();
 
    TCanvas* cnvs_r2 = new TCanvas("cnvs_r2", "c9", 1,1,800,700);
@@ -2331,7 +2377,7 @@ void plus60twoDW(bool verbose=false) {
    legendi->Draw();
    cnvs_r2->Update();
 
-   cnvs_r2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileRR_colTEST.pdf");//,"RECREATE");
+   cnvs_r2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileRR_colTEST.pdf");//,"RECREATE");
    //   cnvs_r2->Write();
    cout<<"r2"<<endl;
    Double_t res_r2[20];
@@ -2339,7 +2385,7 @@ void plus60twoDW(bool verbose=false) {
    //h_r2_data->KolmogorovTest(//h_r2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file10 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileRR_col.root","RECREATE");
+   //   TFile* my_new_file10 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileRR_col.root","RECREATE");
    //  cnvs_r2->Write();
 
    TCanvas* cnvs_r1 = new TCanvas("cnvs_r1", "c10", 1,1,800,700);
@@ -2363,7 +2409,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file11 = new TFile(
-   cnvs_r1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileRR_in1TEST.pdf");//,"RECREATE");
+   cnvs_r1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileRR_in1TEST.pdf");//,"RECREATE");
    //cnvs_r1->Write();
 
 
@@ -2373,7 +2419,7 @@ void plus60twoDW(bool verbose=false) {
    //h_r1_data->KolmogorovTest(//h_r1_mc,"U O N D ");
   
 
-   //   TFile* my_new_file11 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileRR_in1.root","RECREATE");
+   //   TFile* my_new_file11 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileRR_in1.root","RECREATE");
    //cnvs_r1->Write();
 
    TCanvas* cnvs_r0 = new TCanvas("cnvs_r0", "c11", 1,1,800,700);
@@ -2394,7 +2440,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_r0->Update();
 
    //TFile* my_new_file12 = new TFile(
-   cnvs_r0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileRR_in2TEST.pdf");//,"RECREATE");
+   cnvs_r0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileRR_in2TEST.pdf");//,"RECREATE");
    //   cnvs_r0->Write();
 
 
@@ -2405,7 +2451,7 @@ void plus60twoDW(bool verbose=false) {
    //h_r0_data->KolmogorovTest(//h_r0_mc,"U O N D ");
    
 
-   //   TFile* my_new_file12 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileRR_in2.root","RECREATE");
+   //   TFile* my_new_file12 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileRR_in2.root","RECREATE");
    //cnvs_r0->Write();
 
    TCanvas* cnvs_l = new TCanvas("cnvs_l", "c12", 1,1,800,700);
@@ -2427,7 +2473,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_l->Update();
 
    // TFile* my_new_file13 = new TFile(
-   cnvs_l->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileLengthTEST.pdf");//,"RECREATE");
+   cnvs_l->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLengthTEST.pdf");//,"RECREATE");
    //   cnvs_l->Write();
 
 
@@ -2457,12 +2503,12 @@ void plus60twoDW(bool verbose=false) {
    legendl2Dc->Draw();
    cnvs_l2Dc->Update();
 
-   TFile output_file1("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Az_col.root","RECREATE");
+   TFile output_file1("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Az_col.root","RECREATE");
    h1l2Dc_prof->Write();
    h2l2Dc_prof->Write();
    cnvs_l2Dc->Write();
 
-   cnvs_l2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Az_col.pdf");
+   cnvs_l2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Az_col.pdf");
 
 
    TCanvas* cnvs_zl2Dc = new TCanvas("cnvs_zl2Dc", "zc122Dc", 1,1,800,700);
@@ -2481,12 +2527,12 @@ void plus60twoDW(bool verbose=false) {
    legendzl2Dc->Draw();
    cnvs_zl2Dc->Update();
 
-   TFile output_file1z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Z_col.root","RECREATE");
+   TFile output_file1z("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Z_col.root","RECREATE");
    hz1l2Dc_prof->Write();
    hz2l2Dc_prof->Write();
    cnvs_zl2Dc->Write();
 
-   cnvs_zl2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Z_col.pdf");
+   cnvs_zl2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Z_col.pdf");
 
 
 
@@ -2509,7 +2555,7 @@ void plus60twoDW(bool verbose=false) {
    legendl2Dc->Draw();
    cnvs_l2Dc->Update();
    */
-   //   cnvs_l2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Az_col.pdf");
+   //   cnvs_l2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Az_col.pdf");
 
    
    TCanvas* cnvs_l2D1 = new TCanvas("cnvs_l2D1", "c122D1", 1,1,800,700);
@@ -2527,12 +2573,12 @@ void plus60twoDW(bool verbose=false) {
    legendl2D1->Draw();
    cnvs_l2D1->Update();
 
-   TFile output_file2("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Az_in1.root","RECREATE");
+   TFile output_file2("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Az_in1.root","RECREATE");
    h1l2D1_prof->Write();
    h2l2D1_prof->Write();
    cnvs_l2D1->Write();
 
-   cnvs_l2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Az_in1.pdf");
+   cnvs_l2D1->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Az_in1.pdf");
 
    /*h1l2D1_prof->GetYaxis()->SetTitle(" Muon Length in cm  ");
    h1l2D1_prof->GetXaxis()->SetTitle("Azimuthal Angle in radians");
@@ -2550,7 +2596,7 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   //   cnvs_l2D1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Az_in1.pdf");
+   //   cnvs_l2D1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Az_in1.pdf");
 
 
    TCanvas* cnvs_l2D2 = new TCanvas("cnvs_l2D2", "c122D2", 1,1,800,700);
@@ -2568,7 +2614,7 @@ void plus60twoDW(bool verbose=false) {
    legendl2D2->Draw();
    cnvs_l2D2->Update();
 
-   TFile output_file3("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Az_in2.root","RECREATE");
+   TFile output_file3("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Az_in2.root","RECREATE");
    h1l2D2_prof->Write();
    h2l2D2_prof->Write();
    cnvs_l2D2->Write();
@@ -2584,7 +2630,7 @@ void plus60twoDW(bool verbose=false) {
    legendl2D2->Draw();
    cnvs_l2D2->Update();
    */
-   cnvs_l2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength_Az_in2.pdf");
+   cnvs_l2D2->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength_Az_in2.pdf");
   
 
 
@@ -2601,7 +2647,7 @@ void plus60twoDW(bool verbose=false) {
    //h_l_data->Chi2Test(//h_l_mc,"UW OF UF P",res_l);// h2l->Chi2Test(h1l,"UU NORM  P",res_l);                                     
    //h_l_data->KolmogorovTest(//h_l_mc,"U O N D ");
    
-   //   TFile* my_new_file13 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileLength.root","RECREATE");
+   //   TFile* my_new_file13 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileLength.root","RECREATE");
    //cnvs_l->Write();
 
    TCanvas* cnvs_t0 = new TCanvas("cnvs_t0", "c13", 1,1,800,700);
@@ -2622,7 +2668,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_t0->Update();
 
    //TFile* my_new_file14 = new TFile(
-   cnvs_t0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileT0TEST.pdf");//,"RECREATE");
+   cnvs_t0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileT0TEST.pdf");//,"RECREATE");
    //   cnvs_t0->Write();
 
    cout<<"t0"<<endl;
@@ -2631,7 +2677,7 @@ void plus60twoDW(bool verbose=false) {
    //h_t0_data->KolmogorovTest(//h_t0_mc,"U O N D ");
    
 
-   //   TFile* my_new_file14 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileT0.root","RECREATE");
+   //   TFile* my_new_file14 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileT0.root","RECREATE");
    //cnvs_t0->Write();
 
    TCanvas* cnvs_sx = new TCanvas("cnvs_sx", "c14", 1,1,800,700);
@@ -2653,7 +2699,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sx->Update();
 
    //TFile* my_new_file15 = new TFile(
-   cnvs_sx->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartX_colTEST.pdf");//,"RECREATE");
+   cnvs_sx->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartX_colTEST.pdf");//,"RECREATE");
    //   cnvs_sx->Write();
 
 
@@ -2672,13 +2718,13 @@ void plus60twoDW(bool verbose=false) {
    legendn2Dc->Draw();
    cnvs_sx2Dc->Update();
 
-   TFile output_file4("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartX_Az_col.root","RECREATE");
+   TFile output_file4("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartX_Az_col.root","RECREATE");
    h1n2Dc_prof->Write();
    h2n2Dc_prof->Write();
    cnvs_sx2Dc->Write();
 
 
-   cnvs_sx2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartX_Az_col.pdf");
+   cnvs_sx2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartX_Az_col.pdf");
 
    TCanvas* cnvs_sx2D1 = new TCanvas("cnvs_sx2D1", "c142D1", 1,1,800,700);
    auto h1n2D1_prof = h1n2D1->ProfileX();
@@ -2699,12 +2745,12 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sx2D1->Update();
 
 
-   TFile output_file5("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartX_Az_in1.root","RECREATE");
+   TFile output_file5("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartX_Az_in1.root","RECREATE");
    h1n2D1_prof->Write();
    h2n2D1_prof->Write();
    cnvs_sx2D1->Write();
 
-   cnvs_sx2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartX_Az_in1.pdf");
+   cnvs_sx2D1->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartX_Az_in1.pdf");
 
    TCanvas* cnvs_sx2D2 = new TCanvas("cnvs_sx2D2", "c142D2", 1,1,800,700);
    auto h1n2D2_prof = h1n2D2->ProfileX();
@@ -2725,7 +2771,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sx2D2->Update();
 
 
-   TFile output_file6("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartX_Az_in2.root","RECREATE");
+   TFile output_file6("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartX_Az_in2.root","RECREATE");
    h1n2D2_prof->Write();
    h2n2D2_prof->Write();
    cnvs_sx2D2->Write();
@@ -2733,7 +2779,7 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   cnvs_sx2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartX_Az_in2.pdf");
+   cnvs_sx2D2->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartX_Az_in2.pdf");
 
 
 
@@ -2745,7 +2791,7 @@ void plus60twoDW(bool verbose=false) {
    //h_sx_data->Chi2Test(//h_sx_mc,"UW OF UF P",res_sx);// h2n->Chi2Test(h1n,"UU NORM  P",res_sx);                                 
    //h_sx_data->KolmogorovTest(//h_sx_mc,"U O N D ");
    
-   //   TFile* my_new_file15 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartX_col.root","RECREATE");
+   //   TFile* my_new_file15 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartX_col.root","RECREATE");
    // cnvs_sx->Write();
 
    TCanvas* cnvs_sy = new TCanvas("cnvs_sy", "c15", 1,1,800,700);
@@ -2766,7 +2812,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sy->Update();
 
    //TFile* my_new_file16 = new TFile(
-   cnvs_sy->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartY_in1TEST.pdf");//,"RECREATE");
+   cnvs_sy->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartY_in1TEST.pdf");//,"RECREATE");
    //  cnvs_sy->Write();
 
 
@@ -2791,12 +2837,12 @@ void plus60twoDW(bool verbose=false) {
    legendo2Dc->Draw();
    cnvs_sy2Dc->Update();
 
-   TFile output_file7("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartY_Az_col.root","RECREATE");
+   TFile output_file7("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartY_Az_col.root","RECREATE");
    h1o2Dc_prof->Write();
    h2o2Dc_prof->Write();
    cnvs_sy2Dc->Write();
 
-   cnvs_sy2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartY_Az_col.pdf");
+   cnvs_sy2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartY_Az_col.pdf");
 
    TCanvas* cnvs_sy2D1 = new TCanvas("cnvs_sy2D1", "c152D1", 1,1,800,700);
    auto h1o2D1_prof = h1o2D1->ProfileX();
@@ -2817,13 +2863,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sy2D1->Update();
 
 
-   TFile output_file8("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartY_Az_in1.root","RECREATE");
+   TFile output_file8("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartY_Az_in1.root","RECREATE");
    h1o2D1_prof->Write();
    h2o2D1_prof->Write();
    cnvs_sy2D1->Write();
 
 
-   cnvs_sy2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartY_Az_in1.pdf");
+   cnvs_sy2D1->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartY_Az_in1.pdf");
 
    TCanvas* cnvs_sy2D2 = new TCanvas("cnvs_sy2D2", "c152D2", 1,1,800,700);
    auto h1o2D2_prof = h1o2D2->ProfileX();
@@ -2844,13 +2890,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sy2D2->Update();
 
 
-   TFile output_file9("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartY_Az_in2.root","RECREATE");
+   TFile output_file9("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartY_Az_in2.root","RECREATE");
    h1o2D2_prof->Write();
    h2o2D2_prof->Write();
    cnvs_sy2D2->Write();
 
 
-   cnvs_sy2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartY_Az_in2.pdf");
+   cnvs_sy2D2->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartY_Az_in2.pdf");
 
 
 
@@ -2866,7 +2912,7 @@ void plus60twoDW(bool verbose=false) {
    //h_sy_data->Chi2Test(//h_sy_mc,"UW OF UF P",res_sy);//h2o->Chi2Test(h1o,"UU NORM  P",res_sy);                                  
    //h_sy_data->KolmogorovTest(//h_sy_mc,"U O N D ");
   
-   //   TFile* my_new_file16 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartY_in1.root","RECREATE");
+   //   TFile* my_new_file16 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartY_in1.root","RECREATE");
    //cnvs_sy->Write();
 
    TCanvas* cnvs_sz = new TCanvas("cnvs_sz", "c17", 1,1,800,700);
@@ -2886,7 +2932,7 @@ void plus60twoDW(bool verbose=false) {
    legendp->Draw();
    cnvs_sz->Update();
    //   TFile* my_new_file17 = new TFile(
-   cnvs_sz->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartZ_in2TEST.pdf");//,"RECREATE");
+   cnvs_sz->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartZ_in2TEST.pdf");//,"RECREATE");
    //   cnvs_sz->Write();
 
 
@@ -2915,12 +2961,12 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file10("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartZ_Az_col.root","RECREATE");
+   TFile output_file10("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartZ_Az_col.root","RECREATE");
    h1p2Dc_prof->Write();
    h2p2Dc_prof->Write();
    cnvs_sz2Dc->Write();
 
-   cnvs_sz2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartZ_Az_col.pdf");
+   cnvs_sz2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartZ_Az_col.pdf");
 
    TCanvas* cnvs_sz2D1 = new TCanvas("cnvs_sz2D1", "c162D1", 1,1,800,700);
    auto h1p2D1_prof = h1p2D1->ProfileX();
@@ -2941,12 +2987,12 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sz2D1->Update();
 
 
-   TFile output_file11("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartZ_Az_in1.root","RECREATE");
+   TFile output_file11("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartZ_Az_in1.root","RECREATE");
    h1p2D1_prof->Write();
    h2p2D1_prof->Write();
    cnvs_sz2D1->Write();
 
-   cnvs_sz2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartZ_Az_in1.pdf");
+   cnvs_sz2D1->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartZ_Az_in1.pdf");
 
    TCanvas* cnvs_sz2D2 = new TCanvas("cnvs_sz2D2", "c162D2", 1,1,800,700);
    auto h1p2D2_prof = h1p2D2->ProfileX();
@@ -2968,13 +3014,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_sz2D2->Update();
 
 
-   TFile output_file12("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartZ_Az_in2.root","RECREATE");
+   TFile output_file12("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartZ_Az_in2.root","RECREATE");
    h1p2D2_prof->Write();
    h2p2D2_prof->Write();
    cnvs_sz2D2->Write();
 
 
-   cnvs_sz2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartZ_Az_in2.pdf");
+   cnvs_sz2D2->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartZ_Az_in2.pdf");
 
 
 
@@ -2995,7 +3041,7 @@ void plus60twoDW(bool verbose=false) {
    //h_sz_data->KolmogorovTest(//h_sz_mc,"U O N D ");
 
 
-   //   TFile* my_new_file17 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileStartZ_in2.root","RECREATE");
+   //   TFile* my_new_file17 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileStartZ_in2.root","RECREATE");
    //cnvs_sz->Write();
 
 
@@ -3017,7 +3063,7 @@ void plus60twoDW(bool verbose=false) {
    legendq->Draw();
    cnvs_ex->Update();
    //TFile* my_new_file18 = new TFile(
-   cnvs_ex->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndX_colTEST.pdf");//,"RECREATE");
+   cnvs_ex->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndX_colTEST.pdf");//,"RECREATE");
    //  cnvs_ex->Write();
 
 
@@ -3043,13 +3089,13 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file13("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndX_Az_col.root","RECREATE");
+   TFile output_file13("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndX_Az_col.root","RECREATE");
    h1q2Dc_prof->Write();
    h2q2Dc_prof->Write();
    cnvs_ex2Dc->Write();
 
 
-   cnvs_ex2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndX_Az_col.pdf");
+   cnvs_ex2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndX_Az_col.pdf");
 
    TCanvas* cnvs_ex2D1 = new TCanvas("cnvs_ex2D1", "c182D1", 1,1,800,700);
    auto h1q2D1_prof = h1q2D1->ProfileX();
@@ -3071,13 +3117,13 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file14("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndX_Az_in1.root","RECREATE");
+   TFile output_file14("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndX_Az_in1.root","RECREATE");
    h1q2D1_prof->Write();
    h2q2D1_prof->Write();
    cnvs_ex2D1->Write();
 
 
-   cnvs_ex2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndX_Az_in1.pdf");
+   cnvs_ex2D1->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndX_Az_in1.pdf");
 
    TCanvas* cnvs_ex2D2 = new TCanvas("cnvs_ex2D2", "c182D2", 1,1,800,700);
    auto h1q2D2_prof = h1q2D2->ProfileX();
@@ -3099,14 +3145,14 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file15("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndX_Az_in2.root","RECREATE");
+   TFile output_file15("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndX_Az_in2.root","RECREATE");
    h1q2D2_prof->Write();
    h2q2D2_prof->Write();
    cnvs_ex2D2->Write();
 
 
 
-   cnvs_ex2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndX_Az_in2.pdf");
+   cnvs_ex2D2->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndX_Az_in2.pdf");
 
 
 
@@ -3126,7 +3172,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ex_data->Chi2Test(//h_ex_mc,"UW OF UF P",res_ex);// h2q->Chi2Test(h1q,"UU NORM  P",res_ex);                                 
    //h_ex_data->KolmogorovTest(//h_ex_mc,"U O N D ");
   
-   //   TFile* my_new_file18 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndX_col.root","RECREATE");
+   //   TFile* my_new_file18 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndX_col.root","RECREATE");
    // cnvs_ex->Write();
 
 
@@ -3149,7 +3195,7 @@ void plus60twoDW(bool verbose=false) {
    legendr->Draw();
    cnvs_ey->Update();
    //TFile* my_new_file19 = new TFile(
-   cnvs_ey->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndY_in1TEST.pdf");//,"RECREATE");
+   cnvs_ey->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndY_in1TEST.pdf");//,"RECREATE");
    //  cnvs_ey->Write();
 
 
@@ -3177,14 +3223,14 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file16("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndY_Az_col.root","RECREATE");
+   TFile output_file16("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndY_Az_col.root","RECREATE");
    h1r2Dc_prof->Write();
    h2r2Dc_prof->Write();
    cnvs_ey2Dc->Write();
 
 
 
-   cnvs_ey2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndY_Az_col.pdf");
+   cnvs_ey2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndY_Az_col.pdf");
 
    TCanvas* cnvs_ey2D1 = new TCanvas("cnvs_ey2D1", "c192D1", 1,1,800,700);
    auto h1r2D1_prof = h1r2D1->ProfileX();
@@ -3205,13 +3251,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ey2D1->Update();
 
 
-   TFile output_file17("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndY_Az_in1.root","RECREATE");
+   TFile output_file17("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndY_Az_in1.root","RECREATE");
    h1r2D1_prof->Write();
    h2r2D1_prof->Write();
    cnvs_ey2D1->Write();
 
 
-   cnvs_ey2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndY_Az_in1.pdf");
+   cnvs_ey2D1->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndY_Az_in1.pdf");
 
    TCanvas* cnvs_ey2D2 = new TCanvas("cnvs_ey2D2", "c192D2", 1,1,800,700);
    auto h1r2D2_prof = h1r2D2->ProfileX();
@@ -3233,14 +3279,14 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ey2D2->Update();
 
 
-   TFile output_file18("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndY_Az_in2.root","RECREATE");
+   TFile output_file18("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndY_Az_in2.root","RECREATE");
    h1r2D2_prof->Write();
    h2r2D2_prof->Write();
    cnvs_ey2D2->Write();
 
 
 
-   cnvs_ey2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndY_Az_in2.pdf");
+   cnvs_ey2D2->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndY_Az_in2.pdf");
 
 
 
@@ -3258,7 +3304,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ey_data->Chi2Test(//h_ey_mc,"UW OF UF P",res_ey);// h2r->Chi2Test(h1r,"UU NORM  P",res_ey);                                 
    //h_ey_data->KolmogorovTest(//h_ey_mc,"U O N D ");
   
-   //   TFile* my_new_file19 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndY_in1.root","RECREATE");
+   //   TFile* my_new_file19 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndY_in1.root","RECREATE");
    //cnvs_ey->Write();
 
 
@@ -3281,7 +3327,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ez->Update();
 
    //T//File* my_new_file20 = new TFile(
-   cnvs_ez->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndZ_in2TEST.pdf");//,"RECREATE");
+   cnvs_ez->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndZ_in2TEST.pdf");//,"RECREATE");
    //   cnvs_ez->Write();
 
 
@@ -3309,7 +3355,7 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file19("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndZ_Az_col.root","RECREATE");
+   TFile output_file19("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndZ_Az_col.root","RECREATE");
    h1s2Dc_prof->Write();
    h2s2Dc_prof->Write();
    cnvs_ez2Dc->Write();
@@ -3317,7 +3363,7 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   cnvs_ez2Dc->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndZ_Az_col.pdf");
+   cnvs_ez2Dc->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndZ_Az_col.pdf");
 
    TCanvas* cnvs_ez2D1 = new TCanvas("cnvs_ez2D1", "c202D1", 1,1,800,700);
    auto h1s2D1_prof = h1s2D1->ProfileX();
@@ -3338,14 +3384,14 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ez2D1->Update();
 
 
-   TFile output_file20("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndZ_Az_in1.root","RECREATE");
+   TFile output_file20("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndZ_Az_in1.root","RECREATE");
    h1s2D1_prof->Write();
    h2s2D1_prof->Write();
    cnvs_ez2D1->Write();
 
 
 
-   cnvs_ez2D1->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndZ_Az_in1.pdf");
+   cnvs_ez2D1->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndZ_Az_in1.pdf");
 
    TCanvas* cnvs_ez2D2 = new TCanvas("cnvs_ez2D2", "c202D2", 1,1,800,700);
    auto h1s2D2_prof = h1s2D2->ProfileX();
@@ -3369,14 +3415,14 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file21("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndZ_Az_in2.root","RECREATE");
+   TFile output_file21("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndZ_Az_in2.root","RECREATE");
    h1s2D2_prof->Write();
    h2s2D2_prof->Write();
    cnvs_ez2D2->Write();
 
 
 
-   cnvs_ez2D2->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndZ_Az_in2.pdf");
+   cnvs_ez2D2->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndZ_Az_in2.pdf");
 
 
 
@@ -3397,7 +3443,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ez_data->Chi2Test(//h_ez_mc,"UW OF UF P",res_ez);//h2s->Chi2Test(h1s,"UU NORM  P",res_ez);                                  
    //h_ez_data->KolmogorovTest(//h_ez_mc,"U O N D ");
 
-   //   TFile* my_new_file20 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileEndZ_in2.root","RECREATE");
+   //   TFile* my_new_file20 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileEndZ_in2.root","RECREATE");
    //cnvs_ez->Write();
 
 
@@ -3409,10 +3455,10 @@ void plus60twoDW(bool verbose=false) {
    hs_ci2->Add(h2AA);
    hs_ci2->Draw("nostackHIST");
 
-   hs_ci2->GetXaxis()->SetTitle(" Charge Integral in ADC  ");
+   hs_ci2->GetXaxis()->SetTitle(" dq/dx in ADC/cm  ");
    hs_ci2->GetYaxis()->SetTitle("Relative Frequency");
    TText TAA; TAA.SetTextFont(42); TAA.SetTextAlign(21);
-   TAA.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (col): East Cryostat");
+   TAA.DrawTextNDC(.5,.95,"Relative Frequency vs dq/dx (col): East Cryostat");
    auto legendAA = new TLegend(0.1,0.8,0.2,0.9);
    legendAA->AddEntry(h1AA,"MC");
    legendAA->AddEntry(h2AA,"Data");
@@ -3420,7 +3466,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ci2->Update();
 
    //TFile* my_new_file21 = new TFile(
-   cnvs_ci2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileInt_colTEST.pdf");//,"RECREATE");
+   cnvs_ci2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDXgood_colTEST.pdf");//,"RECREATE");
    // cnvs_ci2->Write();
 
    TCanvas* cnvs_ci02D = new TCanvas("cnvs_ci02D", "ci02D", 1,1,800,700);
@@ -3438,13 +3484,16 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ci02D->Update();
 
 
-   TFile output_file22("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Az_col.root","RECREATE");
+   TFile output_file22("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Az_col.root","RECREATE");
    h1ci02D_prof->Write();
    h2ci02D_prof->Write();
    cnvs_ci02D->Write();
 
 
-   cnvs_ci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_az_col.pdf");
+   cnvs_ci02D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_az_col.pdf");
+
+
+
 
 
 
@@ -3470,16 +3519,100 @@ void plus60twoDW(bool verbose=false) {
    cnvs_zci02D->Update();
 
 
-   TFile output_file22z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Z_col.root","RECREATE");
+   TFile output_file22z("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Z_col.root","RECREATE");
    hz1ci02D_prof->Write();
    hz2ci02D_prof->Write();
    cnvs_zci02D->Write();
 
 
-   cnvs_zci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Z_col.pdf");
+   cnvs_zci02D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Z_col.pdf");
 
 
 
+
+   TCanvas* cnvs_pci02D = new TCanvas("cnvs_pci02D", "pci012D", 1,1,800,700);
+   auto hp1pi02D_prof = h13332D->ProfileX();
+   auto hp2pi02D_prof = h14442D->ProfileX();
+   hp1pi02D_prof->SetLineColor(kRed);
+   hp2pi02D_prof->SetLineColor(kBlue);
+   hp1pi02D_prof->SetMaximum(800);
+   hp1pi02D_prof->Draw();
+   hp2pi02D_prof->Draw("same");
+
+   auto legendpCC2D = new TLegend(0.1,0.8,0.2,0.9);
+   legendpCC2D->AddEntry(h13332D,"MC");
+   legendpCC2D->AddEntry(h14442D,"Data");
+   legendpCC2D->Draw();
+   cnvs_pci02D->Update();
+
+
+   TFile output_file22p("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_pitch_col.root","RECREATE");
+   hp1pi02D_prof->Write();
+   hp2pi02D_prof->Write();
+   cnvs_pci02D->Write();
+
+
+   cnvs_pci02D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_pitch_col.pdf");
+
+
+
+
+
+
+   TCanvas* cnvs_pci22D = new TCanvas("cnvs_pci22D", "pci22D", 1,1,800,700);
+   auto hp1pi22Da_prof = h13332Db->ProfileX();
+   auto hp2pi22Da_prof = h14442Db->ProfileX();
+   hp1pi22Da_prof->SetLineColor(kRed);
+   hp2pi22Da_prof->SetLineColor(kBlue);
+   hp1pi22Da_prof->SetMaximum(800);
+   hp1pi22Da_prof->Draw();
+   hp2pi22Da_prof->Draw("same");
+
+   auto legendp2CC2Da = new TLegend(0.1,0.8,0.2,0.9);
+   legendp2CC2Da->AddEntry(h13332Db,"MC");
+   legendp2CC2Da->AddEntry(h14442Db,"Data");
+   legendp2CC2Da->Draw();
+   cnvs_pci22D->Update();
+
+
+   TFile output_file22p2("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_pitch_in2.root","RECREATE");
+   hp1pi22Da_prof->Write();
+   hp2pi22Da_prof->Write();
+   cnvs_pci22D->Write();
+
+   cnvs_pci22D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_pitch_in2.pdf");
+
+
+
+
+
+
+
+   TCanvas* cnvs_pci12D = new TCanvas("cnvs_pci12D", "pci12D", 1,1,800,700);
+   auto hp1pi12Db_prof = h13332Da->ProfileX();
+   auto hp2pi12Db_prof = h14442Da->ProfileX();
+   hp1pi12Db_prof->SetLineColor(kRed);
+   hp2pi12Db_prof->SetLineColor(kBlue);
+   hp1pi12Db_prof->SetMaximum(800);
+   hp1pi12Db_prof->Draw();
+   hp2pi12Db_prof->Draw("same");
+
+   auto legendp2CC2Db = new TLegend(0.1,0.8,0.2,0.9);
+   legendp2CC2Db->AddEntry(h13332Da,"MC");
+   legendp2CC2Db->AddEntry(h14442Da,"Data");
+   legendp2CC2Db->Draw();
+   cnvs_pci12D->Update();
+
+
+   TFile output_file22p1("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_pitch_in1.root","RECREATE");
+   hp1pi12Db_prof->Write();
+   hp2pi12Db_prof->Write();
+   cnvs_pci12D->Write();
+
+
+   cnvs_pci12D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_pitch_in1.pdf");
+
+   //h14442D
 
 
 
@@ -3503,11 +3636,11 @@ void plus60twoDW(bool verbose=false) {
    legendBB2D->AddEntry(h2BB2D,"Data");
    legendBB2D->Draw();
    cnvs_ci12D->Update();
-   TFile output_file221("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Az_in1.root","RECREATE");
+   TFile output_file221("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Az_in1.root","RECREATE");
    h1ci12D_prof->Write();
    h2ci12D_prof->Write();
    cnvs_ci12D->Write();
-   cnvs_ci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_az_in1.pdf");
+   cnvs_ci12D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_az_in1.pdf");
 
    TCanvas* cnvs_zci12D = new TCanvas("cnvs_zci12D", "zci112D", 1,1,800,700);
    auto hz1ci12D_prof = hz1BB2D->ProfileX();
@@ -3522,11 +3655,11 @@ void plus60twoDW(bool verbose=false) {
    legendzBB2D->AddEntry(hz2BB2D,"Data");
    legendzBB2D->Draw();
    cnvs_zci12D->Update();
-   TFile output_file221z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Z_in1.root","RECREATE");
+   TFile output_file221z("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Z_in1.root","RECREATE");
    hz1ci12D_prof->Write();
    hz2ci12D_prof->Write();
    cnvs_zci12D->Write();
-   cnvs_zci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Z_in1.pdf");
+   cnvs_zci12D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Z_in1.pdf");
 
 
 
@@ -3545,11 +3678,11 @@ void plus60twoDW(bool verbose=false) {
    legendAA2D->AddEntry(h2AA2D,"Data");
    legendAA2D->Draw();
    cnvs_ci22D->Update();
-   TFile output_file2212("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Az_in2.root","RECREATE");
+   TFile output_file2212("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Az_in2.root","RECREATE");
    h1ci22D_prof->Write();
    h2ci22D_prof->Write();
    cnvs_ci22D->Write();
-   cnvs_ci22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_az_in2.pdf");
+   cnvs_ci22D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_az_in2.pdf");
 
    TCanvas* cnvs_zci22D = new TCanvas("cnvs_zci22D", "zci212D", 1,1,800,700);
    auto hz1ci22D_prof = hz1AA2D->ProfileX();
@@ -3564,11 +3697,11 @@ void plus60twoDW(bool verbose=false) {
    legendzAA2D->AddEntry(hz2AA2D,"Data");
    legendzAA2D->Draw();
    cnvs_zci22D->Update();
-   TFile output_file2212z("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Z_in2.root","RECREATE");
+   TFile output_file2212z("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Z_in2.root","RECREATE");
    hz1ci22D_prof->Write();
    hz2ci22D_prof->Write();
    cnvs_zci22D->Write();
-   cnvs_zci22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Z_in2.pdf");
+   cnvs_zci22D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Z_in2.pdf");
 
 
 
@@ -3599,11 +3732,11 @@ void plus60twoDW(bool verbose=false) {
    legendFF2D->AddEntry(h2FF2D,"Data");
    legendFF2D->Draw();
    cnvs_wi02D->Update();
-   TFile output_file22w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Az_col.root","RECREATE");
+   TFile output_file22w("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Az_col.root","RECREATE");
    h1wi02D_prof->Write();
    h2wi02D_prof->Write();
    cnvs_wi02D->Write();
-   cnvs_wi02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_az_col.pdf");
+   cnvs_wi02D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_az_col.pdf");
    TCanvas* cnvs_zwi02D = new TCanvas("cnvs_zwi02D", "zwi012D", 1,1,800,700);
    auto hz1wi02D_prof = hz1FF2D->ProfileX();
    auto hz2wi02D_prof = hz2FF2D->ProfileX();
@@ -3617,11 +3750,11 @@ void plus60twoDW(bool verbose=false) {
    legendzFF2D->AddEntry(hz2FF2D,"Data");
    legendzFF2D->Draw();
    cnvs_zwi02D->Update();
-   TFile output_file22wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Z_col.root","RECREATE");
+   TFile output_file22wz("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Z_col.root","RECREATE");
    hz1wi02D_prof->Write();
    hz2wi02D_prof->Write();
    cnvs_zwi02D->Write();
-   cnvs_zwi02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Z_col.pdf");
+   cnvs_zwi02D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Z_col.pdf");
 
 
    TCanvas* cnvs_wi12D = new TCanvas("cnvs_wi12D", "wi12D", 1,1,800,700);
@@ -3637,11 +3770,11 @@ void plus60twoDW(bool verbose=false) {
    legendEE2D->AddEntry(h2EE2D,"Data");
    legendEE2D->Draw();
    cnvs_wi12D->Update();
-   TFile output_file2211w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Az_in1.root","RECREATE");
+   TFile output_file2211w("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Az_in1.root","RECREATE");
    h1wi12D_prof->Write();
    h2wi12D_prof->Write();
    cnvs_wi12D->Write();
-   cnvs_wi12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_az_in1.pdf");
+   cnvs_wi12D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_az_in1.pdf");
 
 
    TCanvas* cnvs_zwi12D = new TCanvas("cnvs_zwi12D", "zwi112D", 1,1,800,700);
@@ -3657,11 +3790,11 @@ void plus60twoDW(bool verbose=false) {
    legendzEE2D->AddEntry(hz2EE2D,"Data");
    legendzEE2D->Draw();
    cnvs_zwi12D->Update();
-   TFile output_file221wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Z_in1.root","RECREATE");
+   TFile output_file221wz("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Z_in1.root","RECREATE");
    hz1wi12D_prof->Write();
    hz2wi12D_prof->Write();
    cnvs_zwi12D->Write();
-   cnvs_zwi12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Z_in1.pdf");
+   cnvs_zwi12D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Z_in1.pdf");
 
 
 
@@ -3681,11 +3814,11 @@ void plus60twoDW(bool verbose=false) {
    legendDD2D->AddEntry(h2DD2D,"Data");
    legendDD2D->Draw();
    cnvs_wi22D->Update();
-   TFile output_file2212w("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Az_in2.root","RECREATE");
+   TFile output_file2212w("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Az_in2.root","RECREATE");
    h1wi22D_prof->Write();
    h2wi22D_prof->Write();
    cnvs_wi22D->Write();
-   cnvs_wi22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_az_in2.pdf");
+   cnvs_wi22D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_az_in2.pdf");
  
 
 
@@ -3702,11 +3835,11 @@ void plus60twoDW(bool verbose=false) {
    legendzDD2D->AddEntry(hz2DD2D,"Data");
    legendzDD2D->Draw();
    cnvs_zwi22D->Update();
-   TFile output_file222wz("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Z_in2.root","RECREATE");
+   TFile output_file222wz("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Z_in2.root","RECREATE");
    hz1wi22D_prof->Write();
    hz2wi22D_prof->Write();
    cnvs_zwi22D->Write();
-   cnvs_zwi22D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_Z_in2.pdf");
+   cnvs_zwi22D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_Z_in2.pdf");
 
 
 
@@ -3722,7 +3855,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ci2_data->Chi2Test(//h_ci2_mc,"UW OF UF P",res_ci2);//h2AA->Chi2Test(h1AA,"UU NORM  P",res_ci2);                            
    //h_ci2_data->KolmogorovTest(//h_ci2_mc,"U O N D "); 
 
-   //   TFile* my_new_file21 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileInt_col.root","RECREATE");
+   //   TFile* my_new_file21 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDXgood_col.root","RECREATE");
    // cnvs_ci2->Write();
 
    TCanvas* cnvs_ci1 = new TCanvas("cnvs_ci1", "c22", 1,1,800,700);
@@ -3733,10 +3866,10 @@ void plus60twoDW(bool verbose=false) {
    hs_ci1->Draw("nostackHIST");
 
 
-   hs_ci1->GetXaxis()->SetTitle(" Charge Integral in ADC  ");
+   hs_ci1->GetXaxis()->SetTitle(" dq/dx in ADC/cm  ");
    hs_ci1->GetYaxis()->SetTitle("Relative Frequency");
    TText TBB; TBB.SetTextFont(42); TBB.SetTextAlign(21);
-   TBB.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in1): East Cryostat");
+   TBB.DrawTextNDC(.5,.95,"Relative Frequency vs dq/dx (in1): East Cryostat");
    auto legendBB = new TLegend(0.1,0.8,0.2,0.9);
    legendBB->AddEntry(h1BB,"MC");
    legendBB->AddEntry(h2BB,"Data");
@@ -3744,7 +3877,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ci1->Update();
 
    //TFile* my_new_file22 = new TFile(
-   cnvs_ci1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileInt_in1TEST.pdf");//,"RECREATE");
+   cnvs_ci1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDXgood_in1TEST.pdf");//,"RECREATE");
    //   cnvs_ci1->Write();
 
    /*
@@ -3757,10 +3890,10 @@ void plus60twoDW(bool verbose=false) {
    h1ci12D_prof->Draw();
    h2ci12D_prof->Draw("same");
 
-   //   hs_ci12D->GetYaxis()->SetTitle(" Charge Integral in ADC  ");
+   //   hs_ci12D->GetYaxis()->SetTitle(" dq/dx in ADC/cm  ");
    //hs_ci12D->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText TBB2D; TBB2D.SetTextFont(42); TBB2D.SetTextAlign(21);
-   //TBB2D.DrawTextNDC(.5,.95,"Charge Integral vs Azimuthal Angle (in1): East Cryostat");
+   //TBB2D.DrawTextNDC(.5,.95,"dq/dx vs Azimuthal Angle (in1): East Cryostat");
    auto legendBB2D = new TLegend(0.1,0.8,0.2,0.9);
    legendBB2D->AddEntry(h1BB2D,"MC");
    legendBB2D->AddEntry(h2BB2D,"Data");
@@ -3768,13 +3901,13 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ci12D->Update();
    */
    /*
-   TFile output_file23("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Az_in1.root","RECREATE");
+   TFile output_file23("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Az_in1.root","RECREATE");
    h1ci12D_prof->Write();
    h2ci12D_prof->Write();
    cnvs_ci12D->Write();
 
 
-   cnvs_ci12D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileInt_az_in1.pdf");
+   cnvs_ci12D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDXgood_az_in1.pdf");
    */
 
    cout<<"ci1"<<endl;
@@ -3782,7 +3915,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ci1_data->Chi2Test(//h_ci1_mc,"UW OF UF P",res_ci1);//h2BB->Chi2Test(h1BB,"UU NORM  P",res_ci1);                            
    //h_ci1_data->KolmogorovTest(//h_ci1_mc,"U O N D ");
   
-   //   TFile* my_new_file22 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileInt_in1.root","RECREATE");
+   //   TFile* my_new_file22 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDXgood_in1.root","RECREATE");
    //cnvs_ci1->Write();
    /*
    TCanvas* cnvs_ci0 = new TCanvas("cnvs_ci0", "c23", 1,1,800,700);
@@ -3792,17 +3925,17 @@ void plus60twoDW(bool verbose=false) {
    hs_ci0->Add(h2CC);
    hs_ci0->Draw("nostackHIST");
 
-   hs_ci0->GetXaxis()->SetTitle(" Charge Integral in ADC  ");
+   hs_ci0->GetXaxis()->SetTitle(" dq/dx in ADC/cm  ");
    hs_ci0->GetYaxis()->SetTitle("Relative Frequency");
    TText TCC; TCC.SetTextFont(42); TCC.SetTextAlign(21);
-   TCC.DrawTextNDC(.5,.95,"Relative Frequency vs Charge Integral (in2): East Cryostat");
+   TCC.DrawTextNDC(.5,.95,"Relative Frequency vs dq/dx (in2): East Cryostat");
    auto legendCC = new TLegend(0.1,0.8,0.2,0.9);
    legendCC->AddEntry(h1CC,"MC");
    legendCC->AddEntry(h2CC,"Data");
    legendCC->Draw();
    cnvs_ci0->Update();
    //TFile* my_new_file23 = new TFile(
-   cnvs_ci0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileInt_in2TEST.pdf");//,"RECREATE");
+   cnvs_ci0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDXgood_in2TEST.pdf");//,"RECREATE");
    //   cnvs_ci0->Write();
 
 
@@ -3819,10 +3952,10 @@ void plus60twoDW(bool verbose=false) {
    h2ci02D_prof->Draw("same");
 
 
-   //   hs_ci02D->GetYaxis()->SetTitle(" Charge Integral in ADC  ");
+   //   hs_ci02D->GetYaxis()->SetTitle(" dq/dx in ADC/cm  ");
    //hs_ci02D->GetXaxis()->SetTitle("Azimuthal Angle in radians");
    //TText TCC2D; TCC2D.SetTextFont(42); TCC2D.SetTextAlign(21);
-   //TCC2D.DrawTextNDC(.5,.95,"Charge Integral vs Azimuthal Angle (in2): East Cryostat");
+   //TCC2D.DrawTextNDC(.5,.95,"dq/dx vs Azimuthal Angle (in2): East Cryostat");
    auto legendCC2D = new TLegend(0.1,0.8,0.2,0.9);
    legendCC2D->AddEntry(h1AA2D,"MC");
    legendCC2D->AddEntry(h2AA2D,"Data");
@@ -3831,13 +3964,13 @@ void plus60twoDW(bool verbose=false) {
 
 
 
-   TFile output_file24("my_output_file_2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileCint_Az_in2.root","RECREATE");
+   TFile output_file24("my_output_file_2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDX_Az_in2.root","RECREATE");
    h1ci02D_prof->Write();
    h2ci02D_prof->Write();
    cnvs_ci02D->Write();
 
 
-   cnvs_ci02D->SaveAs("2D_my_60plusTESToutputNUMI_tpc0_sel2_East_fileInt_az_in2.pdf");
+   cnvs_ci02D->SaveAs("2D_my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDXgood_az_in2.pdf");
 
    */
 
@@ -3857,7 +3990,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ci0_data->KolmogorovTest(//h_ci0_mc,"U O N D ");
    
 
-   //   TFile* my_new_file23 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileInt_in2.root","RECREATE");
+   //   TFile* my_new_file23 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDQDXgood_in2.root","RECREATE");
    //cnvs_ci0->Write();
 
 
@@ -3880,7 +4013,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_wi2->Update();
 
    //TFile* my_new_file24 = new TFile(
-   cnvs_wi2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_colTEST.pdf");//,"RECREATE");
+   cnvs_wi2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_colTEST.pdf");//,"RECREATE");
    //  cnvs_wi2->Write();
    cout<<"wi2"<<endl;
    Double_t res_wi2[20];
@@ -3888,7 +4021,7 @@ void plus60twoDW(bool verbose=false) {
    //h_wi2_data->KolmogorovTest(//h_wi2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file24 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidt//h_col.root","RECREATE");
+   //   TFile* my_new_file24 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidt//h_col.root","RECREATE");
    //cnvs_wi2->Write();
 
    TCanvas* cnvs_wi1 = new TCanvas("cnvs_wi1", "c25", 1,1,800,700);
@@ -3909,7 +4042,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_wi1->Update();
 
    //   TFile* my_new_file25 = new TFile(
-   cnvs_wi1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_in1TEST.pdf");//,"RECREATE");
+   cnvs_wi1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_in1TEST.pdf");//,"RECREATE");
    //cnvs_wi1->Write();
 
    cout<<"wi1"<<endl;
@@ -3918,7 +4051,7 @@ void plus60twoDW(bool verbose=false) {
    //h_wi1_data->KolmogorovTest(//h_wi1_mc,"U O N D ");
   
 
-   //   TFile* my_new_file25 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidt//h_in1.root","RECREATE");
+   //   TFile* my_new_file25 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidt//h_in1.root","RECREATE");
    // cnvs_wi1->Write();
 
    TCanvas* cnvs_wi0 = new TCanvas("cnvs_wi0", "c26", 1,1,800,700);
@@ -3938,7 +4071,7 @@ void plus60twoDW(bool verbose=false) {
    legendFF->Draw();
    cnvs_wi0->Update();
    //TFile* my_new_file26 = new TFile(
-   cnvs_wi0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidth_in2TEST.pdf");//,"RECREATE");
+   cnvs_wi0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidth_in2TEST.pdf");//,"RECREATE");
    // cnvs_wi0->Write();
 
    cout<<"wi0"<<endl;
@@ -3947,7 +4080,7 @@ void plus60twoDW(bool verbose=false) {
    //h_wi0_data->KolmogorovTest(//h_wi0_mc,"U O N D ");
  
 
-   //   TFile* my_new_file26 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWidt//h_in2.root","RECREATE");
+   //   TFile* my_new_file26 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWidt//h_in2.root","RECREATE");
    //cnvs_wi0->Write();
 
 
@@ -3968,7 +4101,7 @@ void plus60twoDW(bool verbose=false) {
    legendGG->Draw();
    cnvs_w2->Update();
    //   TFile* my_new_file27 = new TFile(
-   cnvs_w2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWire_colTEST.pdf");//,"RECREATE");
+   cnvs_w2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWire_colTEST.pdf");//,"RECREATE");
    // cnvs_w2->Write();
    cout<<"w2"<<endl;
    Double_t res_w2[20];
@@ -3976,7 +4109,7 @@ void plus60twoDW(bool verbose=false) {
    //h_w2_data->KolmogorovTest(//h_w2_mc,"U O N D ");
   
 
-   //   TFile* my_new_file27 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWire_col.root","RECREATE");
+   //   TFile* my_new_file27 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWire_col.root","RECREATE");
    //cnvs_w2->Write();
 
    TCanvas* cnvs_w1 = new TCanvas("cnvs_w1", "c28", 1,1,800,700);
@@ -3996,14 +4129,14 @@ void plus60twoDW(bool verbose=false) {
    legendHH->Draw();
    cnvs_w1->Update();
    //   TFile* my_new_file28 = new TFile(
-   cnvs_w1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWire_in1TEST.pdf");//,"RECREATE");
+   cnvs_w1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWire_in1TEST.pdf");//,"RECREATE");
    // cnvs_w1->Write();
    cout<<"w1"<<endl;
    Double_t res_w1[20];
    //h_w1_data->Chi2Test(//h_w1_mc,"UW OF UF P",res_w1);//h2HH->Chi2Test(h1HH,"UU NORM  P",res_w1);                                
    //h_w1_data->KolmogorovTest(//h_w1_mc,"U O N D ");
   
-   //   TFile* my_new_file28 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWire_in1.root","RECREATE");
+   //   TFile* my_new_file28 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWire_in1.root","RECREATE");
    //cnvs_w1->Write();
 
    TCanvas* cnvs_w0 = new TCanvas("cnvs_w0", "c29", 1,1,800,700);
@@ -4023,14 +4156,14 @@ void plus60twoDW(bool verbose=false) {
    legendII->Draw();
    cnvs_w0->Update();
    //   TFile* my_new_file29 = new TFile(
-   cnvs_w0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWire_in2TEST.pdf");//,"RECREATE");
+   cnvs_w0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWire_in2TEST.pdf");//,"RECREATE");
    //cnvs_w0->Write();
    cout<<"w0"<<endl;
    Double_t res_w0[20];
    //h_w0_data->Chi2Test(//h_w0_mc,"UW OF UF P",res_w0);//h2II->Chi2Test(h1II,"UU NORM  P",res_w0);                                
    //h_w0_data->KolmogorovTest(//h_w0_mc,"U O N D ");
   
-   //   TFile* my_new_file29 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileWire_in2.root","RECREATE");
+   //   TFile* my_new_file29 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileWire_in2.root","RECREATE");
    //cnvs_w0->Write();
 
 
@@ -4053,7 +4186,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file30 = new TFile(
-   cnvs_ti2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileTime_colTEST.pdf");//,"RECREATE");
+   cnvs_ti2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileTime_colTEST.pdf");//,"RECREATE");
    //cnvs_ti2->Write();
 
 
@@ -4063,7 +4196,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ti2_data->KolmogorovTest(//h_ti2_mc,"U O N D ");
    
 
-   //   TFile* my_new_file30 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileTime_col.root","RECREATE");
+   //   TFile* my_new_file30 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileTime_col.root","RECREATE");
    //cnvs_ti2->Write();
 
    TCanvas* cnvs_ti1 = new TCanvas("cnvs_ti1", "c31", 1,1,800,700);
@@ -4085,7 +4218,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file31 = new TFile(
-   cnvs_ti1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileTime_in1TEST.pdf");//,"RECREATE");
+   cnvs_ti1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileTime_in1TEST.pdf");//,"RECREATE");
    // cnvs_ti1->Write();
 
 
@@ -4096,7 +4229,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ti1_data->KolmogorovTest(//h_ti1_mc,"U O N D ");
   
 
-   //   TFile* my_new_file31 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileTime_in1.root","RECREATE");
+   //   TFile* my_new_file31 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileTime_in1.root","RECREATE");
    //cnvs_ti1->Write();
 
    TCanvas* cnvs_ti0 = new TCanvas("cnvs_ti0", "c32", 1,1,800,700);
@@ -4117,7 +4250,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_ti0->Update();
 
    //   TFile* my_new_file32 = new TFile(
-   cnvs_ti0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileTime_in2TEST.pdf");//,"RECREATE");
+   cnvs_ti0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileTime_in2TEST.pdf");//,"RECREATE");
    //cnvs_ti0->Write();
 
 
@@ -4127,7 +4260,7 @@ void plus60twoDW(bool verbose=false) {
    //h_ti0_data->Chi2Test(//h_ti0_mc,"UW OF UF P",res_ti0);//h2LL->Chi2Test(h1LL,"UU NORM  P",res_ti0);                            
    //h_ti0_data->KolmogorovTest(//h_ti0_mc,"U O N D ");
   
-   //   TFile* my_new_file32 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileTime_in2.root","RECREATE");
+   //   TFile* my_new_file32 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileTime_in2.root","RECREATE");
    //cnvs_ti0->Write();
 
    TCanvas* cnvs_x2 = new TCanvas("cnvs_x2", "c33", 1,1,800,700);
@@ -4148,7 +4281,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_x2->Update();
 
    //   TFile* my_new_file33 = new TFile(
-   cnvs_x2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisy_colTEST.pdf");//,"RECREATE");
+   cnvs_x2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisy_colTEST.pdf");//,"RECREATE");
    //cnvs_x2->Write();
 
 
@@ -4157,7 +4290,7 @@ void plus60twoDW(bool verbose=false) {
    //h_x2_data->Chi2Test(//h_x2_mc,"UW OF UF P",res_x2);//h2MM->Chi2Test(h1MM,"UU NORM  P",res_x2);                                
    //h_x2_data->KolmogorovTest(//h_x2_mc,"U O N D ");
 
-   //   TFile* my_new_file33 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisy_col.root","RECREATE");
+   //   TFile* my_new_file33 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisy_col.root","RECREATE");
    //cnvs_x2->Write();
 
    TCanvas* cnvs_x1 = new TCanvas("cnvs_x1", "c34", 1,1,800,700);
@@ -4178,14 +4311,14 @@ void plus60twoDW(bool verbose=false) {
    cnvs_x1->Update();
 
    //   TFile* my_new_file34 = new TFile(
-   cnvs_x1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisy_in1TEST.pdf");//,"RECREATE");
+   cnvs_x1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisy_in1TEST.pdf");//,"RECREATE");
    //cnvs_x1->Write();
    cout<<"x1"<<endl;
    Double_t res_x1[20];
    //h_x1_data->Chi2Test(//h_x1_mc,"UW OF UF P",res_x1);//h2NN->Chi2Test(h1NN,"UU NORM  P",res_x1);                                
    //h_x1_data->KolmogorovTest(//h_x1_mc,"U O N D ");
   
-   //   TFile* my_new_file34 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisy_in1.root","RECREATE");
+   //   TFile* my_new_file34 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisy_in1.root","RECREATE");
    //cnvs_x1->Write();
 
    TCanvas* cnvs_x0 = new TCanvas("cnvs_x0", "c35", 1,1,800,700);
@@ -4206,7 +4339,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_x0->Update();
 
    //   TFile* my_new_file35 = new TFile(
-   cnvs_x0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisy_in2TEST.pdf");//,"RECREATE");
+   cnvs_x0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisy_in2TEST.pdf");//,"RECREATE");
    //cnvs_x0->Write();
 
 
@@ -4216,7 +4349,7 @@ void plus60twoDW(bool verbose=false) {
    //h_x0_data->KolmogorovTest(//h_x0_mc,"U O N D ");
   
 
-   //   TFile* my_new_file35 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisy_in2.root","RECREATE");
+   //   TFile* my_new_file35 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisy_in2.root","RECREATE");
    //cnvs_x0->Write();
 
 
@@ -4238,14 +4371,14 @@ void plus60twoDW(bool verbose=false) {
    legendPP->Draw();
    cnvs_y2->Update();
    //   TFile* my_new_file36 = new TFile(
-   cnvs_y2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisY_colTEST.pdf");//,"RECREATE");
+   cnvs_y2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisY_colTEST.pdf");//,"RECREATE");
    //cnvs_y2->Write();
    cout<<"y2"<<endl;
    Double_t res_y2[20];
    //h_y2_data->Chi2Test(//h_y2_mc,"UW OF UF P",res_y2);//h2PP->Chi2Test(h1PP,"UU NORM  P",res_y2);                                
    //h_y2_data->KolmogorovTest(//h_y2_mc,"U O N D ");
 
-   //   TFile* my_new_file36 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisY_col.root","RECREATE");
+   //   TFile* my_new_file36 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisY_col.root","RECREATE");
    //cnvs_y2->Write();
 
 
@@ -4267,7 +4400,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_y1->Update();
 
    // TFile* my_new_file37 = new TFile(
-   cnvs_y1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisY_in1TEST.pdf");//,"RECREATE");
+   cnvs_y1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisY_in1TEST.pdf");//,"RECREATE");
    //cnvs_y1->Write();
 
    cout<<"y1"<<endl;
@@ -4275,7 +4408,7 @@ void plus60twoDW(bool verbose=false) {
    //h_y1_data->Chi2Test(//h_y1_mc,"UW OF UF P",res_y1);//h2QQ->Chi2Test(h1QQ,"UU NORM  P",res_y1);                                
    //h_y1_data->KolmogorovTest(//h_y1_mc,"U O N D ");
   
-   //   TFile* my_new_file37 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisY_in1.root","RECREATE");
+   //   TFile* my_new_file37 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisY_in1.root","RECREATE");
    //cnvs_y1->Write();
 
 
@@ -4298,7 +4431,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //  TFile* my_new_file38 = new TFile(
-   cnvs_y0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisY_in2TEST.pdf");//,"RECREATE");
+   cnvs_y0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisY_in2TEST.pdf");//,"RECREATE");
    //cnvs_y0->Write();
 
    cout<<"y0"<<endl;
@@ -4306,7 +4439,7 @@ void plus60twoDW(bool verbose=false) {
    //h_y0_data->Chi2Test(//h_y0_mc,"UW OF UF P",res_y0);//h2RR->Chi2Test(h1RR,"UU NORM  P",res_y0);                                
    //h_y0_data->KolmogorovTest(//h_y0_mc,"U O N D ");
   
-   //   TFile* my_new_file38 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisY_in2.root","RECREATE");
+   //   TFile* my_new_file38 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisY_in2.root","RECREATE");
    //cnvs_y0->Write();
 
 
@@ -4329,7 +4462,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_z2->Update();
    
    //   TFile* my_new_file39 = new TFile(
-   cnvs_z2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisZ_colTEST.pdf");//,"RECREATE");
+   cnvs_z2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisZ_colTEST.pdf");//,"RECREATE");
    //cnvs_z2->Write();
 
    cout<<"z2"<<endl;
@@ -4337,7 +4470,7 @@ void plus60twoDW(bool verbose=false) {
    //h_z2_data->Chi2Test(//h_z2_mc,"UW OF UF P",res_z2);//h2SS->Chi2Test(h1SS,"UU NORM  P",res_z2);                                
    //h_z2_data->KolmogorovTest(//h_z2_mc,"U O N D ");
   
-   //   TFile* my_new_file39 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisZ_col.root","RECREATE");
+   //   TFile* my_new_file39 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisZ_col.root","RECREATE");
    //cnvs_z2->Write();
 
 
@@ -4360,7 +4493,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //TFile* my_new_file40 = new TFile(
-   cnvs_z1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisZ_in1TEST.pdf");//,"RECREATE");
+   cnvs_z1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisZ_in1TEST.pdf");//,"RECREATE");
    //   cnvs_z1->Write();
 
    cout<<"z1"<<endl;
@@ -4368,7 +4501,7 @@ void plus60twoDW(bool verbose=false) {
    //h_z1_data->Chi2Test(//h_z1_mc,"UW OF UF P",res_z1);// h2TT->Chi2Test(h1TT,"UU NORM  P",res_z1);                               
    //h_z1_data->KolmogorovTest(//h_z1_mc,"U O N D ");
   
-   //   TFile* my_new_file40 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisZ_in1.root","RECREATE");
+   //   TFile* my_new_file40 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisZ_in1.root","RECREATE");
    //cnvs_z1->Write();
 
 
@@ -4390,14 +4523,14 @@ void plus60twoDW(bool verbose=false) {
    cnvs_z0->Update();
 
    //TFile* my_new_file41 = new TFile(
-   cnvs_z0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisZ_in2TEST.pdf");//,"RECREATE");
+   cnvs_z0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisZ_in2TEST.pdf");//,"RECREATE");
    // cnvs_z0->Write();
    cout<<"z0"<<endl;
    Double_t res_z0[20];
    //h_z0_data->Chi2Test(//h_z0_mc,"UW OF UF P",res_z0);//h2UU->Chi2Test(h1UU,"UU NORM  P",res_z0);                                
    //h_z0_data->KolmogorovTest(//h_z0_mc,"U O N D ");
   
-   //   TFile* my_new_file41 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_fileDisZ_in2.root","RECREATE");                                                                                          
+   //   TFile* my_new_file41 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_fileDisZ_in2.root","RECREATE");                                                                                          
    //cnvs_z0->Write();
 
 
@@ -4420,7 +4553,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file42 = new TFile(
-   cnvs_p2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_Pitch_colTEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
+   cnvs_p2->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_Pitch_colTEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
                                                                                                                                
   //  cnvs_p2->Write();
 
@@ -4430,7 +4563,7 @@ void plus60twoDW(bool verbose=false) {
    //h_p2_data->KolmogorovTest(//h_p2_mc,"U O N D ");
   
 
-   //   TFile* my_new_file42 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_Pitc//h_col.root","RECREATE"); // open new file in write mode                                                                                         
+   //   TFile* my_new_file42 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_Pitc//h_col.root","RECREATE"); // open new file in write mode                                                                                         
    //cnvs_p2->Write();
 
 
@@ -4454,7 +4587,7 @@ void plus60twoDW(bool verbose=false) {
 
 
    //   TFile* my_new_file43 = new TFile(
-   cnvs_p1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_Pitch_in1TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
+   cnvs_p1->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_Pitch_in1TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
                                                                                                                                
   //  cnvs_p1->Write();
 
@@ -4464,7 +4597,7 @@ void plus60twoDW(bool verbose=false) {
    //h_p1_data->Chi2Test(//h_p1_mc,"UW OF UF P",res_p1);//h2WW->Chi2Test(h1WW,"UU NORM  P",res_p1);                                
    //h_p1_data->KolmogorovTest(//h_p1_mc,"U O N D ");
   
-   //   TFile* my_new_file43 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_Pitc//h_in1.root","RECREATE"); // open new file in write mode                                                                                            
+   //   TFile* my_new_file43 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_Pitc//h_in1.root","RECREATE"); // open new file in write mode                                                                                            
    //cnvs_p1->Write();
 
    TCanvas* cnvs_p0 = new TCanvas("cnvs_p0", "c44", 1,1,800,700);
@@ -4485,7 +4618,7 @@ void plus60twoDW(bool verbose=false) {
    cnvs_p0->Update();
 
    //   TFile* my_new_file44 = new TFile(
-   cnvs_p0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_Pitch_in2TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
+   cnvs_p0->SaveAs("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_Pitch_in2TEST.pdf");//,"RECREATE"); // open new file in write mode                                                           \
                                                                                                                                
    // cnvs_p0->Write();
 
@@ -4496,7 +4629,7 @@ void plus60twoDW(bool verbose=false) {
    //h_p0_data->Chi2Test(//h_p0_mc,"UW OF UF P",res_p0);//h2XX->Chi2Test(h1XX,"UU NORM  P",res_p0);                                
    //h_p0_data->KolmogorovTest(//h_p0_mc,"U O N D ");
  
-   //   TFile* my_new_file44 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_60plusTESToutputNUMI_tpc0_sel2_East_file_Pitc//h_in2.root","RECREATE"); // open new file in write mode                                                                               
+   //   TFile* my_new_file44 = new TFile("/icarus/data/users/obitter/CalibrationWS21/histos_for_analysis/my_testTESToutputNUMI_tp30_sel122_JUNE_East_file_Pitc//h_in2.root","RECREATE"); // open new file in write mode                                                                               
    //cnvs_p0->Write();
 
    
