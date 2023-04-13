@@ -1,6 +1,6 @@
 # icarus_CosmicMuonTrackComparisons
 
-### Description of output files (Olivia, 21 Feb 2023)
+### Description of output files (Olivia, 12 April 2023)
 
 * `April_2023_1Ddis.C (was Nov1D.C)` : up-to-date 1D plots
 
