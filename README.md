@@ -1,6 +1,6 @@
 # icarus_CosmicMuonTrackComparisons
 
-### Description of output files (Olivia, 12 April 2023)
+### Description of output files (Olivia, 12 August 2023)
 
 * `April_2023_1Ddis.C (was Nov1D.C)` : up-to-date 1D plots
 
@@ -10,3 +10,6 @@
 * `Between2_hor.C`: calculation of the angles, using the `Sept_angle` output as input. Horizontal only
 * `P_M_60angles.C`: calculation of the angles, using the `Sept_angle` output as input, +/-60 degree angles relatively to horizontal
 
+# /AUG_2023
+
+* `Sept_angle_E_MAY2023_MConly.C`: combining the above files to run together (work in progress)
