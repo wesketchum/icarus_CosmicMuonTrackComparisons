@@ -13,4 +13,4 @@
 # /AUG_2023
 
 * `Sept_angle_E_MAY2023_MConly.C`: combining the above files to run together
-* `FullSet_1D2D_Oct23_E_MConly_Etpc0.C`: Latest to combine for running together (need to use the updated MC files) (sim. files also for logical tpc 1-3)
+* `FullSet_1D2D_Oct23_E_MConly_Etpc0.C`: Latest to combine for running together (will use the updated MC files) (sim. files also for logical tpc 1-3)
