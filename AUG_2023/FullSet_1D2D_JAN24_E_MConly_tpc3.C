@@ -6,35 +6,35 @@
 
 
 
-void FullSet_1D2D_JAN24_E_MConly_tpc0(bool verbose=false) {
+void FullSet_1D2D_JAN24_E_MConly_tpc3(bool verbose=false) {
 
 
   gStyle->SetOptStat(0);
   ofstream outfile("t.txt");
-  ofstream outfile_col_mc_xyz("mcOCT2023_NUMI_tpc0_sel12_East_file_xyz_col.txt");
-  ofstream outfile_in2_mc_xyz("mcOCT2023_NUMI_tpc0_sel12_East_file_xyz_in2.txt");
-  ofstream outfile_in1_mc_xyz("mcOCT2023_NUMI_tpc0_sel12_East_file_xyz_in1.txt");
+  ofstream outfile_col_mc_xyz("mcOCT2023_NUMI_tpc3_sel12_East_file_xyz_col.txt");
+  ofstream outfile_in2_mc_xyz("mcOCT2023_NUMI_tpc3_sel12_East_file_xyz_in2.txt");
+  ofstream outfile_in1_mc_xyz("mcOCT2023_NUMI_tpc3_sel12_East_file_xyz_in1.txt");
 
-  ofstream outfile_dqdxc("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
-  ofstream outfile_dqdx1("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
-  ofstream outfile_dqdx2("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
+  ofstream outfile_dqdxc("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc3_sel12_East_file_Qdx_col.txt");
+  ofstream outfile_dqdx1("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc3_sel12_East_file_Qdx_in1.txt");
+  ofstream outfile_dqdx2("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc3_sel12_East_file_Qdx_in2.txt");
 
-  ofstream outfile_intc("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
-  ofstream outfile_int1("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
-  ofstream outfile_int2("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
+  ofstream outfile_intc("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc3_sel12_East_file_HC_col.txt");
+  ofstream outfile_int1("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc3_sel12_East_file_HC_in1.txt");
+  ofstream outfile_int2("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc3_sel12_East_file_HC_in2.txt");
 
 
-  ofstream outfile1("mchnoCOSangle_by_OCT2023__col_East_file_tpc0.txt");
-  ofstream outfile2("mchnoCOSangle_by_OCT2023__in1_East_file_tpc0.txt");
-  ofstream outfile3("mchnoCOSangle_by_OCT2023__in2_East_file_tpc0.txt");
+  ofstream outfile1("mchnoCOSangle_by_OCT2023__col_East_file_tpc3.txt");
+  ofstream outfile2("mchnoCOSangle_by_OCT2023__in1_East_file_tpc3.txt");
+  ofstream outfile3("mchnoCOSangle_by_OCT2023__in2_East_file_tpc3.txt");
 
-  ofstream outfile1_c_PLUS("mchnoCOSangle_by_OCT2023__col_East_file_tpc0_PLUS.txt");
-  ofstream outfile2_1_PLUS("mchnoCOSangle_by_OCT2023__in1_East_file_tpc0_PLUS.txt");
-  ofstream outfile3_2_PLUS("mchnoCOSangle_by_OCT2023__in2_East_file_tpc0_PLUS.txt");
+  ofstream outfile1_c_PLUS("mchnoCOSangle_by_OCT2023__col_East_file_tpc3_PLUS.txt");
+  ofstream outfile2_1_PLUS("mchnoCOSangle_by_OCT2023__in1_East_file_tpc3_PLUS.txt");
+  ofstream outfile3_2_PLUS("mchnoCOSangle_by_OCT2023__in2_East_file_tpc3_PLUS.txt");
 
-  ofstream outfile1_c_MINUS("mchnoCOSangle_by_OCT2023__col_East_file_tpc0_MINUS.txt");
-  ofstream outfile2_1_MINUS("mchnoCOSangle_by_OCT2023__in1_East_file_tpc0_MINUS.txt");
-  ofstream outfile3_2_MINUS("mchnoCOSangle_by_OCT2023__in2_East_file_tpc0_MINUS.txt");
+  ofstream outfile1_c_MINUS("mchnoCOSangle_by_OCT2023__col_East_file_tpc3_MINUS.txt");
+  ofstream outfile2_1_MINUS("mchnoCOSangle_by_OCT2023__in1_East_file_tpc3_MINUS.txt");
+  ofstream outfile3_2_MINUS("mchnoCOSangle_by_OCT2023__in2_East_file_tpc3_MINUS.txt");
 
   
   ofstream outT("OCT2023.txt");
@@ -94,37 +94,37 @@ void FullSet_1D2D_JAN24_E_MConly_tpc0(bool verbose=false) {
   double angle_by_in2_Wo[n];
   double angle_by_in1_Eo[n];
   double angle_by_in1_Wo[n];
-  TH1F *h1p = new TH1F("h1p","TPC0 East Cryostat MC (COL) ", 100., 0.0, 2.0); //0., 7.0);                             
+  TH1F *h1p = new TH1F("h1p","TPC3 East Cryostat MC (COL) ", 100., 0.0, 2.0); //0., 7.0);                             
   h1p->GetXaxis()->SetTitle("angle in radians");
 
 
-  TH1F *h2p = new TH1F("h2p","TPC0 East Cryostat MC (IN1) ", 100., 0.0, 2.0); //0., 7.0);                                                                                                                                                  
+  TH1F *h2p = new TH1F("h2p","TPC3 East Cryostat MC (IN1) ", 100., 0.0, 2.0); //0., 7.0);                                                                                                                                                  
   h2p->GetXaxis()->SetTitle("angle in radians");
 
-  TH1F *h3p = new TH1F("h3p","TPC0 East Cryostat MC (IN2) ", 100., 0.0, 2.0); //0., 7.0);                                                                                                                                                
+  TH1F *h3p = new TH1F("h3p","TPC3 East Cryostat MC (IN2) ", 100., 0.0, 2.0); //0., 7.0);                                                                                                                                                
   h3p->GetXaxis()->SetTitle("angle in radians");
 
 
-  TH1F *h1pDQ = new TH1F("h1pDQ","TPC0 East Cryostat MC (COL) ", 100., 100.0, 1000.0); //0., 7.0);                    
+  TH1F *h1pDQ = new TH1F("h1pDQ","TPC3 East Cryostat MC (COL) ", 100., 100.0, 1000.0); //0., 7.0);                    
   h1pDQ->GetXaxis()->SetTitle("dQ/dX");
 
 
-  TH1F *h2pDQ = new TH1F("h2pDQ","TPC0 East Cryostat MC (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                                                                                                                                      
+  TH1F *h2pDQ = new TH1F("h2pDQ","TPC3 East Cryostat MC (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                                                                                                                                      
   h2pDQ->GetXaxis()->SetTitle("dQ/dX");
 
-  TH1F *h3pDQ = new TH1F("h3pDQ","TPC0 East Cryostat MC (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                    
+  TH1F *h3pDQ = new TH1F("h3pDQ","TPC3 East Cryostat MC (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                    
   h3pDQ->GetXaxis()->SetTitle("dQ/dX");
 
-  TH1F *h1pI = new TH1F("h1pI","TPC0 East Cryostat MC (COL) ", 100., 100.0, 1000.0); //0., 7.0);                   \
+  TH1F *h1pI = new TH1F("h1pI","TPC3 East Cryostat MC (COL) ", 100., 100.0, 1000.0); //0., 7.0);                   \
                                                                                                                       
   h1pI->GetXaxis()->SetTitle("integral");
 
 
-  TH1F *h2pI = new TH1F("h2pI","TPC0 East Cryostat MC (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                   \
+  TH1F *h2pI = new TH1F("h2pI","TPC3 East Cryostat MC (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                   \
                                                                                                                       
   h2pI->GetXaxis()->SetTitle("integral");
 
-  TH1F *h3pI = new TH1F("h3pI","TPC0 East Cryostat MC (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                   \
+  TH1F *h3pI = new TH1F("h3pI","TPC3 East Cryostat MC (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                   \
                                                                                                                       
   h3pI->GetXaxis()->SetTitle("integral");
 
@@ -134,84 +134,84 @@ void FullSet_1D2D_JAN24_E_MConly_tpc0(bool verbose=false) {
 
 
 
-  TH1F *h1P = new TH1F("h1P","TPC0 East Cryostat MC COL (P) ", 100., 0.0, 2.0);
+  TH1F *h1P = new TH1F("h1P","TPC3 East Cryostat MC COL (P) ", 100., 0.0, 2.0);
   h1P->GetXaxis()->SetTitle("angle (radians)");
-  TH1F *h1m = new TH1F("h1m","TPC0 East Cryostat MC COL (M) ", 100., 0.0, 2.0);
+  TH1F *h1m = new TH1F("h1m","TPC3 East Cryostat MC COL (M) ", 100., 0.0, 2.0);
   h1m->GetXaxis()->SetTitle("angle (radians)");
 
-  TH1F *h2P = new TH1F("h2P","TPC0 East Cryostat MC IN2 (P) ", 100., 0.0, 2.0);
+  TH1F *h2P = new TH1F("h2P","TPC3 East Cryostat MC IN2 (P) ", 100., 0.0, 2.0);
   h1P->GetXaxis()->SetTitle("angle (radians)");
-  TH1F *h2m = new TH1F("h2m","TPC0 East Cryostat MC IN2 (M) ", 100., 0.0, 2.0);
+  TH1F *h2m = new TH1F("h2m","TPC3 East Cryostat MC IN2 (M) ", 100., 0.0, 2.0);
   h1m->GetXaxis()->SetTitle("angle (radians)");
 
-  TH1F *h3P = new TH1F("h3P","TPC0 East Cryostat MC IN1 (P) ", 100., 0.0, 2.0);
+  TH1F *h3P = new TH1F("h3P","TPC3 East Cryostat MC IN1 (P) ", 100., 0.0, 2.0);
   h3P->GetXaxis()->SetTitle("angle (radians)");
-  TH1F *h3m = new TH1F("h3m","TPC0 East Cryostat MC IN1 (M) ", 100., 0.0, 2.0);
+  TH1F *h3m = new TH1F("h3m","TPC3 East Cryostat MC IN1 (M) ", 100., 0.0, 2.0);
   h3m->GetXaxis()->SetTitle("angle (radians)");
 
 
 
-  TH2F *hz_hor_dQdx_East_tpc0_COL=new TH2F("hz_hor_dQdx_East_tpc0_COL","Horizontal Angle vs  dQdx COL", 50., 0., 2.0, 50., 0., 1000.);
-  hz_hor_dQdx_East_tpc0_COL->GetYaxis()->SetTitle("dQdx ");
-  hz_hor_dQdx_East_tpc0_COL->GetXaxis()->SetTitle("Horizontal angle in radians");
-  TH2F *hz_hor_dQdx_East_tpc0_IN2=new TH2F("hz_hor_dQdx_East_tpc0_IN2","Horizontal Angle vs  dQdx IN2", 50., 0., 2.0, 50., 0., 1000.);
-  hz_hor_dQdx_East_tpc0_IN2->GetYaxis()->SetTitle("dQdx ");
-  hz_hor_dQdx_East_tpc0_IN2->GetXaxis()->SetTitle("Horizontal angle in radians");
-  TH2F *hz_hor_dQdx_East_tpc0_IN1=new TH2F("hz_hor_dQdx_East_tpc0_IN1","Horizontal Angle vs  dQdx IN1", 50., 0., 2.0, 50., 0., 1000.);
-  hz_hor_dQdx_East_tpc0_IN1->GetYaxis()->SetTitle("dQdx ");
-  hz_hor_dQdx_East_tpc0_IN1->GetXaxis()->SetTitle("Horizontal angle in radians");
+  TH2F *hz_hor_dQdx_East_tpc3_COL=new TH2F("hz_hor_dQdx_East_tpc3_COL","Horizontal Angle vs  dQdx COL", 50., 0., 2.0, 50., 0., 1000.);
+  hz_hor_dQdx_East_tpc3_COL->GetYaxis()->SetTitle("dQdx ");
+  hz_hor_dQdx_East_tpc3_COL->GetXaxis()->SetTitle("Horizontal angle in radians");
+  TH2F *hz_hor_dQdx_East_tpc3_IN2=new TH2F("hz_hor_dQdx_East_tpc3_IN2","Horizontal Angle vs  dQdx IN2", 50., 0., 2.0, 50., 0., 1000.);
+  hz_hor_dQdx_East_tpc3_IN2->GetYaxis()->SetTitle("dQdx ");
+  hz_hor_dQdx_East_tpc3_IN2->GetXaxis()->SetTitle("Horizontal angle in radians");
+  TH2F *hz_hor_dQdx_East_tpc3_IN1=new TH2F("hz_hor_dQdx_East_tpc3_IN1","Horizontal Angle vs  dQdx IN1", 50., 0., 2.0, 50., 0., 1000.);
+  hz_hor_dQdx_East_tpc3_IN1->GetYaxis()->SetTitle("dQdx ");
+  hz_hor_dQdx_East_tpc3_IN1->GetXaxis()->SetTitle("Horizontal angle in radians");
 
-  TH2F *hz_hor_INT_East_tpc0_COL=new TH2F("hz_hor_INT_East_tpc0_COL","Horizontal Angle vs  INT COL", 50., 0., 2.0, 50., 0., 1000.);
-  hz_hor_INT_East_tpc0_COL->GetYaxis()->SetTitle("INT ");
-  hz_hor_INT_East_tpc0_COL->GetXaxis()->SetTitle("Horizontal angle in radians");
-  TH2F *hz_hor_INT_East_tpc0_IN2=new TH2F("hz_hor_INT_East_tpc0_IN2","Horizontal Angle vs  INT IN2", 50., 0., 2.0, 50., 0., 1000.);
-  hz_hor_INT_East_tpc0_IN2->GetYaxis()->SetTitle("INT ");
-  hz_hor_INT_East_tpc0_IN2->GetXaxis()->SetTitle("Horizontal angle in radians");
-  TH2F *hz_hor_INT_East_tpc0_IN1=new TH2F("hz_hor_INT_East_tpc0_IN1","Horizontal Angle vs  INT IN1", 50., 0., 2.0, 50., 0., 1000.);
-  hz_hor_INT_East_tpc0_IN1->GetYaxis()->SetTitle("INT ");
-  hz_hor_INT_East_tpc0_IN1->GetXaxis()->SetTitle("Horizontal angle in radians");
-
-
-  TH2F *hz_plus_dQdx_East_tpc0_COL=new TH2F("hz_plus_dQdx_East_tpc0_COL","Horizontal plus Angle vs dQdx COL", 50., 0., 2.0, 50., 0., 1000.);
-  hz_plus_dQdx_East_tpc0_COL->GetYaxis()->SetTitle("dQdx ");
-  hz_plus_dQdx_East_tpc0_COL->GetXaxis()->SetTitle("Horizontal plus angle in radians");
-  TH2F *hz_plus_dQdx_East_tpc0_IN2=new TH2F("hz_plus_dQdx_East_tpc0_IN2","Horizontal plus Angle vs dQdx IN2", 50., 0., 2.0, 50., 0., 1000.);
-  hz_plus_dQdx_East_tpc0_IN2->GetYaxis()->SetTitle("dQdx ");
-  hz_plus_dQdx_East_tpc0_IN2->GetXaxis()->SetTitle("Horizontal plus angle in radians");
-  TH2F *hz_plus_dQdx_East_tpc0_IN1=new TH2F("hz_plus_dQdx_East_tpc0_IN1","Horizontal plus Angle vs dQdx IN1", 50., 0., 2.0, 50., 0., 1000.);
-  hz_plus_dQdx_East_tpc0_IN1->GetYaxis()->SetTitle("dQdx ");
-  hz_plus_dQdx_East_tpc0_IN1->GetXaxis()->SetTitle("Horizontal plus angle in radians");
-
-  TH2F *hz_plus_INT_East_tpc0_COL=new TH2F("hz_plus_INT_East_tpc0_COL","Horizontal plus Angle vs  INT COL", 50., 0., 2.0, 50., 0., 1000.);
-  hz_plus_INT_East_tpc0_COL->GetYaxis()->SetTitle("INT ");
-  hz_plus_INT_East_tpc0_COL->GetXaxis()->SetTitle("Horizontal plus angle in radians");
-  TH2F *hz_plus_INT_East_tpc0_IN2=new TH2F("hz_plus_INT_East_tpc0_IN2","Horizontal plus Angle vs  INT IN2", 50., 0., 2.0, 50., 0., 1000.);
-  hz_plus_INT_East_tpc0_IN2->GetYaxis()->SetTitle("INT ");
-  hz_plus_INT_East_tpc0_IN2->GetXaxis()->SetTitle("Horizontal plus angle in radians");
-  TH2F *hz_plus_INT_East_tpc0_IN1=new TH2F("hz_plus_INT_East_tpc0_IN1","Horizontal plus Angle vs  INT IN1", 50., 0., 2.0, 50., 0., 1000.);
-  hz_plus_INT_East_tpc0_IN1->GetYaxis()->SetTitle("INT ");
-  hz_plus_INT_East_tpc0_IN1->GetXaxis()->SetTitle("Horizontal plus angle in radians");
+  TH2F *hz_hor_INT_East_tpc3_COL=new TH2F("hz_hor_INT_East_tpc3_COL","Horizontal Angle vs  INT COL", 50., 0., 2.0, 50., 0., 1000.);
+  hz_hor_INT_East_tpc3_COL->GetYaxis()->SetTitle("INT ");
+  hz_hor_INT_East_tpc3_COL->GetXaxis()->SetTitle("Horizontal angle in radians");
+  TH2F *hz_hor_INT_East_tpc3_IN2=new TH2F("hz_hor_INT_East_tpc3_IN2","Horizontal Angle vs  INT IN2", 50., 0., 2.0, 50., 0., 1000.);
+  hz_hor_INT_East_tpc3_IN2->GetYaxis()->SetTitle("INT ");
+  hz_hor_INT_East_tpc3_IN2->GetXaxis()->SetTitle("Horizontal angle in radians");
+  TH2F *hz_hor_INT_East_tpc3_IN1=new TH2F("hz_hor_INT_East_tpc3_IN1","Horizontal Angle vs  INT IN1", 50., 0., 2.0, 50., 0., 1000.);
+  hz_hor_INT_East_tpc3_IN1->GetYaxis()->SetTitle("INT ");
+  hz_hor_INT_East_tpc3_IN1->GetXaxis()->SetTitle("Horizontal angle in radians");
 
 
-  TH2F *hz_minus_dQdx_East_tpc0_COL=new TH2F("hz_minus_dQdx_East_tpc0_COL","Horizontal minus Angle vs dQdx COL", 50., 0., 2.0, 50., 0., 1000.);
-  hz_minus_dQdx_East_tpc0_COL->GetYaxis()->SetTitle("dQdx ");
-  hz_minus_dQdx_East_tpc0_COL->GetXaxis()->SetTitle("Horizontal minus angle in radians");
-  TH2F *hz_minus_dQdx_East_tpc0_IN2=new TH2F("hz_minus_dQdx_East_tpc0_IN2","Horizontal minus Angle vs dQdx IN2", 50., 0., 2.0, 50., 0., 1000.);
-  hz_minus_dQdx_East_tpc0_IN2->GetYaxis()->SetTitle("dQdx ");
-  hz_minus_dQdx_East_tpc0_IN2->GetXaxis()->SetTitle("Horizontal minus angle in radians");
-  TH2F *hz_minus_dQdx_East_tpc0_IN1=new TH2F("hz_minus_dQdx_East_tpc0_IN1","Horizontal minus Angle vs dQdx IN1", 50., 0., 2.0, 50., 0., 1000.);
-  hz_minus_dQdx_East_tpc0_IN1->GetYaxis()->SetTitle("dQdx ");
-  hz_minus_dQdx_East_tpc0_IN1->GetXaxis()->SetTitle("Horizontal minus angle in radians");
+  TH2F *hz_plus_dQdx_East_tpc3_COL=new TH2F("hz_plus_dQdx_East_tpc3_COL","Horizontal plus Angle vs dQdx COL", 50., 0., 2.0, 50., 0., 1000.);
+  hz_plus_dQdx_East_tpc3_COL->GetYaxis()->SetTitle("dQdx ");
+  hz_plus_dQdx_East_tpc3_COL->GetXaxis()->SetTitle("Horizontal plus angle in radians");
+  TH2F *hz_plus_dQdx_East_tpc3_IN2=new TH2F("hz_plus_dQdx_East_tpc3_IN2","Horizontal plus Angle vs dQdx IN2", 50., 0., 2.0, 50., 0., 1000.);
+  hz_plus_dQdx_East_tpc3_IN2->GetYaxis()->SetTitle("dQdx ");
+  hz_plus_dQdx_East_tpc3_IN2->GetXaxis()->SetTitle("Horizontal plus angle in radians");
+  TH2F *hz_plus_dQdx_East_tpc3_IN1=new TH2F("hz_plus_dQdx_East_tpc3_IN1","Horizontal plus Angle vs dQdx IN1", 50., 0., 2.0, 50., 0., 1000.);
+  hz_plus_dQdx_East_tpc3_IN1->GetYaxis()->SetTitle("dQdx ");
+  hz_plus_dQdx_East_tpc3_IN1->GetXaxis()->SetTitle("Horizontal plus angle in radians");
 
-  TH2F *hz_minus_INT_East_tpc0_COL=new TH2F("hz_minus_INT_East_tpc0_COL","Horizontal minus Angle vs  INT COL", 50., 0., 2.0, 50., 0., 1000.);
-  hz_minus_INT_East_tpc0_COL->GetYaxis()->SetTitle("INT ");
-  hz_minus_INT_East_tpc0_COL->GetXaxis()->SetTitle("Horizontal minus angle in radians");
-  TH2F *hz_minus_INT_East_tpc0_IN2=new TH2F("hz_minus_INT_East_tpc0_IN2","Horizontal minus Angle vs  INT IN2", 50., 0., 2.0, 50., 0., 1000.);
-  hz_minus_INT_East_tpc0_IN2->GetYaxis()->SetTitle("INT ");
-  hz_minus_INT_East_tpc0_IN2->GetXaxis()->SetTitle("Horizontal minus angle in radians");
-  TH2F *hz_minus_INT_East_tpc0_IN1=new TH2F("hz_minus_INT_East_tpc0_IN1","Horizontal minus Angle vs  INT IN1", 50., 0., 2.0, 50., 0., 1000.);
-  hz_minus_INT_East_tpc0_IN1->GetYaxis()->SetTitle("INT ");
-  hz_minus_INT_East_tpc0_IN1->GetXaxis()->SetTitle("Horizontal minus angle in radians");
+  TH2F *hz_plus_INT_East_tpc3_COL=new TH2F("hz_plus_INT_East_tpc3_COL","Horizontal plus Angle vs  INT COL", 50., 0., 2.0, 50., 0., 1000.);
+  hz_plus_INT_East_tpc3_COL->GetYaxis()->SetTitle("INT ");
+  hz_plus_INT_East_tpc3_COL->GetXaxis()->SetTitle("Horizontal plus angle in radians");
+  TH2F *hz_plus_INT_East_tpc3_IN2=new TH2F("hz_plus_INT_East_tpc3_IN2","Horizontal plus Angle vs  INT IN2", 50., 0., 2.0, 50., 0., 1000.);
+  hz_plus_INT_East_tpc3_IN2->GetYaxis()->SetTitle("INT ");
+  hz_plus_INT_East_tpc3_IN2->GetXaxis()->SetTitle("Horizontal plus angle in radians");
+  TH2F *hz_plus_INT_East_tpc3_IN1=new TH2F("hz_plus_INT_East_tpc3_IN1","Horizontal plus Angle vs  INT IN1", 50., 0., 2.0, 50., 0., 1000.);
+  hz_plus_INT_East_tpc3_IN1->GetYaxis()->SetTitle("INT ");
+  hz_plus_INT_East_tpc3_IN1->GetXaxis()->SetTitle("Horizontal plus angle in radians");
+
+
+  TH2F *hz_minus_dQdx_East_tpc3_COL=new TH2F("hz_minus_dQdx_East_tpc3_COL","Horizontal minus Angle vs dQdx COL", 50., 0., 2.0, 50., 0., 1000.);
+  hz_minus_dQdx_East_tpc3_COL->GetYaxis()->SetTitle("dQdx ");
+  hz_minus_dQdx_East_tpc3_COL->GetXaxis()->SetTitle("Horizontal minus angle in radians");
+  TH2F *hz_minus_dQdx_East_tpc3_IN2=new TH2F("hz_minus_dQdx_East_tpc3_IN2","Horizontal minus Angle vs dQdx IN2", 50., 0., 2.0, 50., 0., 1000.);
+  hz_minus_dQdx_East_tpc3_IN2->GetYaxis()->SetTitle("dQdx ");
+  hz_minus_dQdx_East_tpc3_IN2->GetXaxis()->SetTitle("Horizontal minus angle in radians");
+  TH2F *hz_minus_dQdx_East_tpc3_IN1=new TH2F("hz_minus_dQdx_East_tpc3_IN1","Horizontal minus Angle vs dQdx IN1", 50., 0., 2.0, 50., 0., 1000.);
+  hz_minus_dQdx_East_tpc3_IN1->GetYaxis()->SetTitle("dQdx ");
+  hz_minus_dQdx_East_tpc3_IN1->GetXaxis()->SetTitle("Horizontal minus angle in radians");
+
+  TH2F *hz_minus_INT_East_tpc3_COL=new TH2F("hz_minus_INT_East_tpc3_COL","Horizontal minus Angle vs  INT COL", 50., 0., 2.0, 50., 0., 1000.);
+  hz_minus_INT_East_tpc3_COL->GetYaxis()->SetTitle("INT ");
+  hz_minus_INT_East_tpc3_COL->GetXaxis()->SetTitle("Horizontal minus angle in radians");
+  TH2F *hz_minus_INT_East_tpc3_IN2=new TH2F("hz_minus_INT_East_tpc3_IN2","Horizontal minus Angle vs  INT IN2", 50., 0., 2.0, 50., 0., 1000.);
+  hz_minus_INT_East_tpc3_IN2->GetYaxis()->SetTitle("INT ");
+  hz_minus_INT_East_tpc3_IN2->GetXaxis()->SetTitle("Horizontal minus angle in radians");
+  TH2F *hz_minus_INT_East_tpc3_IN1=new TH2F("hz_minus_INT_East_tpc3_IN1","Horizontal minus Angle vs  INT IN1", 50., 0., 2.0, 50., 0., 1000.);
+  hz_minus_INT_East_tpc3_IN1->GetYaxis()->SetTitle("INT ");
+  hz_minus_INT_East_tpc3_IN1->GetXaxis()->SetTitle("Horizontal minus angle in radians");
 
 
 
@@ -293,7 +293,7 @@ void FullSet_1D2D_JAN24_E_MConly_tpc0(bool verbose=false) {
    double zangle[52000];
    double zangle2[52000];
    cout<<"vars declared"<<endl;
-   double tpc_num = 0;
+   double tpc_num = 3;
 
 
    //MC Azimuthal Angle
@@ -432,15 +432,15 @@ void FullSet_1D2D_JAN24_E_MConly_tpc0(bool verbose=false) {
        }
 
 
-       hz_hor_dQdx_East_tpc0_COL->Fill(ref_angle_col[alpha],av_dqdx_mc_c);
-       hz_hor_INT_East_tpc0_COL->Fill(ref_angle_col[alpha],av_integral_mc_c);
+       hz_hor_dQdx_East_tpc3_COL->Fill(ref_angle_col[alpha],av_dqdx_mc_c);
+       hz_hor_INT_East_tpc3_COL->Fill(ref_angle_col[alpha],av_integral_mc_c);
 
 
-       hz_plus_dQdx_East_tpc0_COL->Fill(ref_angle_col_p[alpha],av_dqdx_mc_c);
-       hz_plus_INT_East_tpc0_COL->Fill(ref_angle_col_p[alpha],av_integral_mc_c);
+       hz_plus_dQdx_East_tpc3_COL->Fill(ref_angle_col_p[alpha],av_dqdx_mc_c);
+       hz_plus_INT_East_tpc3_COL->Fill(ref_angle_col_p[alpha],av_integral_mc_c);
 
-       hz_minus_dQdx_East_tpc0_COL->Fill(ref_angle_col_m[alpha],av_dqdx_mc_c);
-       hz_minus_INT_East_tpc0_COL->Fill(ref_angle_col_m[alpha],av_integral_mc_c);
+       hz_minus_dQdx_East_tpc3_COL->Fill(ref_angle_col_m[alpha],av_dqdx_mc_c);
+       hz_minus_INT_East_tpc3_COL->Fill(ref_angle_col_m[alpha],av_integral_mc_c);
 
 
 
@@ -545,14 +545,14 @@ void FullSet_1D2D_JAN24_E_MConly_tpc0(bool verbose=false) {
        }
 
 
-         hz_hor_dQdx_East_tpc0_IN2->Fill(ref_angle_in2[gamma],av_dqdx_mc_i2);
-         hz_hor_INT_East_tpc0_IN2->Fill(ref_angle_in2[gamma],av_integral_mc_i2);
+         hz_hor_dQdx_East_tpc3_IN2->Fill(ref_angle_in2[gamma],av_dqdx_mc_i2);
+         hz_hor_INT_East_tpc3_IN2->Fill(ref_angle_in2[gamma],av_integral_mc_i2);
 
-	 hz_plus_dQdx_East_tpc0_IN2->Fill(ref_angle_in2_p[gamma],av_dqdx_mc_i2);
-         hz_plus_INT_East_tpc0_IN2->Fill(ref_angle_in2_p[gamma],av_integral_mc_i2);
+	 hz_plus_dQdx_East_tpc3_IN2->Fill(ref_angle_in2_p[gamma],av_dqdx_mc_i2);
+         hz_plus_INT_East_tpc3_IN2->Fill(ref_angle_in2_p[gamma],av_integral_mc_i2);
 
-	 hz_minus_dQdx_East_tpc0_IN2->Fill(ref_angle_in2_m[gamma],av_dqdx_mc_i2);
-         hz_minus_INT_East_tpc0_IN2->Fill(ref_angle_in2_m[gamma],av_integral_mc_i2);
+	 hz_minus_dQdx_East_tpc3_IN2->Fill(ref_angle_in2_m[gamma],av_dqdx_mc_i2);
+         hz_minus_INT_East_tpc3_IN2->Fill(ref_angle_in2_m[gamma],av_integral_mc_i2);
 
 
 
@@ -657,16 +657,16 @@ void FullSet_1D2D_JAN24_E_MConly_tpc0(bool verbose=false) {
 
 
 
-     hz_hor_dQdx_East_tpc0_IN1->Fill(ref_angle_in1[beta],av_dqdx_mc_i1);
-     hz_hor_INT_East_tpc0_IN1->Fill(ref_angle_in1[beta],av_integral_mc_i1);
+     hz_hor_dQdx_East_tpc3_IN1->Fill(ref_angle_in1[beta],av_dqdx_mc_i1);
+     hz_hor_INT_East_tpc3_IN1->Fill(ref_angle_in1[beta],av_integral_mc_i1);
 
         
-     hz_plus_dQdx_East_tpc0_IN1->Fill(ref_angle_in1_p[beta],av_dqdx_mc_i1);
-     hz_plus_INT_East_tpc0_IN1->Fill(ref_angle_in1_p[beta],av_integral_mc_i1);
+     hz_plus_dQdx_East_tpc3_IN1->Fill(ref_angle_in1_p[beta],av_dqdx_mc_i1);
+     hz_plus_INT_East_tpc3_IN1->Fill(ref_angle_in1_p[beta],av_integral_mc_i1);
 
 
-     hz_minus_dQdx_East_tpc0_IN1->Fill(ref_angle_in1_m[beta],av_dqdx_mc_i1);
-     hz_minus_INT_East_tpc0_IN1->Fill(ref_angle_in1_m[beta],av_integral_mc_i1);
+     hz_minus_dQdx_East_tpc3_IN1->Fill(ref_angle_in1_m[beta],av_dqdx_mc_i1);
+     hz_minus_INT_East_tpc3_IN1->Fill(ref_angle_in1_m[beta],av_integral_mc_i1);
 
 
 
@@ -680,130 +680,130 @@ void FullSet_1D2D_JAN24_E_MConly_tpc0(bool verbose=false) {
    }//end while myReader
    cout<<"MC done"<<endl;
    
-   TCanvas* cnvs1p= new TCanvas("cnvs1p", "TPC0 East Cryostat MC COL",1,1,600,500);
+   TCanvas* cnvs1p= new TCanvas("cnvs1p", "TPC3 East Cryostat MC COL",1,1,600,500);
    h1p->Draw("HIST");
-   TCanvas* cnvs2p= new TCanvas("cnvs2p", "TPC0 East Cryostat MC IN1",1,1,600,500);
+   TCanvas* cnvs2p= new TCanvas("cnvs2p", "TPC3 East Cryostat MC IN1",1,1,600,500);
    h2p->Draw("HIST");
-   TCanvas* cnvs3p= new TCanvas("cnvs3p", "TPC0 East Cryostat MC IN2",1,1,600,500);
+   TCanvas* cnvs3p= new TCanvas("cnvs3p", "TPC3 East Cryostat MC IN2",1,1,600,500);
    h3p->Draw("HIST");
 
-   cnvs1p->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_col_angle_NEW_h_JAN2024.pdf");
-   cnvs2p->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_in1_angle_NEW_h_JAN2024.pdf");
-   cnvs3p->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_in2_angle_NEW_h_JAN2024.pdf");
+   cnvs1p->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_col_angle_NEW_h_JAN2024.pdf");
+   cnvs2p->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_in1_angle_NEW_h_JAN2024.pdf");
+   cnvs3p->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_in2_angle_NEW_h_JAN2024.pdf");
 
-   TCanvas* cnvs1pDQ= new TCanvas("cnvs1pDQ", "TPC0 East Cryostat MC COL",1,1,600,500);
+   TCanvas* cnvs1pDQ= new TCanvas("cnvs1pDQ", "TPC3 East Cryostat MC COL",1,1,600,500);
    h1pDQ->Draw("HIST");
-   TCanvas* cnvs2pDQ= new TCanvas("cnvs2pDQ", "TPC0 East Cryostat MC IN1",1,1,600,500);
+   TCanvas* cnvs2pDQ= new TCanvas("cnvs2pDQ", "TPC3 East Cryostat MC IN1",1,1,600,500);
    h2pDQ->Draw("HIST");
-   TCanvas* cnvs3pDQ= new TCanvas("cnvs3pDQ", "TPC0 East Cryostat MC IN2",1,1,600,500);
+   TCanvas* cnvs3pDQ= new TCanvas("cnvs3pDQ", "TPC3 East Cryostat MC IN2",1,1,600,500);
    h3pDQ->Draw("HIST");
 
-   cnvs1pDQ->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_col_DQDX_NEW_h_JAN2024.pdf");
-   cnvs2pDQ->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_in1_DQDX_NEW_h_JAN2024.pdf");
-   cnvs3pDQ->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_in2_DQDX_NEW_h_JAN2024.pdf");
+   cnvs1pDQ->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_col_DQDX_NEW_h_JAN2024.pdf");
+   cnvs2pDQ->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_in1_DQDX_NEW_h_JAN2024.pdf");
+   cnvs3pDQ->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_in2_DQDX_NEW_h_JAN2024.pdf");
 
 
-   TCanvas* cnvs1pI= new TCanvas("cnvs1pI", "TPC0 East Cryostat MC COL",1,1,600,500);
+   TCanvas* cnvs1pI= new TCanvas("cnvs1pI", "TPC3 East Cryostat MC COL",1,1,600,500);
    h1pI->Draw("HIST");
-   TCanvas* cnvs2pI= new TCanvas("cnvs2pI", "TPC0 East Cryostat MC IN1",1,1,600,500);
+   TCanvas* cnvs2pI= new TCanvas("cnvs2pI", "TPC3 East Cryostat MC IN1",1,1,600,500);
    h2pI->Draw("HIST");
-   TCanvas* cnvs3pI= new TCanvas("cnvs3pI", "TPC0 East Cryostat MC IN2",1,1,600,500);
+   TCanvas* cnvs3pI= new TCanvas("cnvs3pI", "TPC3 East Cryostat MC IN2",1,1,600,500);
    h3pI->Draw("HIST");
 
-   cnvs1pI->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_col_INT_NEW_h_JAN2024.pdf");
-   cnvs2pI->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_in1_INT_NEW_h_JAN2024.pdf");
-   cnvs3pI->SaveAs("JAN24/MC_tpc0_sel12_East_file_xyz_in2_INT_NEW_h_JAN2024.pdf");
+   cnvs1pI->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_col_INT_NEW_h_JAN2024.pdf");
+   cnvs2pI->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_in1_INT_NEW_h_JAN2024.pdf");
+   cnvs3pI->SaveAs("JAN24/MC_tpc3_sel12_East_file_xyz_in2_INT_NEW_h_JAN2024.pdf");
 
 
 
-   TCanvas* cnvs1P= new TCanvas("cnvs1P", "TPC0 East Cryostat MC COL Plus",1,1,600,500);
+   TCanvas* cnvs1P= new TCanvas("cnvs1P", "TPC3 East Cryostat MC COL Plus",1,1,600,500);
    h1P->Draw("HIST");
-   TCanvas* cnvs1m= new TCanvas("cnvs1m", "TPC0 East Cryostat MC COL Minus",1,1,600,500);
+   TCanvas* cnvs1m= new TCanvas("cnvs1m", "TPC3 East Cryostat MC COL Minus",1,1,600,500);
    h1m->Draw("HIST");
-   cnvs1P->SaveAs("JAN24/COL_MC_tpc0_sel12_East_file_angle_PLUS_JAN2024.pdf");
-   cnvs1m->SaveAs("JAN24/COL_MC_tpc0_sel12_East_file_angle_MINUS_JAN2024.pdf");
+   cnvs1P->SaveAs("JAN24/COL_MC_tpc3_sel12_East_file_angle_PLUS_JAN2024.pdf");
+   cnvs1m->SaveAs("JAN24/COL_MC_tpc3_sel12_East_file_angle_MINUS_JAN2024.pdf");
 
-   TCanvas* cnvs2P= new TCanvas("cnvs2P", "TPC0 East Cryostat MC IN2 Plus",1,1,600,500);
+   TCanvas* cnvs2P= new TCanvas("cnvs2P", "TPC3 East Cryostat MC IN2 Plus",1,1,600,500);
    h2P->Draw("HIST");
-   TCanvas* cnvs2m= new TCanvas("cnvs2m", "TPC0 East Cryostat MC IN2 Minus",1,1,600,500);
+   TCanvas* cnvs2m= new TCanvas("cnvs2m", "TPC3 East Cryostat MC IN2 Minus",1,1,600,500);
    h2m->Draw("HIST");
-   cnvs2P->SaveAs("JAN24/IN2_MC_tpc0_sel12_East_file_angle_PLUS_JAN2024.pdf");
-   cnvs2m->SaveAs("JAN24/IN2_MC_tpc0_sel12_East_file_angle_MINUS_JAN2024.pdf");
+   cnvs2P->SaveAs("JAN24/IN2_MC_tpc3_sel12_East_file_angle_PLUS_JAN2024.pdf");
+   cnvs2m->SaveAs("JAN24/IN2_MC_tpc3_sel12_East_file_angle_MINUS_JAN2024.pdf");
 
-   TCanvas* cnvs3P= new TCanvas("cnvs3p", "TPC0 East Cryostat MC IN1 Plus",1,1,600,500);
+   TCanvas* cnvs3P= new TCanvas("cnvs3p", "TPC3 East Cryostat MC IN1 Plus",1,1,600,500);
    h3P->Draw("HIST");
-   TCanvas* cnvs3m= new TCanvas("cnvs3m", "TPC0 East Cryostat MC IN1 Minus",1,1,600,500);
+   TCanvas* cnvs3m= new TCanvas("cnvs3m", "TPC3 East Cryostat MC IN1 Minus",1,1,600,500);
    h3m->Draw("HIST");
-   cnvs3P->SaveAs("JAN24/IN1_MC_tpc0_sel12_East_file_angle_PLUS_JAN2024.pdf");
-   cnvs3m->SaveAs("JAN24/IN1_MC_tpc0_sel12_East_file_angle_MINUS_JAN2024.pdf");
+   cnvs3P->SaveAs("JAN24/IN1_MC_tpc3_sel12_East_file_angle_PLUS_JAN2024.pdf");
+   cnvs3m->SaveAs("JAN24/IN1_MC_tpc3_sel12_East_file_angle_MINUS_JAN2024.pdf");
 
    TCanvas *c1 = new TCanvas("c1", "COL Profile: dqdx vs horizontal angle ",200,10,700,500);
-   hz_hor_dQdx_East_tpc0_COL->Draw();
+   hz_hor_dQdx_East_tpc3_COL->Draw();
    TCanvas *c2 = new TCanvas("c2", "COL Profile: integral vs horizontal angle ",200,10,700,500);
-   hz_hor_INT_East_tpc0_COL->Draw();
-   c1->SaveAs("JAN24/COL_Profile_MC_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_JAN2024.pdf");
-   c2->SaveAs("JAN24/COL_Profile_MC_tpc0_sel12_East_file_integral_VS_horizontalAngle_JAN2024.pdf");
+   hz_hor_INT_East_tpc3_COL->Draw();
+   c1->SaveAs("JAN24/COL_Profile_MC_tpc3_sel12_East_file_dqdx_VS_horizontalAngle_JAN2024.pdf");
+   c2->SaveAs("JAN24/COL_Profile_MC_tpc3_sel12_East_file_integral_VS_horizontalAngle_JAN2024.pdf");
 
    TCanvas *c3 = new TCanvas("c3", "IN2 Profile: dqdx vs horizontal angle ",200,10,700,500);
-   hz_hor_dQdx_East_tpc0_IN2->Draw();
+   hz_hor_dQdx_East_tpc3_IN2->Draw();
    TCanvas *c4 = new TCanvas("c4", "IN2 Profile: integral vs horizontal angle ",200,10,700,500);
-   hz_hor_INT_East_tpc0_IN2->Draw();
-   c3->SaveAs("JAN24/IN2_Profile_MC_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_JAN2024.pdf");
-   c4->SaveAs("JAN24/IN2_Profile_MC_tpc0_sel12_East_file_integral_VS_horizontalAngle_JAN2024.pdf");
+   hz_hor_INT_East_tpc3_IN2->Draw();
+   c3->SaveAs("JAN24/IN2_Profile_MC_tpc3_sel12_East_file_dqdx_VS_horizontalAngle_JAN2024.pdf");
+   c4->SaveAs("JAN24/IN2_Profile_MC_tpc3_sel12_East_file_integral_VS_horizontalAngle_JAN2024.pdf");
 
    TCanvas *c5 = new TCanvas("c5", "IN1 Profile: dqdx vs horizontal angle ",200,10,700,500);
-   hz_hor_dQdx_East_tpc0_IN1->Draw();
+   hz_hor_dQdx_East_tpc3_IN1->Draw();
    TCanvas *c6 = new TCanvas("c6", "IN1 Profile: integral vs horizontal angle ",200,10,700,500);
-   hz_hor_INT_East_tpc0_IN1->Draw();
-   c5->SaveAs("JAN24/IN1_Profile_MC_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_JAN2024.pdf");
-   c6->SaveAs("JAN24/IN1_Profile_MC_tpc0_sel12_East_file_integral_VS_horizontalAngle_JAN2024.pdf");
+   hz_hor_INT_East_tpc3_IN1->Draw();
+   c5->SaveAs("JAN24/IN1_Profile_MC_tpc3_sel12_East_file_dqdx_VS_horizontalAngle_JAN2024.pdf");
+   c6->SaveAs("JAN24/IN1_Profile_MC_tpc3_sel12_East_file_integral_VS_horizontalAngle_JAN2024.pdf");
 
 
 
 
 
    TCanvas *c11 = new TCanvas("c11", "COL Profile: dqdx vs plus angle ",200,10,700,500);
-   hz_plus_dQdx_East_tpc0_COL->Draw();
+   hz_plus_dQdx_East_tpc3_COL->Draw();
    TCanvas *c21 = new TCanvas("c21", "COL Profile: integral vs plus angle ",200,10,700,500);
-   hz_plus_INT_East_tpc0_COL->Draw();
-   c11->SaveAs("JAN24/COL_Profile_MC_tpc0_sel12_East_file_dqdx_VS_plusAngle_JAN2024.pdf");
-   c21->SaveAs("JAN24/COL_Profile_MC_tpc0_sel12_East_file_integral_VS_plusAngle_JAN2024.pdf");
+   hz_plus_INT_East_tpc3_COL->Draw();
+   c11->SaveAs("JAN24/COL_Profile_MC_tpc3_sel12_East_file_dqdx_VS_plusAngle_JAN2024.pdf");
+   c21->SaveAs("JAN24/COL_Profile_MC_tpc3_sel12_East_file_integral_VS_plusAngle_JAN2024.pdf");
 
    TCanvas *c31 = new TCanvas("c31", "IN2 Profile: dqdx vs plus angle ",200,10,700,500);
-   hz_plus_dQdx_East_tpc0_IN2->Draw();
+   hz_plus_dQdx_East_tpc3_IN2->Draw();
    TCanvas *c41 = new TCanvas("c41", "IN2 Profile: integral vs plus angle ",200,10,700,500);
-   hz_plus_INT_East_tpc0_IN2->Draw();
-   c31->SaveAs("JAN24/IN2_Profile_MC_tpc0_sel12_East_file_dqdx_VS_plusAngle_JAN2024.pdf");
-   c41->SaveAs("JAN24/IN2_Profile_MC_tpc0_sel12_East_file_integral_VS_plusAngle_JAN2024.pdf");
+   hz_plus_INT_East_tpc3_IN2->Draw();
+   c31->SaveAs("JAN24/IN2_Profile_MC_tpc3_sel12_East_file_dqdx_VS_plusAngle_JAN2024.pdf");
+   c41->SaveAs("JAN24/IN2_Profile_MC_tpc3_sel12_East_file_integral_VS_plusAngle_JAN2024.pdf");
 
    TCanvas *c51 = new TCanvas("c51", "IN1 Profile: dqdx vs plus angle ",200,10,700,500);
-   hz_plus_dQdx_East_tpc0_IN1->Draw();
+   hz_plus_dQdx_East_tpc3_IN1->Draw();
    TCanvas *c61 = new TCanvas("c61", "IN1 Profile: integral vs plus angle ",200,10,700,500);
-   hz_plus_INT_East_tpc0_IN1->Draw();
-   c51->SaveAs("JAN24/IN1_Profile_MC_tpc0_sel12_East_file_dqdx_VS_plusAngle_JAN2024.pdf");
-   c61->SaveAs("JAN24/IN1_Profile_MC_tpc0_sel12_East_file_integral_VS_plusAngle_JAN2024.pdf");
+   hz_plus_INT_East_tpc3_IN1->Draw();
+   c51->SaveAs("JAN24/IN1_Profile_MC_tpc3_sel12_East_file_dqdx_VS_plusAngle_JAN2024.pdf");
+   c61->SaveAs("JAN24/IN1_Profile_MC_tpc3_sel12_East_file_integral_VS_plusAngle_JAN2024.pdf");
 
 
    TCanvas *c12 = new TCanvas("c12", "COL Profile: dqdx vs minus angle ",200,10,700,500);
-   hz_minus_dQdx_East_tpc0_COL->Draw();
+   hz_minus_dQdx_East_tpc3_COL->Draw();
    TCanvas *c22 = new TCanvas("c22", "COL Profile: integral vs minus angle ",200,10,700,500);
-   hz_minus_INT_East_tpc0_COL->Draw();
-   c12->SaveAs("JAN24/COL_Profile_MC_tpc0_sel12_East_file_dqdx_VS_minusAngle_JAN2024.pdf");
-   c22->SaveAs("JAN24/COL_Profile_MC_tpc0_sel12_East_file_integral_VS_minusAngle_JAN2024.pdf");
+   hz_minus_INT_East_tpc3_COL->Draw();
+   c12->SaveAs("JAN24/COL_Profile_MC_tpc3_sel12_East_file_dqdx_VS_minusAngle_JAN2024.pdf");
+   c22->SaveAs("JAN24/COL_Profile_MC_tpc3_sel12_East_file_integral_VS_minusAngle_JAN2024.pdf");
 
    TCanvas *c32 = new TCanvas("c32", "IN2 Profile: dqdx vs minus angle ",200,10,700,500);
-   hz_minus_dQdx_East_tpc0_IN2->Draw();
+   hz_minus_dQdx_East_tpc3_IN2->Draw();
    TCanvas *c42 = new TCanvas("c42", "IN2 Profile: integral vs minus angle ",200,10,700,500);
-   hz_minus_INT_East_tpc0_IN2->Draw();
-   c32->SaveAs("JAN24/IN2_Profile_MC_tpc0_sel12_East_file_dqdx_VS_minusAngle_JAN2024.pdf");
-   c42->SaveAs("JAN24/IN2_Profile_MC_tpc0_sel12_East_file_integral_VS_minusAngle_JAN2024.pdf");
+   hz_minus_INT_East_tpc3_IN2->Draw();
+   c32->SaveAs("JAN24/IN2_Profile_MC_tpc3_sel12_East_file_dqdx_VS_minusAngle_JAN2024.pdf");
+   c42->SaveAs("JAN24/IN2_Profile_MC_tpc3_sel12_East_file_integral_VS_minusAngle_JAN2024.pdf");
 
    TCanvas *c52 = new TCanvas("c52", "IN1 Profile: dqdx vs minus angle ",200,10,700,500);
-   hz_minus_dQdx_East_tpc0_IN1->Draw();
+   hz_minus_dQdx_East_tpc3_IN1->Draw();
    TCanvas *c62 = new TCanvas("c62", "IN1 Profile: integral vs minus angle ",200,10,700,500);
-   hz_minus_INT_East_tpc0_IN1->Draw();
-   c52->SaveAs("JAN24/IN1_Profile_MC_tpc0_sel12_East_file_dqdx_VS_minusAngle_JAN2024.pdf");
-   c62->SaveAs("JAN24/IN1_Profile_MC_tpc0_sel12_East_file_integral_VS_minusAngle_JAN2024.pdf");
+   hz_minus_INT_East_tpc3_IN1->Draw();
+   c52->SaveAs("JAN24/IN1_Profile_MC_tpc3_sel12_East_file_dqdx_VS_minusAngle_JAN2024.pdf");
+   c62->SaveAs("JAN24/IN1_Profile_MC_tpc3_sel12_East_file_integral_VS_minusAngle_JAN2024.pdf");
 
 
 

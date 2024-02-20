@@ -1,1 +1,0 @@
-/pnfs/sbn/data/sbn_fd/poms_production/data/Run2/reconstructed/icaruscode_v09_72_00_03p01/bnbmajority/calibtuples/
