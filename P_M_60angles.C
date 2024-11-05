@@ -44,17 +44,17 @@ void P_M_60angles(){
    double E3m[5000];
    double W3m[5000];
 
-   ifstream infile1("noCOSangle_by_in1_E_tpc0.txt");
-   ifstream infile2("noCOSangle_by_in1_W_tpc0.txt");
-   ifstream infile3("noCOSangle_by_in1_E_tpc1.txt");
-   ifstream infile4("noCOSangle_by_in1_W_tpc1.txt");
-   ifstream infile5("noCOSangle_by_in1_E_tpc2.txt");
-   ifstream infile6("noCOSangle_by_in1_W_tpc2.txt");
-   ifstream infile7("noCOSangle_by_in1_E_tpc3.txt");
-   ifstream infile8("noCOSangle_by_in1_W_tpc3.txt");
+   ifstream infile1("hnoCOSangle_by_col_E_tpc0.txt");
+   ifstream infile2("hnoCOSangle_by_col_W_tpc0.txt");
+   ifstream infile3("hnoCOSangle_by_col_E_tpc1.txt");
+   ifstream infile4("hnoCOSangle_by_col_W_tpc1.txt");
+   ifstream infile5("hnoCOSangle_by_col_E_tpc2.txt");
+   ifstream infile6("hnoCOSangle_by_col_W_tpc2.txt");
+   ifstream infile7("hnoCOSangle_by_col_E_tpc3.txt");
+   ifstream infile8("hnoCOSangle_by_col_W_tpc3.txt");
 
-   ofstream o1("E_tpc0_plus.txt");
-   ofstream o2("E_tpc0_minus.txt");
+   ofstream o1("E_tpc0_col_plus.txt");
+   ofstream o2("E_tpc0_col_minus.txt");
 
 
    TH1F *h1p = new TH1F("h1p","TPC0 East Cryostat MC (P) ", 100., 0.0, 5.0);
@@ -169,6 +169,10 @@ void P_M_60angles(){
      E0m[n0] = E0i[n0] - TMath::Pi()/(3.0);
      cout<<  E0p[n0]<<" "<<  E0m[n0]<<endl;
 
+     o1<<E0p[n0]<<endl;
+     o2<<E0m[n0]<<endl;
+
+
      h1p->Fill(E0p[n0]);
      h1m->Fill(E0m[n0]);
    }
@@ -189,8 +193,6 @@ void P_M_60angles(){
      E1p[n1] = E1i[n1] + TMath::Pi()/(3.0);
      E1m[n1] = E1i[n1] - TMath::Pi()/(3.0);
 
-     o1<<E1p[n1]<<endl;
-     o2<<E1m[n1]<<endl;
      h3p->Fill(E1p[n1]);
      h3m->Fill(E1m[n1]);
    }
@@ -276,23 +278,23 @@ void P_M_60angles(){
    TCanvas* cnvs8m= new TCanvas("cnvs8m", "TPC3 West Cryostat MC Minus",1,1,600,500);
    h8m->Draw("HIST");
 
-   cnvs1p->SaveAs("b_MC_tpc0_sel12_East_file_angle_PLUS.pdf");
-   cnvs2p->SaveAs("b_MC_tpc0_sel12_West_file_angle_PLUS.pdf");
-   cnvs3p->SaveAs("b_MC_tpc1_sel12_East_file_angle_PLUS.pdf");
-   cnvs4p->SaveAs("b_MC_tpc1_sel12_West_file_angle_PLUS.pdf");
-   cnvs5p->SaveAs("b_MC_tpc2_sel12_East_file_angle_PLUS.pdf");
-   cnvs6p->SaveAs("b_MC_tpc2_sel12_West_file_angle_PLUS.pdf");
-   cnvs7p->SaveAs("b_MC_tpc3_sel12_East_file_angle_PLUS.pdf");
-   cnvs8p->SaveAs("b_MC_tpc3_sel12_West_file_angle_PLUS.pdf");
+   cnvs1p->SaveAs("b_col_MC_tpc0_sel12_East_file_angle_PLUS.pdf");
+   cnvs2p->SaveAs("b_col_MC_tpc0_sel12_West_file_angle_PLUS.pdf");
+   cnvs3p->SaveAs("b_col_MC_tpc1_sel12_East_file_angle_PLUS.pdf");
+   cnvs4p->SaveAs("b_col_MC_tpc1_sel12_West_file_angle_PLUS.pdf");
+   cnvs5p->SaveAs("b_col_MC_tpc2_sel12_East_file_angle_PLUS.pdf");
+   cnvs6p->SaveAs("b_col_MC_tpc2_sel12_West_file_angle_PLUS.pdf");
+   cnvs7p->SaveAs("b_col_MC_tpc3_sel12_East_file_angle_PLUS.pdf");
+   cnvs8p->SaveAs("b_col_MC_tpc3_sel12_West_file_angle_PLUS.pdf");
 
 
-   cnvs1m->SaveAs("b_MC_tpc0_sel12_East_file_angle_MINUS.pdf");
-   cnvs2m->SaveAs("b_MC_tpc0_sel12_West_file_angle_MINUS.pdf");
-   cnvs3m->SaveAs("b_MC_tpc1_sel12_East_file_angle_MINUS.pdf");
-   cnvs4m->SaveAs("b_MC_tpc1_sel12_West_file_angle_MINUS.pdf");
-   cnvs5m->SaveAs("b_MC_tpc2_sel12_East_file_angle_MINUS.pdf");
-   cnvs6m->SaveAs("b_MC_tpc2_sel12_West_file_angle_MINUS.pdf");
-   cnvs7m->SaveAs("b_MC_tpc3_sel12_East_file_angle_MINUS.pdf");
-   cnvs8m->SaveAs("b_MC_tpc3_sel12_West_file_angle_MINUS.pdf");
+   cnvs1m->SaveAs("b_col_MC_tpc0_sel12_East_file_angle_MINUS.pdf");
+   cnvs2m->SaveAs("b_col_MC_tpc0_sel12_West_file_angle_MINUS.pdf");
+   cnvs3m->SaveAs("b_col_MC_tpc1_sel12_East_file_angle_MINUS.pdf");
+   cnvs4m->SaveAs("b_col_MC_tpc1_sel12_West_file_angle_MINUS.pdf");
+   cnvs5m->SaveAs("b_col_MC_tpc2_sel12_East_file_angle_MINUS.pdf");
+   cnvs6m->SaveAs("b_col_MC_tpc2_sel12_West_file_angle_MINUS.pdf");
+   cnvs7m->SaveAs("b_col_MC_tpc3_sel12_East_file_angle_MINUS.pdf");
+   cnvs8m->SaveAs("b_col_MC_tpc3_sel12_West_file_angle_MINUS.pdf");
 
 }

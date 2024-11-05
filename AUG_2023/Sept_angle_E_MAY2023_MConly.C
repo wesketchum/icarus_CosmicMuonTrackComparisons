@@ -89,28 +89,21 @@ void Sept_angle_E_MAY2023_MConly(bool verbose=false) {
   h3p->GetXaxis()->SetTitle("angle in radians");
 
 
-  TH1F *h1pDQ = new TH1F("h1pDQ","TPC0 East Cryostat MC (COL) ", 100., 100.0, 1000.0); //0., 7.0);                    
-  h1pDQ->GetXaxis()->SetTitle("dQ/dX");
-
-
-  TH1F *h2pDQ = new TH1F("h2pDQ","TPC0 East Cryostat MC (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                                                                                                                                      
-  h2pDQ->GetXaxis()->SetTitle("dQ/dX");
-
-  TH1F *h3pDQ = new TH1F("h3pDQ","TPC0 East Cryostat MC (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                    
-  h3pDQ->GetXaxis()->SetTitle("dQ/dX");
-
-  TH1F *h1pI = new TH1F("h1pI","TPC0 East Cryostat MC (COL) ", 100., 100.0, 2000.0); //0., 7.0);                   \
+  TH1F *h1pDQ = new TH1F("h1pDQ","TPC0 East Cryostat MC (COL) ", 100., 100.0, 1000.0); //0., 7.0);                            
                                                                                                                       
-  h1pI->GetXaxis()->SetTitle("integral");
+  h1p->GetXaxis()->SetTitle("dQ/dX");
 
 
-  TH1F *h2pI = new TH1F("h2pI","TPC0 East Cryostat MC (IN1) ", 100., 100.0, 2000.0); //0., 7.0);                   \
+  TH1F *h2pDQ = new TH1F("h2pDQ","TPC0 East Cryostat MC (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                            
+                                                                                                                     
                                                                                                                       
-  h2pI->GetXaxis()->SetTitle("integral");
+  h2p->GetXaxis()->SetTitle("dQ/dX");
 
-  TH1F *h3pI = new TH1F("h3pI","TPC0 East Cryostat MC (IN2) ", 100., 100.0, 2000.0); //0., 7.0);                   \
+  TH1F *h3pDQ = new TH1F("h3pDQ","TPC0 East Cryostat MC (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                           
                                                                                                                       
-  h3pI->GetXaxis()->SetTitle("integral");
+  h3p->GetXaxis()->SetTitle("dQ/dX");
+
+
    //Get the files from ICARUS gpvm
   TFileCollection *my_files = new TFileCollection("my_files","My File List");
 
@@ -252,9 +245,6 @@ void Sept_angle_E_MAY2023_MConly(bool verbose=false) {
      outfile_dqdxc<<av_dqdx_mc_c<<endl;
      outfile_intc<<av_integral_mc_c<<endl;
 
-     h1pDQ->Fill(av_dqdx_mc_c);
-     h1pI->Fill(av_integral_mc_c);
-
      AVG_int_col[last_h_mc_c] = av_dqdx_mc_c;
      //outfile_dqdxc<<AVG_int_col[last_h_mc_c]<<endl;
 
@@ -331,10 +321,6 @@ void Sept_angle_E_MAY2023_MConly(bool verbose=false) {
      outfile_dqdx2<<av_dqdx_mc_i2<<endl;
      outfile_int2<<av_integral_mc_i2<<endl;
 
-
-     h3pDQ->Fill(av_dqdx_mc_i2);
-     h3pI->Fill(av_integral_mc_i2);
-
      int gamma = last_h_mc_i2;
 
      //   for(int gamma = 0; gamma<ni2; gamma++){
@@ -394,13 +380,13 @@ void Sept_angle_E_MAY2023_MConly(bool verbose=false) {
      outfile_dqdx1<<av_dqdx_mc_i1<<endl;
      outfile_int1<<av_integral_mc_i1<<endl;
                              
-     h2pDQ->Fill(av_dqdx_mc_i1);
-     h2pI->Fill(av_integral_mc_i1);
+
      int beta = last_h_mc_i1;
 
      ref_angle_in1[beta] = 0.0;
 
      angle_by_in1_E[beta] = TMath::ACos( (  (Z_SEL12_East_MC_in1[beta]*z_p) ) / ( sqrt(X_SEL12_East_MC_in1[beta]*X_SEL12_East_MC_in1[beta]+Y_SEL12_East_MC_in1[beta]*Y_SEL12_East_MC_in1[beta]+Z_SEL12_East_MC_in1[beta]*Z_SEL12_East_MC_in1[beta]) * sqrt( (z_p*z_p) ) ) );
+
      if(  (angle_by_in1_E[beta] > ((Pi)/2.0) ) && (angle_by_in1_E[beta] < (Pi) )){
 
        ref_angle_in1[beta] = (Pi) - angle_by_in1_E[beta];
@@ -533,28 +519,6 @@ void Sept_angle_E_MAY2023_MConly(bool verbose=false) {
    cnvs2p->SaveAs("MC_tpc0_sel12_East_file_xyz_in1_angle_NEW_h_AUG2023.pdf");
    cnvs3p->SaveAs("MC_tpc0_sel12_East_file_xyz_in2_angle_NEW_h_AUG2023.pdf");
 
-   TCanvas* cnvs1pDQ= new TCanvas("cnvs1pDQ", "TPC0 East Cryostat MC COL",1,1,600,500);
-   h1pDQ->Draw("HIST");
-   TCanvas* cnvs2pDQ= new TCanvas("cnvs2pDQ", "TPC0 East Cryostat MC IN1",1,1,600,500);
-   h2pDQ->Draw("HIST");
-   TCanvas* cnvs3pDQ= new TCanvas("cnvs3pDQ", "TPC0 East Cryostat MC IN2",1,1,600,500);
-   h3pDQ->Draw("HIST");
-
-   cnvs1pDQ->SaveAs("MC_tpc0_sel12_East_file_xyz_col_DQDX_NEW_h_AUG2023.pdf");
-   cnvs2pDQ->SaveAs("MC_tpc0_sel12_East_file_xyz_in1_DQDX_NEW_h_AUG2023.pdf");
-   cnvs3pDQ->SaveAs("MC_tpc0_sel12_East_file_xyz_in2_DQDX_NEW_h_AUG2023.pdf");
-
-
-   TCanvas* cnvs1pI= new TCanvas("cnvs1pI", "TPC0 East Cryostat MC COL",1,1,600,500);
-   h1pI->Draw("HIST");
-   TCanvas* cnvs2pI= new TCanvas("cnvs2pI", "TPC0 East Cryostat MC IN1",1,1,600,500);
-   h2pI->Draw("HIST");
-   TCanvas* cnvs3pI= new TCanvas("cnvs3pI", "TPC0 East Cryostat MC IN2",1,1,600,500);
-   h3pI->Draw("HIST");
-
-   cnvs1pI->SaveAs("MC_tpc0_sel12_East_file_xyz_col_INT_NEW_h_AUG2023.pdf");
-   cnvs2pI->SaveAs("MC_tpc0_sel12_East_file_xyz_in1_INT_NEW_h_AUG2023.pdf");
-   cnvs3pI->SaveAs("MC_tpc0_sel12_East_file_xyz_in2_INT_NEW_h_AUG2023.pdf");
 
    std::cout << "Number of files in our MC list is " << my_files->GetNFiles() << std::endl;
    cout<<"end of macro"<<endl;

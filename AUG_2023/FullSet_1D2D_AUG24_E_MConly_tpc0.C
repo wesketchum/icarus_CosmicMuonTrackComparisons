@@ -6,38 +6,38 @@
 
 
 
-void FullSet_1D2D_AUG24_E_DATAonly_tpc0(bool verbose=false) {
+void FullSet_1D2D_AUG24_E_MConly_tpc0(bool verbose=false) {
 
 
   gStyle->SetOptStat(0);
   ofstream outfile("t.txt");
-  ofstream outfile_col_mc_xyz("dataOCT2023_NUMI_tpc0_sel12_East_file_xyz_col.txt");
-  ofstream outfile_in2_mc_xyz("dataOCT2023_NUMI_tpc0_sel12_East_file_xyz_in2.txt");
-  ofstream outfile_in1_mc_xyz("dataOCT2023_NUMI_tpc0_sel12_East_file_xyz_in1.txt");
+  ofstream outfile_col_mc_xyz("mcAUG2024_NUMI_tpc0_sel12_East_file_xyz_col.txt");
+  ofstream outfile_in2_mc_xyz("mcAUG2024_NUMI_tpc0_sel12_East_file_xyz_in2.txt");
+  ofstream outfile_in1_mc_xyz("mcAUG2024_NUMI_tpc0_sel12_East_file_xyz_in1.txt");
 
-  ofstream outfile_dqdxc("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
-  ofstream outfile_dqdx1("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
-  ofstream outfile_dqdx2("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
+  ofstream outfile_dqdxc("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
+  ofstream outfile_dqdx1("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
+  ofstream outfile_dqdx2("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
 
-  ofstream outfile_intc("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
-  ofstream outfile_int1("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
-  ofstream outfile_int2("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
+  ofstream outfile_intc("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
+  ofstream outfile_int1("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
+  ofstream outfile_int2("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
 
 
-  ofstream outfile1("datahnoCOSangle_by_OCT2023__col_East_file_tpc0.txt");
-  ofstream outfile2("datahnoCOSangle_by_OCT2023__in1_East_file_tpc0.txt");
-  ofstream outfile3("datahnoCOSangle_by_OCT2023__in2_East_file_tpc0.txt");
+  ofstream outfile1("mchnoCOSangle_by_AUG2024__col_East_file_tpc0.txt");
+  ofstream outfile2("mchnoCOSangle_by_AUG2024__in1_East_file_tpc0.txt");
+  ofstream outfile3("mchnoCOSangle_by_AUG2024__in2_East_file_tpc0.txt");
 
-  ofstream outfile1_c_PLUS("datahnoCOSangle_by_OCT2023__col_East_file_tpc0_PLUS.txt");
-  ofstream outfile2_1_PLUS("datahnoCOSangle_by_OCT2023__in1_East_file_tpc0_PLUS.txt");
-  ofstream outfile3_2_PLUS("datahnoCOSangle_by_OCT2023__in2_East_file_tpc0_PLUS.txt");
+  ofstream outfile1_c_PLUS("mchnoCOSangle_by_AUG2024__col_East_file_tpc0_PLUS.txt");
+  ofstream outfile2_1_PLUS("mchnoCOSangle_by_AUG2024__in1_East_file_tpc0_PLUS.txt");
+  ofstream outfile3_2_PLUS("mchnoCOSangle_by_AUG2024__in2_East_file_tpc0_PLUS.txt");
 
-  ofstream outfile1_c_MINUS("datahnoCOSangle_by_OCT2023__col_East_file_tpc0_MINUS.txt");
-  ofstream outfile2_1_MINUS("datahnoCOSangle_by_OCT2023__in1_East_file_tpc0_MINUS.txt");
-  ofstream outfile3_2_MINUS("datahnoCOSangle_by_OCT2023__in2_East_file_tpc0_MINUS.txt");
+  ofstream outfile1_c_MINUS("mchnoCOSangle_by_AUG2024__col_East_file_tpc0_MINUS.txt");
+  ofstream outfile2_1_MINUS("mchnoCOSangle_by_AUG2024__in1_East_file_tpc0_MINUS.txt");
+  ofstream outfile3_2_MINUS("mchnoCOSangle_by_AUG2024__in2_East_file_tpc0_MINUS.txt");
 
   
-  ofstream outT("OCT2023.txt");
+  ofstream outT("AUG2024.txt");
   double z_p = 1.0;
 
   double Plus_x = 1.0/sqrt(3);
@@ -94,37 +94,37 @@ void FullSet_1D2D_AUG24_E_DATAonly_tpc0(bool verbose=false) {
   double angle_by_in2_Wo[n];
   double angle_by_in1_Eo[n];
   double angle_by_in1_Wo[n];
-  TH1F *h1p = new TH1F("h1p","TPC0 East Cryostat DATA (COL) ", 100., 0.0, 2.0); //0., 7.0);                             
+  TH1F *h1p = new TH1F("h1p","TPC0 East Cryostat MC (COL) ", 100., 0.0, 2.0); //0., 7.0);                             
   h1p->GetXaxis()->SetTitle("angle in radians");
 
 
-  TH1F *h2p = new TH1F("h2p","TPC0 East Cryostat DATA (IN1) ", 100., 0.0, 2.0); //0., 7.0);                                                                                                                                                  
+  TH1F *h2p = new TH1F("h2p","TPC0 East Cryostat MC (IN1) ", 100., 0.0, 2.0); //0., 7.0);                                                                                                                                                  
   h2p->GetXaxis()->SetTitle("angle in radians");
 
-  TH1F *h3p = new TH1F("h3p","TPC0 East Cryostat DATA (IN2) ", 100., 0.0, 2.0); //0., 7.0);                                                                                                                                                
+  TH1F *h3p = new TH1F("h3p","TPC0 East Cryostat MC (IN2) ", 100., 0.0, 2.0); //0., 7.0);                                                                                                                                                
   h3p->GetXaxis()->SetTitle("angle in radians");
 
 
-  TH1F *h1pDQ = new TH1F("h1pDQ","TPC0 East Cryostat DATA (COL) ", 100., 100.0, 1000.0); //0., 7.0);                    
+  TH1F *h1pDQ = new TH1F("h1pDQ","TPC0 East Cryostat MC (COL) ", 100., 100.0, 1000.0); //0., 7.0);                    
   h1pDQ->GetXaxis()->SetTitle("dQ/dX");
 
 
-  TH1F *h2pDQ = new TH1F("h2pDQ","TPC0 East Cryostat DATA (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                                                                                                                                      
+  TH1F *h2pDQ = new TH1F("h2pDQ","TPC0 East Cryostat MC (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                                                                                                                                      
   h2pDQ->GetXaxis()->SetTitle("dQ/dX");
 
-  TH1F *h3pDQ = new TH1F("h3pDQ","TPC0 East Cryostat DATA (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                    
+  TH1F *h3pDQ = new TH1F("h3pDQ","TPC0 East Cryostat MC (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                    
   h3pDQ->GetXaxis()->SetTitle("dQ/dX");
 
-  TH1F *h1pI = new TH1F("h1pI","TPC0 East Cryostat DATA (COL) ", 100., 100.0, 1000.0); //0., 7.0);                   \
+  TH1F *h1pI = new TH1F("h1pI","TPC0 East Cryostat MC (COL) ", 100., 100.0, 1000.0); //0., 7.0);                   \
                                                                                                                       
   h1pI->GetXaxis()->SetTitle("integral");
 
 
-  TH1F *h2pI = new TH1F("h2pI","TPC0 East Cryostat DATA (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                   \
+  TH1F *h2pI = new TH1F("h2pI","TPC0 East Cryostat MC (IN1) ", 100., 100.0, 1000.0); //0., 7.0);                   \
                                                                                                                       
   h2pI->GetXaxis()->SetTitle("integral");
 
-  TH1F *h3pI = new TH1F("h3pI","TPC0 East Cryostat DATA (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                   \
+  TH1F *h3pI = new TH1F("h3pI","TPC0 East Cryostat MC (IN2) ", 100., 100.0, 1000.0); //0., 7.0);                   \
                                                                                                                       
   h3pI->GetXaxis()->SetTitle("integral");
 
@@ -134,19 +134,19 @@ void FullSet_1D2D_AUG24_E_DATAonly_tpc0(bool verbose=false) {
 
 
 
-  TH1F *h1P = new TH1F("h1P","TPC0 East Cryostat DATA COL (P) ", 100., 0.0, 2.0);
+  TH1F *h1P = new TH1F("h1P","TPC0 East Cryostat MC COL (P) ", 100., 0.0, 2.0);
   h1P->GetXaxis()->SetTitle("angle (radians)");
-  TH1F *h1m = new TH1F("h1m","TPC0 East Cryostat DATA COL (M) ", 100., 0.0, 2.0);
+  TH1F *h1m = new TH1F("h1m","TPC0 East Cryostat MC COL (M) ", 100., 0.0, 2.0);
   h1m->GetXaxis()->SetTitle("angle (radians)");
 
-  TH1F *h2P = new TH1F("h2P","TPC0 East Cryostat DATA IN2 (P) ", 100., 0.0, 2.0);
+  TH1F *h2P = new TH1F("h2P","TPC0 East Cryostat MC IN2 (P) ", 100., 0.0, 2.0);
   h1P->GetXaxis()->SetTitle("angle (radians)");
-  TH1F *h2m = new TH1F("h2m","TPC0 East Cryostat DATA IN2 (M) ", 100., 0.0, 2.0);
+  TH1F *h2m = new TH1F("h2m","TPC0 East Cryostat MC IN2 (M) ", 100., 0.0, 2.0);
   h1m->GetXaxis()->SetTitle("angle (radians)");
 
-  TH1F *h3P = new TH1F("h3P","TPC0 East Cryostat DATA IN1 (P) ", 100., 0.0, 2.0);
+  TH1F *h3P = new TH1F("h3P","TPC0 East Cryostat MC IN1 (P) ", 100., 0.0, 2.0);
   h3P->GetXaxis()->SetTitle("angle (radians)");
-  TH1F *h3m = new TH1F("h3m","TPC0 East Cryostat DATA IN1 (M) ", 100., 0.0, 2.0);
+  TH1F *h3m = new TH1F("h3m","TPC0 East Cryostat MC IN1 (M) ", 100., 0.0, 2.0);
   h3m->GetXaxis()->SetTitle("angle (radians)");
 
 
@@ -220,8 +220,10 @@ void FullSet_1D2D_AUG24_E_DATAonly_tpc0(bool verbose=false) {
    //Get the files from ICARUS gpvm
   TFileCollection *my_files = new TFileCollection("my_files","My File List");
 
-  my_files->AddFromFile("list.txt");//list_DATA24.txt");//DATA24.TXT");///pnfs/sbn/data/sbn_fd/poms_production/data/Run2/reconstructed/icaruscode_v09_72_00_03p01/bnbmajority/calibtuples/00/00/**/**/");//mc_april22versiontest2.txt");//mc_aprilversion.txt");
- outfile<< "Number of files in our DATA list is " << my_files->GetNFiles() <<endl;
+  my_files->AddFromFile("OCT24_MC.txt");//Sept2024_MC.txt");
+
+///July2024_MC.txt");//MC24.txt");///pnfs/sbn/data/sbn_fd/poms_production/2023A/ICARUS_BNB_intime_cosmics/mc/reconstructed/icaruscode_v09_72_00_03p01/calibtuples/00/**/**.root");///pnfs/sbn/data/sbn_fd/poms_production/data/Run2/reconstructed/icaruscode_v09_72_00_03p01/bnbmajority/calibtuples/00/00/**/**/");//mc_april22versiontest2.txt");//mc_aprilversion.txt");
+ outfile<< "Number of files in our MC list is " << my_files->GetNFiles() <<endl;
   TChain myfile("caloskimE/TrackCaloSkim");
   myfile.AddFileInfoList(my_files->GetList());
 
@@ -678,85 +680,85 @@ void FullSet_1D2D_AUG24_E_DATAonly_tpc0(bool verbose=false) {
      ni2=last_h_mc_i2;
 
    }//end while myReader
-   cout<<"DATA done"<<endl;
+   cout<<"MC done"<<endl;
    
-   TCanvas* cnvs1p= new TCanvas("cnvs1p", "TPC0 East Cryostat DATA COL",1,1,600,500);
+   TCanvas* cnvs1p= new TCanvas("cnvs1p", "TPC0 East Cryostat MC COL",1,1,600,500);
    h1p->Draw("HIST");
-   TCanvas* cnvs2p= new TCanvas("cnvs2p", "TPC0 East Cryostat DATA IN1",1,1,600,500);
+   TCanvas* cnvs2p= new TCanvas("cnvs2p", "TPC0 East Cryostat MC IN1",1,1,600,500);
    h2p->Draw("HIST");
-   TCanvas* cnvs3p= new TCanvas("cnvs3p", "TPC0 East Cryostat DATA IN2",1,1,600,500);
+   TCanvas* cnvs3p= new TCanvas("cnvs3p", "TPC0 East Cryostat MC IN2",1,1,600,500);
    h3p->Draw("HIST");
 
-   cnvs1p->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_col_angle_NEW_h_AUG2024.pdf");
-   cnvs2p->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_in1_angle_NEW_h_AUG2024.pdf");
-   cnvs3p->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_in2_angle_NEW_h_AUG2024.pdf");
+   cnvs1p->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_col_angle_NEW_h_AUG2024.pdf");
+   cnvs2p->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_in1_angle_NEW_h_AUG2024.pdf");
+   cnvs3p->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_in2_angle_NEW_h_AUG2024.pdf");
 
-   TCanvas* cnvs1pDQ= new TCanvas("cnvs1pDQ", "TPC0 East Cryostat DATA COL",1,1,600,500);
+   TCanvas* cnvs1pDQ= new TCanvas("cnvs1pDQ", "TPC0 East Cryostat MC COL",1,1,600,500);
    h1pDQ->Draw("HIST");
-   TCanvas* cnvs2pDQ= new TCanvas("cnvs2pDQ", "TPC0 East Cryostat DATA IN1",1,1,600,500);
+   TCanvas* cnvs2pDQ= new TCanvas("cnvs2pDQ", "TPC0 East Cryostat MC IN1",1,1,600,500);
    h2pDQ->Draw("HIST");
-   TCanvas* cnvs3pDQ= new TCanvas("cnvs3pDQ", "TPC0 East Cryostat DATA IN2",1,1,600,500);
+   TCanvas* cnvs3pDQ= new TCanvas("cnvs3pDQ", "TPC0 East Cryostat MC IN2",1,1,600,500);
    h3pDQ->Draw("HIST");
 
-   cnvs1pDQ->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_col_DQDX_NEW_h_AUG2024.pdf");
-   cnvs2pDQ->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_in1_DQDX_NEW_h_AUG2024.pdf");
-   cnvs3pDQ->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_in2_DQDX_NEW_h_AUG2024.pdf");
+   cnvs1pDQ->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_col_DQDX_NEW_h_AUG2024.pdf");
+   cnvs2pDQ->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_in1_DQDX_NEW_h_AUG2024.pdf");
+   cnvs3pDQ->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_in2_DQDX_NEW_h_AUG2024.pdf");
 
 
-   TCanvas* cnvs1pI= new TCanvas("cnvs1pI", "TPC0 East Cryostat DATA COL",1,1,600,500);
+   TCanvas* cnvs1pI= new TCanvas("cnvs1pI", "TPC0 East Cryostat MC COL",1,1,600,500);
    h1pI->Draw("HIST");
-   TCanvas* cnvs2pI= new TCanvas("cnvs2pI", "TPC0 East Cryostat DATA IN1",1,1,600,500);
+   TCanvas* cnvs2pI= new TCanvas("cnvs2pI", "TPC0 East Cryostat MC IN1",1,1,600,500);
    h2pI->Draw("HIST");
-   TCanvas* cnvs3pI= new TCanvas("cnvs3pI", "TPC0 East Cryostat DATA IN2",1,1,600,500);
+   TCanvas* cnvs3pI= new TCanvas("cnvs3pI", "TPC0 East Cryostat MC IN2",1,1,600,500);
    h3pI->Draw("HIST");
 
-   cnvs1pI->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_col_INT_NEW_h_AUG2024.pdf");
-   cnvs2pI->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_in1_INT_NEW_h_AUG2024.pdf");
-   cnvs3pI->SaveAs("AUG24/DATA_tpc0_sel12_East_file_xyz_in2_INT_NEW_h_AUG2024.pdf");
+   cnvs1pI->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_col_INT_NEW_h_AUG2024.pdf");
+   cnvs2pI->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_in1_INT_NEW_h_AUG2024.pdf");
+   cnvs3pI->SaveAs("AUG24/MC_tpc0_sel12_East_file_xyz_in2_INT_NEW_h_AUG2024.pdf");
 
 
 
-   TCanvas* cnvs1P= new TCanvas("cnvs1P", "TPC0 East Cryostat DATA COL Plus",1,1,600,500);
+   TCanvas* cnvs1P= new TCanvas("cnvs1P", "TPC0 East Cryostat MC COL Plus",1,1,600,500);
    h1P->Draw("HIST");
-   TCanvas* cnvs1m= new TCanvas("cnvs1m", "TPC0 East Cryostat DATA COL Minus",1,1,600,500);
+   TCanvas* cnvs1m= new TCanvas("cnvs1m", "TPC0 East Cryostat MC COL Minus",1,1,600,500);
    h1m->Draw("HIST");
-   cnvs1P->SaveAs("AUG24/COL_DATA_tpc0_sel12_East_file_angle_PLUS_AUG2024.pdf");
-   cnvs1m->SaveAs("AUG24/COL_DATA_tpc0_sel12_East_file_angle_MINUS_AUG2024.pdf");
+   cnvs1P->SaveAs("AUG24/COL_MC_tpc0_sel12_East_file_angle_PLUS_AUG2024.pdf");
+   cnvs1m->SaveAs("AUG24/COL_MC_tpc0_sel12_East_file_angle_MINUS_AUG2024.pdf");
 
-   TCanvas* cnvs2P= new TCanvas("cnvs2P", "TPC0 East Cryostat DATA IN2 Plus",1,1,600,500);
+   TCanvas* cnvs2P= new TCanvas("cnvs2P", "TPC0 East Cryostat MC IN2 Plus",1,1,600,500);
    h2P->Draw("HIST");
-   TCanvas* cnvs2m= new TCanvas("cnvs2m", "TPC0 East Cryostat DATA IN2 Minus",1,1,600,500);
+   TCanvas* cnvs2m= new TCanvas("cnvs2m", "TPC0 East Cryostat MC IN2 Minus",1,1,600,500);
    h2m->Draw("HIST");
-   cnvs2P->SaveAs("AUG24/IN2_DATA_tpc0_sel12_East_file_angle_PLUS_AUG2024.pdf");
-   cnvs2m->SaveAs("AUG24/IN2_DATA_tpc0_sel12_East_file_angle_MINUS_AUG2024.pdf");
+   cnvs2P->SaveAs("AUG24/IN2_MC_tpc0_sel12_East_file_angle_PLUS_AUG2024.pdf");
+   cnvs2m->SaveAs("AUG24/IN2_MC_tpc0_sel12_East_file_angle_MINUS_AUG2024.pdf");
 
-   TCanvas* cnvs3P= new TCanvas("cnvs3p", "TPC0 East Cryostat DATA IN1 Plus",1,1,600,500);
+   TCanvas* cnvs3P= new TCanvas("cnvs3p", "TPC0 East Cryostat MC IN1 Plus",1,1,600,500);
    h3P->Draw("HIST");
-   TCanvas* cnvs3m= new TCanvas("cnvs3m", "TPC0 East Cryostat DATA IN1 Minus",1,1,600,500);
+   TCanvas* cnvs3m= new TCanvas("cnvs3m", "TPC0 East Cryostat MC IN1 Minus",1,1,600,500);
    h3m->Draw("HIST");
-   cnvs3P->SaveAs("AUG24/IN1_DATA_tpc0_sel12_East_file_angle_PLUS_AUG2024.pdf");
-   cnvs3m->SaveAs("AUG24/IN1_DATA_tpc0_sel12_East_file_angle_MINUS_AUG2024.pdf");
+   cnvs3P->SaveAs("AUG24/IN1_MC_tpc0_sel12_East_file_angle_PLUS_AUG2024.pdf");
+   cnvs3m->SaveAs("AUG24/IN1_MC_tpc0_sel12_East_file_angle_MINUS_AUG2024.pdf");
 
    TCanvas *c1 = new TCanvas("c1", "COL Profile: dqdx vs horizontal angle ",200,10,700,500);
    hz_hor_dQdx_East_tpc0_COL->Draw();
    TCanvas *c2 = new TCanvas("c2", "COL Profile: integral vs horizontal angle ",200,10,700,500);
    hz_hor_INT_East_tpc0_COL->Draw();
-   c1->SaveAs("AUG24/COL_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_AUG2024.pdf");
-   c2->SaveAs("AUG24/COL_Profile_DATA_tpc0_sel12_East_file_integral_VS_horizontalAngle_AUG2024.pdf");
+   c1->SaveAs("AUG24/COL_Profile_MC_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_AUG2024.pdf");
+   c2->SaveAs("AUG24/COL_Profile_MC_tpc0_sel12_East_file_integral_VS_horizontalAngle_AUG2024.pdf");
 
    TCanvas *c3 = new TCanvas("c3", "IN2 Profile: dqdx vs horizontal angle ",200,10,700,500);
    hz_hor_dQdx_East_tpc0_IN2->Draw();
    TCanvas *c4 = new TCanvas("c4", "IN2 Profile: integral vs horizontal angle ",200,10,700,500);
    hz_hor_INT_East_tpc0_IN2->Draw();
-   c3->SaveAs("AUG24/IN2_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_AUG2024.pdf");
-   c4->SaveAs("AUG24/IN2_Profile_DATA_tpc0_sel12_East_file_integral_VS_horizontalAngle_AUG2024.pdf");
+   c3->SaveAs("AUG24/IN2_Profile_MC_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_AUG2024.pdf");
+   c4->SaveAs("AUG24/IN2_Profile_MC_tpc0_sel12_East_file_integral_VS_horizontalAngle_AUG2024.pdf");
 
    TCanvas *c5 = new TCanvas("c5", "IN1 Profile: dqdx vs horizontal angle ",200,10,700,500);
    hz_hor_dQdx_East_tpc0_IN1->Draw();
    TCanvas *c6 = new TCanvas("c6", "IN1 Profile: integral vs horizontal angle ",200,10,700,500);
    hz_hor_INT_East_tpc0_IN1->Draw();
-   c5->SaveAs("AUG24/IN1_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_AUG2024.pdf");
-   c6->SaveAs("AUG24/IN1_Profile_DATA_tpc0_sel12_East_file_integral_VS_horizontalAngle_AUG2024.pdf");
+   c5->SaveAs("AUG24/IN1_Profile_MC_tpc0_sel12_East_file_dqdx_VS_horizontalAngle_AUG2024.pdf");
+   c6->SaveAs("AUG24/IN1_Profile_MC_tpc0_sel12_East_file_integral_VS_horizontalAngle_AUG2024.pdf");
 
 
 
@@ -766,49 +768,49 @@ void FullSet_1D2D_AUG24_E_DATAonly_tpc0(bool verbose=false) {
    hz_plus_dQdx_East_tpc0_COL->Draw();
    TCanvas *c21 = new TCanvas("c21", "COL Profile: integral vs plus angle ",200,10,700,500);
    hz_plus_INT_East_tpc0_COL->Draw();
-   c11->SaveAs("AUG24/COL_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_plusAngle_AUG2024.pdf");
-   c21->SaveAs("AUG24/COL_Profile_DATA_tpc0_sel12_East_file_integral_VS_plusAngle_AUG2024.pdf");
+   c11->SaveAs("AUG24/COL_Profile_MC_tpc0_sel12_East_file_dqdx_VS_plusAngle_AUG2024.pdf");
+   c21->SaveAs("AUG24/COL_Profile_MC_tpc0_sel12_East_file_integral_VS_plusAngle_AUG2024.pdf");
 
    TCanvas *c31 = new TCanvas("c31", "IN2 Profile: dqdx vs plus angle ",200,10,700,500);
    hz_plus_dQdx_East_tpc0_IN2->Draw();
    TCanvas *c41 = new TCanvas("c41", "IN2 Profile: integral vs plus angle ",200,10,700,500);
    hz_plus_INT_East_tpc0_IN2->Draw();
-   c31->SaveAs("AUG24/IN2_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_plusAngle_AUG2024.pdf");
-   c41->SaveAs("AUG24/IN2_Profile_DATA_tpc0_sel12_East_file_integral_VS_plusAngle_AUG2024.pdf");
+   c31->SaveAs("AUG24/IN2_Profile_MC_tpc0_sel12_East_file_dqdx_VS_plusAngle_AUG2024.pdf");
+   c41->SaveAs("AUG24/IN2_Profile_MC_tpc0_sel12_East_file_integral_VS_plusAngle_AUG2024.pdf");
 
    TCanvas *c51 = new TCanvas("c51", "IN1 Profile: dqdx vs plus angle ",200,10,700,500);
    hz_plus_dQdx_East_tpc0_IN1->Draw();
    TCanvas *c61 = new TCanvas("c61", "IN1 Profile: integral vs plus angle ",200,10,700,500);
    hz_plus_INT_East_tpc0_IN1->Draw();
-   c51->SaveAs("AUG24/IN1_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_plusAngle_AUG2024.pdf");
-   c61->SaveAs("AUG24/IN1_Profile_DATA_tpc0_sel12_East_file_integral_VS_plusAngle_AUG2024.pdf");
+   c51->SaveAs("AUG24/IN1_Profile_MC_tpc0_sel12_East_file_dqdx_VS_plusAngle_AUG2024.pdf");
+   c61->SaveAs("AUG24/IN1_Profile_MC_tpc0_sel12_East_file_integral_VS_plusAngle_AUG2024.pdf");
 
 
    TCanvas *c12 = new TCanvas("c12", "COL Profile: dqdx vs minus angle ",200,10,700,500);
    hz_minus_dQdx_East_tpc0_COL->Draw();
    TCanvas *c22 = new TCanvas("c22", "COL Profile: integral vs minus angle ",200,10,700,500);
    hz_minus_INT_East_tpc0_COL->Draw();
-   c12->SaveAs("AUG24/COL_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_minusAngle_AUG2024.pdf");
-   c22->SaveAs("AUG24/COL_Profile_DATA_tpc0_sel12_East_file_integral_VS_minusAngle_AUG2024.pdf");
+   c12->SaveAs("AUG24/COL_Profile_MC_tpc0_sel12_East_file_dqdx_VS_minusAngle_AUG2024.pdf");
+   c22->SaveAs("AUG24/COL_Profile_MC_tpc0_sel12_East_file_integral_VS_minusAngle_AUG2024.pdf");
 
    TCanvas *c32 = new TCanvas("c32", "IN2 Profile: dqdx vs minus angle ",200,10,700,500);
    hz_minus_dQdx_East_tpc0_IN2->Draw();
    TCanvas *c42 = new TCanvas("c42", "IN2 Profile: integral vs minus angle ",200,10,700,500);
    hz_minus_INT_East_tpc0_IN2->Draw();
-   c32->SaveAs("AUG24/IN2_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_minusAngle_AUG2024.pdf");
-   c42->SaveAs("AUG24/IN2_Profile_DATA_tpc0_sel12_East_file_integral_VS_minusAngle_AUG2024.pdf");
+   c32->SaveAs("AUG24/IN2_Profile_MC_tpc0_sel12_East_file_dqdx_VS_minusAngle_AUG2024.pdf");
+   c42->SaveAs("AUG24/IN2_Profile_MC_tpc0_sel12_East_file_integral_VS_minusAngle_AUG2024.pdf");
 
    TCanvas *c52 = new TCanvas("c52", "IN1 Profile: dqdx vs minus angle ",200,10,700,500);
    hz_minus_dQdx_East_tpc0_IN1->Draw();
    TCanvas *c62 = new TCanvas("c62", "IN1 Profile: integral vs minus angle ",200,10,700,500);
    hz_minus_INT_East_tpc0_IN1->Draw();
-   c52->SaveAs("AUG24/IN1_Profile_DATA_tpc0_sel12_East_file_dqdx_VS_minusAngle_AUG2024.pdf");
-   c62->SaveAs("AUG24/IN1_Profile_DATA_tpc0_sel12_East_file_integral_VS_minusAngle_AUG2024.pdf");
+   c52->SaveAs("AUG24/IN1_Profile_MC_tpc0_sel12_East_file_dqdx_VS_minusAngle_AUG2024.pdf");
+   c62->SaveAs("AUG24/IN1_Profile_MC_tpc0_sel12_East_file_integral_VS_minusAngle_AUG2024.pdf");
 
 
-   
 
-   std::cout << "Number of files in our DATA list is " << my_files->GetNFiles() << std::endl;
+
+   std::cout << "Number of files in our MC list is " << my_files->GetNFiles() << std::endl;
    cout<<"end of macro"<<endl;
 
 

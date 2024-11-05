@@ -11,33 +11,33 @@ void FullSet_1D2D_AUG24_E_DATAonly_tpc0(bool verbose=false) {
 
   gStyle->SetOptStat(0);
   ofstream outfile("t.txt");
-  ofstream outfile_col_mc_xyz("dataOCT2023_NUMI_tpc0_sel12_East_file_xyz_col.txt");
-  ofstream outfile_in2_mc_xyz("dataOCT2023_NUMI_tpc0_sel12_East_file_xyz_in2.txt");
-  ofstream outfile_in1_mc_xyz("dataOCT2023_NUMI_tpc0_sel12_East_file_xyz_in1.txt");
+  ofstream outfile_col_mc_xyz("dataAUG2024_NUMI_tpc0_sel12_East_file_xyz_col.txt");
+  ofstream outfile_in2_mc_xyz("dataAUG2024_NUMI_tpc0_sel12_East_file_xyz_in2.txt");
+  ofstream outfile_in1_mc_xyz("dataAUG2024_NUMI_tpc0_sel12_East_file_xyz_in1.txt");
 
-  ofstream outfile_dqdxc("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
-  ofstream outfile_dqdx1("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
-  ofstream outfile_dqdx2("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
+  ofstream outfile_dqdxc("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
+  ofstream outfile_dqdx1("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
+  ofstream outfile_dqdx2("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
 
-  ofstream outfile_intc("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
-  ofstream outfile_int1("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
-  ofstream outfile_int2("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
+  ofstream outfile_intc("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
+  ofstream outfile_int1("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
+  ofstream outfile_int2("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
 
 
-  ofstream outfile1("datahnoCOSangle_by_OCT2023__col_East_file_tpc0.txt");
-  ofstream outfile2("datahnoCOSangle_by_OCT2023__in1_East_file_tpc0.txt");
-  ofstream outfile3("datahnoCOSangle_by_OCT2023__in2_East_file_tpc0.txt");
+  ofstream outfile1("datahnoCOSangle_by_AUG2024__col_East_file_tpc0.txt");
+  ofstream outfile2("datahnoCOSangle_by_AUG2024__in1_East_file_tpc0.txt");
+  ofstream outfile3("datahnoCOSangle_by_AUG2024__in2_East_file_tpc0.txt");
 
-  ofstream outfile1_c_PLUS("datahnoCOSangle_by_OCT2023__col_East_file_tpc0_PLUS.txt");
-  ofstream outfile2_1_PLUS("datahnoCOSangle_by_OCT2023__in1_East_file_tpc0_PLUS.txt");
-  ofstream outfile3_2_PLUS("datahnoCOSangle_by_OCT2023__in2_East_file_tpc0_PLUS.txt");
+  ofstream outfile1_c_PLUS("datahnoCOSangle_by_AUG2024__col_East_file_tpc0_PLUS.txt");
+  ofstream outfile2_1_PLUS("datahnoCOSangle_by_AUG2024__in1_East_file_tpc0_PLUS.txt");
+  ofstream outfile3_2_PLUS("datahnoCOSangle_by_AUG2024__in2_East_file_tpc0_PLUS.txt");
 
-  ofstream outfile1_c_MINUS("datahnoCOSangle_by_OCT2023__col_East_file_tpc0_MINUS.txt");
-  ofstream outfile2_1_MINUS("datahnoCOSangle_by_OCT2023__in1_East_file_tpc0_MINUS.txt");
-  ofstream outfile3_2_MINUS("datahnoCOSangle_by_OCT2023__in2_East_file_tpc0_MINUS.txt");
+  ofstream outfile1_c_MINUS("datahnoCOSangle_by_AUG2024__col_East_file_tpc0_MINUS.txt");
+  ofstream outfile2_1_MINUS("datahnoCOSangle_by_AUG2024__in1_East_file_tpc0_MINUS.txt");
+  ofstream outfile3_2_MINUS("datahnoCOSangle_by_AUG2024__in2_East_file_tpc0_MINUS.txt");
 
   
-  ofstream outT("OCT2023.txt");
+  ofstream outT("AUG2024.txt");
   double z_p = 1.0;
 
   double Plus_x = 1.0/sqrt(3);
@@ -220,7 +220,7 @@ void FullSet_1D2D_AUG24_E_DATAonly_tpc0(bool verbose=false) {
    //Get the files from ICARUS gpvm
   TFileCollection *my_files = new TFileCollection("my_files","My File List");
 
-  my_files->AddFromFile("list.txt");//list_DATA24.txt");//DATA24.TXT");///pnfs/sbn/data/sbn_fd/poms_production/data/Run2/reconstructed/icaruscode_v09_72_00_03p01/bnbmajority/calibtuples/00/00/**/**/");//mc_april22versiontest2.txt");//mc_aprilversion.txt");
+  my_files->AddFromFile("OCT24_data.txt");//OCT24_data.txt");//July2024_DATA2.txt");//list_DATA24.txt");//DATA24.TXT");///pnfs/sbn/data/sbn_fd/poms_production/data/Run2/reconstructed/icaruscode_v09_72_00_03p01/bnbmajority/calibtuples/00/00/**/**/");//mc_april22versiontest2.txt");//mc_aprilversion.txt");
  outfile<< "Number of files in our DATA list is " << my_files->GetNFiles() <<endl;
   TChain myfile("caloskimE/TrackCaloSkim");
   myfile.AddFileInfoList(my_files->GetList());

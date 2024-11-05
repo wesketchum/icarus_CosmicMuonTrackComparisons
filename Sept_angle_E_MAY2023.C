@@ -335,14 +335,13 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
 
      //if not on thr trajectory, continue
      if(ontraj_c[last_h_mc_c]!=1) continue;
+     if(ontraj_i2[last_h_mc_i2]!=1) continue;
+     if(ontraj_i1[last_h_mc_i1]!=1) continue;
+
+
+
 
      if(tpc_c[last_h_mc_c]!=tpc_num) continue;
-
-
-     //60 degrees plus:
-     //x_c[last_h_mc_c] = (0.5)*x_c[last_h_mc_c] - (sqrt(3)/2.0)*y_c[last_h_mc_c];
-     //y_c[last_h_mc_c] = (sqrt(3)/2.0)*x_c[last_h_mc_c] + (0.5)*y_c[last_h_mc_c];
-     // z_c[last_h_mc_c] = z_c[last_h_mc_c];
 
      outfile_col_mc<<x_c[last_h_mc_c]<<" "<<y_c[last_h_mc_c]<<" "<<z_c[last_h_mc_c]<<endl;
     
@@ -353,18 +352,14 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
 
 
      double sum_integral_mc_c = 0.0;
-     double sum_width_mc_c =0.0;
      double sum_dqdx_mc_c =0.0;
-     double sum_pitch_mc_c =0.0;
      for(int i = 0; i < last_h_mc_c; i++){
        sum_integral_mc_c += integral_c[i];
        sum_dqdx_mc_c += dqdx_c[i];
      }
 
      double av_integral_mc_c = sum_integral_mc_c/last_h_mc_c;
-     double av_width_mc_c = sum_width_mc_c/last_h_mc_c;
      double av_dqdx_mc_c = sum_dqdx_mc_c/last_h_mc_c;
-     double av_pitch_mc_c = sum_pitch_mc_c/last_h_mc_c;
 
 
      outfileqc<<av_dqdx_mc_c<<endl;
@@ -372,20 +367,9 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
 
      cout<<"collection done"<<endl;
 
-     //     if(verbose) 
-     // cout << "MC angle " << TMath::ATan(x_c[last_h_mc_c]/z_c[last_h_mc_c]) << endl;
-
-     //and fill all the other histograms related to traj points too
-     
-
-     if(ontraj_i2[last_h_mc_i2]!=1) continue;
-
      if(tpc_i2[last_h_mc_i2]!=tpc_num)continue;//==0) continue;
 
 
-     //60 degrees plus:                                                                                                                                   
-     //x_i2[last_h_mc_i2] = (0.5)*x_i2[last_h_mc_i2] - (sqrt(3)/2.0)*y_i2[last_h_mc_i2];
-     //y_i2[last_h_mc_i2] = (sqrt(3)/2.0)*x_i2[last_h_mc_i2] + (0.5)*y_i2[last_h_mc_i2];
      outfile_in2_mc<<x_i2[last_h_mc_i2]<<" "<<y_i2[last_h_mc_i2]<<" "<<z_i2[last_h_mc_i2]<<endl;
 
 
@@ -396,17 +380,13 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
 
 
      double sum_integral_mc_i2 =0.0;
-     double sum_width_mc_i2 =0.0;
      double sum_dqdx_mc_i2 =0.0;
-     double sum_pitch_mc_i2 =0.0;
      for(int j = 0; j <last_h_mc_i2; j++){
        sum_integral_mc_i2 += integral_i2[j];
        sum_dqdx_mc_i2 += dqdx_i2[j];
      }
      double av_integral_mc_i2 = sum_integral_mc_i2/last_h_mc_i2;
-     double av_width_mc_i2 = sum_width_mc_i2/last_h_mc_i2;
      double av_dqdx_mc_i2 = sum_dqdx_mc_i2/last_h_mc_i2;
-     double av_pitch_mc_i2 = sum_pitch_mc_i2/last_h_mc_i2;
 
 
      outfileq2<<av_dqdx_mc_i2<<endl;
@@ -416,7 +396,9 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
 
 
      cout<<"induction 2 done"<<endl;
-     if(ontraj_i1[last_h_mc_i1]!=1) continue;
+
+
+
      if(tpc_i1[last_h_mc_i1]!=tpc_num)continue;//==0) continue;
 
      outfile_in1_mc<<x_i1[last_h_mc_i1]<<" "<<y_i1[last_h_mc_i1]<<" "<<z_i1[last_h_mc_i1]<<endl;     //60 degrees plus:                         
@@ -428,20 +410,14 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
 
 
      double sum_integral_mc_i1 =0.0;
-     double sum_width_mc_i1 =0.0;
      double sum_dqdx_mc_i1 =0.0;
-     double sum_pitch_mc_i1 =0.0;
      for(int k = 0; k <last_h_mc_i1; k++){
        sum_integral_mc_i1 += integral_i1[k];
        sum_dqdx_mc_i1 += dqdx_i1[k];
      }
      double av_integral_mc_i1 = sum_integral_mc_i1/last_h_mc_i1;
-     double av_width_mc_i1 = sum_width_mc_i1/last_h_mc_i1;
      double av_dqdx_mc_i1 = sum_dqdx_mc_i1/last_h_mc_i1;
-     double av_pitch_mc_i1 = sum_pitch_mc_i1/last_h_mc_i1;
-     //h_ci0_mc->Fill(av_dqdx_mc_i1);                                                                                                            
-     // h_wi0_mc->Fill(av_width_mc_i1);                                                                                                          
-     //h_q0_mc->Fill(av_dqdx_mc_i1);                                                                                                             
+                            
      outfileq1<<av_dqdx_mc_i1<<endl;
      outfileh1<<av_integral_mc_i1<<endl;
 
@@ -487,6 +463,13 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
 
      //if not on thr trajectory, continue
      if(ontraj2_c[last_h_data_c]!=1) continue;
+     if(ontraj2_i2[last_h_data_i2]!=1) continue;
+     if(ontraj2_i1[last_h_data_i1]!=1) continue;
+
+
+
+
+
      if(tpc2_c[last_h_data_c]!=tpc_num)continue;//==0) continue;
 
      outfile_col_data<<x2_c[last_h_data_c]<<" "<<y2_c[last_h_data_c]<<" "<<z2_c[last_h_data_c]<<endl;
@@ -498,7 +481,7 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
      //and fill all the other histograms related to traj points too
      
 
-     if(ontraj2_i2[last_h_data_i2]!=1) continue;
+     //if(ontraj2_i2[last_h_data_i2]!=1) continue;
      if(tpc2_i2[last_h_data_i2]!=tpc_num)continue;//==0) continue;
 
      outfile_in2_data<<x2_i2[last_h_data_i2]<<" "<<y2_i2[last_h_data_i2]<<" "<<z2_i2[last_h_data_i2]<<endl;
@@ -507,7 +490,7 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
      cout<<"induction 2 done"<<endl;
 
 
-     if(ontraj2_i1[last_h_data_i1]!=1) continue;
+     //if(ontraj2_i1[last_h_data_i1]!=1) continue;
      if(tpc2_i1[last_h_data_i1]!=tpc_num)continue;//==0) continue;
      outfile_in1_data<<x2_i1[last_h_data_i1]<<" "<<y2_i1[last_h_data_i1]<<" "<<z2_i1[last_h_data_i1]<<endl;
 
@@ -612,12 +595,12 @@ void Sept_angle_E_MAY2023(bool verbose=false) {
    TCanvas* cnvs6p= new TCanvas("cnvs6p", "TPC0 West Cryostat MC IN2",1,1,600,500);
    h6p->Draw("HIST");
 
-   cnvs1p->SaveAs("MC_tpc0_sel12_East_file_xyz_col_angle_NEW_h_MAY2023.pdf");
-   cnvs2p->SaveAs("MC_tpc0_sel12_East_file_xyz_in1_angle_NEW_h_MAY2023.pdf");
-   cnvs3p->SaveAs("MC_tpc0_sel12_East_file_xyz_in2_angle_NEW_h_MAY2023.pdf");
-   cnvs4p->SaveAs("MC_tpc0_sel12_West_file_xyz_col_angle_NEW_h_MAY2023.pdf");
-   cnvs5p->SaveAs("MC_tpc0_sel12_West_file_xyz_in1_angle_NEW_h_MAY2023.pdf");
-   cnvs6p->SaveAs("MC_tpc0_sel12_West_file_xyz_in2_angle_NEW_h_MAY2023.pdf");
+   cnvs1p->SaveAs("MC_tpc0_sel12_East_file_xyz_col_angle_NEW_h_AUG2023.pdf");
+   cnvs2p->SaveAs("MC_tpc0_sel12_East_file_xyz_in1_angle_NEW_h_AUG2023.pdf");
+   cnvs3p->SaveAs("MC_tpc0_sel12_East_file_xyz_in2_angle_NEW_h_AUG2023.pdf");
+   cnvs4p->SaveAs("MC_tpc0_sel12_West_file_xyz_col_angle_NEW_h_AUG2023.pdf");
+   cnvs5p->SaveAs("MC_tpc0_sel12_West_file_xyz_in1_angle_NEW_h_AUG2023.pdf");
+   cnvs6p->SaveAs("MC_tpc0_sel12_West_file_xyz_in2_angle_NEW_h_AUG2023.pdf");
 
 
    std::cout << "Number of files in our MC list is " << my_files->GetNFiles() << std::endl;

@@ -11,62 +11,62 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
 
   gStyle->SetOptStat(0);
 
-  ofstream outfile_dqdxc("FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_Qdx_col_MCvsDATA.txt");
-  ofstream outfile_dqdx1("FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_Qdx_in1_MCvsDATA.txt");
-  ofstream outfile_dqdx2("FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_Qdx_in2_MCvsDATA.txt");
+  ofstream outfile_dqdxc("AUG24_OUTFILE_NUMI_tpc0_sel12_West_file_Qdx_col_MCvsDATA.txt");
+  ofstream outfile_dqdx1("AUG24_OUTFILE_NUMI_tpc0_sel12_West_file_Qdx_in1_MCvsDATA.txt");
+  ofstream outfile_dqdx2("AUG24_OUTFILE_NUMI_tpc0_sel12_West_file_Qdx_in2_MCvsDATA.txt");
 
-  ofstream outfile_intc("FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_HC_col_MCvsDATA.txt");
-  ofstream outfile_int1("FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_HC_in1_MCvsDATA.txt");
-  ofstream outfile_int2("FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_HC_in2_MCvsDATA.txt");
-
-
-
-  ofstream outfile1("hnoCOSangle_FEB24_col_West_file_tpc0_MCvsDATA.txt");
-  ofstream outfile2("hnoCOSangle_FEB24_in1_West_file_tpc0_MCvsDATA.txt");
-  ofstream outfile3("hnoCOSangle_FEB24_in2_West_file_tpc0_MCvsDATA.txt");
-
-  ofstream outfile1_c_PLUS("hnoCOSangle_FEB24_col_West_file_tpc0_PLUS_MCvsDATA.txt");
-  ofstream outfile2_1_PLUS("hnoCOSangle_FEB24_in1_West_file_tpc0_PLUS_MCvsDATA.txt");
-  ofstream outfile3_2_PLUS("hnoCOSangle_FEB24_in2_West_file_tpc0_PLUS_MCvsDATA.txt");
-
-  ofstream outfile1_c_MINUS("hnoCOSangle_FEB24_col_West_file_tpc0_MINUS_MCvsDATA.txt");
-  ofstream outfile2_1_MINUS("hnoCOSangle_FEB24_in1_West_file_tpc0_MINUS_MCvsDATA.txt");
-  ofstream outfile3_2_MINUS("hnoCOSangle_FEB24_in2_West_file_tpc0_MINUS_MCvsDATA.txt");
-
-  ifstream infiledqdxc_DATA("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_col.txt");
-  ifstream infiledqdx2_DATA("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_in2.txt");
-  ifstream infiledqdx1_DATA("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_in1.txt");
-  ifstream infileintc_DATA("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_col.txt");
-  ifstream infileint2_DATA("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_in2.txt");
-  ifstream infileint1_DATA("dataOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_in1.txt");
-
-  ifstream infileAc_DATA("datahnoCOSangle_by_OCT2023__col_West_file_tpc0.txt");
-  ifstream infileA2_DATA("datahnoCOSangle_by_OCT2023__in2_West_file_tpc0.txt");
-  ifstream infileA1_DATA("datahnoCOSangle_by_OCT2023__in1_West_file_tpc0.txt");
-  ifstream infileAcp_DATA("datahnoCOSangle_by_OCT2023__col_West_file_tpc0_PLUS.txt");
-  ifstream infileA2p_DATA("datahnoCOSangle_by_OCT2023__in2_West_file_tpc0_PLUS.txt");
-  ifstream infileA1p_DATA("datahnoCOSangle_by_OCT2023__in1_West_file_tpc0_PLUS.txt");
-  ifstream infileAcm_DATA("datahnoCOSangle_by_OCT2023__col_West_file_tpc0_MINUS.txt");
-  ifstream infileA2m_DATA("datahnoCOSangle_by_OCT2023__in2_West_file_tpc0_MINUS.txt");
-  ifstream infileA1m_DATA("datahnoCOSangle_by_OCT2023__in1_West_file_tpc0_MINUS.txt");
+  ofstream outfile_intc("AUG24_OUTFILE_NUMI_tpc0_sel12_West_file_HC_col_MCvsDATA.txt");
+  ofstream outfile_int1("AUG24_OUTFILE_NUMI_tpc0_sel12_West_file_HC_in1_MCvsDATA.txt");
+  ofstream outfile_int2("AUG24_OUTFILE_NUMI_tpc0_sel12_West_file_HC_in2_MCvsDATA.txt");
 
 
-  ifstream infiledqdxc_MC("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_col.txt");
-  ifstream infiledqdx2_MC("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_in2.txt");
-  ifstream infiledqdx1_MC("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_in1.txt");
-  ifstream infileintc_MC("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_col.txt");
-  ifstream infileint2_MC("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_in2.txt");
-  ifstream infileint1_MC("mcOCT2023_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_in1.txt");
 
-  ifstream infileAc_MC("mchnoCOSangle_by_OCT2023__col_West_file_tpc0.txt");
-  ifstream infileA2_MC("mchnoCOSangle_by_OCT2023__in2_West_file_tpc0.txt");
-  ifstream infileA1_MC("mchnoCOSangle_by_OCT2023__in1_West_file_tpc0.txt");
-  ifstream infileAcp_MC("mchnoCOSangle_by_OCT2023__col_West_file_tpc0_PLUS.txt");
-  ifstream infileA2p_MC("mchnoCOSangle_by_OCT2023__in2_West_file_tpc0_PLUS.txt");
-  ifstream infileA1p_MC("mchnoCOSangle_by_OCT2023__in1_West_file_tpc0_PLUS.txt");
-  ifstream infileAcm_MC("mchnoCOSangle_by_OCT2023__col_West_file_tpc0_MINUS.txt");
-  ifstream infileA2m_MC("mchnoCOSangle_by_OCT2023__in2_West_file_tpc0_MINUS.txt");
-  ifstream infileA1m_MC("mchnoCOSangle_by_OCT2023__in1_West_file_tpc0_MINUS.txt");
+  ofstream outfile1("hnoCOSangle_AUG24_col_West_file_tpc0_MCvsDATA.txt");
+  ofstream outfile2("hnoCOSangle_AUG24_in1_West_file_tpc0_MCvsDATA.txt");
+  ofstream outfile3("hnoCOSangle_AUG24_in2_West_file_tpc0_MCvsDATA.txt");
+
+  ofstream outfile1_c_PLUS("hnoCOSangle_AUG24_col_West_file_tpc0_PLUS_MCvsDATA.txt");
+  ofstream outfile2_1_PLUS("hnoCOSangle_AUG24_in1_West_file_tpc0_PLUS_MCvsDATA.txt");
+  ofstream outfile3_2_PLUS("hnoCOSangle_AUG24_in2_West_file_tpc0_PLUS_MCvsDATA.txt");
+
+  ofstream outfile1_c_MINUS("hnoCOSangle_AUG24_col_West_file_tpc0_MINUS_MCvsDATA.txt");
+  ofstream outfile2_1_MINUS("hnoCOSangle_AUG24_in1_West_file_tpc0_MINUS_MCvsDATA.txt");
+  ofstream outfile3_2_MINUS("hnoCOSangle_AUG24_in2_West_file_tpc0_MINUS_MCvsDATA.txt");
+
+  ifstream infiledqdxc_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_col.txt");
+  ifstream infiledqdx2_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_in2.txt");
+  ifstream infiledqdx1_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_in1.txt");
+  ifstream infileintc_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_col.txt");
+  ifstream infileint2_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_in2.txt");
+  ifstream infileint1_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_in1.txt");
+
+  ifstream infileAc_DATA("datahnoCOSangle_by_AUG2024__col_West_file_tpc0.txt");
+  ifstream infileA2_DATA("datahnoCOSangle_by_AUG2024__in2_West_file_tpc0.txt");
+  ifstream infileA1_DATA("datahnoCOSangle_by_AUG2024__in1_West_file_tpc0.txt");
+  ifstream infileAcp_DATA("datahnoCOSangle_by_AUG2024__col_West_file_tpc0_PLUS.txt");
+  ifstream infileA2p_DATA("datahnoCOSangle_by_AUG2024__in2_West_file_tpc0_PLUS.txt");
+  ifstream infileA1p_DATA("datahnoCOSangle_by_AUG2024__in1_West_file_tpc0_PLUS.txt");
+  ifstream infileAcm_DATA("datahnoCOSangle_by_AUG2024__col_West_file_tpc0_MINUS.txt");
+  ifstream infileA2m_DATA("datahnoCOSangle_by_AUG2024__in2_West_file_tpc0_MINUS.txt");
+  ifstream infileA1m_DATA("datahnoCOSangle_by_AUG2024__in1_West_file_tpc0_MINUS.txt");
+
+
+  ifstream infiledqdxc_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_col.txt");
+  ifstream infiledqdx2_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_in2.txt");
+  ifstream infiledqdx1_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_Qdx_in1.txt");
+  ifstream infileintc_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_col.txt");
+  ifstream infileint2_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_in2.txt");
+  ifstream infileint1_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_West_file_HC_in1.txt");
+
+  ifstream infileAc_MC("mchnoCOSangle_by_AUG2024__col_West_file_tpc0.txt");
+  ifstream infileA2_MC("mchnoCOSangle_by_AUG2024__in2_West_file_tpc0.txt");
+  ifstream infileA1_MC("mchnoCOSangle_by_AUG2024__in1_West_file_tpc0.txt");
+  ifstream infileAcp_MC("mchnoCOSangle_by_AUG2024__col_West_file_tpc0_PLUS.txt");
+  ifstream infileA2p_MC("mchnoCOSangle_by_AUG2024__in2_West_file_tpc0_PLUS.txt");
+  ifstream infileA1p_MC("mchnoCOSangle_by_AUG2024__in1_West_file_tpc0_PLUS.txt");
+  ifstream infileAcm_MC("mchnoCOSangle_by_AUG2024__col_West_file_tpc0_MINUS.txt");
+  ifstream infileA2m_MC("mchnoCOSangle_by_AUG2024__in2_West_file_tpc0_MINUS.txt");
+  ifstream infileA1m_MC("mchnoCOSangle_by_AUG2024__in1_West_file_tpc0_MINUS.txt");
 
 
   int n = 15000;
@@ -694,7 +694,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendAc->AddEntry(h2Ac,"Data");
    legendAc->Draw();
    cnvs_Ac->Update();
-   cnvs_Ac->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_MCvsDATA.pdf");
+   cnvs_Ac->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_A1 = new TCanvas("cnvs_A1", "c7", 1,1,800,700);
@@ -713,7 +713,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendA1->AddEntry(h2A1,"Data");
    legendA1->Draw();
    cnvs_A1->Update();
-   cnvs_A1->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_MCvsDATA.pdf");
+   cnvs_A1->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_MCvsDATA.pdf");
 
    TCanvas* cnvs_A2 = new TCanvas("cnvs_A2", "c7", 1,1,800,700);
    h1A2->SetLineColor(kRed);
@@ -731,7 +731,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendA2->AddEntry(h2A2,"Data");
    legendA2->Draw();
    cnvs_A2->Update();
-   cnvs_A2->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_MCvsDATA.pdf");
+   cnvs_A2->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_Acp = new TCanvas("cnvs_Acp", "c7", 1,1,800,700);
@@ -750,7 +750,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendAcp->AddEntry(h2Acp,"Data");
    legendAcp->Draw();
    cnvs_Acp->Update();
-   cnvs_Acp->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_plus_MCvsDATA.pdf");
+   cnvs_Acp->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_plus_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_A1p = new TCanvas("cnvs_A1p", "c7", 1,1,800,700);
@@ -769,7 +769,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendA1p->AddEntry(h2A1p,"Data");
    legendA1p->Draw();
    cnvs_A1p->Update();
-   cnvs_A1p->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_plus_MCvsDATA.pdf");
+   cnvs_A1p->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_plus_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_A2p = new TCanvas("cnvs_A2p", "c7", 1,1,800,700);
@@ -788,7 +788,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendA2p->AddEntry(h2A2p,"Data");
    legendA2p->Draw();
    cnvs_A2p->Update();
-   cnvs_A2p->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_plus_MCvsDATA.pdf");
+   cnvs_A2p->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_plus_MCvsDATA.pdf");
 
    TCanvas* cnvs_Acm = new TCanvas("cnvs_Acm", "c7", 1,1,800,700);
    h1Acm->SetLineColor(kRed);
@@ -806,7 +806,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendAcm->AddEntry(h2Acm,"Data");
    legendAcm->Draw();
    cnvs_Acm->Update();
-   cnvs_Acm->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_minus_MCvsDATA.pdf");
+   cnvs_Acm->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_minus_MCvsDATA.pdf");
 
    TCanvas* cnvs_A1m = new TCanvas("cnvs_A1m", "c7", 1,1,800,700);
    h1A1m->SetLineColor(kRed);
@@ -824,7 +824,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendA1m->AddEntry(h2A1m,"Data");
    legendA1m->Draw();
    cnvs_A1m->Update();
-   cnvs_A1m->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_minus_MCvsDATA.pdf");
+   cnvs_A1m->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_minus_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_A2m = new TCanvas("cnvs_A2m", "c7", 1,1,800,700);
@@ -843,7 +843,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendA2m->AddEntry(h2A2m,"Data");
    legendA2m->Draw();
    cnvs_A2m->Update();
-   cnvs_A2m->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_minus_MCvsDATA.pdf");
+   cnvs_A2m->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_minus_MCvsDATA.pdf");
 
 
 
@@ -864,7 +864,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendDQDXc->AddEntry(h2DQDXc,"Data");
    legendDQDXc->Draw();
    cnvs_DQDXc->Update();
-   cnvs_DQDXc->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_col_MCvsDATA.pdf");
+   cnvs_DQDXc->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_col_MCvsDATA.pdf");
 
 
 
@@ -884,7 +884,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendDQDX1->AddEntry(h2DQDX1,"Data");
    legendDQDX1->Draw();
    cnvs_DQDX1->Update();
-   cnvs_DQDX1->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_in1_MCvsDATA.pdf");
+   cnvs_DQDX1->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_in1_MCvsDATA.pdf");
 
 
 
@@ -904,7 +904,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendDQDX2->AddEntry(h2DQDX2,"Data");
    legendDQDX2->Draw();
    cnvs_DQDX2->Update();
-   cnvs_DQDX2->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_in2_MCvsDATA.pdf");
+   cnvs_DQDX2->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_in2_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_INTc = new TCanvas("cnvs_INTc", "c7", 1,1,800,700);
@@ -923,7 +923,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendINTc->AddEntry(h2INTc,"Data");
    legendINTc->Draw();
    cnvs_INTc->Update();
-   cnvs_INTc->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_col_MCvsDATA.pdf");
+   cnvs_INTc->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_col_MCvsDATA.pdf");
 
    TCanvas* cnvs_INT1 = new TCanvas("cnvs_INT1", "c7", 1,1,800,700);
    h1INT1->SetLineColor(kRed);
@@ -941,7 +941,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendINT1->AddEntry(h2INT1,"Data");
    legendINT1->Draw();
    cnvs_INT1->Update();
-   cnvs_INT1->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_in1_MCvsDATA.pdf");
+   cnvs_INT1->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_in1_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_INT2 = new TCanvas("cnvs_INT2", "c7", 1,1,800,700);
@@ -960,7 +960,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendINT2->AddEntry(h2INT2,"Data");
    legendINT2->Draw();
    cnvs_INT2->Update();
-   cnvs_INT2->SaveAs("AUG24/FEB24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_in2_MCvsDATA.pdf");
+   cnvs_INT2->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_in2_MCvsDATA.pdf");
 
 
    cout<<"Display done"<<endl;

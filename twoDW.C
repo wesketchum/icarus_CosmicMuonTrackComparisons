@@ -1688,7 +1688,6 @@ void twoDW(bool verbose=false) {
 
 
 
-
    TH1*h1AA = (TH1*)(h_ci2_mc->Clone("h1AA"));
    h1AA->Scale(1./h1AA->Integral());
 

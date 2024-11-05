@@ -105,39 +105,39 @@ void Between2_hor(){
   double angle_by_in1_Eo[n];
   double angle_by_in1_Wo[n];
 
-  ifstream infile1("mcJUNE_NUMI_tpc3_sel12_East_file_xyz_col.txt");
-  ifstream infile2("mcJUNE_NUMI_tpc3_sel12_East_file_xyz_in1.txt");
-  ifstream infile3("mcJUNE_NUMI_tpc3_sel12_East_file_xyz_in2.txt");
+  ifstream infile1("mcJUNE_NUMI_tpc0_sel12_East_file_xyz_col.txt");
+  ifstream infile2("mcJUNE_NUMI_tpc0_sel12_East_file_xyz_in1.txt");
+  ifstream infile3("mcJUNE_NUMI_tpc0_sel12_East_file_xyz_in2.txt");
 
-  ifstream infile4("mcJUNE_NUMI_tpc3_sel12_West_file_xyz_col.txt");
-  ifstream infile5("mcJUNE_NUMI_tpc3_sel12_West_file_xyz_in1.txt");
-  ifstream infile6("mcJUNE_NUMI_tpc3_sel12_West_file_xyz_in2.txt");
+  ifstream infile4("mcJUNE_NUMI_tpc0_sel12_West_file_xyz_col.txt");
+  ifstream infile5("mcJUNE_NUMI_tpc0_sel12_West_file_xyz_in1.txt");
+  ifstream infile6("mcJUNE_NUMI_tpc0_sel12_West_file_xyz_in2.txt");
 
-  ofstream outfile1("hnoCOSangle_by_col_E_tpc3.txt");
-  ofstream outfile2("hnoCOSangle_by_in1_E_tpc3.txt");
-  ofstream outfile3("hnoCOSangle_by_in2_E_tpc3.txt");
-  ofstream outfile4("hnoCOSangle_by_col_W_tpc3.txt");
-  ofstream outfile5("hnoCOSangle_by_in1_W_tpc3.txt");
-  ofstream outfile6("hnoCOSangle_by_in2_W_tpc3.txt");
+  ofstream outfile1("hnoCOSangle_by_col_E_tpc0.txt");
+  ofstream outfile2("hnoCOSangle_by_in1_E_tpc0.txt");
+  ofstream outfile3("hnoCOSangle_by_in2_E_tpc0.txt");
+  ofstream outfile4("hnoCOSangle_by_col_W_tpc0.txt");
+  ofstream outfile5("hnoCOSangle_by_in1_W_tpc0.txt");
+  ofstream outfile6("hnoCOSangle_by_in2_W_tpc0.txt");
 
   double Pi = 3.1415926535897932384;
 
-  TH1F *h1p = new TH1F("h1p","TPC3 East Cryostat MC (COL) ", 100., 0.0, 2.0); //0., 7.0);                           
+  TH1F *h1p = new TH1F("h1p","TPC0 East Cryostat MC (COL) ", 100., 0.0, 2.0); //0., 7.0);                           
   h1p->GetXaxis()->SetTitle("angle in radians");
 
-  TH1F *h4p = new TH1F("h4p","TPC3 West Cryostat MC (COL) ", 100., 0.0, 2.0); //0., 7.0);                           
+  TH1F *h4p = new TH1F("h4p","TPC0 West Cryostat MC (COL) ", 100., 0.0, 2.0); //0., 7.0);                           
   h4p->GetXaxis()->SetTitle("angle in radians");
 
-  TH1F *h5p = new TH1F("h5p","TPC3 West Cryostat MC (IN1) ", 100., 0.0, 2.0); //0., 7.0);                           
+  TH1F *h5p = new TH1F("h5p","TPC0 West Cryostat MC (IN1) ", 100., 0.0, 2.0); //0., 7.0);                           
   h5p->GetXaxis()->SetTitle("angle in radians");
 
-  TH1F *h6p = new TH1F("h6p","TPC3 West Cryostat MC (IN2) ", 100., 0.0, 2.0); //0., 7.0);                           
+  TH1F *h6p = new TH1F("h6p","TPC0 West Cryostat MC (IN2) ", 100., 0.0, 2.0); //0., 7.0);                           
   h6p->GetXaxis()->SetTitle("angle in radians");
 
-  TH1F *h2p = new TH1F("h2p","TPC3 East Cryostat MC (IN1) ", 100., 0.0, 2.0); //0., 7.0);                                                                                         
+  TH1F *h2p = new TH1F("h2p","TPC0 East Cryostat MC (IN1) ", 100., 0.0, 2.0); //0., 7.0);                                                                                         
   h2p->GetXaxis()->SetTitle("angle in radians");
 
-  TH1F *h3p = new TH1F("h3p","TPC3 East Cryostat MC (IN2) ", 100., 0.0, 2.0); //0., 7.0);                                                                                         
+  TH1F *h3p = new TH1F("h3p","TPC0 East Cryostat MC (IN2) ", 100., 0.0, 2.0); //0., 7.0);                                                                                         
   h3p->GetXaxis()->SetTitle("angle in radians");
 
 
@@ -364,25 +364,25 @@ void Between2_hor(){
   }
 
 
-  TCanvas* cnvs1p= new TCanvas("cnvs1p", "TPC3 East Cryostat MC COL",1,1,600,500);
+  TCanvas* cnvs1p= new TCanvas("cnvs1p", "TPC0 East Cryostat MC COL",1,1,600,500);
   h1p->Draw("HIST");
-  TCanvas* cnvs2p= new TCanvas("cnvs2p", "TPC3 East Cryostat MC IN1",1,1,600,500);
+  TCanvas* cnvs2p= new TCanvas("cnvs2p", "TPC0 East Cryostat MC IN1",1,1,600,500);
   h2p->Draw("HIST");
-  TCanvas* cnvs3p= new TCanvas("cnvs3p", "TPC3 East Cryostat MC IN2",1,1,600,500);
+  TCanvas* cnvs3p= new TCanvas("cnvs3p", "TPC0 East Cryostat MC IN2",1,1,600,500);
   h3p->Draw("HIST");
-  TCanvas* cnvs4p= new TCanvas("cnvs4p", "TPC3 West Cryostat MC COL",1,1,600,500);
+  TCanvas* cnvs4p= new TCanvas("cnvs4p", "TPC0 West Cryostat MC COL",1,1,600,500);
   h4p->Draw("HIST");
-  TCanvas* cnvs5p= new TCanvas("cnvs5p", "TPC3 West Cryostat MC IN1",1,1,600,500);
+  TCanvas* cnvs5p= new TCanvas("cnvs5p", "TPC0 West Cryostat MC IN1",1,1,600,500);
   h5p->Draw("HIST");
-  TCanvas* cnvs6p= new TCanvas("cnvs6p", "TPC3 West Cryostat MC IN2",1,1,600,500);
+  TCanvas* cnvs6p= new TCanvas("cnvs6p", "TPC0 West Cryostat MC IN2",1,1,600,500);
   h6p->Draw("HIST");
 
-  cnvs1p->SaveAs("MC_tpc3_sel12_East_file_xyz_col_angle_NEW_h.pdf");
-  cnvs2p->SaveAs("MC_tpc3_sel12_East_file_xyz_in1_angle_NEW_h.pdf");
-  cnvs3p->SaveAs("MC_tpc3_sel12_East_file_xyz_in2_angle_NEW_h.pdf");
-  cnvs4p->SaveAs("MC_tpc3_sel12_West_file_xyz_col_angle_NEW_h.pdf");
-  cnvs5p->SaveAs("MC_tpc3_sel12_West_file_xyz_in1_angle_NEW_h.pdf");
-  cnvs6p->SaveAs("MC_tpc3_sel12_West_file_xyz_in2_angle_NEW_h.pdf");
+  cnvs1p->SaveAs("MC_tpc0_sel12_East_file_xyz_col_angle_NEW_h.pdf");
+  cnvs2p->SaveAs("MC_tpc0_sel12_East_file_xyz_in1_angle_NEW_h.pdf");
+  cnvs3p->SaveAs("MC_tpc0_sel12_East_file_xyz_in2_angle_NEW_h.pdf");
+  cnvs4p->SaveAs("MC_tpc0_sel12_West_file_xyz_col_angle_NEW_h.pdf");
+  cnvs5p->SaveAs("MC_tpc0_sel12_West_file_xyz_in1_angle_NEW_h.pdf");
+  cnvs6p->SaveAs("MC_tpc0_sel12_West_file_xyz_in2_angle_NEW_h.pdf");
 
 
 }
