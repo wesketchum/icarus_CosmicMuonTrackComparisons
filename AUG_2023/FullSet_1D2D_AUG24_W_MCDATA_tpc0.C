@@ -69,19 +69,19 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
   ifstream infileA1m_MC("mchnoCOSangle_by_AUG2024__in1_West_file_tpc0_MINUS.txt");
 
 
-  int n = 15000;
+  int n =  48500;
 
   double ref_angle_col_DATA[n];                                                                                  
   double ref_angle_in1_DATA[n];                                                                                       
   double ref_angle_in2_DATA[n];          
 
-  double ref_angle_col_p_DATA[n];
-  double ref_angle_in1_p_DATA[n];
-  double ref_angle_in2_p_DATA[n];
+  //  double ref_angle_col_p_DATA[n];
+  // double ref_angle_in1_p_DATA[n];
+  // double ref_angle_in2_p_DATA[n];
 
-  double ref_angle_col_m_DATA[n];
-  double ref_angle_in1_m_DATA[n];
-  double ref_angle_in2_m_DATA[n];
+  // double ref_angle_col_m_DATA[n];
+  // double ref_angle_in1_m_DATA[n];
+  // double ref_angle_in2_m_DATA[n];
 
   double DQDX_col_DATA[n];
   double DQDX_in2_DATA[n];
@@ -95,13 +95,13 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
   double ref_angle_in1_MC[n];
   double ref_angle_in2_MC[n];
 
-  double ref_angle_col_p_MC[n];
-  double ref_angle_in1_p_MC[n];
-  double ref_angle_in2_p_MC[n];
+  //  double ref_angle_col_p_MC[n];
+  //  double ref_angle_in1_p_MC[n];
+  // double ref_angle_in2_p_MC[n];
 
-  double ref_angle_col_m_MC[n];
-  double ref_angle_in1_m_MC[n];
-  double ref_angle_in2_m_MC[n];
+  // double ref_angle_col_m_MC[n];
+  // double ref_angle_in1_m_MC[n];
+  // double ref_angle_in2_m_MC[n];
 
   double DQDX_col_MC[n];
   double DQDX_in2_MC[n];
@@ -255,44 +255,44 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
   cout<<"MC angle"<<endl;
 
   int MC_Acp = 0;
-  while(infileAcp_MC>>val_Acp_MC)
-    {
-      ref_angle_col_p_MC[MC_Acp] = val_Acp_MC;
-      MC_Acp++;
-    }
+  //  while(infileAcp_MC>>val_Acp_MC)
+  //{
+  //  ref_angle_col_p_MC[MC_Acp] = val_Acp_MC;
+  //  MC_Acp++;
+  //}
   int MC_A1p = 0;
-  while(infileA1p_MC>>val_A1p_MC)
-    {
-      ref_angle_in1_p_MC[MC_A1p] = val_A1p_MC;
-      MC_A1p++;
-    }
+  //  while(infileA1p_MC>>val_A1p_MC)
+  //{
+  //  ref_angle_in1_p_MC[MC_A1p] = val_A1p_MC;
+  //  MC_A1p++;
+  //}
   int MC_A2p = 0;
-  while(infileA2p_MC>>val_A2p_MC)
-    {
-      ref_angle_in2_p_MC[MC_A2p] = val_A2p_MC;
-      MC_A2p++;
-    }
+  //  while(infileA2p_MC>>val_A2p_MC)
+  //{
+  //  ref_angle_in2_p_MC[MC_A2p] = val_A2p_MC;
+  //  MC_A2p++;
+  //}
 
 
   cout<<"MC p angle"<<endl;
   int MC_Acm = 0;
-  while(infileAcm_MC>>val_Acm_MC)
-    {
-      ref_angle_col_m_MC[MC_Acm] = val_Acm_MC;
-      MC_Acm++;
-    }
+  //  while(infileAcm_MC>>val_Acm_MC)
+  //{
+  //  ref_angle_col_m_MC[MC_Acm] = val_Acm_MC;
+  //  MC_Acm++;
+  //}
   int MC_A1m = 0;
-  while(infileA1m_MC>>val_A1m_MC)
-    {
-      ref_angle_in1_m_MC[MC_A1m] = val_A1m_MC;
-      MC_A1m++;
-    }
+  //  while(infileA1m_MC>>val_A1m_MC)
+  //{
+  //  ref_angle_in1_m_MC[MC_A1m] = val_A1m_MC;
+  //  MC_A1m++;
+  //}
   int MC_A2m = 0;
-  while(infileA2m_MC>>val_A2m_MC)
-    {
-      ref_angle_in2_m_MC[MC_A2m] = val_A2m_MC;
-      MC_A2m++;
-    }
+  //  while(infileA2m_MC>>val_A2m_MC)
+  //{
+  //  ref_angle_in2_m_MC[MC_A2m] = val_A2m_MC;
+  //  MC_A2m++;
+  //}
 
   cout<<"MC m angle"<<endl;
    int MC_DQDXc = 0;
@@ -338,23 +338,29 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
 
 
    int DATA_Ac = 0;
-   //cout<<"here1"<<endl;
+   cout<<"data collection"<<endl;
+
    while(infileAc_DATA>>val_Ac_DATA)
      {
-       //cout<<"here2 "<<DATA_Ac<<endl;
+       //       cout<<"here2 "<<DATA_Ac<<endl;
        ref_angle_col_DATA[DATA_Ac] = val_Ac_DATA;
        //cout<<"here3 "<<DATA_Ac<<endl;
        DATA_Ac++;
-       //cout<<"here4"<<endl;
+       cout<<"here4"<<endl;
      }
-   //   cout<<"here"<<endl;
+
+   cout<<"here"<<endl;
+
    int DATA_A1 = 0;
+   cout<<"data in1"<<endl;
+
    while(infileA1_DATA>>val_A1_DATA)
      {
        ref_angle_in1_DATA[DATA_A1] = val_A1_DATA;
        DATA_A1++;
      }
    int DATA_A2 = 0;
+   cout<<"data in2"<<endl;
    while(infileA2_DATA>>val_A2_DATA)
      {
        ref_angle_in2_DATA[DATA_A2] = val_A2_DATA;
@@ -364,43 +370,43 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
 
    cout<<"DATA angle"<<endl;
    int DATA_Acp = 0;
-   while(infileAcp_DATA>>val_Acp_DATA)
-     {
-       ref_angle_col_p_DATA[DATA_Acp] = val_Acp_DATA;
-       DATA_Acp++;
-     }
+   //   while(infileAcp_DATA>>val_Acp_DATA)
+   //{
+   //  ref_angle_col_p_DATA[DATA_Acp] = val_Acp_DATA;
+   //  DATA_Acp++;
+   //}
    int DATA_A1p = 0;
-   while(infileA1p_DATA>>val_A1p_DATA)
-     {
-       ref_angle_in1_p_DATA[DATA_A1p] = val_A1p_DATA;
-       DATA_A1p++;
-     }
+   //   while(infileA1p_DATA>>val_A1p_DATA)
+   //{
+   //  ref_angle_in1_p_DATA[DATA_A1p] = val_A1p_DATA;
+   //  DATA_A1p++;
+   //}
    int DATA_A2p = 0;
-   while(infileA2p_DATA>>val_A2p_DATA)
-     {
-       ref_angle_in2_p_DATA[DATA_A2p] = val_A2p_DATA;
-       DATA_A2p++;
-     }
+   //   while(infileA2p_DATA>>val_A2p_DATA)
+   //{
+   //  ref_angle_in2_p_DATA[DATA_A2p] = val_A2p_DATA;
+   //  DATA_A2p++;
+   //}
 
    cout<<"DATA angle p"<<endl;
    int DATA_Acm = 0;
-   while(infileAcm_DATA>>val_Acm_DATA)
-     {
-       ref_angle_col_m_DATA[DATA_Acm] = val_Acm_DATA;
-       DATA_Acm++;
-     }
+   //   while(infileAcm_DATA>>val_Acm_DATA)
+   //{
+   //  ref_angle_col_m_DATA[DATA_Acm] = val_Acm_DATA;
+   //  DATA_Acm++;
+   //}
    int DATA_A1m = 0;
-   while(infileA1m_DATA>>val_A1m_DATA)
-     {
-       ref_angle_in1_m_DATA[DATA_A1m] = val_A1m_DATA;
-       DATA_A1m++;
-     }
+   //   while(infileA1m_DATA>>val_A1m_DATA)
+   //{
+   //  ref_angle_in1_m_DATA[DATA_A1m] = val_A1m_DATA;
+   //  DATA_A1m++;
+   //}
    int DATA_A2m = 0;
-   while(infileA2m_DATA>>val_A2m_DATA)
-     {
-       ref_angle_in2_m_DATA[DATA_A2m] = val_A2m_DATA;
-       DATA_A2m++;
-     }
+   //   while(infileA2m_DATA>>val_A2m_DATA)
+   //{
+   //  ref_angle_in2_m_DATA[DATA_A2m] = val_A2m_DATA;
+   //  DATA_A2m++;
+   //}
 
    cout<<"DATA angle m"<<endl;
 
@@ -484,53 +490,53 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    int cc=0;
    int cc1=0;
    int cc2=0;
-   for (cc=0;cc<MC_Acp;cc++){
-     h_Acp_mc->Fill(ref_angle_col_p_MC[cc]);
-   }
-   for (cc1=0;cc1<MC_A1p;cc1++){
-     h_A1p_mc->Fill(ref_angle_in1_p_MC[cc1]);
-   }
-   for (cc2=0;cc2<MC_A2p;cc2++){
-     h_A2p_mc->Fill(ref_angle_in2_p_MC[cc2]);
-   }
+   //   for (cc=0;cc<MC_Acp;cc++){
+   //h_Acp_mc->Fill(ref_angle_col_p_MC[cc]);
+   //   }
+   //   for (cc1=0;cc1<MC_A1p;cc1++){
+   //h_A1p_mc->Fill(ref_angle_in1_p_MC[cc1]);
+   //  }
+   //  for (cc2=0;cc2<MC_A2p;cc2++){
+   //h_A2p_mc->Fill(ref_angle_in2_p_MC[cc2]);
+   // }
    cout<<"here3"<<endl;
    int dd=0;
    int dd1=0;
    int dd2=0;
-   for (dd=0;dd<DATA_Acp;dd++){
-     h_Acp_data->Fill(ref_angle_col_p_DATA[dd]);
-   }
-   for (dd1=0;dd1<DATA_A1p;dd1++){
-     h_A1p_data->Fill(ref_angle_in1_p_DATA[dd1]);
-   }
-   for (dd2=0;dd2<DATA_A2p;dd2++){
-     h_A2p_data->Fill(ref_angle_in2_p_DATA[dd2]);
-   }
+   //   for (dd=0;dd<DATA_Acp;dd++){
+   //h_Acp_data->Fill(ref_angle_col_p_DATA[dd]);
+   //   }
+   //  for (dd1=0;dd1<DATA_A1p;dd1++){
+   //h_A1p_data->Fill(ref_angle_in1_p_DATA[dd1]);
+   //   }
+   //  for (dd2=0;dd2<DATA_A2p;dd2++){
+   //h_A2p_data->Fill(ref_angle_in2_p_DATA[dd2]);
+   //  }
 
    int ee=0;
    int ee1=0;
    int ee2=0;
-   for (ee=0;ee<MC_Acm;ee++){
-     h_Acm_mc->Fill(ref_angle_col_m_MC[ee]);
-   }
-   for (ee1=0;ee1<MC_A1m;ee1++){
-     h_A1m_mc->Fill(ref_angle_in1_m_MC[ee1]);
-   }
-   for (ee2=0;ee2<MC_A2m;ee2++){
-     h_A2m_mc->Fill(ref_angle_in2_m_MC[ee2]);
-   }
+   //   for (ee=0;ee<MC_Acm;ee++){
+   //h_Acm_mc->Fill(ref_angle_col_m_MC[ee]);
+   //   }
+   //   for (ee1=0;ee1<MC_A1m;ee1++){
+   //h_A1m_mc->Fill(ref_angle_in1_m_MC[ee1]);
+   //  }
+   //   for (ee2=0;ee2<MC_A2m;ee2++){
+   //h_A2m_mc->Fill(ref_angle_in2_m_MC[ee2]);
+   //  }
    int ff=0;
    int ff1=0;
    int ff2=0;
-   for (ff=0;ff<DATA_Acm;ff++){
-     h_Acm_data->Fill(ref_angle_col_m_DATA[ff]);
-   }
-   for (ff1=0;ff1<DATA_A1m;ff1++){
-     h_A1m_data->Fill(ref_angle_in1_m_DATA[ff1]);
-   }
-   for (ff2=0;ff2<DATA_A2m;ff2++){
-     h_A2m_data->Fill(ref_angle_in2_m_DATA[ff2]);
-   }
+   //   for (ff=0;ff<DATA_Acm;ff++){
+   //h_Acm_data->Fill(ref_angle_col_m_DATA[ff]);
+   //   }
+   //   for (ff1=0;ff1<DATA_A1m;ff1++){
+   //h_A1m_data->Fill(ref_angle_in1_m_DATA[ff1]);
+   //   }
+   // for (ff2=0;ff2<DATA_A2m;ff2++){
+   //h_A2m_data->Fill(ref_angle_in2_m_DATA[ff2]);
+   // }
 
 
 
@@ -608,35 +614,35 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
 
 
 
-   TH1*h1Acp = (TH1*)(h_Acp_mc->Clone("h1Acp"));
-   h1Acp->Scale(1./h1Acp->Integral());
-   TH1*h2Acp = (TH1*)(h_Acp_data->Clone("h2Acp"));
-   h2Acp->Scale(1./h2Acp->Integral());
+   //   TH1*h1Acp = (TH1*)(h_Acp_mc->Clone("h1Acp"));
+   //   h1Acp->Scale(1./h1Acp->Integral());
+   //  TH1*h2Acp = (TH1*)(h_Acp_data->Clone("h2Acp"));
+   //   h2Acp->Scale(1./h2Acp->Integral());
 
-   TH1*h1A1p = (TH1*)(h_A1p_mc->Clone("h1A1p"));
-   h1A1p->Scale(1./h1A1p->Integral());
-   TH1*h2A1p = (TH1*)(h_A1p_data->Clone("h2A1p"));
-   h2A1p->Scale(1./h2A1p->Integral());
+   //  TH1*h1A1p = (TH1*)(h_A1p_mc->Clone("h1A1p"));
+   //h1A1p->Scale(1./h1A1p->Integral());
+   //   TH1*h2A1p = (TH1*)(h_A1p_data->Clone("h2A1p"));
+   // h2A1p->Scale(1./h2A1p->Integral());
 
-   TH1*h1A2p = (TH1*)(h_A2p_mc->Clone("h1A2p"));
-   h1A2p->Scale(1./h1A2p->Integral());
-   TH1*h2A2p = (TH1*)(h_A2p_data->Clone("h2A2p"));
-   h2A2p->Scale(1./h2A2p->Integral());
+   //   TH1*h1A2p = (TH1*)(h_A2p_mc->Clone("h1A2p"));
+   //   h1A2p->Scale(1./h1A2p->Integral());
+   //   TH1*h2A2p = (TH1*)(h_A2p_data->Clone("h2A2p"));
+   //   h2A2p->Scale(1./h2A2p->Integral());
 
-   TH1*h1Acm = (TH1*)(h_Acm_mc->Clone("h1Acm"));
-   h1Acm->Scale(1./h1Acm->Integral());
-   TH1*h2Acm = (TH1*)(h_Acm_data->Clone("h2Acm"));
-   h2Acm->Scale(1./h2Acm->Integral());
+   //   TH1*h1Acm = (TH1*)(h_Acm_mc->Clone("h1Acm"));
+   //   h1Acm->Scale(1./h1Acm->Integral());
+   //   TH1*h2Acm = (TH1*)(h_Acm_data->Clone("h2Acm"));
+   //   h2Acm->Scale(1./h2Acm->Integral());
 
-   TH1*h1A1m = (TH1*)(h_A1m_mc->Clone("h1A1m"));
-   h1A1m->Scale(1./h1A1m->Integral());
-   TH1*h2A1m = (TH1*)(h_A1m_data->Clone("h2A1m"));
-   h2A1m->Scale(1./h2A1m->Integral());
+   //   TH1*h1A1m = (TH1*)(h_A1m_mc->Clone("h1A1m"));
+   //   h1A1m->Scale(1./h1A1m->Integral());
+   //   TH1*h2A1m = (TH1*)(h_A1m_data->Clone("h2A1m"));
+   //   h2A1m->Scale(1./h2A1m->Integral());
 
-   TH1*h1A2m = (TH1*)(h_A2m_mc->Clone("h1A2m"));
-   h1A2m->Scale(1./h1A2m->Integral());
-   TH1*h2A2m = (TH1*)(h_A2m_data->Clone("h2A2m"));
-   h2A2m->Scale(1./h2A2m->Integral());
+   //   TH1*h1A2m = (TH1*)(h_A2m_mc->Clone("h1A2m"));
+   //   h1A2m->Scale(1./h1A2m->Integral());
+   //   TH1*h2A2m = (TH1*)(h_A2m_data->Clone("h2A2m"));
+   //   h2A2m->Scale(1./h2A2m->Integral());
 
 
    TH1*h1DQDXc = (TH1*)(h_dqdxc_mc->Clone("h1DQDXc"));
@@ -694,7 +700,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendAc->AddEntry(h2Ac,"Data");
    legendAc->Draw();
    cnvs_Ac->Update();
-   cnvs_Ac->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_MCvsDATA.pdf");
+   cnvs_Ac->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_A1 = new TCanvas("cnvs_A1", "c7", 1,1,800,700);
@@ -713,7 +719,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendA1->AddEntry(h2A1,"Data");
    legendA1->Draw();
    cnvs_A1->Update();
-   cnvs_A1->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_MCvsDATA.pdf");
+   cnvs_A1->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_MCvsDATA.pdf");
 
    TCanvas* cnvs_A2 = new TCanvas("cnvs_A2", "c7", 1,1,800,700);
    h1A2->SetLineColor(kRed);
@@ -731,119 +737,119 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendA2->AddEntry(h2A2,"Data");
    legendA2->Draw();
    cnvs_A2->Update();
-   cnvs_A2->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_MCvsDATA.pdf");
+   cnvs_A2->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_MCvsDATA.pdf");
 
 
-   TCanvas* cnvs_Acp = new TCanvas("cnvs_Acp", "c7", 1,1,800,700);
-   h1Acp->SetLineColor(kRed);
-   h2Acp->SetLineColor(kBlue);
-   hs_Acp->Add(h1Acp);
-   hs_Acp->Add(h2Acp);
-   hs_Acp->Draw("nostackHIST");
+   //   TCanvas* cnvs_Acp = new TCanvas("cnvs_Acp", "c7", 1,1,800,700);
+   //   h1Acp->SetLineColor(kRed);
+   //   h2Acp->SetLineColor(kBlue);
+   //   hs_Acp->Add(h1Acp);
+   //   hs_Acp->Add(h2Acp);
+   //   hs_Acp->Draw("nostackHIST");
 
-   hs_Acp->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians)  ");
-   hs_Acp->GetYaxis()->SetTitle("Relative Frequency");
-   TText TAcp; TAcp.SetTextFont(42); TAcp.SetTextAlign(21);
-   TAcp.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle PLUS (col): West Cryostat");
-   auto legendAcp = new TLegend(0.1,0.8,0.2,0.9);
-   legendAcp->AddEntry(h1Acp,"MC");
-   legendAcp->AddEntry(h2Acp,"Data");
-   legendAcp->Draw();
-   cnvs_Acp->Update();
-   cnvs_Acp->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_plus_MCvsDATA.pdf");
-
-
-   TCanvas* cnvs_A1p = new TCanvas("cnvs_A1p", "c7", 1,1,800,700);
-   h1A1p->SetLineColor(kRed);
-   h2A1p->SetLineColor(kBlue);
-   hs_A1p->Add(h1A1p);
-   hs_A1p->Add(h2A1p);
-   hs_A1p->Draw("nostackHIST");
-
-   hs_A1p->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians)  ");
-   hs_A1p->GetYaxis()->SetTitle("Relative Frequency");
-   TText TA1p; TA1p.SetTextFont(42); TA1p.SetTextAlign(21);
-   TA1p.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle PLUS (in1): West Cryostat");
-   auto legendA1p = new TLegend(0.1,0.8,0.2,0.9);
-   legendA1p->AddEntry(h1A1p,"MC");
-   legendA1p->AddEntry(h2A1p,"Data");
-   legendA1p->Draw();
-   cnvs_A1p->Update();
-   cnvs_A1p->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_plus_MCvsDATA.pdf");
+   //   hs_Acp->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians)  ");
+   //   hs_Acp->GetYaxis()->SetTitle("Relative Frequency");
+   //   TText TAcp; TAcp.SetTextFont(42); TAcp.SetTextAlign(21);
+   //   TAcp.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle PLUS (col): West Cryostat");
+   //   auto legendAcp = new TLegend(0.1,0.8,0.2,0.9);
+   //   legendAcp->AddEntry(h1Acp,"MC");
+   //   legendAcp->AddEntry(h2Acp,"Data");
+   //  legendAcp->Draw();
+   //   cnvs_Acp->Update();
+   //  cnvs_Acp->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_plus_MCvsDATA.pdf");
 
 
-   TCanvas* cnvs_A2p = new TCanvas("cnvs_A2p", "c7", 1,1,800,700);
-   h1A2p->SetLineColor(kRed);
-   h2A2p->SetLineColor(kBlue);
-   hs_A2p->Add(h1A2p);
-   hs_A2p->Add(h2A2p);
-   hs_A2p->Draw("nostackHIST");
+   //   TCanvas* cnvs_A1p = new TCanvas("cnvs_A1p", "c7", 1,1,800,700);
+   //   h1A1p->SetLineColor(kRed);
+   //   h2A1p->SetLineColor(kBlue);
+   //   hs_A1p->Add(h1A1p);
+   //   hs_A1p->Add(h2A1p);
+   //   hs_A1p->Draw("nostackHIST");
 
-   hs_A2p->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians)  ");
-   hs_A2p->GetYaxis()->SetTitle("Relative Frequency");
-   TText TA2p; TA2p.SetTextFont(42); TA2p.SetTextAlign(21);
-   TA2p.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle PLUS (in2): West Cryostat");
-   auto legendA2p = new TLegend(0.1,0.8,0.2,0.9);
-   legendA2p->AddEntry(h1A2p,"MC");
-   legendA2p->AddEntry(h2A2p,"Data");
-   legendA2p->Draw();
-   cnvs_A2p->Update();
-   cnvs_A2p->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_plus_MCvsDATA.pdf");
-
-   TCanvas* cnvs_Acm = new TCanvas("cnvs_Acm", "c7", 1,1,800,700);
-   h1Acm->SetLineColor(kRed);
-   h2Acm->SetLineColor(kBlue);
-   hs_Acm->Add(h1Acm);
-   hs_Acm->Add(h2Acm);
-   hs_Acm->Draw("nostackHIST");
-
-   hs_Acm->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians)  ");
-   hs_Acm->GetYaxis()->SetTitle("Relative Frequency");
-   TText TAcm; TAcm.SetTextFont(42); TAcm.SetTextAlign(21);
-   TAcm.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle MINUS (col): West Cryostat");
-   auto legendAcm = new TLegend(0.1,0.8,0.2,0.9);
-   legendAcm->AddEntry(h1Acm,"MC");
-   legendAcm->AddEntry(h2Acm,"Data");
-   legendAcm->Draw();
-   cnvs_Acm->Update();
-   cnvs_Acm->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_minus_MCvsDATA.pdf");
-
-   TCanvas* cnvs_A1m = new TCanvas("cnvs_A1m", "c7", 1,1,800,700);
-   h1A1m->SetLineColor(kRed);
-   h2A1m->SetLineColor(kBlue);
-   hs_A1m->Add(h1A1m);
-   hs_A1m->Add(h2A1m);
-   hs_A1m->Draw("nostackHIST");
-
-   hs_A1m->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians)  ");
-   hs_A1m->GetYaxis()->SetTitle("Relative Frequency");
-   TText TA1m; TA1m.SetTextFont(42); TA1m.SetTextAlign(21);
-   TA1m.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle MINUS (in1): West Cryostat");
-   auto legendA1m = new TLegend(0.1,0.8,0.2,0.9);
-   legendA1m->AddEntry(h1A1m,"MC");
-   legendA1m->AddEntry(h2A1m,"Data");
-   legendA1m->Draw();
-   cnvs_A1m->Update();
-   cnvs_A1m->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_minus_MCvsDATA.pdf");
+   //   hs_A1p->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians)  ");
+   //   hs_A1p->GetYaxis()->SetTitle("Relative Frequency");
+   //   TText TA1p; TA1p.SetTextFont(42); TA1p.SetTextAlign(21);
+   //   TA1p.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle PLUS (in1): West Cryostat");
+   //   auto legendA1p = new TLegend(0.1,0.8,0.2,0.9);
+   //   legendA1p->AddEntry(h1A1p,"MC");
+   //   legendA1p->AddEntry(h2A1p,"Data");
+   //   legendA1p->Draw();
+   //   cnvs_A1p->Update();
+   //  cnvs_A1p->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_plus_MCvsDATA.pdf");
 
 
-   TCanvas* cnvs_A2m = new TCanvas("cnvs_A2m", "c7", 1,1,800,700);
-   h1A2m->SetLineColor(kRed);
-   h2A2m->SetLineColor(kBlue);
-   hs_A2m->Add(h1A2m);
-   hs_A2m->Add(h2A2m);
-   hs_A2m->Draw("nostackHIST");
+   //   TCanvas* cnvs_A2p = new TCanvas("cnvs_A2p", "c7", 1,1,800,700);
+   //   h1A2p->SetLineColor(kRed);
+   //   h2A2p->SetLineColor(kBlue);
+   //   hs_A2p->Add(h1A2p);
+   //   hs_A2p->Add(h2A2p);
+   //   hs_A2p->Draw("nostackHIST");
 
-   hs_A2m->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians)  ");
-   hs_A2m->GetYaxis()->SetTitle("Relative Frequency");
-   TText TA2m; TA2m.SetTextFont(42); TA2m.SetTextAlign(21);
-   TA2m.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle MINUS (in2): West Cryostat");
-   auto legendA2m = new TLegend(0.1,0.8,0.2,0.9);
-   legendA2m->AddEntry(h1A2m,"MC");
-   legendA2m->AddEntry(h2A2m,"Data");
-   legendA2m->Draw();
-   cnvs_A2m->Update();
-   cnvs_A2m->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_minus_MCvsDATA.pdf");
+   //   hs_A2p->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians)  ");
+   //   hs_A2p->GetYaxis()->SetTitle("Relative Frequency");
+   //   TText TA2p; TA2p.SetTextFont(42); TA2p.SetTextAlign(21);
+   //  TA2p.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle PLUS (in2): West Cryostat");
+   //auto legendA2p = new TLegend(0.1,0.8,0.2,0.9);
+   //legendA2p->AddEntry(h1A2p,"MC");
+   //legendA2p->AddEntry(h2A2p,"Data");
+   //legendA2p->Draw();
+   //cnvs_A2p->Update();
+   //cnvs_A2p->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_plus_MCvsDATA.pdf");
+
+   //TCanvas* cnvs_Acm = new TCanvas("cnvs_Acm", "c7", 1,1,800,700);
+   //h1Acm->SetLineColor(kRed);
+   //h2Acm->SetLineColor(kBlue);
+   //hs_Acm->Add(h1Acm);
+   // hs_Acm->Add(h2Acm);
+   //hs_Acm->Draw("nostackHIST");
+
+   //hs_Acm->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians)  ");
+   //hs_Acm->GetYaxis()->SetTitle("Relative Frequency");
+   //TText TAcm; TAcm.SetTextFont(42); TAcm.SetTextAlign(21);
+   //TAcm.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle MINUS (col): West Cryostat");
+   //auto legendAcm = new TLegend(0.1,0.8,0.2,0.9);
+   //legendAcm->AddEntry(h1Acm,"MC");
+   //legendAcm->AddEntry(h2Acm,"Data");
+   //legendAcm->Draw();
+   //cnvs_Acm->Update();
+   //cnvs_Acm->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_col_minus_MCvsDATA.pdf");
+
+   //TCanvas* cnvs_A1m = new TCanvas("cnvs_A1m", "c7", 1,1,800,700);
+   //h1A1m->SetLineColor(kRed);
+   //h2A1m->SetLineColor(kBlue);
+   //hs_A1m->Add(h1A1m);
+   //hs_A1m->Add(h2A1m);
+   //hs_A1m->Draw("nostackHIST");
+
+   //hs_A1m->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians)  ");
+   //hs_A1m->GetYaxis()->SetTitle("Relative Frequency");
+   //TText TA1m; TA1m.SetTextFont(42); TA1m.SetTextAlign(21);
+   //TA1m.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle MINUS (in1): West Cryostat");
+   //auto legendA1m = new TLegend(0.1,0.8,0.2,0.9);
+   //legendA1m->AddEntry(h1A1m,"MC");
+   //legendA1m->AddEntry(h2A1m,"Data");
+   //legendA1m->Draw();
+   //cnvs_A1m->Update();
+   //cnvs_A1m->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in1_minus_MCvsDATA.pdf");
+
+
+   //TCanvas* cnvs_A2m = new TCanvas("cnvs_A2m", "c7", 1,1,800,700);
+   //h1A2m->SetLineColor(kRed);
+   //h2A2m->SetLineColor(kBlue);
+   //hs_A2m->Add(h1A2m);
+   //hs_A2m->Add(h2A2m);
+   //hs_A2m->Draw("nostackHIST");
+
+   //hs_A2m->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians)  ");
+   //hs_A2m->GetYaxis()->SetTitle("Relative Frequency");
+   //TText TA2m; TA2m.SetTextFont(42); TA2m.SetTextAlign(21);
+   //TA2m.DrawTextNDC(.5,.95,"Relative Frequency vs Horizontal Angle MINUS (in2): West Cryostat");
+   //auto legendA2m = new TLegend(0.1,0.8,0.2,0.9);
+   //legendA2m->AddEntry(h1A2m,"MC");
+   //legendA2m->AddEntry(h2A2m,"Data");
+   //legendA2m->Draw();
+   //cnvs_A2m->Update();
+   //cnvs_A2m->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_angle_in2_minus_MCvsDATA.pdf");
 
 
 
@@ -864,7 +870,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendDQDXc->AddEntry(h2DQDXc,"Data");
    legendDQDXc->Draw();
    cnvs_DQDXc->Update();
-   cnvs_DQDXc->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_col_MCvsDATA.pdf");
+   cnvs_DQDXc->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_col_MCvsDATA.pdf");
 
 
 
@@ -884,7 +890,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendDQDX1->AddEntry(h2DQDX1,"Data");
    legendDQDX1->Draw();
    cnvs_DQDX1->Update();
-   cnvs_DQDX1->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_in1_MCvsDATA.pdf");
+   cnvs_DQDX1->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_in1_MCvsDATA.pdf");
 
 
 
@@ -904,7 +910,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendDQDX2->AddEntry(h2DQDX2,"Data");
    legendDQDX2->Draw();
    cnvs_DQDX2->Update();
-   cnvs_DQDX2->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_in2_MCvsDATA.pdf");
+   cnvs_DQDX2->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_DQDX_in2_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_INTc = new TCanvas("cnvs_INTc", "c7", 1,1,800,700);
@@ -923,7 +929,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendINTc->AddEntry(h2INTc,"Data");
    legendINTc->Draw();
    cnvs_INTc->Update();
-   cnvs_INTc->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_col_MCvsDATA.pdf");
+   cnvs_INTc->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_col_MCvsDATA.pdf");
 
    TCanvas* cnvs_INT1 = new TCanvas("cnvs_INT1", "c7", 1,1,800,700);
    h1INT1->SetLineColor(kRed);
@@ -941,7 +947,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendINT1->AddEntry(h2INT1,"Data");
    legendINT1->Draw();
    cnvs_INT1->Update();
-   cnvs_INT1->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_in1_MCvsDATA.pdf");
+   cnvs_INT1->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_in1_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_INT2 = new TCanvas("cnvs_INT2", "c7", 1,1,800,700);
@@ -960,7 +966,7 @@ void FullSet_1D2D_AUG24_W_MCDATA_tpc0(bool verbose=false) {
    legendINT2->AddEntry(h2INT2,"Data");
    legendINT2->Draw();
    cnvs_INT2->Update();
-   cnvs_INT2->SaveAs("OCT24plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_in2_MCvsDATA.pdf");
+   cnvs_INT2->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_West_file_INT_in2_MCvsDATA.pdf");
 
 
    cout<<"Display done"<<endl;

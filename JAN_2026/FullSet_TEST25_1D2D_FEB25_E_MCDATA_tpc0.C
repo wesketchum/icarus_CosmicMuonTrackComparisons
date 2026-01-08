@@ -6,7 +6,7 @@
 #include "iostream"
 
 
-void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
+void FullSet_TEST25_1D2D_FEB25_E_MCDATA_tpc0(bool verbose=false) {
 
 
   gStyle->SetOptStat(0);
@@ -33,40 +33,40 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
   ofstream outfile2_1_MINUS("hnoCOSangle_AUG24_in1_East_file_tpc0_MINUS_MCvsDATA.txt");
   ofstream outfile3_2_MINUS("hnoCOSangle_AUG24_in2_East_file_tpc0_MINUS_MCvsDATA.txt");
 
-  ifstream infiledqdxc_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
-  ifstream infiledqdx2_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
-  ifstream infiledqdx1_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
-  ifstream infileintc_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
-  ifstream infileint2_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
-  ifstream infileint1_DATA("dataAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
+  ifstream infiledqdxc_DATA("dataAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
+  ifstream infiledqdx2_DATA("dataAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
+  ifstream infiledqdx1_DATA("dataAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
+  ifstream infileintc_DATA("dataAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
+  ifstream infileint2_DATA("dataAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
+  ifstream infileint1_DATA("dataAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
 
-  ifstream infileAc_DATA("datahnoCOSangle_by_AUG2024__col_East_file_tpc0.txt");
-  ifstream infileA2_DATA("datahnoCOSangle_by_AUG2024__in2_East_file_tpc0.txt");
-  ifstream infileA1_DATA("datahnoCOSangle_by_AUG2024__in1_East_file_tpc0.txt");
-  ifstream infileAcp_DATA("datahnoCOSangle_by_AUG2024__col_East_file_tpc0_PLUS.txt");
-  ifstream infileA2p_DATA("datahnoCOSangle_by_AUG2024__in2_East_file_tpc0_PLUS.txt");
-  ifstream infileA1p_DATA("datahnoCOSangle_by_AUG2024__in1_East_file_tpc0_PLUS.txt");
-  ifstream infileAcm_DATA("datahnoCOSangle_by_AUG2024__col_East_file_tpc0_MINUS.txt");
-  ifstream infileA2m_DATA("datahnoCOSangle_by_AUG2024__in2_East_file_tpc0_MINUS.txt");
-  ifstream infileA1m_DATA("datahnoCOSangle_by_AUG2024__in1_East_file_tpc0_MINUS.txt");
+  ifstream infileAc_DATA("datahnoCOSangle_by_AUG2026__col_East_file_tpc0.txt");
+  ifstream infileA2_DATA("datahnoCOSangle_by_AUG2026__in2_East_file_tpc0.txt");
+  ifstream infileA1_DATA("datahnoCOSangle_by_AUG2026__in1_East_file_tpc0.txt");
+  ifstream infileAcp_DATA("datahnoCOSangle_by_AUG2026__col_East_file_tpc0_PLUS.txt");
+  ifstream infileA2p_DATA("datahnoCOSangle_by_AUG2026__in2_East_file_tpc0_PLUS.txt");
+  ifstream infileA1p_DATA("datahnoCOSangle_by_AUG2026__in1_East_file_tpc0_PLUS.txt");
+  ifstream infileAcm_DATA("datahnoCOSangle_by_AUG2026__col_East_file_tpc0_MINUS.txt");
+  ifstream infileA2m_DATA("datahnoCOSangle_by_AUG2026__in2_East_file_tpc0_MINUS.txt");
+  ifstream infileA1m_DATA("datahnoCOSangle_by_AUG2026__in1_East_file_tpc0_MINUS.txt");
 
 
-  ifstream infiledqdxc_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
-  ifstream infiledqdx2_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
-  ifstream infiledqdx1_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
-  ifstream infileintc_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
-  ifstream infileint2_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
-  ifstream infileint1_MC("mcAUG2024_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
+  ifstream infiledqdxc_MC("mcAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_col.txt");
+  ifstream infiledqdx2_MC("mcAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in2.txt");
+  ifstream infiledqdx1_MC("mcAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_Qdx_in1.txt");
+  ifstream infileintc_MC("mcAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_col.txt");
+  ifstream infileint2_MC("mcAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in2.txt");
+  ifstream infileint1_MC("mcAUG2026_OUTFILE_my_testTESToutputNUMI_tpc0_sel12_East_file_HC_in1.txt");
 
-  ifstream infileAc_MC("mchnoCOSangle_by_AUG2024__col_East_file_tpc0.txt");
-  ifstream infileA2_MC("mchnoCOSangle_by_AUG2024__in2_East_file_tpc0.txt");
-  ifstream infileA1_MC("mchnoCOSangle_by_AUG2024__in1_East_file_tpc0.txt");
-  ifstream infileAcp_MC("mchnoCOSangle_by_AUG2024__col_East_file_tpc0_PLUS.txt");
-  ifstream infileA2p_MC("mchnoCOSangle_by_AUG2024__in2_East_file_tpc0_PLUS.txt");
-  ifstream infileA1p_MC("mchnoCOSangle_by_AUG2024__in1_East_file_tpc0_PLUS.txt");
-  ifstream infileAcm_MC("mchnoCOSangle_by_AUG2024__col_East_file_tpc0_MINUS.txt");
-  ifstream infileA2m_MC("mchnoCOSangle_by_AUG2024__in2_East_file_tpc0_MINUS.txt");
-  ifstream infileA1m_MC("mchnoCOSangle_by_AUG2024__in1_East_file_tpc0_MINUS.txt");
+  ifstream infileAc_MC("mchnoCOSangle_by_AUG2026__col_East_file_tpc0.txt");
+  ifstream infileA2_MC("mchnoCOSangle_by_AUG2026__in2_East_file_tpc0.txt");
+  ifstream infileA1_MC("mchnoCOSangle_by_AUG2026__in1_East_file_tpc0.txt");
+  ifstream infileAcp_MC("mchnoCOSangle_by_AUG2026__col_East_file_tpc0_PLUS.txt");
+  ifstream infileA2p_MC("mchnoCOSangle_by_AUG2026__in2_East_file_tpc0_PLUS.txt");
+  ifstream infileA1p_MC("mchnoCOSangle_by_AUG2026__in1_East_file_tpc0_PLUS.txt");
+  ifstream infileAcm_MC("mchnoCOSangle_by_AUG2026__col_East_file_tpc0_MINUS.txt");
+  ifstream infileA2m_MC("mchnoCOSangle_by_AUG2026__in2_East_file_tpc0_MINUS.txt");
+  ifstream infileA1m_MC("mchnoCOSangle_by_AUG2026__in1_East_file_tpc0_MINUS.txt");
 
 
   int n =  46300;
@@ -146,51 +146,51 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
   double val_A1m_MC=0.0;
 
 
-  TH1F *h_Ac_mc   = new TH1F("h_Ac_mc","Relative Frequency vs  Horizontal Angle: East Cryostat", 100., 0., 2.);
-  TH1F *h_Ac_data = new TH1F("h_Ac_data","Relative Frequency vs Horizontal Angle: East Cryostat", 100., 0., 2.);
+  TH1F *h_Ac_mc   = new TH1F("h_Ac_mc","Relative Frequency vs  Horizontal Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_Ac_data = new TH1F("h_Ac_data","Relative Frequency vs Horizontal Angle: East Cryostat", 100., 0., 1.6);
   h_Ac_mc->GetXaxis()->SetTitle(" Horizontal Angle (radians) ");
   h_Ac_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_Ac = new THStack("hs_Ac","");
-  TH1F *h_A1_mc   = new TH1F("h_A1_mc","Relative Frequency vs  Horizontal Angle: East Cryostat", 100., 0., 2.);
-  TH1F *h_A1_data = new TH1F("h_A1_data","Relative Frequency vs Horizontal Angle: East Cryostat", 100., 0., 2.);
+  TH1F *h_A1_mc   = new TH1F("h_A1_mc","Relative Frequency vs  Horizontal Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_A1_data = new TH1F("h_A1_data","Relative Frequency vs Horizontal Angle: East Cryostat", 100., 0., 1.6);
   h_A1_mc->GetXaxis()->SetTitle(" Horizontal Angle (radians) ");
   h_A1_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_A1 = new THStack("hs_A1","");
-  TH1F *h_A2_mc   = new TH1F("h_A2_mc","Relative Frequency vs  Horizontal Angle: East Cryostat", 100., 0., 2.);
-  TH1F *h_A2_data = new TH1F("h_A2_data","Relative Frequency vs Horizontal Angle: East Cryostat", 100., 0., 2.);
+  TH1F *h_A2_mc   = new TH1F("h_A2_mc","Relative Frequency vs  Horizontal Angle: East Cryostat", 100., 0., 1.6);
+  TH1F *h_A2_data = new TH1F("h_A2_data","Relative Frequency vs Horizontal Angle: East Cryostat", 100., 0., 1.6);
   h_A2_mc->GetXaxis()->SetTitle(" Horizontal Angle (radians) ");
   h_A2_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_A2 = new THStack("hs_A2","");
 
 
-  TH1F *h_Acp_mc   = new TH1F("h_Acp_mc","Relative Frequency vs  Horizontal Angle PLUS: East Cryostat", 100., 0., 2.);
-  TH1F *h_Acp_data = new TH1F("h_Acp_data","Relative Frequency vs Horizontal Angle PLUS: East Cryostat", 100., 0., 2.);
+  TH1F *h_Acp_mc   = new TH1F("h_Acp_mc","Relative Frequency vs  Horizontal Angle PLUS: East Cryostat", 100., 0., 1.6);
+  TH1F *h_Acp_data = new TH1F("h_Acp_data","Relative Frequency vs Horizontal Angle PLUS: East Cryostat", 100., 0., 1.6);
   h_Acp_mc->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians) ");
   h_Acp_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_Acp = new THStack("hs_Acp","");
-  TH1F *h_A1p_mc   = new TH1F("h_A1p_mc","Relative Frequency vs  Horizontal Angle PLUS: East Cryostat", 100., 0., 2.);
-  TH1F *h_A1p_data = new TH1F("h_A1p_data","Relative Frequency vs Horizontal Angle PLUS: East Cryostat", 100., 0., 2.);
+  TH1F *h_A1p_mc   = new TH1F("h_A1p_mc","Relative Frequency vs  Horizontal Angle PLUS: East Cryostat", 100., 0., 1.6);
+  TH1F *h_A1p_data = new TH1F("h_A1p_data","Relative Frequency vs Horizontal Angle PLUS: East Cryostat", 100., 0., 1.6);
   h_A1p_mc->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians) ");
   h_A1p_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_A1p = new THStack("hs_A1p","");
-  TH1F *h_A2p_mc   = new TH1F("h_A2p_mc","Relative Frequency vs  Horizontal Angle PLUS: East Cryostat", 100., 0., 2.);
-  TH1F *h_A2p_data = new TH1F("h_A2p_data","Relative Frequency vs Horizontal Angle PLUS: East Cryostat", 100., 0., 2.);
+  TH1F *h_A2p_mc   = new TH1F("h_A2p_mc","Relative Frequency vs  Horizontal Angle PLUS: East Cryostat", 100., 0., 1.6);
+  TH1F *h_A2p_data = new TH1F("h_A2p_data","Relative Frequency vs Horizontal Angle PLUS: East Cryostat", 100., 0., 1.6);
   h_A2p_mc->GetXaxis()->SetTitle(" Horizontal Angle PLUS (radians) ");
   h_A2p_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_A2p = new THStack("hs_A2p","");
 
-  TH1F *h_Acm_mc   = new TH1F("h_Acm_mc","Relative Frequency vs  Horizontal Angle MINUS: East Cryostat", 100., 0., 2.);
-  TH1F *h_Acm_data = new TH1F("h_Acm_data","Relative Frequency vs Horizontal Angle MINUS: East Cryostat", 100., 0., 2.);
+  TH1F *h_Acm_mc   = new TH1F("h_Acm_mc","Relative Frequency vs  Horizontal Angle MINUS: East Cryostat", 100., 0., 1.6);
+  TH1F *h_Acm_data = new TH1F("h_Acm_data","Relative Frequency vs Horizontal Angle MINUS: East Cryostat", 100., 0., 1.6);
   h_Acm_mc->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians) ");
   h_Acm_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_Acm = new THStack("hs_Acm","");
-  TH1F *h_A1m_mc   = new TH1F("h_A1m_mc","Relative Frequency vs  Horizontal Angle MINUS: East Cryostat", 100., 0., 2.);
-  TH1F *h_A1m_data = new TH1F("h_A1m_data","Relative Frequency vs Horizontal Angle MINUS: East Cryostat", 100., 0., 2.);
+  TH1F *h_A1m_mc   = new TH1F("h_A1m_mc","Relative Frequency vs  Horizontal Angle MINUS: East Cryostat", 100., 0., 1.6);
+  TH1F *h_A1m_data = new TH1F("h_A1m_data","Relative Frequency vs Horizontal Angle MINUS: East Cryostat", 100., 0., 1.6);
   h_A1m_mc->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians) ");
   h_A1m_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_A1m = new THStack("hs_A1m","");
-  TH1F *h_A2m_mc   = new TH1F("h_A2m_mc","Relative Frequency vs  Horizontal Angle MINUS: East Cryostat", 100., 0., 2.);
-  TH1F *h_A2m_data = new TH1F("h_A2m_data","Relative Frequency vs Horizontal Angle MINUS: East Cryostat", 100., 0., 2.);
+  TH1F *h_A2m_mc   = new TH1F("h_A2m_mc","Relative Frequency vs  Horizontal Angle MINUS: East Cryostat", 100., 0., 1.6);
+  TH1F *h_A2m_data = new TH1F("h_A2m_data","Relative Frequency vs Horizontal Angle MINUS: East Cryostat", 100., 0., 1.6);
   h_A2m_mc->GetXaxis()->SetTitle(" Horizontal Angle MINUS (radians) ");
   h_A2m_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_A2m = new THStack("hs_A2m","");
@@ -226,6 +226,50 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
   h_int2_mc->GetXaxis()->SetTitle(" INT ");
   h_int2_mc->GetYaxis()->SetTitle("Relative Frequency");
   THStack *hs_int2 = new THStack("hs_int2","");
+
+
+
+  //2D
+
+  TH2F *h_dqdxcANGLEc_mc = new TH2F("h_dqdxcANGLE_mc","DQDX vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  TH2F *h_dqdxcANGLEc_data = new TH2F("h_dqdxcANGLE_data","DQDX vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  h_dqdxcANGLEc_mc->GetYaxis()->SetTitle(" DQDX ");
+  h_dqdxcANGLEc_mc->GetXaxis()->SetTitle("Horizontal Angle");
+  THStack *hs_dqdxANGLEc = new THStack("hs_dqdxANGLEc","");
+
+  TH2F *h_dqdx2ANGLE2_mc = new TH2F("h_dqdx2ANGLE_mc","DQDX vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  TH2F *h_dqdx2ANGLE2_data = new TH2F("h_dqdx2ANGLE_data","DQDX vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  h_dqdx2ANGLE2_mc->GetYaxis()->SetTitle(" DQDX ");
+  h_dqdx2ANGLE2_mc->GetXaxis()->SetTitle("Horizontal Angle");
+  THStack *hs_dqdxANGLE2 = new THStack("hs_dqdxANGLE2","");
+
+  TH2F *h_dqdx1ANGLE1_mc = new TH2F("h_dqdx1ANGLE_mc","DQDX vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  TH2F *h_dqdx1ANGLE1_data = new TH2F("h_dqdx1ANGLE_data","DQDX vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  h_dqdx1ANGLE1_mc->GetYaxis()->SetTitle(" DQDX ");
+  h_dqdx1ANGLE1_mc->GetXaxis()->SetTitle("Horizontal Angle");
+  THStack *hs_dqdxANGLE1 = new THStack("hs_dqdxANGLE1","");
+
+
+  TH2F *h_intcANGLEc_mc = new TH2F("h_intcANGLE_mc","INT vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  TH2F *h_intcANGLEc_data = new TH2F("h_intcANGLE_data","INT vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  h_intcANGLEc_mc->GetYaxis()->SetTitle(" INT ");
+  h_intcANGLEc_mc->GetXaxis()->SetTitle("Horizontal Angle");
+  THStack *hs_intANGLEc = new THStack("hs_intANGLEc","");
+
+  TH2F *h_int2ANGLE2_mc = new TH2F("h_int2ANGLE_mc","INT vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  TH2F *h_int2ANGLE2_data = new TH2F("h_int2ANGLE_data","INT vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  h_int2ANGLE2_mc->GetYaxis()->SetTitle(" INT ");
+  h_int2ANGLE2_mc->GetXaxis()->SetTitle("Horizontal Angle");
+  THStack *hs_intANGLE2 = new THStack("hs_intANGLE2","");
+
+  TH2F *h_int1ANGLE1_mc = new TH2F("h_int1ANGLE_mc","INT vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  TH2F *h_int1ANGLE1_data = new TH2F("h_int1ANGLE_data","INT vs Horizontal Angle: East Cryostat",100., 0., 1.6, 100., 0., 2000.);
+  h_int1ANGLE1_mc->GetYaxis()->SetTitle(" INT ");
+  h_int1ANGLE1_mc->GetXaxis()->SetTitle("Horizontal Angle");
+  THStack *hs_intANGLE1 = new THStack("hs_intANGLE1","");
+
+
+
 
 
 
@@ -550,12 +594,17 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    int gg2=0;
    for (gg=0;gg<MC_DQDXc;gg++){
      h_dqdxc_mc->Fill(DQDX_col_MC[gg]);
+
+     h_dqdxcANGLEc_mc->Fill(ref_angle_col_MC[gg],DQDX_col_MC[gg]);
+
    }
    for (gg1=0;gg1<MC_DQDX1;gg1++){
      h_dqdx1_mc->Fill(DQDX_in1_MC[gg1]);
+     h_dqdx1ANGLE1_mc->Fill(ref_angle_in1_MC[gg1],DQDX_in1_MC[gg1]);
    }
    for (gg2=0;gg2<MC_DQDX2;gg2++){
      h_dqdx2_mc->Fill(DQDX_in2_MC[gg2]);
+     h_dqdx2ANGLE2_mc->Fill(ref_angle_in2_MC[gg2],DQDX_in2_MC[gg2]);
    }
 
 
@@ -564,12 +613,17 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    int hh2=0;
    for (hh=0;hh<DATA_DQDXc;hh++){
      h_dqdxc_data->Fill(DQDX_col_DATA[hh]);
+
+     h_dqdxcANGLEc_data->Fill(ref_angle_col_DATA[hh],DQDX_col_DATA[hh]);
    }
    for (hh1=0;hh1<DATA_DQDX1;hh1++){
      h_dqdx1_data->Fill(DQDX_in1_DATA[hh1]);
+     h_dqdx1ANGLE1_data->Fill(ref_angle_in1_DATA[hh1],DQDX_in1_DATA[hh1]);
+
    }
    for (hh2=0;hh2<DATA_DQDX2;hh2++){
      h_dqdx2_data->Fill(DQDX_in2_DATA[hh2]);
+     h_dqdx2ANGLE2_data->Fill(ref_angle_in2_DATA[hh2],DQDX_in2_DATA[hh2]);
    }
 
 
@@ -578,12 +632,15 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    int ii2=0;
    for (ii=0;ii<MC_INTc;ii++){
      h_intc_mc->Fill(INT_col_MC[ii]);
+     h_intcANGLEc_mc->Fill(ref_angle_col_MC[ii],INT_col_MC[ii]);
    }
    for (ii1=0;ii1<MC_INT1;ii1++){
      h_int1_mc->Fill(INT_in1_MC[ii1]);
+     h_int1ANGLE1_mc->Fill(ref_angle_in1_MC[ii1],INT_in1_MC[ii1]);
    }
    for (ii2=0;ii2<MC_INT2;ii2++){
      h_int2_mc->Fill(INT_in2_MC[ii2]);
+     h_int2ANGLE2_mc->Fill(ref_angle_in2_MC[ii2],INT_in2_MC[ii2]);
    }
 
    int jj=0;
@@ -591,12 +648,17 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    int jj2=0;
    for (jj=0;jj<DATA_INTc;jj++){
      h_intc_data->Fill(INT_col_DATA[jj]);
+     h_intcANGLEc_data->Fill(ref_angle_col_DATA[jj],INT_col_DATA[jj]);
    }
    for (jj1=0;jj1<DATA_INT1;jj1++){
      h_int1_data->Fill(INT_in1_DATA[jj1]);
+     h_int1ANGLE1_data->Fill(ref_angle_in1_DATA[jj1],INT_in1_DATA[jj1]);
+
    }
    for (jj2=0;jj2<DATA_INT2;jj2++){
      h_int2_data->Fill(INT_in2_DATA[jj2]);
+     h_int2ANGLE2_data->Fill(ref_angle_in2_DATA[jj2],INT_in2_DATA[jj2]);
+
    }
 
    cout<<"Fill done"<<endl;
@@ -704,7 +766,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendAc->AddEntry(h2Ac,"Data");
    legendAc->Draw();
    cnvs_Ac->Update();
-   cnvs_Ac->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_col_MCvsDATA.pdf");
+   cnvs_Ac->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_col_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_A1 = new TCanvas("cnvs_A1", "c7", 1,1,800,700);
@@ -723,7 +785,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendA1->AddEntry(h2A1,"Data");
    legendA1->Draw();
    cnvs_A1->Update();
-   cnvs_A1->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in1_MCvsDATA.pdf");
+   cnvs_A1->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in1_MCvsDATA.pdf");
 
    TCanvas* cnvs_A2 = new TCanvas("cnvs_A2", "c7", 1,1,800,700);
    h1A2->SetLineColor(kRed);
@@ -741,7 +803,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendA2->AddEntry(h2A2,"Data");
    legendA2->Draw();
    cnvs_A2->Update();
-   cnvs_A2->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in2_MCvsDATA.pdf");
+   cnvs_A2->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in2_MCvsDATA.pdf");
 
 //   TCanvas* cnvs_Acp = new TCanvas("cnvs_Acp", "c7", 1,1,800,700);
 //   h1Acp->SetLineColor(kRed);
@@ -759,7 +821,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    //  legendAcp->AddEntry(h2Acp,"Data");
    //   legendAcp->Draw();
    // cnvs_Acp->Update();
-   // cnvs_Acp->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_col_plus_MCvsDATA.pdf");
+   // cnvs_Acp->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_col_plus_MCvsDATA.pdf");
 
 
    // TCanvas* cnvs_A1p = new TCanvas("cnvs_A1p", "c7", 1,1,800,700);
@@ -778,7 +840,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    //  legendA1p->AddEntry(h2A1p,"Data");
    //  legendA1p->Draw();
    //  cnvs_A1p->Update();
-   //cnvs_A1p->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in1_plus_MCvsDATA.pdf");
+   //cnvs_A1p->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in1_plus_MCvsDATA.pdf");
 
 
    //   TCanvas* cnvs_A2p = new TCanvas("cnvs_A2p", "c7", 1,1,800,700);
@@ -797,7 +859,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    //  legendA2p->AddEntry(h2A2p,"Data");
    // legendA2p->Draw();
    // cnvs_A2p->Update();
-   // cnvs_A2p->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in2_plus_MCvsDATA.pdf");
+   // cnvs_A2p->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in2_plus_MCvsDATA.pdf");
 
    //   TCanvas* cnvs_Acm = new TCanvas("cnvs_Acm", "c7", 1,1,800,700);
    //   h1Acm->SetLineColor(kRed);
@@ -815,7 +877,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    //  legendAcm->AddEntry(h2Acm,"Data");
    //   legendAcm->Draw();
    // cnvs_Acm->Update();
-   // cnvs_Acm->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_col_minus_MCvsDATA.pdf");
+   // cnvs_Acm->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_col_minus_MCvsDATA.pdf");
 
    //   TCanvas* cnvs_A1m = new TCanvas("cnvs_A1m", "c7", 1,1,800,700);
    //   h1A1m->SetLineColor(kRed);
@@ -833,7 +895,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    //  legendA1m->AddEntry(h2A1m,"Data");
    // legendA1m->Draw();
    // cnvs_A1m->Update();
-   // cnvs_A1m->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in1_minus_MCvsDATA.pdf");
+   // cnvs_A1m->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in1_minus_MCvsDATA.pdf");
 
 
    //   TCanvas* cnvs_A2m = new TCanvas("cnvs_A2m", "c7", 1,1,800,700);
@@ -852,11 +914,162 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    //  legendA2m->AddEntry(h2A2m,"Data");
    // legendA2m->Draw();
    //cnvs_A2m->Update();
-   //cnvs_A2m->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in2_minus_MCvsDATA.pdf");
+   //cnvs_A2m->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_angle_in2_minus_MCvsDATA.pdf");
+
+
+   //display 2D
 
 
 
 
+
+
+
+
+
+
+
+   TCanvas* cnvs_DQDXvsANGLE_c = new TCanvas("cnvs_DQDXvsANGLE_c", "c7", 1,1,800,700);
+   h_dqdxcANGLEc_mc->SetMarkerColor(kRed);
+   h_dqdxcANGLEc_mc->SetMarkerStyle(kPlus);
+   h_dqdxcANGLEc_data->SetMarkerColor(kBlue);
+   h_dqdxcANGLEc_data->SetMarkerStyle(kCircle);
+
+   hs_dqdxANGLEc->Add(h_dqdxcANGLEc_mc);
+   hs_dqdxANGLEc->Add(h_dqdxcANGLEc_data);
+   hs_dqdxANGLEc->Draw("nostackHIST");
+
+   hs_dqdxANGLEc->GetYaxis()->SetTitle(" DQDX  ");
+   hs_dqdxANGLEc->GetXaxis()->SetTitle(" Horizontal Angle  ");
+   TText TDQDXANGLEc; TDQDXANGLEc.SetTextFont(42); TDQDXANGLEc.SetTextAlign(21);
+   TDQDXANGLEc.DrawTextNDC(.5,.95,"DQDX vs Horizontal Angle (col): East Cryostat");
+   auto legendDQDXANGLEc = new TLegend(0.1,0.8,0.2,0.9);
+   legendDQDXANGLEc->AddEntry(h_dqdxcANGLEc_mc,"MC");
+   legendDQDXANGLEc->AddEntry(h_dqdxcANGLEc_data,"Data");
+   legendDQDXANGLEc->Draw();
+   cnvs_DQDXvsANGLE_c->Update();
+   cnvs_DQDXvsANGLE_c->SaveAs("MAY25/2DPLOTS_OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_ANGLEvsDQDX_col_MCvsDATA.pdf");
+
+
+   TCanvas* cnvs_DQDXvsANGLE_2 = new TCanvas("cnvs_DQDXvsANGLE_2", "c7", 1,1,800,700);
+   h_dqdx2ANGLE2_mc->SetMarkerColor(kRed);
+   h_dqdx2ANGLE2_mc->SetMarkerStyle(kPlus);
+   h_dqdx2ANGLE2_data->SetMarkerColor(kBlue);
+   h_dqdx2ANGLE2_data->SetMarkerStyle(kCircle);
+
+   hs_dqdxANGLE2->Add(h_dqdx2ANGLE2_mc);
+   hs_dqdxANGLE2->Add(h_dqdx2ANGLE2_data);
+   hs_dqdxANGLE2->Draw("nostackHIST");
+
+   hs_dqdxANGLE2->GetYaxis()->SetTitle(" DQDX  ");
+   hs_dqdxANGLE2->GetXaxis()->SetTitle(" Horizontal Angle  ");
+   TText TDQDXANGLE2; TDQDXANGLE2.SetTextFont(42); TDQDXANGLE2.SetTextAlign(21);
+   TDQDXANGLE2.DrawTextNDC(.5,.95,"DQDX vs Horizontal Angle (in2): East Cryostat");
+   auto legendDQDXANGLE2 = new TLegend(0.1,0.8,0.2,0.9);
+   legendDQDXANGLE2->AddEntry(h_dqdx2ANGLE2_mc,"MC");
+   legendDQDXANGLE2->AddEntry(h_dqdx2ANGLE2_data,"Data");
+   legendDQDXANGLE2->Draw();
+   cnvs_DQDXvsANGLE_2->Update();
+   cnvs_DQDXvsANGLE_2->SaveAs("MAY25/2DPLOTS_OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_ANGLEvsDQDX_in2_MCvsDATA.pdf");
+
+
+   TCanvas* cnvs_DQDXvsANGLE_1 = new TCanvas("cnvs_DQDXvsANGLE_1", "c7", 1,1,800,700);
+   h_dqdx1ANGLE1_mc->SetMarkerColor(kRed);
+   h_dqdx1ANGLE1_mc->SetMarkerStyle(kPlus);
+   h_dqdx1ANGLE1_data->SetMarkerColor(kBlue);
+   h_dqdx1ANGLE1_data->SetMarkerStyle(kCircle);
+
+   hs_dqdxANGLE1->Add(h_dqdx1ANGLE1_mc);
+   hs_dqdxANGLE1->Add(h_dqdx1ANGLE1_data);
+   hs_dqdxANGLE1->Draw("nostackHIST");
+
+   hs_dqdxANGLE1->GetYaxis()->SetTitle(" DQDX  ");
+   hs_dqdxANGLE1->GetXaxis()->SetTitle(" Horizontal Angle  ");
+   TText TDQDXANGLE1; TDQDXANGLE1.SetTextFont(42); TDQDXANGLE1.SetTextAlign(21);
+   TDQDXANGLE1.DrawTextNDC(.5,.95,"DQDX vs Horizontal Angle (in1): East Cryostat");
+   auto legendDQDXANGLE1 = new TLegend(0.1,0.8,0.2,0.9);
+   legendDQDXANGLE1->AddEntry(h_dqdx1ANGLE1_mc,"MC");
+   legendDQDXANGLE1->AddEntry(h_dqdx1ANGLE1_data,"Data");
+   legendDQDXANGLE1->Draw();
+   cnvs_DQDXvsANGLE_1->Update();
+   cnvs_DQDXvsANGLE_1->SaveAs("MAY25/2DPLOTS_OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_ANGLEvsDQDX_in1_MCvsDATA.pdf");
+
+
+
+   //
+
+
+   TCanvas* cnvs_INTvsANGLE_c = new TCanvas("cnvs_INTvsANGLE_c", "c7", 1,1,800,700);
+   h_intcANGLEc_mc->SetMarkerColor(kRed);
+   h_intcANGLEc_mc->SetMarkerStyle(kPlus);
+   h_intcANGLEc_data->SetMarkerColor(kBlue);
+   h_intcANGLEc_data->SetMarkerStyle(kCircle);
+
+   hs_intANGLEc->Add(h_intcANGLEc_mc);
+   hs_intANGLEc->Add(h_intcANGLEc_data);
+   hs_intANGLEc->Draw("nostackHIST");
+
+   hs_intANGLEc->GetYaxis()->SetTitle(" INT  ");
+   hs_intANGLEc->GetXaxis()->SetTitle(" Horizontal Angle  ");
+   TText TINTANGLEc; TINTANGLEc.SetTextFont(42); TINTANGLEc.SetTextAlign(21);
+   TINTANGLEc.DrawTextNDC(.5,.95,"INT vs Horizontal Angle (col): East Cryostat");
+   auto legendINTANGLEc = new TLegend(0.1,0.8,0.2,0.9);
+   legendINTANGLEc->AddEntry(h_intcANGLEc_mc,"MC");
+   legendINTANGLEc->AddEntry(h_intcANGLEc_data,"Data");
+   legendINTANGLEc->Draw();
+   cnvs_INTvsANGLE_c->Update();
+   cnvs_INTvsANGLE_c->SaveAs("MAY25/2DPLOTS_OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_ANGLEvsINT_col_MCvsDATA.pdf");
+
+
+   TCanvas* cnvs_INTvsANGLE_2 = new TCanvas("cnvs_INTvsANGLE_2", "c7", 1,1,800,700);
+   h_int2ANGLE2_mc->SetMarkerColor(kRed);
+   h_int2ANGLE2_mc->SetMarkerStyle(kPlus);
+   h_int2ANGLE2_data->SetMarkerColor(kBlue);
+   h_int2ANGLE2_data->SetMarkerStyle(kCircle);
+
+   hs_intANGLE2->Add(h_int2ANGLE2_mc);
+   hs_intANGLE2->Add(h_int2ANGLE2_data);
+   hs_intANGLE2->Draw("nostackHIST");
+
+   hs_intANGLE2->GetYaxis()->SetTitle(" INT ");
+   hs_intANGLE2->GetXaxis()->SetTitle(" Horizontal Angle  ");
+   TText TINTANGLE2; TINTANGLE2.SetTextFont(42); TINTANGLE2.SetTextAlign(21);
+   TINTANGLE2.DrawTextNDC(.5,.95,"INT vs Horizontal Angle (in2): East Cryostat");
+   auto legendINTANGLE2 = new TLegend(0.1,0.8,0.2,0.9);
+   legendINTANGLE2->AddEntry(h_int2ANGLE2_mc,"MC");
+   legendINTANGLE2->AddEntry(h_int2ANGLE2_data,"Data");
+   legendINTANGLE2->Draw();
+   cnvs_INTvsANGLE_2->Update();
+   cnvs_INTvsANGLE_2->SaveAs("MAY25/2DPLOTS_OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_ANGLEvsINT_in2_MCvsDATA.pdf");
+
+
+   TCanvas* cnvs_INTvsANGLE_1 = new TCanvas("cnvs_INTvsANGLE_1", "c7", 1,1,800,700);
+   h_int1ANGLE1_mc->SetMarkerColor(kRed);
+   h_int1ANGLE1_mc->SetMarkerStyle(kPlus);
+   h_int1ANGLE1_data->SetMarkerColor(kBlue);
+   h_int1ANGLE1_data->SetMarkerStyle(kCircle);
+
+   hs_intANGLE1->Add(h_int1ANGLE1_mc);
+   hs_intANGLE1->Add(h_int1ANGLE1_data);
+   hs_intANGLE1->Draw("nostackHIST");
+
+   hs_intANGLE1->GetYaxis()->SetTitle(" INT  ");
+   hs_intANGLE1->GetXaxis()->SetTitle(" Horizontal Angle  ");
+   TText TINTANGLE1; TINTANGLE1.SetTextFont(42); TINTANGLE1.SetTextAlign(21);
+   TINTANGLE1.DrawTextNDC(.5,.95,"INT vs Horizontal Angle (in1): East Cryostat");
+   auto legendINTANGLE1 = new TLegend(0.1,0.8,0.2,0.9);
+   legendINTANGLE1->AddEntry(h_int1ANGLE1_mc,"MC");
+   legendINTANGLE1->AddEntry(h_int1ANGLE1_data,"Data");
+   legendINTANGLE1->Draw();
+   cnvs_INTvsANGLE_1->Update();
+   cnvs_INTvsANGLE_1->SaveAs("MAY25/2DPLOTS_OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_ANGLEvsINT_in1_MCvsDATA.pdf");
+
+
+
+
+
+
+   /*
    TCanvas* cnvs_DQDXc = new TCanvas("cnvs_DQDXc", "c7", 1,1,800,700);
    h1DQDXc->SetLineColor(kRed);
    h2DQDXc->SetLineColor(kBlue);
@@ -873,7 +1086,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendDQDXc->AddEntry(h2DQDXc,"Data");
    legendDQDXc->Draw();
    cnvs_DQDXc->Update();
-   cnvs_DQDXc->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_DQDX_col_MCvsDATA.pdf");
+   cnvs_DQDXc->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_DQDX_col_MCvsDATA.pdf");
 
 
 
@@ -893,7 +1106,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendDQDX1->AddEntry(h2DQDX1,"Data");
    legendDQDX1->Draw();
    cnvs_DQDX1->Update();
-   cnvs_DQDX1->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_DQDX_in1_MCvsDATA.pdf");
+   cnvs_DQDX1->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_DQDX_in1_MCvsDATA.pdf");
 
 
 
@@ -913,7 +1126,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendDQDX2->AddEntry(h2DQDX2,"Data");
    legendDQDX2->Draw();
    cnvs_DQDX2->Update();
-   cnvs_DQDX2->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_DQDX_in2_MCvsDATA.pdf");
+   cnvs_DQDX2->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_DQDX_in2_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_INTc = new TCanvas("cnvs_INTc", "c7", 1,1,800,700);
@@ -932,7 +1145,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendINTc->AddEntry(h2INTc,"Data");
    legendINTc->Draw();
    cnvs_INTc->Update();
-   cnvs_INTc->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_INT_col_MCvsDATA.pdf");
+   cnvs_INTc->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_INT_col_MCvsDATA.pdf");
 
    TCanvas* cnvs_INT1 = new TCanvas("cnvs_INT1", "c7", 1,1,800,700);
    h1INT1->SetLineColor(kRed);
@@ -950,7 +1163,7 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendINT1->AddEntry(h2INT1,"Data");
    legendINT1->Draw();
    cnvs_INT1->Update();
-   cnvs_INT1->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_INT_in1_MCvsDATA.pdf");
+   cnvs_INT1->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_INT_in1_MCvsDATA.pdf");
 
 
    TCanvas* cnvs_INT2 = new TCanvas("cnvs_INT2", "c7", 1,1,800,700);
@@ -969,8 +1182,8 @@ void FullSet_1D2D_AUG24_E_MCDATA_tpc0(bool verbose=false) {
    legendINT2->AddEntry(h2INT2,"Data");
    legendINT2->Draw();
    cnvs_INT2->Update();
-   cnvs_INT2->SaveAs("JAN25plots/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_INT_in2_MCvsDATA.pdf");
-
+   cnvs_INT2->SaveAs("MAY25/OCT24_OUTFILE_NUMI_tpc0_sel12_East_file_INT_in2_MCvsDATA.pdf");
+   */
 
    cout<<"Display done"<<endl;
 }
