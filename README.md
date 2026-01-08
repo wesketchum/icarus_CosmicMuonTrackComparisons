@@ -1,6 +1,22 @@
 # icarus_CosmicMuonTrackComparisons
 
-### Description of output files (Olivia, 18 Jan. 2024)
+### Description of output files (Olivia, Jan. 2026)
+
+# /JAN_2026
+
+*'FullSet_TEST25_1D2D_AUG24_E_MConly_tpc0.C': 1D and 2D plots in pdf format for MC files in East cryostat, logical tpc0
+*'FullSet_TEST25_1D2D_AUG24_E_DATAonly_tpc0.C': 1D and 2D plots in pdf format for DATA files in East cryostat, logical tpc0
+*'FullSet_TEST25_1D2D_FEB25_E_MCDATA_tpc0.C': 1D and 2D plots in pdf format for MC and DATA overlaid in East cryostat, logical tpc0
+* note that changing the caloskim from E to W accesses the West cryostat
+* note that changing the tpc_num variable accesses logical tpcs 1-3
+
+
+
+# /AUG_2023
+
+* `Sept_angle_E_MAY2023_MConly.C`: combining the above files to run together
+* `FullSet_1D2D_Oct23_E_MConly_Etpc0.C`: Latest to combine for running together (will use the updated MC files) (sim. files also for logical tpc 1-3)
+
 
 * `April_2023_1Ddis.C (was Nov1D.C)` : up-to-date 1D plots
 
@@ -10,7 +26,3 @@
 * `Between2_hor.C`: calculation of the angles, using the `Sept_angle` output as input. Horizontal only
 * `P_M_60angles.C`: calculation of the angles, using the `Sept_angle` output as input, +/-60 degree angles relatively to horizontal
 
-# /AUG_2023
-
-* `Sept_angle_E_MAY2023_MConly.C`: combining the above files to run together
-* `FullSet_1D2D_Oct23_E_MConly_Etpc0.C`: Latest to combine for running together (will use the updated MC files) (sim. files also for logical tpc 1-3)
