@@ -10,6 +10,8 @@
 * note that changing the caloskim from E to W accesses the West cryostat
 * note that changing the tpc_num variable accesses logical tpcs 1-3
 
+* There are now file paths saved for both MC and data, along with the sam2xrootd.sh script that can pull any new set and form a new .txt file from which to run the above macros.
+
 
 
 # /AUG_2023
